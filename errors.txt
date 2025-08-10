@@ -2,9 +2,47 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 357: 'title' is not a keyword argument or valid child of the add statement.
-    add bg title tavern default
-                ^
+File "game/script_main.rpy", line 64: Line with id introductions_6340148c appears twice. The other line is game/script.rpyc:64
+
+File "game/script_main.rpy", line 66: Line with id introductions_c4e00bae appears twice. The other line is game/script.rpyc:66
+
+File "game/script_main.rpy", line 68: Line with id introductions_d76decd2 appears twice. The other line is game/script.rpyc:68
+
+File "game/script_main.rpy", line 72: Line with id introductions_4fdad1a8 appears twice. The other line is game/script.rpyc:72
+
+File "game/script_main.rpy", line 74: Line with id introductions_b4d377ed appears twice. The other line is game/script.rpyc:74
+
+File "game/script_main.rpy", line 76: Line with id introductions_c7058ab5 appears twice. The other line is game/script.rpyc:76
+
+File "game/script_main.rpy", line 78: Line with id introductions_8185039f appears twice. The other line is game/script.rpyc:78
+
+File "game/script_main.rpy", line 84: Line with id introductions_62a55c57 appears twice. The other line is game/script.rpyc:84
+
+File "game/script_main.rpy", line 86: Line with id introductions_b334c8ca appears twice. The other line is game/script.rpyc:86
+
+File "game/script_main.rpy", line 88: Line with id introductions_d7afdc3b appears twice. The other line is game/script.rpyc:88
+
+File "game/script_main.rpy", line 90: Line with id introductions_146dc0cc appears twice. The other line is game/script.rpyc:90
+
+File "game/script_main.rpy", line 92: Line with id introductions_d78ddc82 appears twice. The other line is game/script.rpyc:92
+
+File "game/script_main.rpy", line 94: Line with id introductions_e5e8e719 appears twice. The other line is game/script.rpyc:94
+
+File "game/script_main.rpy", line 96: Line with id introductions_670ed2be appears twice. The other line is game/script.rpyc:96
+
+File "game/script_main.rpy", line 98: Line with id introductions_e1ee751c appears twice. The other line is game/script.rpyc:98
+
+File "game/script_main.rpy", line 100: Line with id introductions_1b0a5c9b appears twice. The other line is game/script.rpyc:100
+
+File "game/script_main.rpy", line 102: Line with id introductions_81cfa572 appears twice. The other line is game/script.rpyc:102
+
+File "game/script_main.rpy", line 104: Line with id introductions_33a6671b appears twice. The other line is game/script.rpyc:104
+
+File "game/script_main.rpy", line 106: Line with id introductions_65a68303 appears twice. The other line is game/script.rpyc:106
+
+File "game/script_main.rpy", line 108: Line with id introductions_5f33742f appears twice. The other line is game/script.rpyc:108
+
+File "game/script_main.rpy", line 110: Line with id introductions_c68314c4 appears twice. The other line is game/script.rpyc:110
 
 Ren'Py Version: Ren'Py 8.3.4.24120703
-Sat Jan  4 09:04:30 2025
+Wed Feb 12 09:15:27 2025
