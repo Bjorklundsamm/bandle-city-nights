@@ -107,18 +107,26 @@ style frame:
 screen say(who, what):
     zorder 260
 
-    window:
-        id "window"
+    if who is not None or (what is not None and what != ""):
+        window:
+            id "window"
 
-        if who is not None:
+            if who is not None:
 
+                window:
+                    id "namebox"
+                    style "namebox"
+                    text who id "who"
+
+            text what id "what"
+
+    else:
+        ## No content — still render the required ids so Ren'Py internals don't break.
+        transform:
+            alpha 0.0
             window:
-                id "namebox"
-                style "namebox"
-                text who id "who"
-
-        text what id "what"
-
+                id "window"
+                text "" id "what"
 
     ## If there's a side image, display it above the text. Do not display on the
     ## phone variant - there's no room.
@@ -223,31 +231,31 @@ style input:
 ## https://www.renpy.org/doc/html/screen_special.html#choice
 
 screen choice(items):
-    style_prefix "choice"
-
     vbox:
+        xalign 0.5
+        yalign 0.5
+        spacing gui.choice_spacing
+
         for i in items:
-            textbutton i.caption action i.action
-
-
-style choice_vbox is vbox
-style choice_button is button
-style choice_button_text is button_text
-
-style choice_vbox:
-    xalign 0.5
-    ypos 405
-    yanchor 0.5
-
-    spacing gui.choice_spacing
-
-style choice_button is default:
-    properties gui.button_properties("choice_button")
-    hover_sound "audio/sfx/hover_selectable.mp3"
-    activate_sound "audio/sfx/click_selectable.mp3"
-
-style choice_button_text is default:
-    properties gui.text_properties("choice_button")
+            button:
+                background None
+                hover_background None
+                padding (0, 0)
+                action i.action
+                hover_sound "audio/sfx/hover_selectable.mp3"
+                activate_sound "audio/sfx/click_selectable.mp3"
+                fixed:
+                    xsize 640
+                    ysize 54
+                    add "gui/fade_choice_bar.png" xpos 0 ypos 0
+                    text i.caption:
+                        xalign 0.5
+                        yalign 0.5
+                        color "#d4c4a8"
+                        hover_color "#ffffff"
+                        size 26
+                        font gui.name_text_font
+                        text_align 0.5
 
 
 ## Quick Menu screen ###########################################################
@@ -283,6 +291,7 @@ screen quick_menu():
 init python:
     config.overlay_screens.append("quick_menu")
     config.overlay_screens.append("constitution_hud")
+    config.overlay_screens.append("journal_button")
 
 default quick_menu = True
 
@@ -299,6 +308,88 @@ screen system_overlay():
     add Solid("#000000c0")
 
 
+## System "Got it." button #####################################################
+##
+## A clickable button shown at the top of the screen during system announcements.
+## Use `call screen system_got_it` in the script — it returns immediately when
+## clicked so the script can then hide the overlay and continue.
+## zorder 310 places it above the overlay (249) and the say screen (260).
+
+## fade_choice_bar — transparent→dark→transparent horizontal bar.
+## Generated at init time as a PNG using pure Python (struct + zlib).
+## Written to game/gui/fade_choice_bar.png so Ren'Py loads it normally.
+## The bar is 640×54px; text is layered on top inside a fixed.
+
+init python:
+    import struct, zlib, os
+
+    def _write_png(path, width, height, rows_rgba):
+        """Write a minimal RGBA PNG to disk."""
+        def chunk(tag, data):
+            c = tag + data
+            return struct.pack(">I", len(data)) + c + struct.pack(">I", zlib.crc32(c) & 0xFFFFFFFF)
+
+        raw = b""
+        for row in rows_rgba:
+            raw += b"\x00" + bytes(row)
+
+        png = (
+            b"\x89PNG\r\n\x1a\n"
+            + chunk(b"IHDR", struct.pack(">IIBBBBB", width, height, 8, 6, 0, 0, 0))
+            + chunk(b"IDAT", zlib.compress(raw, 9))
+            + chunk(b"IEND", b"")
+        )
+        with open(path, "wb") as f:
+            f.write(png)
+
+    def _make_fade_bar_png(path, width=640, height=54,
+                           mid_r=0x1a, mid_g=0x1a, mid_b=0x1a, mid_a=0xcc,
+                           fade_w=180):
+        rows = []
+        for _y in range(height):
+            row = []
+            for x in range(width):
+                if x < fade_w:
+                    t = x / float(fade_w)
+                elif x > width - fade_w:
+                    t = (width - x) / float(fade_w)
+                else:
+                    t = 1.0
+                a = int(mid_a * t)
+                row += [mid_r, mid_g, mid_b, a]
+            rows.append(row)
+        _write_png(path, width, height, rows)
+
+    _bar_path  = os.path.join(renpy.config.gamedir, "gui", "fade_choice_bar.png")
+    _bar_path2 = os.path.join(renpy.config.gamedir, "gui", "fade_choice_bar_hover.png")
+    _make_fade_bar_png(_bar_path,  mid_r=0x1a, mid_g=0x1a, mid_b=0x1a, mid_a=0xcc)
+    _make_fade_bar_png(_bar_path2, mid_r=0x2e, mid_g=0x2e, mid_b=0x2e, mid_a=0xcc)
+
+
+screen system_got_it():
+    zorder 310
+    button:
+        xalign 0.5
+        yalign 0.5
+        background None
+        hover_background None
+        padding (0, 0)
+        action Return()
+        hover_sound "audio/sfx/hover_selectable.mp3"
+        activate_sound "audio/sfx/click_selectable.mp3"
+        fixed:
+            xsize 640
+            ysize 54
+            add "gui/fade_choice_bar.png" xpos 0 ypos 0
+            text "Got it.":
+                xalign 0.5
+                yalign 0.5
+                color "#d4c4a8"
+                hover_color "#ffffff"
+                size 26
+                font gui.name_text_font
+
+
 ## Announcement arrows #########################################################
 ##
 ## Off-white bobbing arrows shown during system announcements to highlight
@@ -306,6 +397,7 @@ screen system_overlay():
 ##
 ## Constitution arrow — points left toward the hearts in the top-left corner.
 ## Backpack arrow — points right toward the backpack icon in the top-right corner.
+## Journal arrow — points right toward the journal button below the backpack.
 
 ## Position + bob baked into the transform so no screen-level container is needed,
 ## which avoids any inherited box styling on the arrow character.
@@ -324,6 +416,13 @@ transform pack_arrow_anim:
     linear 0.45 xoffset 0
     repeat
 
+transform journal_arrow_anim:
+    ## Sits to the left of the journal button (below backpack), bobs right toward it.
+    xpos 1680 ypos 70 xoffset 0
+    linear 0.45 xoffset 14
+    linear 0.45 xoffset 0
+    repeat
+
 screen constitution_arrow():
     zorder 310
     add Text("←", color="#d4c4a8", size=80, font="DejaVuSans.ttf") at const_arrow_anim
@@ -331,6 +430,10 @@ screen constitution_arrow():
 screen backpack_arrow():
     zorder 310
     add Text("→", color="#d4c4a8", size=80, font="DejaVuSans.ttf") at pack_arrow_anim
+
+screen journal_arrow():
+    zorder 310
+    add Text("→", color="#d4c4a8", size=80, font="DejaVuSans.ttf") at journal_arrow_anim
 
 
 ## Constitution HUD ############################################################
@@ -356,6 +459,114 @@ screen constitution_hud():
                     "gui/hud/Heart - %d.png" % min(max(persistent.constitution - i * 5, 0), 5),
                     zoom=0.5
                 )
+
+## Barkeep: ask about someone ################################################
+##
+## Paginated name selection screen. Called from barkeep_ask_about_page.
+## _slice  — list of (display_name, affection, label) for this page
+## _page   — current page index (0-based)
+## _pages  — total number of pages
+##
+## Returns: label name string, "prev", "next", or "back"
+
+screen barkeep_name_select(_slice, _page, _pages):
+    modal True
+    zorder 200
+
+    vbox:
+        xalign 0.5
+        yalign 0.5
+        spacing gui.choice_spacing
+
+        for _name, _aff, _label in _slice:
+            button:
+                background None
+                hover_background None
+                padding (0, 0)
+                action Return(_label)
+                hover_sound "audio/sfx/hover_selectable.mp3"
+                activate_sound "audio/sfx/click_selectable.mp3"
+                fixed:
+                    xsize 640
+                    ysize 54
+                    add "gui/fade_choice_bar.png" xpos 0 ypos 0
+                    text "[_name]":
+                        xalign 0.5
+                        yalign 0.5
+                        color "#d4c4a8"
+                        hover_color "#ffffff"
+                        size 26
+                        font gui.name_text_font
+                        text_align 0.5
+
+        null height 4
+
+        hbox:
+            xalign 0.5
+            spacing gui.choice_spacing
+
+            if _page > 0:
+                button:
+                    background None
+                    hover_background None
+                    padding (0, 0)
+                    action Return("prev")
+                    hover_sound "audio/sfx/hover_selectable.mp3"
+                    activate_sound "audio/sfx/click_selectable.mp3"
+                    fixed:
+                        xsize 640
+                        ysize 54
+                        add "gui/fade_choice_bar.png" xpos 0 ypos 0
+                        text "← Previous":
+                            xalign 0.5
+                            yalign 0.5
+                            color "#d4c4a8"
+                            hover_color "#ffffff"
+                            size 26
+                            font gui.name_text_font
+                            text_align 0.5
+
+            button:
+                background None
+                hover_background None
+                padding (0, 0)
+                action Return("back")
+                hover_sound "audio/sfx/hover_selectable.mp3"
+                activate_sound "audio/sfx/click_selectable.mp3"
+                fixed:
+                    xsize 640
+                    ysize 54
+                    add "gui/fade_choice_bar.png" xpos 0 ypos 0
+                    text "Never mind":
+                        xalign 0.5
+                        yalign 0.5
+                        color "#d4c4a8"
+                        hover_color "#ffffff"
+                        size 26
+                        font gui.name_text_font
+                        text_align 0.5
+
+            if _page < _pages - 1:
+                button:
+                    background None
+                    hover_background None
+                    padding (0, 0)
+                    action Return("next")
+                    hover_sound "audio/sfx/hover_selectable.mp3"
+                    activate_sound "audio/sfx/click_selectable.mp3"
+                    fixed:
+                        xsize 640
+                        ysize 54
+                        add "gui/fade_choice_bar.png" xpos 0 ypos 0
+                        text "More →":
+                            xalign 0.5
+                            yalign 0.5
+                            color "#d4c4a8"
+                            hover_color "#ffffff"
+                            size 26
+                            font gui.name_text_font
+                            text_align 0.5
+
 
 style quick_button is default
 style quick_button_text is button_text
@@ -386,7 +597,7 @@ style quick_button_text:
 ## Barkeep and Poppy are unconditional; all others are guarded by their flag.
 
 transform patron_zoom:
-    xanchor 0.5 yanchor 0.5 xpos 960 ypos 544
+    xanchor 0.5 yanchor 0.5 xpos 960 ypos 535
     zoom 1.0
     on hover:
         linear 0.15 zoom 1.005
@@ -489,7 +700,7 @@ screen tavern_hub():
     button:
         xalign 0.018
         yalign 0.94
-        background Frame(Solid("#00000028"), 14, 10)
+        background Frame(Solid("#00000000"), 14, 10)
         hover_background Frame(Solid("#00000055"), 14, 10)
         padding (16, 11)
         action Return("leave")
@@ -504,6 +715,230 @@ screen tavern_hub():
                 size 22
                 color "#d4c4a800"
                 hover_color "#d4c4a8ee"
+
+
+## Journal Button ##############################################################
+##
+## Displayed below the backpack in the top-right corner.
+## The journal tracks relationships, stats, and days elapsed.
+## Unlocked alongside the journal system announcement in gameStart.
+
+default journal_unlocked = False
+
+screen journal_button():
+    zorder 260
+    if journal_unlocked and quick_menu:
+        textbutton "J":
+            xalign 0.97
+            yalign 0.08
+            text_color "#d4c4a8"
+            text_hover_color "#ffffff"
+            text_size 30
+            background Frame(Solid("#1a1a1a99"), 6, 6)
+            hover_background Frame(Solid("#1a1a1acc"), 6, 6)
+            padding (10, 6)
+            hover_sound "audio/sfx/hover_selectable.mp3"
+            activate_sound "audio/sfx/click_selectable.mp3"
+            action Show("journal_screen")
+
+
+## Journal intro preview — shown during the system announcement so the player
+## can see the button while it's being described.
+screen journal_intro():
+    zorder 300
+    textbutton "J":
+        xalign 0.97
+        yalign 0.08
+        text_color "#d4c4a8"
+        text_size 30
+        background Frame(Solid("#1a1a1a99"), 6, 6)
+        padding (10, 6)
+        action NullAction()
+
+
+## Journal Screen ##############################################################
+##
+## Full overlay showing:
+##   • Day tracker (Day X / 31)
+##   • Stats: Constitution, Strength, Charisma, Intellect
+##   • People — silhouette (?) if not met, name + affection hearts if met
+##
+## Characters not in the tavern tonight: Kindred, Lilia, Miss Fortune, Fizz, Morgana.
+## All 5 start unmet so they show as question marks.
+
+init python:
+    ## All characters tracked in the journal.
+    ## Each entry: (internal_key, display_name, met_flag_name, affection_var_name)
+    journal_characters = [
+        ## Tavern regulars
+        ("barkeep",       "Barkeep",       "met_barkeep",        "affection_barkeep"),
+        ("tristana",      "Tristana",      "met_tristana",       "affection_tristana"),
+        ("poppy",         "Poppy",         "met_poppy",          "affection_poppy"),
+        ("lulu",          "Lulu",          "met_lulu",           "affection_lulu"),
+        ("vex",           "Vex",           "met_vex",            "affection_vex"),
+        ("katarina",      "Katarina",      "met_katarina",       "affection_katarina"),
+        ("ahri",          "Ahri",          "met_ahri",           "affection_ahri"),
+        ("ezreal",        "Ezreal",        "met_ezreal",         "affection_ezreal"),
+        ("nidalee",       "Nidalee",       "met_nidalee_neeko",  "affection_nidalee"),
+        ("neeko",         "Neeko",         "met_nidalee_neeko",  "affection_neeko"),
+        ("jinx",          "Jinx",          "met_jinx",           "affection_jinx"),
+        ## Not in tavern tonight
+        ("kindred",       "Kindred",       "met_kindred",        "affection_kindred"),
+        ("lilia",         "Lilia",         "met_lilia",          "affection_lilia"),
+        ("miss_fortune",  "Miss Fortune",  "met_miss_fortune",   "affection_miss_fortune"),
+        ("fizz",          "Fizz",          "met_fizz",           "affection_fizz"),
+        ("morgana",       "Morgana",       "met_morgana",        "affection_morgana"),
+    ]
+
+## Default affection values (0–5 hearts each).
+default affection_barkeep = 0
+default affection_tristana = 0
+default affection_poppy = 0
+default affection_lulu = 0
+default affection_vex = 0
+default affection_katarina = 0
+default affection_ahri = 0
+default affection_ezreal = 0
+default affection_nidalee = 0
+default affection_neeko = 0
+default affection_jinx = 0
+default affection_kindred = 0
+default affection_lilia = 0
+default affection_miss_fortune = 0
+default affection_fizz = 0
+default affection_morgana = 0
+
+## Met flags for characters not already declared elsewhere.
+default met_lulu = True
+default met_kindred = False
+default met_lilia = False
+default met_miss_fortune = False
+default met_morgana = False
+
+## Current in-game day (starts at 1, cap at 31).
+default current_day = 1
+
+screen journal_screen():
+    modal True
+    zorder 500
+
+    ## Full-screen dim — click outside to close
+    button:
+        xfill True
+        yfill True
+        background Solid("#22222299")
+        action Hide("journal_screen")
+
+    ## Main journal panel
+    frame:
+        xalign 0.5
+        yalign 0.5
+        xsize 960
+        ysize 680
+        background Solid("#1a1a1acc")
+        padding (40, 36, 40, 36)
+
+        vbox:
+            spacing 18
+
+            ## ── Title + day ──────────────────────────────────────────────────
+            hbox:
+                xfill True
+                text "Journal":
+                    xalign 0.0
+                    color "#e8e0d0"
+                    size 46
+                    font gui.name_text_font
+                text "Day [current_day] / 31":
+                    xalign 1.0
+                    color "#a09880"
+                    size 26
+                    yalign 0.7
+
+            ## ── Stats ────────────────────────────────────────────────────────
+            frame:
+                background Solid("#ffffff11")
+                padding (16, 12)
+                xfill True
+                vbox:
+                    spacing 6
+                    text "Stats":
+                        color "#c8b89a"
+                        size 22
+                        font gui.name_text_font
+                    grid 2 2:
+                        xfill True
+                        spacing 4
+                        text "Constitution  [persistent.constitution] / 25":
+                            color "#e8e0d0"
+                            size 19
+                        text "Strength  [persistent.strength] / 10":
+                            color "#e8e0d0"
+                            size 19
+                        text "Charisma  [persistent.charisma] / 10":
+                            color "#e8e0d0"
+                            size 19
+                        text "Intellect  [persistent.intellect] / 10":
+                            color "#e8e0d0"
+                            size 19
+
+            ## ── People ───────────────────────────────────────────────────────
+            text "People":
+                color "#c8b89a"
+                size 22
+                font gui.name_text_font
+
+            viewport:
+                xfill True
+                ysize 340
+                scrollbars "vertical"
+                mousewheel True
+                vbox:
+                    spacing 8
+                    for key, display_name, met_flag, affection_var in journal_characters:
+                        python:
+                            _met = getattr(store, met_flag, False)
+                            _hearts = getattr(store, affection_var, 0)
+                        hbox:
+                            spacing 12
+                            yalign 0.5
+                            xfill True
+                            ## Name or question mark
+                            if _met:
+                                text "[display_name]":
+                                    color "#e8e0d0"
+                                    size 20
+                                    xminimum 180
+                                    yalign 0.5
+                            else:
+                                text "???":
+                                    color "#555555"
+                                    size 20
+                                    xminimum 180
+                                    yalign 0.5
+                            ## Affection hearts (shown only if met)
+                            if _met:
+                                hbox:
+                                    spacing 4
+                                    yalign 0.5
+                                    for h in range(5):
+                                        if h < _hearts:
+                                            text "♥":
+                                                color "#cc2244"
+                                                size 20
+                                        else:
+                                            text "♥":
+                                                color "#444444"
+                                                size 20
+
+    ## Close button
+    textbutton "✕":
+        xalign 0.97
+        yalign 0.03
+        action Hide("journal_screen")
+        text_color "#e8e0d0"
+        text_hover_color "#ffffff"
+        text_size 36
 
 
 ################################################################################

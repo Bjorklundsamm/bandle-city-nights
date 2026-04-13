@@ -1,4 +1,5 @@
 label wakingUp:
+    stop music fadeout 1.0
     scene bg bedroom default with Dissolve(2.5)
     play ambient "audio/sfx/Tavern_ambience.mp3" fadein 2.0 volume 0.65
 

@@ -19,7 +19,12 @@
       "Bash(start:*)",
       "Bash(\"./renpy.exe\" \"C:/Users/brofe/Documents/Projects/Bandle City Nights\")",
       "Skill(update-config)",
-      "Bash(cmd:*)"
+      "Bash(cmd:*)",
+      "Bash(bash run.sh /Users/sbjorklund/Projects/bandle-city-nights)",
+      "Bash(uv sync:*)",
+      "Bash(brew install:*)",
+      "Bash(pkg-config --exists sdl2)",
+      "Bash(pkg-config --exists libavformat)"
     ]
   }
 }
