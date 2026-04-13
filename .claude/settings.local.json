@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch",
+      "Bash(where renpy:*)",
+      "Read(//c/Users/brofe//**)",
+      "Read(//c/Program Files \\(x86\\)//**)",
+      "Bash(/c/Users/brofe/Documents/renpy-8.4.1-sdk/renpy.exe:*)",
+      "Skill(keybindings-help)",
+      "Bash(python3:*)",
+      "Bash(py:*)",
+      "Bash(powershell:*)",
+      "Bash(powershell.exe:*)",
+      "Bash(ls game/*.rpyc)",
+      "Bash(ls *.txt)",
+      "Bash(unzip -o jester.zip -d jester_extracted)",
+      "Bash(ls:*)",
+      "Bash(start:*)",
+      "Bash(\"./renpy.exe\" \"C:/Users/brofe/Documents/Projects/Bandle City Nights\")",
+      "Skill(update-config)",
+      "Bash(cmd:*)"
+    ]
+  }
+}

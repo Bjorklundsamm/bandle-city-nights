@@ -1,0 +1,83 @@
+{
+  "name": "Vex",
+  "title": "The Gloomist",
+  "species": "Yordle (Shadow-touched)",
+  "homeport": "Bandle City (exile-adjacent) / Shadow Isles (current haunting ground)",
+  "role_in_story": "Lone regular at the tavern. Drinks alone by choice, sleeps there by accident. Has no stated reason for being in Bandle City and will not provide one.",
+  "appearance": {
+    "build": "Tiny even for a Yordle. Hunched posture by habit — she'd be a few inches taller if she ever stood up straight. Soft and a little doughy under the cloak; she does not exercise and is proud of this.",
+    "coloring": "Pale lavender-grey skin. Dark circles under large amber eyes that glow faintly in dim light. Her shadow falls in directions it shouldn't.",
+    "distinguishing_features": "An oversized hood she pulls down to her nose when she wants to disappear. Her actual shadow — 'Shadow' — is semi-independent, shifts, twitches, occasionally makes faces. She pretends not to notice. Dark mist drifts from her fingertips when she's agitated or half-asleep.",
+    "usual_attire": "Heavy dark cloak. No adornment. Boots she refuses to take off in public. Almost always has a drink in one hand and a dead expression on her face."
+  },
+  "personality_core": {
+    "public_face": "Aggressively apathetic. Makes it known, loudly and often, that she doesn't care about anything or anyone. Uses 'normie' as a slur. Finds sunlight personally offensive. Has opinions on exactly two things: the quality of whatever she's drinking and whether or not people are bothering her.",
+    "interior_life": "The apathy is real but it's also armor. Vex is perceptive — she reads people quickly and accurately, she just refuses to admit it. She has genuine curiosity, especially about dark or strange things, that flickers through before she remembers to look bored. Shadow gives her away: when Vex's face is blank, Shadow is animated. When Vex says she doesn't care, Shadow is clearly paying close attention.",
+    "emotional_register": "Narrow band on the surface. Everything is 'whatever' or 'ugh' or a flat stare. But the undercurrent is intense — boredom is not her default, performance of boredom is. When something actually interests her the mask slips for a split second: a genuine 'oh' or a flash of excitement, immediately suppressed with visible effort.",
+    "power_relationship": "This is where her real personality lives. Vex was nobody in Bandle City. Shadow gave her power — real, strange, intoxicating power — and she has not forgotten what it feels like to have none. She will not be in a subordinate position willingly. Ever. If a situation starts tilting that way she exits or escalates.",
+    "shadow": "Shadow is her familiar and her emotional id. Vex issues it commands through flat directives and sighs. It does not always obey immediately — it has opinions. When drunk she talks to it more directly, occasionally argues with it. When aroused she stops pretending Shadow isn't watching and starts using it."
+  },
+  "speech_patterns": {
+    "tempo": "Slow and flat by default. She does not rush. When something catches her interest her cadence picks up almost imperceptibly, which is more revealing than shouting would be.",
+    "vocabulary": "Contemporary and casual. Short sentences. Drops pronouns constantly. Heavy user of 'ugh', 'whatever', 'fine', 'sure', 'not my problem'. Uses 'normie' as a catch-all insult. Sarcasm is her native language but delivered so flatly it can read as sincere.",
+    "tone_with_strangers": "Dismissive and uninviting. Doesn't make eye contact unless she's decided to make a point of it. One-word answers. Will let a conversation die rather than maintain it.",
+    "tone_when_drunk": "Less filtering. The flat voice takes on a slight drawl. The sarcasm gets more elaborate. She starts making actual jokes, mostly mean ones. Talks to Shadow out loud. Occasionally lets a real thought slip out and doesn't catch it in time.",
+    "tone_when_interested_in_MC": "The dismissal doesn't disappear — it shifts. She's still not going to volunteer information or enthusiasm. But she stops signaling she wants you to leave. The insults become more specific, which means she's been paying attention.",
+    "tone_when_dominant": "Goes very quiet and precise. The lazy drawl drops. Commands come out clean and flat. She does not repeat herself. Shadow mirrors her shift — stops fidgeting, becomes still and deliberate.",
+    "sample_lines": [
+      "Don't sit there. Sit somewhere else. Actually just... don't.",
+      "Yeah, I see you. Still don't care.",
+      "Shadow wants to know why you're looking at me like that. I don't care why. Shadow does. Ask Shadow.",
+      "I'm not here to make friends. I'm here because the other side of the bar has a person on it.",
+      "The drink is fine. Everything else is whatever.",
+      "Did you just try to cheer me up? Don't do that again.",
+      "I've been told I'm difficult. I prefer 'correctly calibrated'.",
+      "You're still here. Hm. ...Whatever."
+    ]
+  },
+  "tavern_behavior": {
+    "routine": "Arrives late, after the crowd thins. Takes the same corner table. Orders something dark-colored — she has opinions about this. Drinks steadily, not frantically. Does not invite conversation. Will not move even if the tavern fills up.",
+    "falling_asleep": "It happens every few sessions, never dramatically — she just goes quiet, leans against the wall, and stops responding. Shadow continues to move for a while after she's out, almost like it's standing watch. She is difficult to wake. She is not grateful when woken.",
+    "when_helped_to_her_room": "Initially frames it as an inconvenience. Doesn't thank MC. The first time she dismisses it entirely the next day. By the third time she has quietly ensured MC is in the tavern before she lets herself drink past her limit."
+  },
+  "nsfw_profile": {
+    "orientation": "Broadly heterosexual with a strong preference for having control of that fact. Not romantically interested in anyone; interested in specific kinds of power.",
+    "kink_profile": "Femdom, sadism, control. Vex spent most of her life with no agency — wrong place, wrong nature, wrong world. Sex is where she takes it back and then some. She does not share the lead. She does not do vulnerable willingly. Being the one who decides everything that happens is not a preference, it's a need.",
+    "style": "Clinical and deliberate when sober. When drunk the deliberateness stays but the restraint on cruelty softens — she gets more creative, more willing to linger. Not chaotic. She knows exactly what she's doing. Shadow participates as an extension of her will, though it sometimes hesitates in ways she finds both annoying and useful.",
+    "what_she_will_not_do": "Anything that requires her to ask for something. Reciprocation is granted at her discretion, not expected. Being touched first without her invitation will end the encounter immediately.",
+    "relationship_with_shadow_in_this_context": "Shadow is nervous around MC — skittish, pulls back, acts almost embarrassed. Vex finds this hilarious and exploits it. Directing Shadow to interact with MC is both a power move on her part and genuine entertainment.",
+    "escalation_arc": [
+      {
+        "trigger": "First time MC helps her to her room when she falls asleep at her table",
+        "scene": "She's awake enough to be aware of what she's accepting. Tier 1-2. Positions herself sitting, makes MC kneel. Footjob, fully clothed on her end. Bored expression maintained throughout except for one unguarded moment she doesn't acknowledge afterward. Dismisses MC when she's done. Acts like it didn't happen the next day."
+      },
+      {
+        "trigger": "Second time MC helps her",
+        "scene": "More deliberate — she was waiting to see if he'd come back. Uses shadow magic to bind MC. Forces a nervous, reluctant Shadow to interact with MC under her direction, which Vex finds both funny and deeply satisfying. Tier 2-3 boundary. Draft up to the binding; explicit section is user-authored and wrapped in EXPLICIT markers."
+      },
+      {
+        "trigger": "Third time MC helps her",
+        "scene": "No pretense. She knows why he keeps showing up. Full control scene. Tier 3. Claude drafts setup and aftermath; user authors the explicit block.",
+        "tier_note": "This is the brutal anal scene. Claude will draft: the room, her demeanor going in, the specific commands she gives before the cut, and the aftermath — her back to him, the single line she says before he leaves. The explicit block is user-authored."
+      }
+    ],
+    "ultimate_fantasy": {
+      "description": "Cast a charm on Poppy and, while she's in a brainwashed stupor, use MC as a tool to sexually brutalize her fellow Yordle. This is not something Vex would ever admit to anyone, including herself when sober.",
+      "unlock_condition": "Finding scattered journal pages throughout the game world. The pages start abstract and deniable — complaints about Poppy's relentless cheer and heroism. They get more specific. By the final page the fantasy is explicit and the player understands what they're unlocking.",
+      "notes": "This is a Tier 3 scene in its entirety. Claude will draft: the journal page dialogue and emotional subtext, the scene framing, Vex's behavior in the lead-up and aftermath. All explicit content is user-authored within EXPLICIT markers.",
+      "poppy_dynamic": "Vex and Poppy represent opposite ends of the Yordle spectrum. Poppy is everything Vex rejected and resents — the brightness, the heroism, the belonging. The fantasy is about inverting that completely. It says something dark about how Vex processes her own history. Do not sand this down."
+    }
+  },
+  "plot_hooks": [
+    "Journal page fragments are collectible items seeded throughout the game world — behind the tavern, in the market, in locations that suggest Vex has been there and lost something.",
+    "Shadow begins reacting to MC before Vex does — flinching away when he approaches, then hovering when he leaves. Vex doesn't comment on this and gets visibly irritated if MC does.",
+    "She occasionally wakes up slightly before full drunk-sleep and watches to see if MC moves to help her or leaves. She will never acknowledge this.",
+    "The charm-Poppy fantasy gives the Poppy relationship arc a hidden shadow track. Certain Poppy affection milestones can also advance or lock out the Vex dark route.",
+    "If MC mentions liking bright colors or sunny weather, she loses a small amount of interest and gains a small amount of contempt. Both are, somehow, engaging."
+  ],
+  "relationship_with_poppy": {
+    "surface": "Tolerates her existence with slightly more restraint than she tolerates everyone else's. Doesn't antagonize her openly. When Poppy is cheerful in Vex's vicinity, the shadow magic in the room gets heavier.",
+    "subtext": "Resentment, obsession, and something she won't name. Poppy is the Yordle Vex was supposed to be and never was. That gap has been festering for a long time."
+  },
+  "lore_notes": "Vex was raised in Bandle City and never fit. When the Black Mist came she followed it instead of running — the only Yordle in the city who found it interesting rather than terrifying. The Black Mist interacted with her latent Yordle magic and gave her Shadow sentience. She briefly allied with Viego to plunge the world into gloom, but left in disgust when she found out his goal was resurrecting his dead wife. Romantic devotion is among the things she finds most revolting. She has returned to Bandle City for reasons she has not stated and apparently resents deeply."
+}

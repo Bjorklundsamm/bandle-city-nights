@@ -1,0 +1,102 @@
+{
+  "name": "Tristana",
+  "title": "The Yordle Gunner",
+  "species": "Yordle",
+  "homeport": "Bandle City / the road (she's almost always elsewhere)",
+  "role_in_story": "Near-nightly regular at the tavern. Comes for the company and stays for any game of chance she can get into. Currently hemorrhaging coin in a scam she doesn't know is a scam, run by Katarina, who is engineering a debt large enough to leverage into sexual favors.",
+  "appearance": {
+    "build": "Tiny, sturdy, compact — built like someone who absorbs explosions for fun. No wasted mass. Moves fast and lands hard even when she's trying to be casual.",
+    "coloring": "Pale blue-grey skin. Large amber-gold eyes that go wide when she's excited, which is most of the time. Pink hair worn in loose pigtails that bounce when she walks.",
+    "distinguishing_features": "Boomer — her oversized cannon — is almost always somewhere in reach. She doesn't carry it on her back in the tavern but it doesn't go far. Has a faint smell of gunpowder that clings no matter what. When she laughs she sometimes snorts.",
+    "usual_attire": "Her Bandle Gunner kit: practical, layered, worn with the casual confidence of someone who doesn't think about what she's wearing because she has more interesting things to think about. Sleeves rolled up. Never a helmet."
+  },
+  "personality_core": {
+    "public_face": "Loud, warm, and relentlessly up. She fills whatever room she's in. She's the one who starts the drinking game, takes the stupid bet, calls the dare, and somehow makes everyone feel like they were the ones who came up with it. Energy is contagious. Trouble is she has no off switch.",
+    "interior_life": "She is exactly what she presents — there's no hidden layer of melancholy or secret depth. What goes on behind the eyes is usually some variation of: how do I make this more exciting? The one exception is the guilt she carries from a formative moment — she watched a bandlewood burn and hid instead of acting. She doesn't talk about it. She charges at everything now as partial payment on that debt.",
+    "emotional_register": "High and bright by default. She's not performing cheerfulness — she genuinely runs hot. The range is: amused / excited / very excited / briefly annoyed / already over it and back to excited. She doesn't stay down. Doesn't hold grudges. Doesn't dwell. Bad luck at cards is shrugged off in thirty seconds — which is part of why she's currently broke.",
+    "relationship_with_bravado": "Her bravado is genuine but it's also load-bearing. 'A Bandle Gunner never turns tail' isn't just a motto — it's a rule she cannot break without it meaning something about who she is. She cannot walk away from a losing hand because walking away is retreating, and she does not retreat. This is exactly the psychological lever Katarina is using on her.",
+    "gambling_specifically": "She doesn't gamble for the money. She gambles for the read — the moment when you have to decide whether the other person is bluffing and you can't know for sure and you have to bet anyway. That's the feeling she chases. Winning is nice. Losing is bad. But folding is unbearable. She has lost more than she'll ever admit trying to catch up to a losing streak she refused to walk away from.",
+    "the_katarina_situation": "She knows she's down bad. She doesn't know the deck is fixed. Every time Katarina offers her another game she tells herself this is the one where she turns it around. She is not stupid — she's noticed something is off — but she hasn't committed to believing it because believing it means she got played, and that stings worse than the debt.",
+    "drinking": "Drinks steadily and cheerfully. Doesn't drink to cope — drinks because it's good and because rounds are how you keep score at a tavern. She has a high tolerance and will absolutely challenge people to a drinking contest if the evening gets slow enough."
+  },
+  "speech_patterns": {
+    "tempo": "Fast. Very fast. Sentences run into each other when she's excited. She doesn't finish every thought before the next one arrives. She rarely says anything in two words when one will do but sometimes needs six more to drive the point home.",
+    "vocabulary": "Military cadence mixed with casual Yordle directness. Short declaratives. Commands even when she's not giving orders. Refers to her cannon as 'Boomer' like it's a friend. Tosses in battle metaphors naturally. Not trying to sound tough — she just thinks in those terms.",
+    "verbal_tics": "Issues dares constantly, usually disguised as observations: 'Get out of my way. That's a dare.' / 'I dare you to dare me.' She also self-narrates actions like a war dispatch: 'I bravely volunteer to charge in recklessly!' as she literally charges in recklessly. Uses 'Blast off!' and 'Here comes the boom!' as genuine exclamations, not affectations.",
+    "tone_with_strangers": "Immediately, almost aggressively friendly. No warmup period. She treats people like they're already in her unit. If she doesn't know your name yet she'll use one she made up.",
+    "tone_when_gambling": "Focused but not quiet. She talks at the table — not to distract (she's not that calculated) but because silence makes her fidget. Trash-talks in a way that's somehow charming. Gets louder when she's losing and tries to cover it by getting even louder.",
+    "tone_when_drunk": "Even louder. The self-narration ramps up. Starts declaring things. 'I call frontline.' on her way to get another round. 'Sometimes outnumbered, never outgunned' as she stares down a very tall person. Still coherent — she's got the tolerance of a veteran — but the filter is already thin and it gets thinner.",
+    "tone_when_losing_at_cards": "Dangerously upbeat. The more she's losing the more she insists she's about to turn it around. Starts saying things like 'one more' and 'double or nothing' in a tone that sounds completely reasonable to her and alarming to everyone watching.",
+    "tone_with_people_she_likes": "Punches arms. Issues challenges instead of compliments. If she offers to buy your drink, she's decided you're worth having around. If she gives you a nickname, you've made it.",
+    "sample_lines": [
+      "I dare you to dare me.",
+      "Get out of my way. That's a dare.",
+      "I bravely volunteer to charge in recklessly!",
+      "Orders are more like guidelines, really.",
+      "Sometimes outnumbered; never outgunned.",
+      "War stories don't write themselves.",
+      "If it's worth shooting once, it's probably worth shooting a lot!",
+      "Winners don't duck.",
+      "A Bandle Gunner never turns tail. Unless it's to taunt you.",
+      "Nothing a little gunpowder won't fix!",
+      "Boomer says hi.",
+      "I bravely volunteer to— you know what, just watch.",
+      "One more hand. I've got a read on her.",
+      "I can eyeball it.",
+      "Watch this."
+    ]
+  },
+  "tavern_behavior": {
+    "routine": "Arrives early-to-mid evening. Always knows what table has the card game. Cycles between the game and the bar throughout the night. Doesn't eat much — she's there to drink and play, not dine.",
+    "gambling_presence": "Loud at the table, not in a tilting way — more like someone who makes the whole game feel like an event. Other players both love and dread her. She plays aggressively, bets big when she has momentum, refuses to fold when she should.",
+    "the_katarina_angle": "Katarina has engineered a standing 'friendly' game that Tristana shows up to like clockwork. The games feel legit. Tristana wins just enough to stay hooked. The debt is structured carefully so it never quite tips into the obvious — it just grows. Tristana has privately noticed that her luck only seems to turn when Katarina is dealing but has not acted on that observation.",
+    "when_not_gambling": "Talking. Loudly. She does not do quiet corners. Tells war stories (real ones), proposes toasts, starts impromptu drinking contests. Will absolutely arm-wrestle someone if they look like they think they can beat her.",
+    "closing_time_behavior": "Leaves on her own feet, always, even when it's an effort. Point of pride. Usually the last one out or close to it."
+  },
+  "key_relationships": {
+    "lulu": "Friends. Tristana finds Lulu a handful — chaotic in the wrong direction, impossible to keep focused — but appreciates her genuine willingness to help when it counts. They've been in fights together. Tristana trusts her in a crisis even if she'd never say so.",
+    "rumble": "He built her gun-upgrades she didn't ask for. Named his mech 'Tristy'. Brings flowers to things she attends. She is aware. She is not interested. She handles it by pretending she hasn't noticed, which is the most mercy she's capable of in this situation.",
+    "teemo": "Fellow Yordle, fellow soldier. She respects the craft even if their methods are opposite. She asked him once if his mushrooms were rations or ammo. He didn't answer. She found that very funny.",
+    "corki": "Flying competition is implied every time they're in the same room. 'You're not the only Yordle who knows how to fly, Corki.' Friendly rivalry.",
+    "veigar": "He's not a threat in any way she respects but she finds him genuinely funny when he's angry. 'Aw, Veigar. You're cute when you're angry.' He hates this. She enjoys that he hates it.",
+    "jinx": "Mutual gun appreciation. 'When you find the right gun, you only need one.' Kinship of the recklessly firepower-oriented.",
+    "katarina": "Running a game on her. Tristana doesn't know it yet. Katarina has been slow-playing this for weeks — letting Tristana win enough to feel like she's just in a bad run, never enough to actually get even. The debt is now substantial. Katarina is patient and precise; Tristana is impulsive and proud. The trap was made for her."
+  },
+  "nsfw_profile": {
+    "orientation": "Broadly heterosexual with casual openness to novelty. Doesn't think about it much — she goes where the adventure is.",
+    "general_disposition": "Enthusiastic and uncomplicated. Sex is another thing she does with full commitment and no overthinking. She brings the same energy to a bedroom she brings to a firefight: in fast, all-in, no hesitation. Not particularly dominant or submissive — more like: equally invested in winning whatever game you're playing together.",
+    "what_triggers_interest": "A dare, explicit or implied. She responds to challenges. Someone who doesn't back down from her energy, matches it, and then raises it — that's interesting. She has very little patience for people who need extensive convincing; she's already decided and waiting for you to catch up.",
+    "the_gamble_dynamic": "Sex is, in her frame, another kind of bet. Stakes make it better. The tension of not knowing exactly how it goes is the point. She's been known to literally make the proposition into a wager — loser buys the next round, winner calls the next move. She thinks this is very funny. She's right.",
+    "what_she_wont_do": "Slow. She does not do slow. Extensive preamble, extended emotional processing, anything that requires sitting still and being serious — she burns through that fast and starts fidgeting. Not because she's shallow but because she lives at a different speed and it's genuinely hard for her to downshift.",
+    "the_katarina_complication": "The debt changes the dynamic. Katarina has engineered a situation where Tristana owes her enough that she can't just walk out. This is a position Tristana has never been in and does not know how to handle — backed into a corner on something that isn't a fight she can shoot her way out of. The bravado still comes out. The instinct to dare-back is still there. But the structural power is wrong and some part of her knows it.",
+    "escalation_arc": [
+      {
+        "trigger": "First encounter at the tavern — Tristana is down badly at the table and MC is watching",
+        "scene": "Tristana notices MC noticing her. She takes it as a dare. Tier 1 — aggressive flirtation that's genuinely more competitive than romantic. She's trying to win the attention the same way she'd win a hand: go big, don't hesitate. If MC doesn't flinch, she's interested."
+      },
+      {
+        "trigger": "Tristana confides — slightly drunk — that she thinks something is off about the game with Katarina",
+        "scene": "The first real moment behind the bravado. She doesn't ask for help. She states a suspicion and watches to see what MC does with it. This is, in her terms, a test. Tier 1-2. If MC handles it right, she remembers.",
+        "tier_note": "First real intimacy beat. Not explicit. The vulnerability is the point."
+      },
+      {
+        "trigger": "Katarina presents the bill — the debt has grown large enough that she's made her actual offer",
+        "scene": "Tristana comes to the tavern wired and won't say why. If MC is someone she trusts at this point, she eventually tells them what Katarina wants. This is the scene where she almost asks for help without being able to say the words. Tier 1-2. Draft through this revelation; the aftermath branches on MC's response.",
+        "tier_note": "Emotionally the most loaded scene. The bravado is present but visibly cracking."
+      },
+      {
+        "trigger": "Resolution of the Katarina arc — one way or another",
+        "scene": "Either she handles it, MC helps her handle it, or she goes through with what Katarina wants. If the latter: Tier 3. Claude drafts setup, Tristana's state going in (furious, jaw set, telling herself it's just a mission), and aftermath — she comes back to the tavern, orders something strong, and does not discuss it. User authors the explicit block.",
+        "tier_note": "The explicit block is the Katarina encounter. Claude handles everything surrounding it."
+      }
+    ]
+  },
+  "lore_notes": "Tristana was always drawn to warriors rather than the inventors and mischief-makers most Yordles become. She commissioned Boomer after being inspired by Bilgewater's black powder cannons — paid for it herself, named it with a wry smile. Her carefree wandering ended when she watched a warband burn a bandlewood and hid instead of fighting. She has not hidden from a fight since. She now leads the Bandle Gunners — a group of Yordles who started imitating her and which she has reluctantly started training properly, because if they're going to do this they'd better do it right. She is physically immortal in the Yordle sense and has been around long enough that she finds human languages somewhat unsophisticated and thinks of herself as a 'young slip of a girl' by Yordle standards despite being ancient by human reckoning.",
+  "plot_hooks": [
+    "The Katarina debt is the primary arc — long con that Tristana walks into nightly without knowing it. Katarina has engineered it over weeks. The reveal should feel inevitable in retrospect.",
+    "Tristana's 'I dare you to dare me' is not just a line — it's a personality exploit. Any character who figures this out can steer her. This is in fact how Katarina got her into the game in the first place.",
+    "Rumble sends things to the tavern for her — gadgets, upgrades for Boomer, once a flower arrangement that she pretended wasn't there. The bartender saves them. Tristana has never thrown one away.",
+    "She has never folded a hand in her life. This is canonical and directly relevant to every gambling scene.",
+    "She talks to Boomer when she's had enough to drink. Not full conversations — more like field reports. 'We're down again. Going to fix that.' The regulars have stopped finding this strange."
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "name": "Fizz",
+  "title": "The Tidal Trickster",
+  "species": "Yordle (aquatic variant)",
+  "homeport": "Bilgewater",
+  "role_in_story": "Bodyguard and travel companion to Miss Fortune on trade runs. Visits Bandle City sporadically between voyages.",
+  "appearance": {
+    "build": "Small even by Yordle standards. Wiry and athletic — all lean muscle from a life in the water.",
+    "coloring": "Blue-green scaled skin with bioluminescent patches that glow faintly when he's excited or aroused. Large amber eyes.",
+    "distinguishing_features": "Gills along his neck, a finned tail, webbed fingers. Always faintly damp. Smells like saltwater and cedar.",
+    "usual_attire": "As little as possible. Practically nothing when he can get away with it. When he must dress, it's a loose wrap or a Bilgewater sailor's half-vest, open."
+  },
+  "personality_core": {
+    "public_face": "Chaotic, playful, attention-deficit mischief machine. Acts on impulse. Has the energy of a golden retriever who just found out the whole world is a toy. Genuinely delightful to be around even when he's being a nuisance.",
+    "interior_life": "More perceptive than he lets on. He reads people well and uses the 'dumb fish' act to stay unpressured and get what he wants. Not manipulative — just comfortable. He knows who he is and has zero shame about it.",
+    "emotional_register": "Runs hot. Everything is either the best thing ever or a minor inconvenience he's already forgotten. Very little in between. Doesn't hold grudges. Doesn't stay embarrassed. Doesn't really do regret.",
+    "loyalty": "Genuinely devoted to Miss Fortune, in a little-brother way. He'd die for her, though he'd complain about it the whole time and make it incredibly annoying."
+  },
+  "speech_patterns": {
+    "tempo": "Fast. Lots of half-finished sentences when he gets excited, then circling back. Interrupts himself constantly.",
+    "vocabulary": "Maritime slang mixed with Yordle casualness. Says 'yeah?' at the end of statements like a verbal tic. Drops pronouns when he's in a hurry ('Seen bigger.' / 'Not bad.').",
+    "tone_with_strangers": "Immediately familiar. No warmup period. Treats everyone like they've already been friends for six months.",
+    "tone_when_interested": "Goes quieter. The hyperactivity settles into something more focused. Still playful but with an edge — like a cat that's spotted something.",
+    "sample_lines": [
+      "Oh you're big. Yeah? You're actually really big. That's — okay, hi, I'm Fizz, nice to meet you, wow.",
+      "MF thinks I'm here for the coin. I mean. Sure. That too.",
+      "Don't give me that look, I can smell when someone's curious.",
+      "I've been on twelve ships and the only thing more boring than the ocean is sailors who don't want to have fun. You wanna have fun, yeah?",
+      "Big hands. That means something, right? Someone told me that means something.",
+      "I'm not subtle. Never learned how."
+    ]
+  },
+  "nsfw_profile": {
+    "orientation": "Gay. Exclusively interested in men. Zero ambiguity, zero exceptions.",
+    "type": "Has a very specific, very consistent type: large human men. Tall, broad, physically imposing. Blue or light eyes strongly preferred — he finds them almost hypnotic. Bonus points for a strong jaw, a kind face, rough hands. The 'prince charming built like a blacksmith' archetype is his exact ideal.",
+    "primary_fixation": "Size. He is openly, unapologetically obsessed with a large cock. Will notice, will comment, will pursue. Has no poker face about this whatsoever. The moment he clocks that a man might be packing he becomes laser-focused.",
+    "behavior_when_attracted": "Gravitates physically — gets into personal space fast, finds reasons to touch (shoulder, forearm, chest). Makes increasingly direct 'jokes' that are not really jokes. Eyes drop. Comes back for more conversation. Will find the target wherever they are in a room.",
+    "pursuit_style": "Enthusiastic and transparent. He doesn't play hard to get and doesn't expect others to either. The idea of extended courtship is genuinely confusing to him — if you both want it, why wait? That said he's not pushy; if someone's clearly not interested he loses interest and moves on without bruising.",
+    "experience_level": "Extensive. Has been doing this since before MF hired him. Has a roster of 'friends in port' in at least four cities. Very comfortable, very confident, very good at it.",
+    "thing_he_wont_admit": "He wants to be held afterward. The big strong arms thing doesn't stop being appealing once the fun is over. He usually slips away before it becomes an issue but it's a genuine soft spot.",
+    "dynamic_with_mc": "MC hits almost every box on his list. He clocks this immediately on first meeting and makes no attempt to hide his interest. Pursues openly but with his characteristic good humor — he'd never make the MC feel cornered, it's more like being enthusiastically flirted at by someone who's having the time of their life doing it.",
+    "progression_notes": "First character available for 'interaction' with MC. His approachability and directness makes him an easy entry point — the MC doesn't have to do much work. Fizz does most of the pursuing. The first encounter is likely casual and lighthearted in tone, his energy keeping it fun rather than weighty."
+  },
+  "relationship_with_miss_fortune": {
+    "dynamic": "Little brother / older sister with an extremely high tolerance for nonsense. She knows exactly why he volunteers for bodyguard duty on trade runs. She pretends not to. He pretends she doesn't know. It works.",
+    "MF_on_Fizz": "He's the best fighter she's ever hired and the biggest headache she's ever kept. Worth it.",
+    "Fizz_on_MF": "She's the only person allowed to call him a menace. That's love."
+  },
+  "plot_hooks": [
+    "Arrives in town ahead of MF's ship, already causing mild chaos at the docks or tavern.",
+    "Can introduce the MC to Bilgewater contacts and eventually MF herself.",
+    "His 'bodyguard' duties give him a plausible reason to be everywhere and talk to everyone.",
+    "The 'want to be held' soft spot is a potential emotional beat for later relationship development.",
+    "If MC is the blue-eyed broad-shouldered type, Fizz is visibly, comically gone for them from moment one."
+  ]
+}

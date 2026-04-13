@@ -27,6 +27,14 @@ style gui_text:
 
 style button:
     properties gui.button_properties("button")
+    hover_sound "audio/sfx/hover_selectable.mp3"
+    activate_sound "audio/sfx/click_selectable.mp3"
+
+style patron_button is button:
+    hover_sound None
+    activate_sound None
+    padding (0, 0, 0, 0)
+    background None
 
 style button_text is gui_text:
     properties gui.text_properties("button")
@@ -97,6 +105,7 @@ style frame:
 ## https://www.renpy.org/doc/html/screen_special.html#say
 
 screen say(who, what):
+    zorder 260
 
     window:
         id "window"
@@ -136,31 +145,37 @@ style window:
     yalign gui.textbox_yalign
     ysize gui.textbox_height
 
-    background Image("gui/textbox.png", xalign=0.5, yalign=2.0)
+    background Transform("gui/textbox.png", xalign=0.5, yalign=0.0, alpha=0.75)
 
 style namebox:
     xpos gui.name_xpos
     xanchor gui.name_xalign
-    xsize gui.namebox_width
+    xsize 305
     ypos gui.name_ypos
-    ysize gui.namebox_height
+    ysize 40
 
-    background Frame("gui/namebox.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
-    padding gui.namebox_borders.padding
+    background None
+    padding (0, 0, 0, 0)
 
 style say_label:
     properties gui.text_properties("name", accent=True)
-    xalign gui.name_xalign
+    xalign 0.5
     yalign 0.5
+    text_align 0.5
+    color "#100b09"
 
 style say_dialogue:
     properties gui.text_properties("dialogue")
 
     xpos gui.dialogue_xpos
+    xanchor 0.5
     xsize gui.dialogue_width
     ypos gui.dialogue_ypos
 
+    textalign 0.5
+    layout "greedy"
     adjust_spacing False
+    color "#7c7e79"
 
 ## Input screen ################################################################
 ##
@@ -191,10 +206,12 @@ style input_prompt is default
 style input_prompt:
     xalign gui.dialogue_text_xalign
     properties gui.text_properties("input_prompt")
+    color "#7c7e79"
 
 style input:
     xalign gui.dialogue_text_xalign
     xmaximum gui.dialogue_width
+    color "#7c7e79"
 
 
 ## Choice screen ###############################################################
@@ -226,6 +243,8 @@ style choice_vbox:
 
 style choice_button is default:
     properties gui.button_properties("choice_button")
+    hover_sound "audio/sfx/hover_selectable.mp3"
+    activate_sound "audio/sfx/click_selectable.mp3"
 
 style choice_button_text is default:
     properties gui.text_properties("choice_button")
@@ -263,17 +282,228 @@ screen quick_menu():
 ## the player has not explicitly hidden the interface.
 init python:
     config.overlay_screens.append("quick_menu")
+    config.overlay_screens.append("constitution_hud")
 
 default quick_menu = True
+
+
+## System announcement overlay #################################################
+##
+## Dark veil shown behind system message textboxes.
+## The say screen (zorder 260), hearts (overlay layer), and backpack (zorder 300)
+## all render above this (zorder 249) so they remain visible.
+## Show/hide this in the script around any s "..." announcement line.
+
+screen system_overlay():
+    zorder 249
+    add Solid("#000000c0")
+
+
+## Announcement arrows #########################################################
+##
+## Off-white bobbing arrows shown during system announcements to highlight
+## newly revealed UI elements. Adjust xpos/ypos if heart or backpack size changes.
+##
+## Constitution arrow — points left toward the hearts in the top-left corner.
+## Backpack arrow — points right toward the backpack icon in the top-right corner.
+
+## Position + bob baked into the transform so no screen-level container is needed,
+## which avoids any inherited box styling on the arrow character.
+
+transform const_arrow_anim:
+    ## Sits to the right of the hearts row, bobs left toward them.
+    xpos 390 ypos 14 xoffset 0
+    linear 0.45 xoffset -14
+    linear 0.45 xoffset 0
+    repeat
+
+transform pack_arrow_anim:
+    ## Sits to the left of the backpack icon, bobs right toward it.
+    xpos 1680 ypos 14 xoffset 0
+    linear 0.45 xoffset 14
+    linear 0.45 xoffset 0
+    repeat
+
+screen constitution_arrow():
+    zorder 310
+    add Text("←", color="#d4c4a8", size=80, font="DejaVuSans.ttf") at const_arrow_anim
+
+screen backpack_arrow():
+    zorder 310
+    add Text("→", color="#d4c4a8", size=80, font="DejaVuSans.ttf") at pack_arrow_anim
+
+
+## Constitution HUD ############################################################
+##
+## Five hearts displayed in the top-left. Each heart has 5 sections (25 total).
+## persistent.constitution tracks the total filled sections (starts at 1).
+## Formula per heart i:  min(max(constitution - i*5, 0), 5)
+##
+## To gain a constitution point:  $ persistent.constitution += 1
+## Images live at:  game/gui/hud/Heart - N.png  (N = 0..5)
+## Adjust zoom (currently 0.5) here if hearts appear too large or small.
+
+screen constitution_hud():
+    zorder 260
+    ## Hidden during game-menu screens (quick_menu is False there).
+    if constitution_hud_visible and quick_menu:
+        hbox:
+            xpos 20
+            ypos 20
+            spacing 6
+            for i in range(5):
+                add Transform(
+                    "gui/hud/Heart - %d.png" % min(max(persistent.constitution - i * 5, 0), 5),
+                    zoom=0.5
+                )
 
 style quick_button is default
 style quick_button_text is button_text
 
 style quick_button:
     properties gui.button_properties("quick_button")
+    hover_sound "audio/sfx/hover_selectable.mp3"
+    activate_sound "audio/sfx/click_selectable.mp3"
 
 style quick_button_text:
     properties gui.text_properties("quick_button")
+
+
+## Tavern Hub screen ###########################################################
+##
+## Interactive tavern view shown during free-roam nights. The scene background
+## (bg tavern empty) is set in the label before calling this screen.
+##
+## Position images are 1920x1088 but the viewport is 1920x1080.
+## patron_zoom handles both centering and the hover effect: each button gets its
+## own instance of the transform, so patrons animate independently and the zoom
+## always resets cleanly on blur (fixes the "permanently zoomed" caching bug
+## that occurred with paired idle/hover Transform objects sharing the same image).
+##
+## Draw order matters for overlap: elements declared earlier are drawn first
+## (further back). Ezreal is declared before Ahri so Ahri renders on top.
+##
+## Barkeep and Poppy are unconditional; all others are guarded by their flag.
+
+transform patron_zoom:
+    xanchor 0.5 yanchor 0.5 xpos 960 ypos 544
+    zoom 1.0
+    on hover:
+        linear 0.15 zoom 1.005
+    on idle:
+        linear 0.15 zoom 1.0
+
+screen tavern_hub():
+    zorder 1
+
+    ## ── Barkeep (always present) ─────────────────────────────────────────────
+    button:
+        style "patron_button"
+        focus_mask True
+        xsize 1920
+        ysize 1088
+        action Return("barkeep")
+        add "ch barkeep tavern position" at patron_zoom
+
+    ## ── Poppy — bouncer, always at the door ──────────────────────────────────
+    button:
+        style "patron_button"
+        focus_mask True
+        xsize 1920
+        ysize 1088
+        action Return("poppy")
+        add "ch poppy tavern position" at patron_zoom
+
+    ## ── Tristana ─────────────────────────────────────────────────────────────
+    ## (image is named "ch tristana tavern" — no "position" suffix)
+    if tristana_in_tavern:
+        button:
+            style "patron_button"
+            focus_mask True
+            xsize 1920
+            ysize 1088
+            action Return("tristana")
+            add "ch tristana tavern" at patron_zoom
+
+    ## ── Vex ──────────────────────────────────────────────────────────────────
+    if vex_in_tavern:
+        button:
+            style "patron_button"
+            focus_mask True
+            xsize 1920
+            ysize 1088
+            action Return("vex")
+            add "ch vex tavern position" at patron_zoom
+
+    ## ── Katarina ─────────────────────────────────────────────────────────────
+    if katarina_in_tavern:
+        button:
+            style "patron_button"
+            focus_mask True
+            xsize 1920
+            ysize 1088
+            action Return("katarina")
+            add "ch katarina tavern position" at patron_zoom
+
+    ## ── Ezreal (behind Ahri — declared first) ────────────────────────────────
+    if ezreal_in_tavern:
+        button:
+            style "patron_button"
+            focus_mask True
+            xsize 1920
+            ysize 1088
+            action Return("ezreal")
+            add "ch ezreal tavern position" at patron_zoom
+
+    ## ── Ahri (in front of Ezreal — declared after) ───────────────────────────
+    if ahri_in_tavern:
+        button:
+            style "patron_button"
+            focus_mask True
+            xsize 1920
+            ysize 1088
+            action Return("ahri")
+            add "ch ahri tavern position" at patron_zoom
+
+    ## ── Nidalee & Neeko (shared position image) ──────────────────────────────
+    if nidalee_neeko_in_tavern:
+        button:
+            style "patron_button"
+            focus_mask True
+            xsize 1920
+            ysize 1088
+            action Return("nidalee_neeko")
+            add "ch nidalee and neeko tavern position" at patron_zoom
+
+    ## ── Jinx ─────────────────────────────────────────────────────────────────
+    if jinx_in_tavern:
+        button:
+            style "patron_button"
+            focus_mask True
+            xsize 1920
+            ysize 1088
+            action Return("jinx")
+            add "ch jinx tavern position" at patron_zoom
+
+    ## ── Leave button — diagonal arrow, lower-left corner ────────────────────
+    button:
+        xalign 0.018
+        yalign 0.94
+        background Frame(Solid("#00000028"), 14, 10)
+        hover_background Frame(Solid("#00000055"), 14, 10)
+        padding (16, 11)
+        action Return("leave")
+        hbox:
+            spacing 10
+            yalign 0.5
+            text "↙":
+                size 34
+                color "#d4c4a8aa"
+                hover_color "#ffffffdd"
+            text "Return to your room":
+                size 22
+                color "#d4c4a800"
+                hover_color "#d4c4a8ee"
 
 
 ################################################################################

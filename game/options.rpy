@@ -50,6 +50,10 @@ define config.has_sound = True
 define config.has_music = True
 define config.has_voice = True
 
+## Register an ambient channel for looping background atmosphere sounds.
+init python:
+    renpy.music.register_channel("ambient", "sfx", loop=True)
+
 
 ## To allow the user to play a test sound on the sound or voice channel,
 ## uncomment a line below and use it to set a sample sound to play.
@@ -62,7 +66,7 @@ define config.has_voice = True
 ## the player is at the main menu. This file will continue playing into the
 ## game, until it is stopped or another file is played.
 
-# define config.main_menu_music = "main-menu-theme.ogg"
+define config.main_menu_music = "audio/music/main_menu.mp3"
 
 
 ## Transitions #################################################################

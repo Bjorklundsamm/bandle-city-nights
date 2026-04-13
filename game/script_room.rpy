@@ -1,10 +1,8 @@
-define mc = Character("Main Character")
-define n = Character("Narrator")
-
 label wakingUp:
-    scene bg bedroom default with dissolve
+    scene bg bedroom default with Dissolve(2.5)
+    play ambient "audio/sfx/Tavern_ambience.mp3" fadein 2.0 volume 0.65
 
-    n "Your eyes creep open as the black bleariness of a deep sleep falls away."
+    n "Your eyes creep open as the heavy blur of a deep sleep slowly falls away."
 
     n """
     You
@@ -30,9 +28,11 @@ label wakingUp:
 
     mc '"Is... anyone there?"'
 
-    n "There's no response but outside the room the sounds of laughter and life echo out. The ever familiar bustle of a crowded tavern rings in your ears, it's a sound that's never been quite as welcoming as it is now."
+    n "There's no response, but outside the room the sounds of laughter and life echo out."
+    n "The familiar bustle of a crowded tavern rings in your ears — a sound that's never been quite as welcoming as it is now."
 
-    n "But more importantly the concerns over the status of your mortality seem to fade away as the scent of warm food tickles your nose. Your stomach growls painfully, your mouth practically waters as the rich scent of broth fills the air."
+    n "But more importantly, the concerns over your mortality fade as the scent of warm food tickles your nose."
+    n "Your stomach growls painfully, your mouth practically watering as the rich smell of broth fills the air."
 
     n "It seems as though there's only one thing to do."
 

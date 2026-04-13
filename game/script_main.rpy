@@ -4,24 +4,46 @@
 # name of the character.
 
 define n = Character("Narrator")
-define b = Character("Barkeep", color="#e6810f")
-define mc = Character("Main Character", color="#c8c8c8")
-define s = Character("System", color="#ececec")
+define b = Character("Barkeep")
+define mc = Character("[player_name]")
+define s = Character("System")
 
-define unkwn = Character("???", color="#c8c8c8")
+define unkwn = Character("???")
 
-define t = Character("Tristana", color="#c8c8c8")
-define p = Character("Poppy", color="#c8c8c8")
-define l = Character("Lulu", color="#c8c8c8")
+define t = Character("Tristana")
+define p = Character("Poppy")
+define l = Character("Lulu")
+define f = Character("Fizz")
+define vx = Character("Vex")
+define k = Character("Katarina")
+define a = Character("Ahri")
+define ez = Character("Ezreal")
+define neo = Character("Neeko")
+define ni = Character("Nidalee")
+define j = Character("Jinx")
+
+default persistent.fizz_met = False
+default persistent.constitution = 1
+default constitution_hud_visible = False
+default player_name = "Stranger"
+
+# Tavern presence flags — set each night before entering the tavern loop.
+# All True for the tutorial night; adjust per future night scripts.
+# Barkeep and Poppy are unconditional in the screen — no flags needed.
+default tristana_in_tavern = True
+default vex_in_tavern = True
+default katarina_in_tavern = True
+default ahri_in_tavern = True
+default ezreal_in_tavern = True
+default nidalee_neeko_in_tavern = True
+default jinx_in_tavern = True
 
 
 # The game starts here.
 
 label start:
 
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
+    stop music fadeout 1.5
 
     scene bg black default
 
@@ -31,17 +53,26 @@ label start:
 
     # These display lines of dialogue.
 
-    n "The sound of the leaves rushing past barely even register as you dash forward, your heart thundering in your chest as you keep your eyes focused ahead of you. Every step seems to jolt you with the force of an explosion."
+    n "The sound of the leaves rushing past barely even registers as you dash forward, your heart thundering in your chest."
+    n "Every step seems to jolt you with the force of an explosion, your eyes fixed desperately on what lies ahead."
 
-    scene bg hunted with dissolve 
-    
-    n "It's as if you can feel yourself growing weaker with each step but you don't have any choice other than to keep moving. Moving forward, moving away, because behind you is danger... no... more than danger..."
+    scene bg hunted with dissolve
+    play sound "audio/sfx/forest_running.mp3" loop
 
-    n "Behind you is death, it hunts you as a wolf does a doe and just like that wounded and dying deer you can feel yourself being worn down."
+    n "It's as if you can feel yourself growing weaker with each step, but you don't have any choice other than to keep moving."
+    n "Moving forward, moving away... because behind you is danger. No... more than danger..."
 
-    n "With every beat of your heart you feel a little less alive and a little more afraid, but there is no stopping now. You just need a chance, a sign, anything to help you escape!"
+    n "Behind you is death. It hunts you as a wolf hunts a doe, and just like that wounded deer you can feel yourself being worn down."
 
-    n "A light burns in the distance, if you could just reach it you could make it to safety, you could finally be free... but it's... it's just so..."
+    n "With every beat of your heart you feel a little less alive and a little more afraid, but there is no stopping now."
+    n "You just need a chance — a sign, anything — to help you escape!"
+
+    n "A light burns in the distance. If you could just reach it you could make it to safety, finally be free..."
+    n "But it's... it's just so..."
+
+    stop sound
+    play sound "audio/sfx/body_fall.mp3"
+    with hpunch
 
     n "You collapse, tumbling in a violent burst of leaves and dust, your breath coming in desperate and panicked gasps."
 
@@ -49,10 +80,10 @@ label start:
     You're... 
     
     You're... going to die here...
-
-    You're... going to die here... Your skin grows cold, your breath ragged...
-
-    You're... going to die here... Your skin grows cold, your breath ragged... the haunting blue eyes of your pursuer growing closer...
+    """
+    
+    n """
+     Your skin grows cold, your breath ragged... The haunting blue eyes of your pursuer growing closer...
     """
 
     n "The world around you fades to black and the last thing you feel before the sweet embrace of death is the gentle touch of a small, furred hand."
@@ -69,19 +100,23 @@ label introductions:
 
     n "The door opens with a creak as you step into the empty hallway and begin cautiously making your way towards the sound of conversation and life."
 
-    n "The floorboards creek and the walls seem to have a slight draft, but the smell of the food grows stronger and you can feel the hunger growing."
+    n "The floorboards creak and the walls seem to have a slight draft, but the smell of the food grows stronger and you can feel the hunger growing."
 
-    n "As you round the corner the light grows brighter and the laughter louder, it's almost hard to process as a room full of people of all shapes, sizes and colors comes into view."
+    n "As you round the corner the light grows brighter and the laughter louder, a room full of people of all shapes, sizes, and colors coming into view."
 
     scene bg tavern full with dissolve
+    play music "audio/music/impish_delight.mp3" fadein 2.0
 
-    n "There are creatures with long pointy ears and others with long, bushy tails and others that look like animals wearing human clothes dispersed among humans of as many varieties."
+    n "There are creatures with long pointy ears, others with long bushy tails, and some that look like animals wearing human clothes."
+    n "They're scattered among humans of every variety imaginable."
 
     n "None of them seem to notice you, too engaged in their nightly routine to pay attention to some dirty, tired stranger."
 
-    n "It takes you a moment to gather the courage to approach the counter, it's not as though you've never been to a bar before but the trauma of what's happened is still fresh in your mind."
+    n "It takes you a moment to gather the courage to approach the counter."
+    n "It's not as though you've never been to a bar before, but the trauma of what's happened is still fresh in your mind."
 
-    n "You take a seat at the counter and are nearly immediately greeted by a small, impish creature. Her black and white skin adorned with faint blue runes as she floats through the air in complete defiance of gravity."
+    n "You take a seat at the counter and are almost immediately greeted by a small, impish creature."
+    n "Her black and white skin is adorned with faint blue runes as she floats through the air in complete defiance of gravity."
 
     scene bg tavern empty
     
@@ -103,61 +138,83 @@ label introductions:
 
     n "It's salty and rich, filled with vegetables and meat. The kind of meal that warms you up from the inside out and fills you with energy."
 
-    b "You know, most humans know better than to go out into the deep wood at night, less they're being chased that is."
+    b "You know, most humans know better than to go out into the deep wood at night, unless they're bein' chased, that is."
 
-    b "There was barely anything left of you when we found you out there"
+    b "You're lucky they found you when they did — when we found you out there, there was barely anything left of you."
 
     n "She drifts over to the other side of the bar filling a cup with ale and setting it in front of another patron."
 
     n "The other customers around you have started to take notice, casting curious glances your way, but the bartender doesn't seem worried."
 
-    mc "What happend? Where am I?"
+    mc "What happened? Where am I?"
 
-    n "She blinks at you in surprise"
+    n "She blinks at you in surprise."
 
-    b 'You don\'t know? I don\'t think I\'ve ever heard of someone findin\' this place on accident...'
+    b 'You don\'t know? I don\'t think I\'ve ever heard of someone findin\' this place by accident...'
 
-    n "You looked around the room, taking in the myriad of odd and colorful characters around you, most of them short enough they barely come up to your hips at full height."
+    n "You look around the room, taking in the myriad of odd and colorful characters."
+    n "Most of them are short enough that they barely come up to your hips at full height."
 
     mc "This... this is Bandle City? This is where the Yordles live?"
 
     b "Of course it is! What, did you think we were all just a myth or somethin'? Welcome to the hidden city, stranger. Home of the small folk!"
 
-    n "She puffs out her chest proudly and holds her head up high, her slender waist accentuating her petite figure."
+    n "She puffs out her chest proudly and holds her head up high, despite your fatigue your simple male brain can't help but sneak a quick glance at her slender figure."
 
-    n "You look around the room, the people of the small folk, Yordles, as they were known. Most of them looked more like animals than they did people, and yet despite their size and their shape they seemed no less human than the rest of you."
+    n "You look around the room at the Yordles — the small folk. Most of them look more like animals than people."
+    n "And yet despite their size and shape, they seem no less human than the rest of you."
 
     n "They talked, laughed, drank, played cards and told stories."
 
-    b "And on that note, I've got a bit of a proposal for you. I don't know what you're about or where you're off to, but I don't think you're gonna be fit for travel any time soon."
+    b "And on that note, I've got a bit of a proposal for you."
+    b "I don't know what you're about or where you're off to, but I don't think you're gonna be fit for travel any time soon."
 
-    b "That being said there are plenty of people who need help about town. Considerin' you now owe me for that soup and one of my rooms, I'm thinkin' you outta stick around a while."
+    b "That being said, there are plenty of people who need help about town."
+    b "Considerin' you now owe me for that soup and one of my rooms, I'm thinkin' you outta stick around a while."
 
     mc "Help around town?"
 
-    b "Mmhm, just some odd jobs here and there. I imagine for a fresh faced human like you it'll take some gettin' used to but once you get to know the folk around here I'm sure you'll settle in just fine."
+    b "Mmhm, just some odd jobs here and there. For a fresh-faced human like you it'll take some gettin' used to."
+    b "But once you get to know the folk around here, I'm sure you'll settle in just fine."
 
-    n "She's right about one thing, your whole body aches and it's a struggle to just sit upright. You don't think you could even make it a hundred yards without collapsing, and who knows if you could even make it back to the city if you tried."
+    n "She's right about one thing — your whole body aches and it's a struggle to just sit upright."
+    n "You don't think you could make it a hundred yards without collapsing, let alone all the way back to the city."
 
-    n "It's as if you were literally drained down to the point of an empty husk."
+    n "You feel like you've been drained to an empty husk."
 
-    s "You're encounter with Kindred has completely drained you of strength. Try completing around Bandle City to help regain your constitution!"
+    show screen system_overlay
+    $ constitution_hud_visible = True
+    show screen constitution_arrow
+    s "Your encounter with Kindred has completely drained you of strength. Try completing tasks around Bandle City to help regain your constitution!"
+
+    menu:
+        "Got it.":
+            pass
+
+    hide screen constitution_arrow
+    hide screen system_overlay
+
+    $ renpy.block_rollback()
 
     b "You'll be able to stay here in the best lodging this side of the wildwood, The Imp's Delight!"
 
-    b "And if you're willing to work then I can see my way clear to feedin' ya as well. And if you have any questions or want to know more about anyone you just come over to your local friendly barkeep. What do ya say, deal?"
+    b "And if you're willing to work then I can see my way clear to feedin' ya as well."
+    b "If you have any questions or want to know more about anyone around here, you just come over to your local friendly barkeep. What do ya say, deal?"
 
     n "She holds out a faintly clawed hand to you, a mischievous glint in her eye."
 
-    n "You take a moment to look around the room again, the sounds and smells and the sight of the people. You've never really spent much time around Yordles, if the tales were true most of them tended to be rather solitary creatures."
+    n "You take a moment to look around the room again, drinking in the sounds, the smells, and the sight of it all."
+    n "You've never spent much time around Yordles. If the tales were true, most of them tended to be rather solitary creatures."
 
     n "But these ones seemed friendly enough... if a little boisterous."
 
 menu:
     "Accept the deal.":
+        $ renpy.block_rollback()
         jump gameStart
 
     "Go die in the forest.":
+        $ renpy.block_rollback()
         jump gameover1
 
 label gameStart:
@@ -172,65 +229,98 @@ label gameStart:
 
     b "Wonderful! Now, let's talk shop shall we? Unfortunately it seems like your pack got shredded to bits and I doubt there's much left."
 
-    b "Fortunately for you, I've got an old one I wouldn't mind partin' with. I've got that set aside for you with a bit of starting cash to get you on your feet. "
+    b "Fortunately for you, I've got an old one I wouldn't mind partin' with."
+    b "I've got that set aside for you with a bit of starting cash to get you on your feet."
 
+    show screen system_overlay
     show screen backpack_intro
+    show screen backpack_arrow
 
     s "You've unlocked the inventory system! You can access it at any time by clicking the inventory button in the top right corner of the screen."
 
-    $ persistent.inventory_unlocked = True
+    menu:
+        "Got it.":
+            pass
+
+    $ inventory_unlocked = True
+    hide screen backpack_arrow
     hide screen backpack_intro
+    hide screen system_overlay
+
+    $ renpy.block_rollback()
     show screen inventory_button
 
     n "You nod in understanding as with a wink she flies to tend to her other patrons."
 
     hide ch bartender profile default smiling with dissolve
 
-    n "The room is loud and lively, filled with the chatter of dozens of different voices, the clattering of silverware and the thumping of mugs against tables. You're almost started as a upbeat voice calls out from behind you."
+    n "The room is loud and lively, filled with chatter, the clattering of silverware, and the thumping of mugs against tables."
+    n "You're almost startled as an upbeat voice calls out from behind you."
 
     unkwn "Well hey there, you're a big fella!"
 
     show ch tristana profile with dissolve
 
-    n "The voice rings familiar, and as you turn to take in the sight of the little blue and white furred Yordle behind you some part of you is able to sort through your hazy memories. This was the person who saved your life, and it's not hard to put together the pieces that led you here."
+    n "The voice rings familiar. As you turn, some part of you manages to sort through your hazy memories."
+    n "This was the one who saved your life — it's not hard to piece together what must have happened."
 
     mc "Ah, hey there. You're the one who saved me, right?"
 
     n "She flashes a toothy grin, holding a gloved hand up towards you."
 
-    t "Yep! Another in my long list of heroic acheivements. Names Tristana, how's it going? I gotta say you're looking a lot better than when I tripped over you last night"
+    t "Yep! Another in my long list of heroic achievements. Name's Tristana, how's it going?"
+    t "I gotta say you're looking a lot better than when I tripped over you last night."
 
     mc "Yeah, I guess so. Uh... Thanks for the save, by the way, I really owe you."
 
+    t "Don't even sweat it! Didn't catch your name though."
+
+    $ player_name = renpy.input("Your name is...?", default="", length=24).strip() or "Stranger"
+
+    mc "It's [player_name]."
+
+    t "[player_name]! Ha, I like it. Alright then, [player_name] — consider the debt paid."
+
     n "She grins and waves it off. You can't help but notice an odd warmth in your chest as you're overcome by her upbeat energy."
 
-    t "Eh, don't mention it. If anything you this place was due for a fresh face, gambling with the same people over and over gets real boring real fast. Speaking of which, if you ever wanna join me I'm here just about every night over at that table in the back wall. "
+    t "If anything, this place was due for a fresh face — gambling with the same people over and over gets old fast."
+    t "If you ever wanna join me, I'm here just about every night at that table in the back."
 
     t "You should swing by for a few games, that is if you're ready to hand over all your hard earned money."
 
-    n "She shoots you a teasing smirk and a wink before taking her drink from the bar and turning to make her way across the room. You barely even register the way your eyes linger on her tiny form."
+    n "She shoots you a teasing smirk and a wink before taking her drink from the bar and making her way across the room."
+    n "You barely even register the way your eyes linger on her tiny form."
 
     hide ch tristana profile with dissolve
 
     n """
+    You had always instinctively thought of Yordles as
+
+    You had always instinctively thought of Yordles as.
+
+    You had always instinctively thought of Yordles as..
+
     You had always instinctively thought of Yordles as...
 
     You had always instinctively thought of Yordles as... it's hard to say...
     """
 
-    n "Is it offensive to say childish? But never having a chance to interact with one the only impression of them you were able to get back in your little village was from the tales of mischievous little tricksters, more interested in pranks and mischief than serious business."
+    n "Is it offensive to say childish? Never having met one before, the only impression you had back home was from tales of mischievous little tricksters."
+    n "More interested in pranks and mischief than anything serious."
 
-    n "They were definitely tiny, that's much was for sure. But you felt your impressions changing, watching her figure as she crossed the room."
+    n "They were definitely tiny, that much was for sure. But you felt your impressions changing, watching her figure as she crossed the room."
 
-    n "Head maybe a bit larger compared to a humans but those big ears were actually pretty cute. And for such a little thing her arms and stomach were surprisingly toned."
+    n "Head maybe a bit larger compared to a human's, but those big ears were actually pretty cute."
+    n "And for such a little thing, her arms and stomach were surprisingly toned."
 
-    n "You couldn't help but letting your eyes drift down her shaped back, just a bit. Not to mention, after all, that perfect heart-shaped little-"
+    n "You couldn't help but let your eyes drift down her shapely back, just a bit. Not to mention, after all, that perfect heart-shaped little—"
 
     unkwn "Hey."
 
     show ch poppy profile default with dissolve
 
-    n "You start, for the second time, turning to see a pair of big blonde pigtails and a set of bright pink eyes staring at you. Another blue yordle is looking up at you, judging and weighing you with her gaze."
+    n "You start, for the second time, turning to see a pair of big blonde pigtails and a set of bright pink eyes."
+    n "Another blue Yordle is looking up at you, quietly judging and weighing you with her gaze."
 
     n "She was a bit taller than Tristana, but not by much. What she did have though was muscle and the way she crossed her arms showed it."
 
@@ -244,30 +334,38 @@ label gameStart:
 
     n "You nod and she seems satisfied, her stern expression relaxing and a small smile breaking across her features."
 
-    p "Glad to hear it. Welcome to the city, I'm sure we'll be seeing each other around."
+    p "Glad to hear it. I overheard you mention your name was [player_name] — welcome to the city. I'm sure we'll be seeing each other around."
 
-    n "Her eyes drift past you and she raises a hand to the imp at the counter before returning to her position near the door. Hopping up onto a stool she resumes her vigil, keeping a careful eye on the room."
+    n "Her eyes drift past you and she raises a hand to the Imp at the counter before returning to her position near the door."
+    n "Hopping up onto a stool, she resumes her vigil, keepng a careful eye on the room."
 
     hide ch poppy profile default with dissolve
 
-    n "It's odd, the situation hasn't gotten any less overwhelming but with each smile and friendly greeting the anxiety and uncertainty is fading away. These Yordles, these people are nothing like the monsters that pursued you into the deep forest. These are good people, honest and friendly."
+    n "It's odd — the situation hasn't gotten any less overwhelming, but with each smile and greeting the anxiety is slowly fading."
+    n "These Yordles, these people, are nothing like the monsters that pursued you into the forest. They're good people."
 
-    n "You turn back to your mug and blink in surprise to find it drained to the last drop. A tiny purple insect like creature pointing at you in an imitation of a mocking gesture as it snickers."
+    n "You turn back to your mug and blink in surprise to find it drained to the last drop."
+    n "A tiny purple insect-like creature points at you in a mocking gesture as it snickers."
 
     unkwn "Hey! Pix! That's not nice! Sorry mister, my friend is a bit of a prankster."
 
-    show ch lulu profile alone with dissolve
+    show ch lulu profile default with dissolve
 
-    n "A pair of bright green eyes stare up at you, innocent and curious. Swaying in the seat next to you, feet kicking playfully is another patron with purple fur and long purple hair swaying over her little red dress."
+    n "A pair of bright green eyes stare up at you, innocent and curious."
+    n "Swaying in the seat next to you, feet kicking playfully, is another patron — purple fur and long hair cascading over a little red dress."
 
     
-    unkwn "Seems like everyone is comin' around to say hi and I was starting to feel left out! My names Lulu, the GREAT sorceress supreme, ultimate magician of Bandle City."
+    unkwn "Seems like everyone is comin' around to say hi and I was starting to feel left out!"
+    unkwn "My name's Lulu, the GREAT sorceress supreme, ultimate magician of Bandle City."
 
-    n "She boasts proudly, holding her chin up in a display of smug confidence. You can't help but get the giggle a bit at the declarations of might from such a little thing."
+    l "[player_name], huh? Funny sounding name! Humans are always soooo weird like that."
+
+    n "She boasts proudly, holding her chin up in a display of smug confidence. You can't help but giggle a little at the declarations of might from such a tiny thing."
 
     l "Oh ho, you doubt my powers? Here check THIS out!"
 
-    n "She swipes a gnarled wooden staff from the bar swinging it out to her side and pointing it across the room to where you see Tristana gambling among a few other patrons. After a few moments of intense focus from your newest friend Trist reaches up and scratches gently at one of her large furry ears."
+    n "She swipes a gnarled wooden staff from the bar, swinging it out to her side and pointing it across the room toward Tristana, who's gambling with a few other patrons."
+    n "After a few moments of intense concentration, Trist reaches up and scratches gently at one of her large furry ears."
 
     l "See? You see that?"
 
@@ -281,14 +379,24 @@ label gameStart:
 
     l "Darn right!"
 
-    n "She leaned back hands on her sides seemingly satisfied at your impression of her. With that she swivels on the chair hopping down with a light thud."
+    n "She leans back, hands on her sides, seemingly satisfied with your impression of her. With that she swivels on the chair and hops down with a light thud."
 
     l "Alright well, it's wayyyyy past my bedtime, just wanted to come say hello. I'm usually hanging around here during the day, be sure to come say hi back alright?"
 
-    hide ch lulu profile alone with dissolve
+    hide ch lulu profile default with dissolve
     
     n "You nod and she smiles warmly at you before skipping off into the crowd. You let out a sigh, you can't help but feel like bedtime might be the right call."
 
     n "There are plenty of fresh faces around the room, maybe it would be nice to meet a few of the others. You suspect the bartender would be happy to offer a helping hand."
 
-    s "The bar is full tonight, feel free to meet some of the other regulars since they won't always be around. If you want more information on someone you've met you can always ask the bartender. Once you're ready to move on feel free to head back to your room."
+    show screen system_overlay
+    s "The bar is full tonight — feel free to meet some of the other regulars, since they won't always be around."
+    s "For more information on anyone you've met, ask the bartender. When you're ready to move on, head back to your room."
+
+    menu:
+        "Got it.":
+            pass
+
+    hide screen system_overlay
+
+    jump tavern_tutorial_loop
