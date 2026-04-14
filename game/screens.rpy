@@ -50,33 +50,35 @@ style prompt_text is gui_text:
 
 style bar:
     ysize gui.bar_size
-    left_bar Frame("gui/bar/left.png", gui.bar_borders, tile=gui.bar_tile)
-    right_bar Frame("gui/bar/right.png", gui.bar_borders, tile=gui.bar_tile)
+    left_bar Solid("#c8a87acc")
+    right_bar Solid("#3a302899")
 
 style vbar:
     xsize gui.bar_size
-    top_bar Frame("gui/bar/top.png", gui.vbar_borders, tile=gui.bar_tile)
-    bottom_bar Frame("gui/bar/bottom.png", gui.vbar_borders, tile=gui.bar_tile)
+    top_bar Solid("#3a302899")
+    bottom_bar Solid("#c8a87acc")
 
 style scrollbar:
     ysize gui.scrollbar_size
-    base_bar Frame("gui/scrollbar/horizontal_[prefix_]bar.png", gui.scrollbar_borders, tile=gui.scrollbar_tile)
-    thumb Frame("gui/scrollbar/horizontal_[prefix_]thumb.png", gui.scrollbar_borders, tile=gui.scrollbar_tile)
+    base_bar Solid("#3a302866")
+    thumb Frame(Solid("#7a6a50cc"), gui.scrollbar_borders)
 
 style vscrollbar:
     xsize gui.scrollbar_size
-    base_bar Frame("gui/scrollbar/vertical_[prefix_]bar.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
-    thumb Frame("gui/scrollbar/vertical_[prefix_]thumb.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
+    base_bar Solid("#3a302866")
+    thumb Frame(Solid("#7a6a50cc"), gui.vscrollbar_borders)
 
 style slider:
     ysize gui.slider_size
-    base_bar Frame("gui/slider/horizontal_[prefix_]bar.png", gui.slider_borders, tile=gui.slider_tile)
-    thumb "gui/slider/horizontal_[prefix_]thumb.png"
+    left_bar Solid("#c8a87acc")
+    right_bar Solid("#3a302899")
+    thumb Frame(Solid("#c8a87a"), Borders(4, 4, 4, 4))
 
 style vslider:
     xsize gui.slider_size
-    base_bar Frame("gui/slider/vertical_[prefix_]bar.png", gui.vslider_borders, tile=gui.slider_tile)
-    thumb "gui/slider/vertical_[prefix_]thumb.png"
+    top_bar Solid("#3a302899")
+    bottom_bar Solid("#c8a87acc")
+    thumb Frame(Solid("#c8a87a"), Borders(4, 4, 4, 4))
 
 
 style frame:
@@ -122,11 +124,9 @@ screen say(who, what):
 
     else:
         ## No content — still render the required ids so Ren'Py internals don't break.
-        transform:
-            alpha 0.0
-            window:
-                id "window"
-                text "" id "what"
+        window at Transform(alpha=0.0):
+            id "window"
+            text "" id "what"
 
     ## If there's a side image, display it above the text. Do not display on the
     ## phone variant - there's no room.
@@ -254,7 +254,7 @@ screen choice(items):
                         color "#d4c4a8"
                         hover_color "#ffffff"
                         size 26
-                        font gui.name_text_font
+                        font gui.choice_button_text_font
                         text_align 0.5
 
 
@@ -368,6 +368,7 @@ init python:
 
 screen system_got_it():
     zorder 310
+    modal True
     button:
         xalign 0.5
         yalign 0.5
@@ -404,36 +405,39 @@ screen system_got_it():
 
 transform const_arrow_anim:
     ## Sits to the right of the hearts row, bobs left toward them.
-    xpos 390 ypos 14 xoffset 0
-    linear 0.45 xoffset -14
+    ## ypos 52 = center of the hearts row (xpos 20, ypos 20, hearts ~64px tall at zoom=0.5).
+    xpos 395 ypos 52 yanchor 0.5 xoffset 0
+    linear 0.45 xoffset -20
     linear 0.45 xoffset 0
     repeat
 
 transform pack_arrow_anim:
     ## Sits to the left of the backpack icon, bobs right toward it.
-    xpos 1680 ypos 14 xoffset 0
-    linear 0.45 xoffset 14
+    ## ypos 52 = center of the backpack icon (xalign 0.99, yalign 0.02, ~64px tall at zoom=0.5).
+    xpos 1745 ypos 52 yanchor 0.5 xoffset 0
+    linear 0.45 xoffset 20
     linear 0.45 xoffset 0
     repeat
 
 transform journal_arrow_anim:
-    ## Sits to the left of the journal button (below backpack), bobs right toward it.
-    xpos 1680 ypos 70 xoffset 0
-    linear 0.45 xoffset 14
+    ## Sits to the left of the journal button, bobs right toward it.
+    ## ypos 134 = center of the journal icon (xalign 0.99, yalign 0.10, ~64px tall at zoom=0.5).
+    xpos 1745 ypos 134 yanchor 0.5 xoffset 0
+    linear 0.45 xoffset 20
     linear 0.45 xoffset 0
     repeat
 
 screen constitution_arrow():
     zorder 310
-    add Text("←", color="#d4c4a8", size=80, font="DejaVuSans.ttf") at const_arrow_anim
+    add Transform("pointer arrow", xzoom=-1.0, zoom=0.5) at const_arrow_anim
 
 screen backpack_arrow():
     zorder 310
-    add Text("→", color="#d4c4a8", size=80, font="DejaVuSans.ttf") at pack_arrow_anim
+    add Transform("pointer arrow", zoom=0.5) at pack_arrow_anim
 
 screen journal_arrow():
     zorder 310
-    add Text("→", color="#d4c4a8", size=80, font="DejaVuSans.ttf") at journal_arrow_anim
+    add Transform("pointer arrow", zoom=0.5) at journal_arrow_anim
 
 
 ## Constitution HUD ############################################################
@@ -496,7 +500,7 @@ screen barkeep_name_select(_slice, _page, _pages):
                         color "#d4c4a8"
                         hover_color "#ffffff"
                         size 26
-                        font gui.name_text_font
+                        font gui.choice_button_text_font
                         text_align 0.5
 
         null height 4
@@ -523,7 +527,7 @@ screen barkeep_name_select(_slice, _page, _pages):
                             color "#d4c4a8"
                             hover_color "#ffffff"
                             size 26
-                            font gui.name_text_font
+                            font gui.choice_button_text_font
                             text_align 0.5
 
             button:
@@ -543,7 +547,7 @@ screen barkeep_name_select(_slice, _page, _pages):
                         color "#d4c4a8"
                         hover_color "#ffffff"
                         size 26
-                        font gui.name_text_font
+                        font gui.choice_button_text_font
                         text_align 0.5
 
             if _page < _pages - 1:
@@ -564,7 +568,7 @@ screen barkeep_name_select(_slice, _page, _pages):
                             color "#d4c4a8"
                             hover_color "#ffffff"
                             size 26
-                            font gui.name_text_font
+                            font gui.choice_button_text_font
                             text_align 0.5
 
 
@@ -698,19 +702,16 @@ screen tavern_hub():
 
     ## ── Leave button — diagonal arrow, lower-left corner ────────────────────
     button:
-        xalign 0.018
-        yalign 0.94
+        xalign 0.0
+        yalign 1.0
         background Frame(Solid("#00000000"), 14, 10)
-        hover_background Frame(Solid("#00000055"), 14, 10)
-        padding (16, 11)
+        hover_background Frame(Solid("#00000022"), 14, 10)
+        padding (6, 6)
         action Return("leave")
         hbox:
             spacing 10
             yalign 0.5
-            text "↙":
-                size 34
-                color "#d4c4a8aa"
-                hover_color "#ffffffdd"
+            add Transform("pointer arrow", zoom=0.63, rotate=135) yalign 0.5
             text "Return to your room":
                 size 22
                 color "#d4c4a800"
@@ -728,15 +729,11 @@ default journal_unlocked = False
 screen journal_button():
     zorder 260
     if journal_unlocked and quick_menu:
-        textbutton "J":
-            xalign 0.97
-            yalign 0.08
-            text_color "#d4c4a8"
-            text_hover_color "#ffffff"
-            text_size 30
-            background Frame(Solid("#1a1a1a99"), 6, 6)
-            hover_background Frame(Solid("#1a1a1acc"), 6, 6)
-            padding (10, 6)
+        imagebutton:
+            xalign 0.99
+            yalign 0.10
+            idle Transform("bt journal", zoom=0.5, alpha=0.5)
+            hover Transform("bt journal", zoom=0.56, alpha=1.0)
             hover_sound "audio/sfx/hover_selectable.mp3"
             activate_sound "audio/sfx/click_selectable.mp3"
             action Show("journal_screen")
@@ -746,14 +743,7 @@ screen journal_button():
 ## can see the button while it's being described.
 screen journal_intro():
     zorder 300
-    textbutton "J":
-        xalign 0.97
-        yalign 0.08
-        text_color "#d4c4a8"
-        text_size 30
-        background Frame(Solid("#1a1a1a99"), 6, 6)
-        padding (10, 6)
-        action NullAction()
+    add Transform("bt journal", zoom=0.5) xalign 0.99 yalign 0.10
 
 
 ## Journal Screen ##############################################################
@@ -894,42 +884,44 @@ screen journal_screen():
                 scrollbars "vertical"
                 mousewheel True
                 vbox:
-                    spacing 8
+                    spacing 0
                     for key, display_name, met_flag, affection_var in journal_characters:
                         python:
                             _met = getattr(store, met_flag, False)
                             _hearts = getattr(store, affection_var, 0)
-                        hbox:
-                            spacing 12
-                            yalign 0.5
+                        fixed:
                             xfill True
-                            ## Name or question mark
+                            ysize 38
+                            ## Name at xpos 0 — length doesn't affect anything else.
                             if _met:
                                 text "[display_name]":
+                                    xpos 0
+                                    yalign 0.5
                                     color "#e8e0d0"
                                     size 20
-                                    xminimum 180
-                                    yalign 0.5
                             else:
                                 text "???":
+                                    xpos 0
+                                    yalign 0.5
                                     color "#555555"
                                     size 20
-                                    xminimum 180
-                                    yalign 0.5
-                            ## Affection hearts (shown only if met)
+                            ## Hearts pinned to xpos 200 — always the same column.
                             if _met:
                                 hbox:
-                                    spacing 4
+                                    xpos 200
                                     yalign 0.5
+                                    spacing 4
                                     for h in range(5):
                                         if h < _hearts:
-                                            text "♥":
-                                                color "#cc2244"
-                                                size 20
+                                            add Transform("journal heart full", zoom=0.12) yalign 0.5
                                         else:
-                                            text "♥":
-                                                color "#444444"
-                                                size 20
+                                            add Transform("journal heart empty", zoom=0.12) yalign 0.5
+                        ## Thin separator between entries
+                        frame:
+                            background Solid("#ffffff18")
+                            xfill True
+                            ysize 1
+                            padding (0, 0, 0, 0)
 
     ## Close button
     textbutton "✕":
@@ -958,11 +950,11 @@ screen navigation():
         xpos gui.navigation_xpos
         yalign 0.5
 
-        spacing gui.navigation_spacing
+        spacing 4
 
         if main_menu:
 
-            textbutton _("Start") action Start()
+            textbutton _("New Game") action Start()
 
         else:
 
@@ -972,7 +964,7 @@ screen navigation():
 
         textbutton _("Load") action ShowMenu("load")
 
-        textbutton _("Settings") action ShowMenu("preferences")
+        textbutton _("Options") action ShowMenu("preferences")
 
         if _in_replay:
 
@@ -980,14 +972,14 @@ screen navigation():
 
         elif not main_menu:
 
-            textbutton _("Main Menu") action MainMenu()
+            null height 28
 
-        textbutton _("About") action ShowMenu("about")
+            textbutton _("Main Menu") action MainMenu()
 
         if renpy.variant("pc"):
 
-            ## The quit button is banned on iOS and unnecessary on Android and
-            ## Web.
+            null height 28
+
             textbutton _("Quit") action Quit(confirm=not main_menu)
 
 
@@ -996,10 +988,19 @@ style navigation_button_text is gui_button_text
 
 style navigation_button:
     size_group "navigation"
-    properties gui.button_properties("navigation_button")
+    background None
+    hover_background Solid("#c8a87a1a")
+    padding (14, 8, 14, 8)
+    hover_sound "audio/sfx/hover_selectable.mp3"
+    activate_sound "audio/sfx/click_selectable.mp3"
 
 style navigation_button_text:
-    properties gui.text_properties("navigation_button")
+    font gui.interface_text_font
+    size 42
+    color "#c8b89a"
+    hover_color "#f0e8d8"
+    selected_color "#c8a87a"
+    insensitive_color "#6a5a4a"
 
 
 ## Main Menu screen ############################################################
@@ -1163,7 +1164,7 @@ style game_menu_outer_frame:
     bottom_padding 45
     top_padding 180
 
-    background "gui/overlay/game_menu.png"
+    background Solid("#1a1510e6")
 
 style game_menu_navigation_frame:
     xsize 420
@@ -1382,92 +1383,119 @@ style slot_button_text:
     properties gui.text_properties("slot_button")
 
 
-## Preferences screen ##########################################################
+## Options screen ##############################################################
 ##
-## The preferences screen allows the player to configure the game to better suit
-## themselves.
-##
-## https://www.renpy.org/doc/html/screen_special.html#preferences
+## Player settings: display, gameplay toggles, and audio volumes.
 
 screen preferences():
 
     tag menu
 
-    use game_menu(_("Preferences"), scroll="viewport"):
+    use game_menu(_("Options"), scroll="viewport"):
 
         vbox:
+            xfill True
+            spacing 0
+
+            ## ── Display ───────────────────────────────────────────────────
+            if renpy.variant("pc") or renpy.variant("web"):
+
+                text _("Display"):
+                    style "pref_section_header"
+
+                frame:
+                    style "pref_section_rule"
+
+                hbox:
+                    style_prefix "radio"
+                    spacing 0
+                    textbutton _("Window") action Preference("display", "window")
+                    textbutton _("Fullscreen") action Preference("display", "fullscreen")
+
+                null height 36
+
+            ## ── Gameplay ──────────────────────────────────────────────────
+            text _("Gameplay"):
+                style "pref_section_header"
+
+            frame:
+                style "pref_section_rule"
 
             hbox:
-                box_wrap True
+                style_prefix "check"
+                spacing 0
+                vbox:
+                    xsize 520
+                    textbutton _("Skip Unseen Text") action Preference("skip", "toggle")
+                    textbutton _("Skip After Choices") action Preference("after choices", "toggle")
+                    textbutton _("Disable Transitions") action InvertSelected(Preference("transitions", "toggle"))
 
-                if renpy.variant("pc") or renpy.variant("web"):
+            null height 28
 
+            hbox:
+                spacing 80
+
+                vbox:
+                    xsize 580
+                    text _("Text Speed"):
+                        style "pref_slider_label"
+                    bar value Preference("text speed"):
+                        xsize 560
+
+                vbox:
+                    xsize 580
+                    text _("Auto-Forward Speed"):
+                        style "pref_slider_label"
+                    bar value Preference("auto-forward time"):
+                        xsize 560
+
+            null height 48
+
+            ## ── Audio ─────────────────────────────────────────────────────
+            text _("Audio"):
+                style "pref_section_header"
+
+            frame:
+                style "pref_section_rule"
+
+            hbox:
+                spacing 80
+
+                if config.has_music:
                     vbox:
-                        style_prefix "radio"
-                        label _("Display")
-                        textbutton _("Window") action Preference("display", "window")
-                        textbutton _("Fullscreen") action Preference("display", "fullscreen")
+                        xsize 580
+                        text _("Music"):
+                            style "pref_slider_label"
+                        bar value Preference("music volume"):
+                            xsize 560
 
-                vbox:
+                if config.has_sound:
+                    vbox:
+                        xsize 580
+                        text _("Sound Effects"):
+                            style "pref_slider_label"
+                        bar value Preference("sound volume"):
+                            xsize 560
+
+            if config.has_voice:
+                null height 24
+                hbox:
+                    spacing 80
+                    vbox:
+                        xsize 580
+                        text _("Voice"):
+                            style "pref_slider_label"
+                        bar value Preference("voice volume"):
+                            xsize 560
+
+            if config.has_music or config.has_sound or config.has_voice:
+                null height 28
+                hbox:
                     style_prefix "check"
-                    label _("Skip")
-                    textbutton _("Unseen Text") action Preference("skip", "toggle")
-                    textbutton _("After Choices") action Preference("after choices", "toggle")
-                    textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
+                    spacing 0
+                    textbutton _("Mute All") action Preference("all mute", "toggle")
 
-                ## Additional vboxes of type "radio_pref" or "check_pref" can be
-                ## added here, to add additional creator-defined preferences.
-
-            null height (4 * gui.pref_spacing)
-
-            hbox:
-                style_prefix "slider"
-                box_wrap True
-
-                vbox:
-
-                    label _("Text Speed")
-
-                    bar value Preference("text speed")
-
-                    label _("Auto-Forward Time")
-
-                    bar value Preference("auto-forward time")
-
-                vbox:
-
-                    if config.has_music:
-                        label _("Music Volume")
-
-                        hbox:
-                            bar value Preference("music volume")
-
-                    if config.has_sound:
-
-                        label _("Sound Volume")
-
-                        hbox:
-                            bar value Preference("sound volume")
-
-                            if config.sample_sound:
-                                textbutton _("Test") action Play("sound", config.sample_sound)
-
-
-                    if config.has_voice:
-                        label _("Voice Volume")
-
-                        hbox:
-                            bar value Preference("voice volume")
-
-                            if config.sample_voice:
-                                textbutton _("Test") action Play("voice", config.sample_voice)
-
-                    if config.has_music or config.has_sound or config.has_voice:
-                        null height gui.pref_spacing
-
-                        textbutton _("Mute All"):
-                            action Preference("all mute", "toggle")
-                            style "mute_all_button"
+            null height 48
 
 
 style pref_label is gui_label
@@ -1515,6 +1543,11 @@ style radio_button:
 
 style radio_button_text:
     properties gui.text_properties("radio_button")
+    font gui.interface_text_font
+    color "#c8b89a"
+    hover_color "#f0e8d8"
+    selected_color "#c8a87a"
+    size 26
 
 style check_vbox:
     spacing gui.pref_button_spacing
@@ -1525,6 +1558,11 @@ style check_button:
 
 style check_button_text:
     properties gui.text_properties("check_button")
+    font gui.interface_text_font
+    color "#c8b89a"
+    hover_color "#f0e8d8"
+    selected_color "#c8a87a"
+    size 26
 
 style slider_slider:
     xsize 525
@@ -1539,6 +1577,29 @@ style slider_button_text:
 
 style slider_vbox:
     xsize 675
+
+## Section headers and rules for the Options screen
+
+style pref_section_header is gui_text:
+    font gui.interface_text_font
+    color "#c8a87a"
+    size 26
+    top_margin 16
+    bottom_margin 8
+
+style pref_section_rule is frame:
+    background Solid("#c8a87a55")
+    xfill True
+    ysize 1
+    padding (0, 0, 0, 0)
+    bottom_margin 20
+
+style pref_slider_label is gui_text:
+    font gui.interface_text_font
+    color "#a09880"
+    size 20
+    top_margin 10
+    bottom_margin 6
 
 
 ## History screen ##############################################################

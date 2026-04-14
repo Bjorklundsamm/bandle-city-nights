@@ -10,7 +10,7 @@ transform inventory_button_zoom:
 # No animation: appears immediately at its final resting position.
 screen backpack_intro():
     zorder 300
-    add Transform("bt backpack", zoom=0.5) xalign 0.97 yalign 0.02
+    add Transform("bt backpack", zoom=0.5) xalign 0.99 yalign 0.02
 
 # Screen for the persistent inventory button.
 # Hidden during game-menu screens (quick_menu is False there).
@@ -18,10 +18,10 @@ screen inventory_button():
     zorder 260
     if inventory_unlocked and quick_menu:
         imagebutton:
-            xalign 0.97
+            xalign 0.99
             yalign 0.02
-            idle Transform("bt backpack", zoom=0.5)
-            hover Transform("bt backpack", zoom=0.56)
+            idle Transform("bt backpack", zoom=0.5, alpha=0.5)
+            hover Transform("bt backpack", zoom=0.56, alpha=1.0)
             hover_sound "audio/sfx/hover_selectable.mp3"
             activate_sound "audio/sfx/click_selectable.mp3"
             action Show("inventory_screen")

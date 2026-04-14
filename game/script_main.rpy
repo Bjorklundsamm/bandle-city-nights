@@ -168,8 +168,6 @@ label introductions:
 
     mc "This is Bandle City."
 
-    n "Not quite a question."
-
     b "It is. Home of the Yordles, the small folk, the hidden city — whichever version you heard growing up."
     b "I take it you didn't come here on purpose."
 
@@ -186,10 +184,9 @@ label introductions:
 
     b "Well. Since you're here and you're upright, I have a proposal."
     b "You owe me for the room and the broth. Your body is in no condition to settle that debt by leaving — you wouldn't make it past the treeline."
-    b "And as it happens, there are people in this city who need help. Odd jobs. Nothing that requires being in one piece."
-
-    b "Give it some time. Work off what you owe, get back on your feet, and see what this place has to offer."
-    b "After that, the debt is clear and you can do what you like."
+    b "As it happens, there are people in this city who need help. Odd jobs. Nothing that requires being in one piece."
+    b "Work off what you owe, get back on your feet. A month should cover it."
+    b "After that, the debt is clear and you do what you like."
 
     mc "And if I say no?"
 
@@ -199,14 +196,11 @@ label introductions:
 
     mc "What kind of help?"
 
-    b "Odd jobs. Nothing complicated. For someone new here it'll take some adjustment — the folk are friendly, mostly, but they're not what you're used to."
-    b "Come to me if you have questions. I know everyone in this room and most of their business."
-    b "And who knows. Maybe by the time the month is up you won't be in quite such a hurry."
+    b "The kind that needs doing, as I said. The folk have short arms and shorter patience for things outside their routine."
+    b "Come to me when you need context. I know everyone in this room and most of what they haven't said out loud."
 
-    n "She's right about one thing — every part of you aches and staying upright is an effort."
-    n "A hundred yards toward the treeline would finish you."
-
-    n "You feel like you've been hollowed out."
+    n "She's not wrong. Every part of you aches, and you haven't even tried to stand yet."
+    n "You feel hollowed out — like whatever was chasing you took something even after it stopped."
 
     show screen system_overlay
     $ constitution_hud_visible = True

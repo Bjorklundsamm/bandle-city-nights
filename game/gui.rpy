@@ -25,33 +25,33 @@ define config.check_conflicting_properties = True
 ## The colors of text in the interface.
 
 ## An accent color used throughout the interface to label and highlight text.
-define gui.accent_color = '#9098ac'
+define gui.accent_color = '#c8a87a'
 
 ## The color used for a text button when it is neither selected nor hovered.
-define gui.idle_color = '#e6aa6f'
+define gui.idle_color = '#c8b89a'
 
 ## The small color is used for small text, which needs to be brighter/darker to
 ## achieve the same effect.
-define gui.idle_small_color = '#606060'
+define gui.idle_small_color = '#9a8a6a'
 
 ## The color that is used for buttons and bars that are hovered.
-define gui.hover_color = '#cc6600'
+define gui.hover_color = '#f0e8d8'
 
 ## The color used for a text button when it is selected but not focused. A
 ## button is selected if it is the current screen or preference value.
-define gui.selected_color = '#555555'
+define gui.selected_color = '#c8a87a'
 
 ## The color used for a text button when it cannot be selected.
 define gui.insensitive_color = '#7070707f'
 
 ## Colors used for the portions of bars that are not filled in. These are not
 ## used directly, but are used when re-generating bar image files.
-define gui.muted_color = '#e0a366'
-define gui.hover_muted_color = '#eac199'
+define gui.muted_color = '#7a6a50'
+define gui.hover_muted_color = '#9a8a6a'
 
 ## The colors used for dialogue and menu choice text.
 define gui.text_color = '#241602'
-define gui.interface_text_color = '#404040'
+define gui.interface_text_color = '#c8b89a'
 
 
 ## Fonts and Font Sizes ########################################################
@@ -60,7 +60,7 @@ define gui.interface_text_color = '#404040'
 define gui.text_font = "/fonts/Jester.ttf"
 
 ## The font used for character names.
-define gui.name_text_font = "/fonts/DUKEPLUS.TTF"
+define gui.name_text_font = "/fonts/Godiaz.ttf"
 
 ## The font used for out-of-game text.
 define gui.interface_text_font = "/fonts/Newyear Coffee.ttf"
@@ -191,8 +191,8 @@ define gui.page_button_borders = Borders(15, 6, 15, 6)
 
 define gui.quick_button_borders = Borders(15, 6, 15, 0)
 define gui.quick_button_text_size = 21
-define gui.quick_button_text_idle_color = '#999999'
-define gui.quick_button_text_selected_color = gui.accent_color
+define gui.quick_button_text_idle_color = '#a0988040'
+define gui.quick_button_text_selected_color = '#e8e0d0'
 
 ## You can also add your own customizations, by adding properly-named variables.
 ## For example, you can uncomment the following line to set the width of a
@@ -209,10 +209,10 @@ define gui.choice_button_width = 1185
 define gui.choice_button_height = None
 define gui.choice_button_tile = False
 define gui.choice_button_borders = Borders(150, 8, 150, 8)
-define gui.choice_button_text_font = gui.text_font
+define gui.choice_button_text_font = "/fonts/Knight2.ttf"
 define gui.choice_button_text_size = gui.text_size
 define gui.choice_button_text_xalign = 0.5
-define gui.choice_button_text_idle_color = '#707070'
+define gui.choice_button_text_idle_color = '#a09070'
 define gui.choice_button_text_hover_color = "#ffffff"
 define gui.choice_button_text_insensitive_color = '#7070707f'
 

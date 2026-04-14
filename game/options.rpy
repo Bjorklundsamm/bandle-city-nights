@@ -127,6 +127,7 @@ define config.window_hide_transition = Dissolve(.2)
 ## number is the number of characters per second to type out.
 
 default preferences.text_cps = 0
+default preferences.skip_unseen = True
 
 
 ## The default auto-forward delay. Larger numbers lead to longer waits, with 0

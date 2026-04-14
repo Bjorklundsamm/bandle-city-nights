@@ -499,7 +499,7 @@ label tavern_tutorial_ahri:
 
     n "Two small blue-gold embers drift from her fingertips and dissolve before they reach the table."
 
-    a "You're the one they found in the wood."
+    a "You're the one they found out there last night, all mangled up by something wild and angry."
 
     n "It isn't a question."
 
@@ -608,80 +608,107 @@ label tavern_tutorial_nidalee_neeko:
 
     $ met_nidalee_neeko = True
 
-    show ch nidalee profile default at duo_left
-    show ch neeko profile default at duo_right
-    with dissolve
+    ## Combined profile for narrator/MC lines; individual profiles when each speaks.
+    ## All three images share the "ch" tag so showing one auto-replaces the other.
 
+    show ch neeko and nidalee profile with dissolve
     n "You hear them before you reach the table."
 
+    show ch nidalee profile default with Dissolve(0.15)
     ni "You said you weren't going to do it again."
 
+    show ch neeko profile default with Dissolve(0.15)
     neo "Neeko did not agree to that. Nidalee said it. Neeko was quiet."
 
+    show ch nidalee profile default with Dissolve(0.15)
     ni "Quiet is agreement."
 
+    show ch neeko profile default with Dissolve(0.15)
     neo "Quiet is quiet. They are not the same thing."
 
+    show ch neeko and nidalee profile with Dissolve(0.15)
     n "The taller one has the posture of someone who hunts for a living — still, coiled, zero wasted energy."
     n "The shorter one has scales along her jaw and eyes that are doing several things at once, including noticing you."
 
+    show ch neeko profile default with Dissolve(0.15)
     neo "Oh."
 
+    show ch neeko and nidalee profile with Dissolve(0.15)
     n "Neeko looks at you the way you'd look at something you weren't expecting but are immediately glad exists."
 
+    show ch neeko profile default with Dissolve(0.15)
     neo "Nidalee. There is a human."
 
+    show ch nidalee profile default with Dissolve(0.15)
     ni "I know."
 
+    show ch neeko and nidalee profile with Dissolve(0.15)
     n "She doesn't look at you yet. Still watching Neeko."
 
+    show ch neeko profile default with Dissolve(0.15)
     neo "Neeko thinks you should tell the human what we are arguing about."
     neo "So that they can decide for themselves."
 
+    show ch nidalee profile default with Dissolve(0.15)
     ni "We're not doing that."
 
+    show ch neeko profile default with Dissolve(0.15)
     neo "Neeko is doing it."
 
+    show ch neeko and nidalee profile with Dissolve(0.15)
     n "She turns to you fully, earnest and completely without embarrassment."
 
+    show ch neeko profile default with Dissolve(0.15)
     neo "Nidalee believes that Neeko belongs to her. Like territory."
     neo "Neeko believes Nidalee is wrong. But also correct. It is complicated."
     neo "You are [player_name], yes? The one from the forest?"
 
+    show ch neeko and nidalee profile with Dissolve(0.15)
     mc "That's me."
 
+    show ch neeko profile default with Dissolve(0.15)
     neo "Good. Neeko thinks you should weigh in."
 
+    show ch neeko and nidalee profile with Dissolve(0.15)
     n "Nidalee finally looks at you. It's a slow, complete assessment — the kind that takes inventory."
 
+    show ch nidalee profile default with Dissolve(0.15)
     ni "Don't."
 
+    show ch neeko profile default with Dissolve(0.15)
     neo "Nidalee."
 
+    show ch nidalee profile default with Dissolve(0.15)
     ni "He doesn't need to be part of this."
 
+    show ch neeko profile default with Dissolve(0.15)
     neo "Neeko disagrees. Neeko thinks outside perspective is useful."
 
+    show ch neeko and nidalee profile with Dissolve(0.15)
     n "A silence. Nidalee holds it the way someone holds a weapon they've decided not to use yet."
 
+    show ch nidalee profile default with Dissolve(0.15)
     ni "You smell like the deep wood. Whatever came for you out there didn't finish the job."
 
+    show ch neeko and nidalee profile with Dissolve(0.15)
     n "She says it like it's a fact worth filing."
 
+    show ch nidalee profile default with Dissolve(0.15)
     ni "Stay out of things that aren't yours."
 
+    show ch neeko and nidalee profile with Dissolve(0.15)
     n "It's not entirely clear if she's talking to you or to Neeko."
     n "Neeko, for her part, gives you an apologetic look — the kind that says this is a normal Tuesday."
 
+    show ch neeko profile default with Dissolve(0.15)
     neo "Neeko is sorry about her. She is like this."
     neo "You can come find Neeko again later. When she is less territorial."
 
+    show ch neeko and nidalee profile with Dissolve(0.15)
     n "Nidalee says nothing. She picks up her cup, drinks, and resumes watching the room."
     n "You get the sense the argument isn't over. It's just been set down somewhere they'll pick it up again later."
 
-    hide ch nidalee profile default
-    hide ch neeko profile default
-    with dissolve
+    hide ch neeko and nidalee profile with dissolve
     return
 
 
