@@ -77,6 +77,20 @@
       }
     ]
   },
+  "stat_gates": {
+    "first_confrontation": {
+      "note": "Nidalee tracks Neeko's scent to MC. Evaluation scene, not yet action. Auto-fires after neeko_explicit_done = True.",
+      "requires": { "neeko_explicit_done": true }
+    },
+    "not_flinching_reclassification": {
+      "note": "MC doesn't run or submit. She goes quiet and reclassifies MC from problem to interesting. STR gate — she has to respect physical capacity.",
+      "requires": { "strength": 35, "affection_nidalee": 2, "nidalee_confronted": true }
+    },
+    "explicit_territorial_claiming": {
+      "note": "She claims MC on her terms. Possessive, total. Explicit block user-authored.",
+      "requires": { "strength": 40, "affection_nidalee": 4, "nidalee_scene_1_done": true }
+    }
+  },
   "lore_notes": "Nidalee's origin is a genuine mystery — she doesn't know it and neither does the lore. A mother pakaa accepted her as an infant on an unfamiliar scent that felt somehow familiar, which suggests Nidalee's vastayan heritage may carry a resonance the pakaa recognize instinctively without any of them being able to name it. She was raised as a member of the pack, developed shapeshifting and hunting abilities over years, became packmother after her adoptive mother was killed by Kiilash hunters. She is feared throughout the surrounding jungles as the Kashdaji Queen — not a title she chose, a consequence she earned. The eastern jungles she defends border both Ixtal and Shurima; she is not affiliated with either power structure and has actively repelled incursions from both. She met Neeko when Neeko stumbled onto the pakaa and took their form to run with them — Nidalee found her, shifted to human form, and the months that followed are the most significant personal relationship in either of their lore. She could not leave the jungle to follow Neeko into civilization. She has never stopped tracking where Neeko goes.",
   "plot_hooks": [
     "MC will smell her before seeing her. The first indicator is the pakaa that have been at the edge of the forest for three nights. The second is Neeko being slightly more careful than usual. The third is Nidalee, in cougar form, sitting at the end of an alley watching the tavern door.",

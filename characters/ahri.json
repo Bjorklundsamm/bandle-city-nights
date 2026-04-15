@@ -91,6 +91,31 @@
       }
     ]
   },
+  "stat_gates": {
+    "first_encounter_deferral": {
+      "note": "She defers MC on first meeting — not rejection, just accurate. Happens regardless of stats.",
+      "requires": {}
+    },
+    "re_approach_changed_essence": {
+      "note": "Ahri's read has changed. Player must have been intimate with Tristana, Vex, AND Poppy (three Yordle-essence layers). Stats reflect depth of experience needed to carry that layering.",
+      "requires": {
+        "tristana_explicit_done": true,
+        "vex_explicit_done": true,
+        "poppy_explicit_done": true,
+        "strength": 30,
+        "intellect": 30
+      },
+      "hard_block": "lulu_arc_active must be False. If Lulu arc is active, Ahri is permanently unavailable."
+    },
+    "explicit_scene": {
+      "note": "Tier 2–3 explicit block. Claude handles approach, sensory interest, careful intimacy given her predator nature, and aftermath.",
+      "requires": { "affection_ahri": 5, "ahri_available": true }
+    },
+    "vex_theft_resolution": {
+      "note": "MC tells Ahri about stolen charm. Ahri directs a punishment scene using same brainwashing mechanism used on Poppy. Threesome. Explicit block user-authored.",
+      "requires": { "ahri_scene_1_done": true, "vex_journal_pages_collected": 5 }
+    }
+  },
   "lore_notes": "Vesani by heritage — a nearly extinct Vastayan tribe from the Blessed Isles, wiped out in the Ruination, whose consciousness was preserved in spirit artifacts including the twin sunstones Ahri carries. She was raised by icefoxes in Shon-Xan's frozen north, instinctively channeling spirit energy before she understood what she was. She developed the predatory feeding pattern over decades, consuming human essence — their memories, emotions, experiences — until she fell genuinely in love with an artist who offered himself willingly, and killed him anyway in a moment of lost control. That death broke the feeding pattern, not because she became incapable, but because she could not continue after that. She has been traveling since: recovering her people's history from the surviving artifacts, learning what the Vesani actually were (they were healers, memory-keepers, spirit-guides), and building a different relationship with her own nature. She is the Spirit of Salvation in one telling — a gatekeeper between worlds. She now operates a hidden bathhouse sanctuary in Ionia. She passes through Bandle City because this region's spirit-bleed is useful, because old Vesani records reference this place, and because it is one of the few locations in the world where she can be what she is without explanation.",
   "plot_hooks": [
     "She is looking for something in the forests beyond standard reagents — something she doesn't name at the market. A Vesani artifact, possibly, or a spirit-path that matches old tribe records. She hasn't found it yet. A player character with unusual access to the spirit-bleed zone (via Lulu, via certain item finds) might be useful.",

@@ -82,6 +82,24 @@
       }
     ]
   },
+  "stat_gates": {
+    "shoma_reading": {
+      "note": "Neeko reads MC's sho'ma, finds them interesting, starts asking personal questions. Low bar — she's curious about everyone.",
+      "requires": { "affection_neeko": 2 }
+    },
+    "trust_earned": {
+      "note": "MC handles a Neeko-Nidalee collision well. Neeko starts seeking MC out specifically. CHA gate — navigating the territorial dynamic requires social competence.",
+      "requires": { "affection_neeko": 4, "charisma": 15 }
+    },
+    "explicit_nidalee_absent_night": {
+      "note": "Nidalee is out of range. Neeko isn't being careful. Shapeshifting beat, explicit block user-authored. Both CHA and INT gates — curiosity and comprehension.",
+      "requires": { "affection_neeko": 6, "charisma": 20, "intellect": 20 }
+    },
+    "nidalee_finds_out": {
+      "note": "Trigger for Nidalee's confrontation arc. Auto-fires after neeko_explicit_done = True.",
+      "requires": { "neeko_explicit_done": true }
+    }
+  },
   "lore_notes": "The Oovi-Kat were the oldest vastaya lineage, closest to the vastayashai'rei ancestors, living in isolation on a spirit-adjacent island far to the east. Their isolation preserved a purer, older form of vastayan magic — Neeko's shapeshifting and sho'ma-reading is the direct inheritance of that heritage, not a quirk but an ancestral form. The cataclysm that destroyed the island is unspecified in official lore. Neeko escaped as a bird, spent days on driftwood, was taken aboard a merchant vessel to Harelport. Her Oovi-Kat ancestors came to her in a dream on the voyage — showing her dead pale branches — and gave her the mission she's been on ever since. She found Nidalee's pakaa pack in the eastern jungles, joined them in cougar form without revealing herself, and was eventually found out when Nidalee shifted to human form. For months they were inseparable. Neeko is canonically lesbian, confirmed by Riot narrative writer Matt Dunn in 2018 — the first openly LGBTQ+ champion in the game. Her love for Nidalee is the most significant romantic attachment in her lore, and the fact that it's complicated rather than requited is canonical.",
   "plot_hooks": [
     "She will casually become MC at some point and make an observation about what MC wants that MC hasn't said out loud. This is information and also the most unsettling compliment she knows how to give.",

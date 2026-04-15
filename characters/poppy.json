@@ -104,6 +104,32 @@
       }
     ]
   },
+  "stat_gates": {
+    "arm_wrestling_available": {
+      "note": "MC can challenge Poppy to arm wrestling. She must have seen MC in the gym first. STR gate represents plausible physical contest.",
+      "requires": { "strength": 20, "met_poppy": true }
+    },
+    "arm_wrestling_win": {
+      "note": "Winning the arm wrestle requires matching her 30 STR threshold. A hidden roll: player wins if strength >= 30.",
+      "requires": { "strength": 30 }
+    },
+    "gym_arc_starts": {
+      "note": "After winning, she invites MC to the gym at sixth bell.",
+      "requires": { "poppy_armwrestle_done": true }
+    },
+    "orlon_disclosure": {
+      "note": "She says something about Orlon. Happens across early gym sessions.",
+      "requires": { "affection_poppy": 3, "poppy_gym_arc_started": true }
+    },
+    "hammer_disclosure": {
+      "note": "She explains what the hammer is and why she carries it.",
+      "requires": { "affection_poppy": 5, "poppy_orlon_told": true }
+    },
+    "explicit_stay_after_gym": {
+      "note": "She asks MC to stay. Physical intimacy follows. Explicit block user-authored.",
+      "requires": { "affection_poppy": 8, "strength": 35, "poppy_hammer_told": true }
+    }
+  },
   "lore_notes": "Poppy is one of the oldest Yordles in active service, having been part of Demacia's founding under Orlon centuries ago. Her strength is inexplicable by visible physiology — she weighs 22 kilograms and stands 96 centimeters, and she sends Malphite airborne. She has never explained this to anyone's satisfaction, including her own. The hammer is roughly twice her height and made from materials that are not trying to look impressive. Orlon told her with his dying breath that it belonged to the Hero of Demacia and that she must find them. She has taken candidates. She has lost them. The specific quality of her failure has taught her to be more conservative about what constitutes evidence, and she has been conservative for so long that she had largely stopped looking. The Bandle City posting is not official. She is here because Demacia granted her leave she didn't request and the gym here is adequate and the tavern needed a door. She has not been honest with herself about whether she came here because this is where her people are, because she was tired, or because some instinct she does not trust told her to.",
   "plot_hooks": [
     "She has said nothing to MC about the hero. She has thought about it every gym session since the arm wrestling. The gap between these two facts is the whole arc.",

@@ -194,10 +194,12 @@ label gameStart:
     show screen backpack_arrow
 
     s "You've unlocked the inventory system! You can access it at any time by clicking the inventory button in the top right corner of the screen."
+    s "Your coin purse contains 250 gold."
 
     call screen system_got_it
 
     $ inventory_unlocked = True
+    $ persistent.gold = 250
     hide screen backpack_arrow
     hide screen backpack_intro
     hide screen system_overlay

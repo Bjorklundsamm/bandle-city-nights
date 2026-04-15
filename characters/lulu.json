@@ -95,6 +95,22 @@
       }
     ]
   },
+  "stat_gates": {
+    "pix_watching_conversation": {
+      "note": "Lulu mentions what Pix has been observing. Requires Poppy absent from tavern (poppy_off_duty = True).",
+      "requires": { "poppy_off_duty": true, "affection_lulu": 2 }
+    },
+    "first_physical_intimacy": {
+      "note": "Lulu wants to understand from the inside. Tier 1–2. Poppy must be absent.",
+      "requires": { "poppy_off_duty": true, "affection_lulu": 4, "lulu_pix_talk_done": true }
+    },
+    "explicit_arc_deepens": {
+      "note": "She is integrating, asks about the next thing. Tier 2–3. Intellect gate — she responds to curiosity as comprehension.",
+      "requires": { "poppy_off_duty": true, "affection_lulu": 7, "intellect": 15, "lulu_scene_1_done": true },
+      "blocks": ["ahri_available"]
+    },
+    "ahri_block_note": "If lulu_arc_active = True, Ahri's arc is permanently closed. This flag is set once Lulu scene 1 fires."
+  },
   "the_ahri_cross_reference": "Ahri's essence-reading is scrambled by Lulu's pix-chaos. Where other Yordles add legible depth to a person's magical signature, proximity to Lulu adds interference — static, not complexity. Someone who has been intimate with Lulu carries that scrambling in their essence afterward, and Ahri cannot read through it. This is not a consequence Lulu knows about or intends. It is simply what pix-touched wild magic does to the specific kind of perception Ahri uses. Ahri's arc is permanently blocked to anyone carrying Lulu's magical signature — she will be polite, she will not explain, she will not reconsider. This means the Lulu arc and the Ahri arc are mutually exclusive if pursued in a certain order.",
   "lore_notes": "Lulu entered the Glade as a young Yordle following a fae spirit named Pix who had pretended to be an injured bird. The Glade predates Yordle civilization and may be the origin point of Bandle City itself. Inside it she spent what felt like endless play but translated to centuries in the material world. She emerged with wild magic that is the residue of the Glade — transformative, unpredictable, tied to fae energy rather than learned technique. She has been expelled from Bandle City for her games (children became toadstools, weapons became flowers, chaos reliably followed). She is not malicious. She is operating on a logic system calibrated in a place without permanent consequence and is still adjusting, several centuries in, to the fact that consequences here are stickier. She is looking for the path back to the Glade, which she acknowledges shifts constantly, which means she picks whatever direction seems interesting and follows it. She has not found it. She is not distressed about this. She carries it with her.",
   "plot_hooks": [

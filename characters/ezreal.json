@@ -88,6 +88,21 @@
       }
     ]
   },
+  "stat_gates": {
+    "training_session_available": {
+      "note": "MC can show up at Ezreal's open sparring session. Requires baseline STR — someone below this looks like a spectator, not a sparring partner.",
+      "requires": { "strength": 15, "met_ezreal": true }
+    },
+    "shower_scene": {
+      "note": "Hard mode target practice pass (80%+) unlocks shower invite. STR gate ensures MC is physically credible after the training. SPECIAL UNLOCK via minigame performance.",
+      "requires": { "ezreal_hard_unlocked": true, "strength": 30 },
+      "unlock_trigger": "ezreal_hard mode 80%+ accuracy"
+    },
+    "second_session_negotiated": {
+      "note": "He shows up knowing. More deliberate. His objections are real but fighting with something else now.",
+      "requires": { "ezreal_shower_scene_done": true, "strength": 35, "affection_ezreal": 4 }
+    }
+  },
   "lore_notes": "Born in Piltover to a family of archaeologists who treated the world as a series of problems worth solving. Raised mostly by his uncle after his parents stopped coming back from the desert. Was brilliant and lazy as a student, excelled at everything he tried without trying, ran circles around the campus wardens for fun. Spent months in Shuriman ruins following his mother's field notes, found Ne'Zuk's tomb, discovered the gauntlet, barely survived the traps by using the gauntlet before he understood what it did. Returned to Piltover changed — not wiser, exactly, but committed. Has been building his reputation ever since across expeditions to lost cities, spirit-touched regions, and anywhere the maps go blank. In Demacia he is Jarro Lightfeather, 8th Order Sentinel of Light, a national hero born in Vaskasia. He is very proud of this. Lux is the only Demacian who knows. She was not amused. He found her not being amused somewhat endearing, which tells you a lot about where his head is. He has a natural gift for magic that the gauntlet amplifies massively; he has never trained the raw ability seriously because the gauntlet makes it unnecessary. This is the laziness of someone who's never been pushed hard enough to find out what discipline would actually do for him.",
   "plot_hooks": [
     "His artifact circuit through Bandle City means he has access to unusual objects — some harmless, some not. MC could want something he's carrying, or he could want something the region's spirit bleed has left behind that MC happened to find.",

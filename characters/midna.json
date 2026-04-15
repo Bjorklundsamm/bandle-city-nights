@@ -111,6 +111,24 @@
       }
     ]
   },
+  "stat_gates": {
+    "investigation_phase": {
+      "note": "Clues are collectible throughout the game world. No stat gate — purely observational work.",
+      "requires": {}
+    },
+    "revelation_scene": {
+      "note": "MC presents assembled evidence. Requires high INT (piecing together obscure cross-references) and sufficient affection (she needed time to notice MC noticing).",
+      "requires": { "intellect": 20, "affection_barkeep": 5 }
+    },
+    "late_night_conversation": {
+      "note": "Several days post-revelation. She talks about the Twilight Realm. First real intimacy.",
+      "requires": { "intellect": 20, "affection_barkeep": 6 }
+    },
+    "explicit_initiation": {
+      "note": "She initiates. Tier 2 into Tier 3. Explicit block user-authored. Investigation must be complete.",
+      "requires": { "intellect": 35, "affection_barkeep": 8, "affection_barkeep_revelation_done": true }
+    }
+  },
   "lore_notes": "The Twili are descendants of the Dark Interlopers — sorcerers banished to the Twilight Realm by the Golden Goddesses after they attempted to seize the Sacred Realm using the Fused Shadow. Over centuries in exile, the Interlopers became the Twili — peaceful, gentle, alien. Their realm is lit by a soft orange twilight that Midna has defended as beautiful to people who have called it dark. She was chosen as queen over Zant — a courtier whose lust for power was visible to everyone — and Zant responded by making a deal with a dark power and cursing her into imp form. She carries one fragment of the Fused Shadow, her ancestors' weapon, which she is immune to because she is the Twilight Princess. In her original story she eventually returned to the Twilight Realm and shattered the only bridge between worlds to protect both sides. In this continuity she did not shatter the mirror. She left through it and then — for reasons she will not discuss — did not go back. She came here. She has been here since. The authorities looking for her are Hylian rather than Zaunite or Piltovian, which is part of why Bandle City works: nobody here has ever heard of Hyrule. She is, by every measure, safe. She has not decided what to do with safe.",
   "plot_hooks": [
     "The wanted circular exists somewhere in the city. A merchant who came through months ago left it in the archive. It has a sketch of an imp with one visible eye and a dark fragment covering half her face. The sketch is not flattering but it is recognizable to someone paying attention.",

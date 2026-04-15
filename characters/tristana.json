@@ -91,6 +91,24 @@
       }
     ]
   },
+  "stat_gates": {
+    "scene_1_flirtation": {
+      "note": "Tavern flirtation — aggressive, competitive. No stat requirement.",
+      "requires": {}
+    },
+    "scene_2_drunk_confession": {
+      "note": "Tristana confides suspicion about Katarina. Requires some charisma — she's checking if you can handle it.",
+      "requires": { "affection_tristana": 3, "charisma": 10 }
+    },
+    "scene_3_debt_reveal": {
+      "note": "Katarina calls the debt. Tristana tells MC what Katarina wants.",
+      "requires": { "affection_tristana": 5 }
+    },
+    "explicit_resolution": {
+      "note": "Resolution of the Katarina arc. Either MC helps her out or she goes through with it. Explicit block is user-authored.",
+      "requires": { "affection_tristana": 7, "charisma": 20 }
+    }
+  },
   "lore_notes": "Tristana was always drawn to warriors rather than the inventors and mischief-makers most Yordles become. She commissioned Boomer after being inspired by Bilgewater's black powder cannons — paid for it herself, named it with a wry smile. Her carefree wandering ended when she watched a warband burn a bandlewood and hid instead of fighting. She has not hidden from a fight since. She now leads the Bandle Gunners — a group of Yordles who started imitating her and which she has reluctantly started training properly, because if they're going to do this they'd better do it right. She is physically immortal in the Yordle sense and has been around long enough that she finds human languages somewhat unsophisticated and thinks of herself as a 'young slip of a girl' by Yordle standards despite being ancient by human reckoning.",
   "plot_hooks": [
     "The Katarina debt is the primary arc — long con that Tristana walks into nightly without knowing it. Katarina has engineered it over weeks. The reveal should feel inevitable in retrospect.",

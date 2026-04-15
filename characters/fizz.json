@@ -46,6 +46,16 @@
     "MF_on_Fizz": "He's the best fighter she's ever hired and the biggest headache she's ever kept. Worth it.",
     "Fizz_on_MF": "She's the only person allowed to call him a menace. That's love."
   },
+  "stat_gates": {
+    "day2_proposition": {
+      "note": "No gate — Fizz proposition fires automatically on first meet, Day 2.",
+      "requires": {}
+    },
+    "held_afterward_beat": {
+      "note": "Soft emotional scene — Fizz actually wants to be held. Available on return visits.",
+      "requires": { "affection_fizz": 3 }
+    }
+  },
   "plot_hooks": [
     "Arrives in town ahead of MF's ship, already causing mild chaos at the docks or tavern.",
     "Can introduce the MC to Bilgewater contacts and eventually MF herself.",

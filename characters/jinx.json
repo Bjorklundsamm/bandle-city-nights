@@ -90,6 +90,20 @@
       }
     ]
   },
+  "stat_gates": {
+    "gate_conversation": {
+      "note": "Jinx finds MC alone and says the thing about Tristana. Only possible after Tristana romance path is maxed.",
+      "requires": { "affection_tristana": 10 }
+    },
+    "tavern_tipping_scene": {
+      "note": "The three of them are in the same space and something tips. Tier 1–2.",
+      "requires": { "affection_tristana": 10, "affection_jinx": 2, "jinx_gate_done": true }
+    },
+    "threesome_offer": {
+      "note": "Jinx makes the offer directly. She's decided. CHA gate — she has to actually like you enough to invite you into this.",
+      "requires": { "affection_tristana": 10, "affection_jinx": 4, "charisma": 30 }
+    }
+  },
   "lore_notes": "Born Powder in Zaun's undercity. Orphaned during a failed uprising against Piltover. Taken in by Vander alongside Vi, Mylo, and Claggor. During a hextech heist, she used an unstable bomb trying to help — it killed three of her family and triggered the chain of events that resulted in Vi's arrest and apparent abandonment. Silco found her in the rubble and raised her, channeling her self-destructive grief into weapons genius and eventually naming her his enforcer. She became the most wanted criminal in Piltover through a series of escalating incidents that she does not experience as crimes so much as things that happened near her. Silco died in her arms, shot through by her in the process of stopping Sevika, his last words being unconditional. She is now untethered — no Silco, no obvious purpose, the possibility of Vi still somewhere in the world but unresolved. She drifts toward places where the bounty hasn't caught up and people don't look at her like a problem to solve. Tristana's proximity to Bandle City means she ends up here more than anywhere else.",
   "plot_hooks": [
     "She knows about the Katarina-Tristana situation and has not acted on it. She is waiting to see if Trist figures it out herself, because the lesson means more that way. If MC is the one who helps Trist see it, Jinx's evaluation of MC goes up significantly.",

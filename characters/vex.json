@@ -68,6 +68,24 @@
       "poppy_dynamic": "Vex and Poppy represent opposite ends of the Yordle spectrum. Poppy is everything Vex rejected and resents — the brightness, the heroism, the belonging. The fantasy is about inverting that completely. It says something dark about how Vex processes her own history. Do not sand this down."
     }
   },
+  "stat_gates": {
+    "scene_1_first_carry": {
+      "note": "First time MC helps Vex to her room. She's awake enough to be aware. Footjob scene, Vex keeps clothes on. INT gate — she reads interest as comprehension.",
+      "requires": { "intellect": 8 }
+    },
+    "scene_2_shadow_binding": {
+      "note": "Second time MC helps her. She was waiting. Uses shadow magic to bind MC. Tier 2–3 boundary.",
+      "requires": { "affection_vex": 3, "intellect": 18 }
+    },
+    "scene_3_full_control": {
+      "note": "Third time. No pretense. Full control scene. Explicit block user-authored.",
+      "requires": { "affection_vex": 6, "intellect": 28 }
+    },
+    "poppy_fantasy_route": {
+      "note": "Journal page collection unlocks. Requires all journal fragments + Ahri's confrontation of Vex (Ahri arc scene 3). Separate from main Vex arc.",
+      "requires": { "vex_journal_pages_collected": 5, "ahri_scene_1_done": true }
+    }
+  },
   "plot_hooks": [
     "Journal page fragments are collectible items seeded throughout the game world — behind the tavern, in the market, in locations that suggest Vex has been there and lost something.",
     "Shadow begins reacting to MC before Vex does — flinching away when he approaches, then hovering when he leaves. Vex doesn't comment on this and gets visibly irritated if MC does.",

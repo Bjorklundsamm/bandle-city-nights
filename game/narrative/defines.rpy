@@ -23,15 +23,50 @@ define neo  = Character("Neeko")
 define ni   = Character("Nidalee")
 define j    = Character("Jinx")
 define mf   = Character("Miss Fortune")
+define mo   = Character("Morgana")
+define co   = Character("Corki")
+define ru   = Character("Rumble")
+define te   = Character("Teemo")
 
 
 ## ── Persistent stats ─────────────────────────────────────────────────────────
+# Max values: constitution 50 (10 hearts × 5), strength/charisma/intellect 50 each.
+# Stats are displayed per-heart only for constitution; STR/CHA/INT are raw numbers.
 
 default persistent.constitution = 1
 default persistent.strength     = 1
 default persistent.charisma     = 1
 default persistent.intellect    = 1
-default persistent.fizz_met     = False
+
+## Energy & Gold
+default persistent.energy       = 3   # resets to 3 each morning
+default persistent.gold         = 0
+
+
+## ── Minigame tracking ────────────────────────────────────────────────────────
+# visit_counts — scale difficulty on repeat visits
+default persistent.corki_visits    = 0
+default persistent.rumble_visits   = 0
+default persistent.morgana_visits  = 0
+default persistent.teemo_visits    = 0
+default persistent.ezreal_visits   = 0
+
+# hard mode unlocked flags — set True on first normal-mode pass
+default persistent.corki_hard_unlocked    = False
+default persistent.rumble_hard_unlocked   = False
+default persistent.morgana_hard_unlocked  = False
+default persistent.teemo_hard_unlocked    = False
+default persistent.ezreal_hard_unlocked   = False
+
+# best scores (used for Rumble streak tracking etc.)
+default persistent.rumble_best    = 0
+default persistent.ezreal_best    = 0   # best accuracy % (0–100)
+
+# Morgana special unlock (hard mode reward)
+default persistent.morgana_reward_seen = False
+
+# Ezreal shower scene unlock (hard mode reward)
+default persistent.ezreal_shower_unlocked = False
 
 
 ## ── Player ───────────────────────────────────────────────────────────────────
@@ -85,13 +120,72 @@ default affection_morgana     = 0
 # Set to True/False before entering each night's tavern loop.
 # Barkeep and Poppy are always present — no flags needed for them.
 
-default tristana_in_tavern     = True
-default vex_in_tavern          = True
-default katarina_in_tavern     = True
-default ahri_in_tavern         = True
-default ezreal_in_tavern       = True
+default tristana_in_tavern      = True
+default vex_in_tavern           = True
+default katarina_in_tavern      = True
+default ahri_in_tavern          = True
+default ezreal_in_tavern        = True
 default nidalee_neeko_in_tavern = True
-default jinx_in_tavern         = True
+default jinx_in_tavern          = True
+
+# poppy_off_duty — True on days Poppy is away; unlocks Lulu arc scenes.
+default poppy_off_duty          = False
+
+
+## ── Scene unlock flags ───────────────────────────────────────────────────────
+# Track which escalation scenes have been seen; prevents repeat triggers.
+
+default tristana_scene_1_done   = False   # flirtation
+default tristana_scene_2_done   = False   # drunk confession
+default tristana_scene_3_done   = False   # debt reveal
+default tristana_explicit_done  = False
+
+default poppy_armwrestle_done   = False
+default poppy_gym_arc_started   = False
+default poppy_orlon_told        = False
+default poppy_hammer_told       = False
+default poppy_explicit_done     = False
+
+default lulu_pix_talk_done      = False
+default lulu_scene_1_done       = False
+default lulu_explicit_done      = False
+default lulu_arc_active         = False   # set True once Lulu scene 1 fires; blocks Ahri
+
+default katarina_scene_1_done   = False
+default katarina_explicit_done  = False
+
+default vex_scene_1_done           = False
+default vex_explicit_done          = False
+default vex_journal_pages_collected = 0   # max 5; unlocks Vex ultimate fantasy route
+
+default ahri_available          = False   # set True once Yordle-essence gate passes
+default ahri_scene_1_done       = False
+default ahri_explicit_done      = False
+
+default neeko_shoma_done        = False
+default neeko_trust_done        = False
+default neeko_explicit_done     = False
+
+default nidalee_confronted      = False
+default nidalee_scene_1_done    = False
+default nidalee_explicit_done   = False
+
+default ezreal_trained_once     = False
+default ezreal_shower_scene_done = False
+default ezreal_explicit_done    = False
+
+default morgana_reward_scene_done = False
+default morgana_explicit_done   = False
+
+default jinx_gate_done          = False   # requires tristana affection max
+default jinx_explicit_done      = False
+
+default mf_scene_1_done         = False   # first meeting / loan offer accepted
+default mf_scene_2_done         = False   # pistol return arc — player makes choice
+default mf_scene_3_done         = False   # titjob scene (tier 2)
+default mf_scene_4_done         = False   # room scene (tier 3)
+default mf_paid_in_full         = False   # waited and received full 200g repayment
+default mf_times_visited        = 0       # visit counter for MF arriving in town
 
 
 ## ── Inventory / item flags ───────────────────────────────────────────────────

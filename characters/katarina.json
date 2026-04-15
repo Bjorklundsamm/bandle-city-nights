@@ -91,6 +91,23 @@
       }
     ]
   },
+  "stat_gates": {
+    "scene_1_assessment": {
+      "note": "Katarina notices MC watching and begins including them. Requires enough charisma to be interesting rather than irrelevant.",
+      "requires": { "charisma": 8 }
+    },
+    "scene_2_mutual_assessment": {
+      "note": "MC demonstrates they've seen through the game. Dynamic becomes two-way.",
+      "requires": { "affection_katarina": 3, "charisma": 15 }
+    },
+    "explicit_debt_callout": {
+      "note": "The debt is called in — Katarina presents what she wants. Explicit scene is user-authored. Alternatively unlocked via Tristana arc max (she leverages Tristana's debt as the scene).",
+      "requires_either": [
+        { "affection_katarina": 6, "charisma": 25 },
+        { "affection_tristana": 10 }
+      ]
+    }
+  },
   "lore_notes": "Born to the Du Couteau family — one of the most powerful in Noxus. Trained by her father Marcus, the empire's greatest assassin, who held her to standards that kinship did not soften. Her first field mission ended in the wrong target assassinated, heavy Noxian casualties, and her father sending Talon to kill her as punishment. Talon left a scar over her left eye and chose not to finish the job. She presented the correct head shortly after as acknowledgment of her failure. Since then: precision over passion, a career rebuilt on deadly exactness, and eventually — after years of political upheaval that included her father's return, his plot against Swain, and his death — her elevation to Swain's most trusted instrument. She is his failsafe. The only person he trusts to kill him if necessary. This is the highest form of Noxian acknowledgment she knows, and it is not nothing to her.",
   "plot_hooks": [
     "The Tristana debt arc is the primary throughline — weeks of patient fraud coming to its planned conclusion. MC's awareness of the setup creates the variable Katarina did not fully account for.",
