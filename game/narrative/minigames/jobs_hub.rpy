@@ -52,8 +52,7 @@ screen jobs_hub():
                     if persistent.corki_hard_unlocked:
                         text "[hard_badge()]" style "jobs_hard"
                 if persistent.energy > 0:
-                    textbutton "Work (1 energy)" action Jump("corki_hub_choice") \
-                        style "jobs_btn"
+                    textbutton "Work (1 energy)" action Jump("corki_hub_choice") style "jobs_btn"
                 else:
                     textbutton "Too tired" action NullAction() style "jobs_btn_grey"
 
@@ -71,8 +70,7 @@ screen jobs_hub():
                     if persistent.rumble_hard_unlocked:
                         text "[hard_badge()]" style "jobs_hard"
                 if persistent.energy > 0:
-                    textbutton "Work (1 energy)" action Jump("rumble_hub_choice") \
-                        style "jobs_btn"
+                    textbutton "Work (1 energy)" action Jump("rumble_hub_choice") style "jobs_btn"
                 else:
                     textbutton "Too tired" action NullAction() style "jobs_btn_grey"
 
@@ -90,8 +88,7 @@ screen jobs_hub():
                     if persistent.morgana_hard_unlocked:
                         text "[hard_badge()]" style "jobs_hard"
                 if persistent.energy > 0:
-                    textbutton "Work (1 energy)" action Jump("morgana_hub_choice") \
-                        style "jobs_btn"
+                    textbutton "Work (1 energy)" action Jump("morgana_hub_choice") style "jobs_btn"
                 else:
                     textbutton "Too tired" action NullAction() style "jobs_btn_grey"
 
@@ -109,8 +106,7 @@ screen jobs_hub():
                     if persistent.teemo_hard_unlocked:
                         text "[hard_badge()]" style "jobs_hard"
                 if persistent.energy > 0:
-                    textbutton "Work (1 energy)" action Jump("teemo_hub_choice") \
-                        style "jobs_btn"
+                    textbutton "Work (1 energy)" action Jump("teemo_hub_choice") style "jobs_btn"
                 else:
                     textbutton "Too tired" action NullAction() style "jobs_btn_grey"
 
@@ -128,14 +124,12 @@ screen jobs_hub():
                     if persistent.ezreal_hard_unlocked:
                         text "[hard_badge()]" style "jobs_hard"
                 if persistent.energy > 0:
-                    textbutton "Work (1 energy)" action Jump("ezreal_hub_choice") \
-                        style "jobs_btn"
+                    textbutton "Work (1 energy)" action Jump("ezreal_hub_choice") style "jobs_btn"
                 else:
                     textbutton "Too tired" action NullAction() style "jobs_btn_grey"
 
     # Leave button
-    textbutton "Head to town" action Jump("day_hub_return") \
-        xalign 0.5 yalign 0.95 style "jobs_leave"
+    textbutton "Head to town" action Jump("day_hub_return") xalign 0.5 yalign 0.95 style "jobs_leave"
 
 style jobs_label:
     color "#e8c87a"

@@ -58,6 +58,12 @@ screen inventory_screen():
                 size 52
                 font gui.name_text_font
 
+            text "[persistent.gold]g":
+                xalign 0.5
+                color "#e8c87a"
+                size 30
+                font gui.name_text_font
+
     # Close button — sits above the frame in z-order (declared last)
     textbutton "✕":
         xalign 0.97

@@ -1,0 +1,26 @@
+# Ren'Py compiled bytecode — regenerated on every launch, never commit
+*.rpyc
+*.rpyb
+
+# Runtime cache
+game/cache/
+
+# Save files and persistent data
+game/saves/
+
+# Ren'Py logs and error dumps
+log.txt
+traceback.txt
+errors.txt
+
+# Ren'Py build output
+game/android.txt
+*.apk
+*.exe
+*.app
+game/tmp/
+
+# OS artifacts
+.DS_Store
+Thumbs.db
+desktop.ini

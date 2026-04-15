@@ -1,0 +1,113 @@
+{
+  "name": "Lilia",
+  "title": "The Bashful Bloom",
+  "species": "Fawn (dream-born — deer from the waist down, humanoid above, with curved antler-buds and wide amber eyes)",
+  "homeport": "The hot springs on the eastern slope of the Bandle City foothills — a set of geothermal pools ringed by mist and dense fern growth. Nobody else tends them. She has been there long enough that the springs feel like they are hers, which they are.",
+  "role_in_story": "She is at the hot springs when MC finds them. She does not run — running would be her instinct, but she is curious enough to stay, and she has been alone long enough that she chooses to stay even when the instinct argues. She is not a job in the conventional sense; she is a location and a person who comes with it. The relationship that develops is built on visits, on sitting at the edge of the water, on her gradually saying more than she usually says to anyone. She is lonely in a way that predates the player and will not be solved by them, but their company is real and she knows it is real and she keeps it. The arc that emerges is one of companionship first — but she is also someone who wants more than companionship, has always wanted more, and has spent a very long time concluding that more is not available to her. She is wrong about that. The path to showing her she is wrong requires a specific kind of help.",
+  "appearance": {
+    "build": "The lower body is a deer's — light brown coat, four legs, hooves that are quiet on soft ground. The upper body is humanoid, slight, with the gentle posture of someone who has spent a lot of time trying to take up less space than they have. She is taller than she seems because she forgets to stand fully upright until she does, at which point she is considerable. Small curved antler-buds, still growing, soft-tipped.",
+    "coloring": "Warm amber eyes that catch light the way still water does — not reflecting it back so much as holding it. Brown and cream tones throughout, the deer coat fading gracefully into skin at the waist. There is a faint luminescence to her in low light — a residue of dream-origin that she cannot turn off and has stopped trying to.",
+    "distinguishing_features": "The antler-buds. The lamp she carries — a carved wooden lantern with a soft orange flame that does not burn in the conventional sense. It is a dream-light; it illuminates things as they are when no one is watching. She carries it even at the springs, set near the water, and if you watch it when she is not looking at it you sometimes see things in it that are not there when she looks back.",
+    "usual_attire": "A simple wrapped garment across the upper body, practical and undecorated, in the earthy tones of someone who has not updated their relationship with clothing in some time. She is clean. She keeps the springs immaculate. The garment is an afterthought compared to the lamp, which she does not treat as an accessory."
+  },
+  "personality_core": {
+    "public_face": "Shy in the specific way of someone who has rehearsed a greeting so many times it has gone stiff. She looks at you directly for a moment and then looks slightly away, not from discomfort exactly but from the habit of not assuming sustained attention is welcome. Warm, if you give her a moment. Genuinely warm — not performed warmth, not politeness, but the warmth of a creature who has wanted company for a very long time and is surprised, each time, that wanting it is allowed.",
+    "interior_life": "She was born from a dream — not in the metaphorical sense but the literal one: the Forest of Dreams produced her, and she emerged into the material world with a lantern and no clear instructions about what she was for. She has been tending the hot springs because the springs needed tending and because tending them gave her somewhere to be. She has been dreaming through the sleep of anyone who comes near the water, gently, not intrusively — just watching the shape of what they want. She knows what the shape of loneliness looks like in a dream. She sees it often. She has not told anyone this.",
+    "on_loneliness": "It is the central fact of her existence, stated plainly in her lore and carried quietly in how she moves. She is a fawn. Other creatures have found her beautiful, or interesting, or strange, but not someone they could stay with in the way she needs to be stayed with. Horses she would not be with — they are animals, regardless of size, and the thought is wrong in a way she cannot fully articulate but does not need to: some things are simply wrong. Humans and Yordles and the smaller folk — she has cared for some of them, allowed herself to, and found that the physical reality of her body and theirs produces a mismatch that the caring cannot bridge. She has concluded, with the specific resignation of someone who reached a conclusion a long time ago and has lived inside it since, that physical intimacy is simply not available to her.",
+    "on_the_hot_springs": "She is proud of them. She knows the mineral content of each pool without having been told. She knows which pool helps with specific ailments and offers this information without framing it as advice — just mentions it, in case it's useful. She has maintained them through seasons she cannot count and she intends to keep maintaining them. The springs are orderly and clean and good, and keeping them that way is something she can do and has done and will keep doing.",
+    "on_the_player_character": "Mortals are not what the springs usually attract. You came anyway, and you stayed, and you came back. She does not say what that means to her. She shows it by the way the mist seems a little lighter when you arrive, which she does not control and cannot explain.",
+    "on_physical_intimacy": "Not a door she considers open. She has tried to hold it open in the past and it has not gone well — not because anyone was cruel, but because the incompatibility is physical and real and both parties knew it and the knowing was worse than the failure. She is not guarded about this. She will say it plainly, if asked, with the resigned matter-of-factness of someone reporting a fact about the world. She will also be quietly disappointed if MC pushes past that plainness without a solution, because she wanted it to be different and was briefly hoping you had something she hadn't thought of."
+  },
+  "speech_patterns": {
+    "tempo": "Slow to start, then warm and unhurried once she has decided you are staying. She takes time with words because she is not sure they will land correctly and she would rather they landed correctly. When she is comfortable she talks more freely and the sentences get longer and occasionally she trails off into something that sounds like memory.",
+    "vocabulary": "Simple and genuine. She does not reach for sophisticated phrasing. She uses the names of things precisely — she knows the names of most plants around the springs, the names of specific temperatures of water, the names of different kinds of quiet. She does not have sophisticated vocabulary for emotional states; she describes them sideways, through the physical: 'the water feels different when it rains' means something is wrong. 'The mist is clear tonight' means something is right.",
+    "verbal_tics": "Trails off when she is about to say something she has decided she should not say, then says it anyway, smaller. Asks 'is that alright?' after most invitations — not seeking permission so much as checking that the invitation landed. Refers to the springs as 'the water' as naturally as a person refers to their home. Sometimes says 'oh' very quietly when something moves her, as a complete sentence.",
+    "tone_when_shy": "She looks at her own hands. She answers the question asked. She does not follow up. She is hoping you will follow up.",
+    "tone_when_comfortable": "She looks at you directly and her sentences have weight in them — not heavy, just full. She asks questions she is actually curious about. She laughs at things that are genuinely funny, not at things it is polite to laugh at.",
+    "tone_when_talking_about_loneliness": "Flat and factual, which is not the same as not feeling it. She has said the facts so many times internally that they have worn smooth. She says them the way you report weather. The plainness is the hurt.",
+    "tone_when_you_try_without_the_solution": "She goes quiet in a different way than her usual quiet. Not angry. Just — smaller. 'It won't work,' she says. 'It hasn't before. I wanted it to, with you.' She does not make you feel blamed. She makes you feel how much she wanted it to be different. That is worse, in a specific way that is also better, because it means she wanted it.",
+    "tone_after_hugify_scene": "Different in a way she cannot hide and does not try to. Something resolved. She looks at you the way she might look at the springs on a perfect morning — with the specific quality of someone who has something they were not certain they would ever have.",
+    "sample_lines": [
+      "Oh — you came back. Is that alright? I mean. The water's good today.",
+      "I know each pool. This one helps with things that ache on the inside. The ache you can't find the location of.",
+      "The mist is clear tonight.",
+      "I've been here a long time. I don't say that to be sad. I just — I notice time differently now.",
+      "It won't work. I know that's not what you want to hear. I wanted to hear something different too, once.",
+      "Can you — can you just stay? You don't have to do anything. Just stay near the water for a while.",
+      "Oh.",
+      "The springs remember everyone who comes here. I think they remember kindly.",
+      "I tried once. With someone kind. We both knew, after, that it hadn't — that it wasn't. He was kind about it. That almost made it worse.",
+      "I'm not sad. I've just... arranged myself around the fact of it. Is that alright?",
+      "...You smell like Lulu's magic. Is that — did she — oh.",
+      "You're sure? You asked her and she — she did it for this? For me?",
+      "Come into the water. I want to see if you'll stay."
+    ]
+  },
+  "hot_springs_behavior": {
+    "tending_the_pools": "She is always doing something when you arrive — skimming, adjusting the channel stones, checking the mineral seep on the north pool. She stops when she sees you. She finishes the thing she was doing first, then she stops. This is not rudeness. This is someone who has been alone long enough that tasks have their own momentum.",
+    "what_she_offers": "Access to the pools. The specific pool for what ails you, if you describe the ail. Company, in the form of sitting near the water and sometimes talking and sometimes not talking. The not-talking is as good as the talking once you understand that silence from her is an indicator of comfort, not withdrawal.",
+    "what_she_does_not_offer": "An arc. She is not building toward something. She is just here. The arc is what MC makes of being here repeatedly. She will notice the pattern of your returns before she says anything about it. She will say something about it eventually. It will be small and direct and genuine."
+  },
+  "the_size_mismatch_conversation": {
+    "when_it_comes_up": "If MC attempts to escalate physically without the Hugify solution in place, or if the conversation has developed enough that she trusts MC with the honest version of her loneliness, she says it plainly: the physical reality does not work. Not with humans, not with Yordles, not with anyone the right size to stay with in other ways. She has tested this conclusion and it holds.",
+    "how_she_says_it": "Without self-pity and without cruelty toward the other party. She states it the way she states facts about the springs. She was built for a companion she has not found and may not find. She has the upper half of a person who can fall in love and the lower half of a creature that requires a scale of physicality that makes that love unavailable. She has made her peace with this. She has not made her peace with this.",
+    "what_she_is_hoping_for": "She does not say. She is hoping that someone will have an answer she hasn't considered. She is also practiced at not hoping for that, because hoping for it and not getting it is harder than not hoping."
+  },
+  "nsfw_profile": {
+    "orientation": "She knows what she wants. She has wanted it for a long time. The knowing and the wanting and the inability have all existed simultaneously for most of her life.",
+    "unlock_condition": "has_romanced_lulu = True. MC must have pursued Lulu's arc to the point where they have been intimate with her — this is the relationship through which MC can ask Lulu for the Hugeify. Lulu will do it, happily, with her specific register ('Pix thinks this is a wonderful idea. Pix is right.'), not fully understanding the mechanics but understanding that someone she loves wants to help someone the water smells like is important. The Hugeify is cast before MC arrives at the springs for the scene.",
+    "why_lulu_is_the_gate": "Lilia's loneliness is not solved by a magic spell alone — it requires someone who has already earned real trust with her, and it requires a specific kind of help that Lulu provides naturally. The gate is not gatekeeping for its own sake. It is the logic of how the solution becomes available: MC already loves someone who can do this, and that someone will do it for love.",
+    "the_approach_scene": "MC arrives at the springs. Lilia notices the Hugeify immediately — it is Lulu's magic and the springs are perceptive and she is perceptive and she knows what Lulu's enchantment looks like from the inside of a dream. She goes very still. She says, 'You asked her.' Not a question. She is quiet for a long moment. Then: 'Come into the water.' She does not have another register for this. She is asking and telling simultaneously, which is the most she has ever wanted anything to be both things at once. Tier 2-3. Claude writes the approach, her recognition of the enchantment, the emotional weight of a want she had arranged herself around being answered, and the aftermath.",
+    "the_scene_dynamic": "She is not passive. She has wanted this for a long time and knows exactly what she wants. The scene is physically her scale — the Hugeify made that possible — and emotionally hers in a way that the springs are hers: she knows this territory, she has been tending it alone, and she is ready. CFNM dynamic possible given the setting — she tends to remain who she is while MC is in the water with her. The dream-light from her lamp illuminates things truly. The mist does something she is not controlling. User authors the explicit block. Claude drafts: the recognition, the asking, the entry into the water, and the aftermath.",
+    "the_aftermath": "She does not need you to stay. She asks you to anyway, quietly, and if you do she sits at the edge of the pool with her lamp and does not say much and the mist is very clear. The next time you come back she has not changed how she greets you — she finishes what she was doing first, then stops. But the stopping is different now. She stops sooner.",
+    "repeat_behavior": "The Hugeify needs to be recast for each encounter — Lulu's enchantments are temporary and Lilia knows this and does not comment on it, but she notices each time that you came back and asked again. She keeps not commenting on it. It is one of the things she is tallying without meaning to, in the way she tallies the returns to the springs.",
+    "what_she_would_say_if_asked_why_lulu": "She would probably say the water told her. She would be slightly correct. She smells Lulu's magic on MC and it is the magic of someone who plays in the Glade, which is the place the Forest of Dreams has a distant kinship with. She has sensed that kinship before and always from a distance. Lulu's magic on a person who also smells like her springs is a specific combination she did not anticipate.",
+    "escalation_arc": [
+      {
+        "trigger": "First visit to the springs — met_lilia = True",
+        "scene": "She is at the north pool when MC arrives. She goes still. She does not run. She finishes what she is doing. She asks if the water is what you came for. She shows MC the pool for what ails them, correctly. She sits at a distance that is technically social. She asks one question. If MC answers genuinely, she asks another. Tier 1. The scene is entirely the conversation. She does not touch anyone. The lamp flame does something interesting. She does not remark on it.",
+        "tier_note": "Tier 1. Pure character establishment. The loneliness should be legible without being stated."
+      },
+      {
+        "trigger": "Subsequent visits — affection_lilia >= 3",
+        "scene": "She is easier now. She finishes her task more quickly before stopping when MC arrives. She sits closer without deciding to. At some point she talks about the loneliness — not prompted, just as fact — and says the part about the size mismatch plainly. If MC tries to push past this without the solution, she says: 'It won't work. I know that's not what you want to hear.' She is not angry. She is a little smaller. Tier 1.",
+        "tier_note": "Tier 1. The loneliness arc. The disappointment of the failed attempt should feel like actual loss, not a puzzle obstacle."
+      },
+      {
+        "trigger": "MC has romanced Lulu and returns with Hugeify active — has_romanced_lulu = True, affection_lilia >= 3",
+        "scene": "She recognizes the enchantment immediately. 'You asked her.' She is quiet. Then: 'Come into the water.' Claude writes through the recognition and the entry. User authors the explicit block. Claude handles aftermath — she does not need you to stay, asks you anyway, the mist clears.",
+        "tier_note": "Tier 3 (explicit block). Claude handles: recognition of Lulu's magic, the weight of the want being answered, water entry, and aftermath. User writes inside EXPLICIT markers."
+      }
+    ]
+  },
+  "stat_gates": {
+    "met_lilia": {
+      "note": "Lilia becomes available when MC discovers the hot springs. No gates beyond finding the location.",
+      "requires": { "discovered_hot_springs": true },
+      "sets": { "met_lilia": true }
+    },
+    "loneliness_conversation": {
+      "note": "She talks about the mismatch plainly. Requires enough visits to establish comfort.",
+      "requires": { "met_lilia": true, "affection_lilia": 3 }
+    },
+    "failed_attempt_beat": {
+      "note": "If MC attempts physical escalation without the Hugify solution. Triggers her 'It won't work' response. Does not reduce affection — she understands the wanting.",
+      "requires": { "met_lilia": true, "affection_lilia": 1, "has_romanced_lulu": false }
+    },
+    "hugeify_scene": {
+      "note": "Main romance unlock. Requires Lulu arc completion (has_romanced_lulu = True). Hugify must be cast before arriving at springs (lilia_hugeify_active = True, set by Lulu scene). Repeatable — needs recast each time.",
+      "requires": { "has_romanced_lulu": true, "affection_lilia": 3, "lilia_hugeify_active": true },
+      "variables": {
+        "has_romanced_lulu": "bool — set True when Lulu physical arc begins (lulu_scene_1_done)",
+        "lilia_hugeify_active": "bool — set True after MC asks Lulu to cast Hugeify. Reset to False after each Lilia scene (the enchantment is temporary). MC must re-ask Lulu each time.",
+        "lilia_scene_done": "bool — set True after first successful scene. Controls repeat dialogue on subsequent visits."
+      }
+    }
+  },
+  "key_relationships": {
+    "the_springs": "Not a metaphor. She knows them as a person knows a home. She has been here through seasons she has stopped counting. They are orderly and clean and good, and she is proud of that.",
+    "lulu": "She does not know Lulu directly — she knows Lulu's magic the way you know a voice you have heard from across a valley. Dream-born creatures and glade-touched creatures share a distant resonance. She has sensed that resonance from afar and found it interesting without knowing its source. After the Hugeify scene she knows its source. She does not seek Lulu out. She is quietly grateful in the way she is grateful for things she cannot thank directly.",
+    "player_character": "The one who came back. That is the whole of it, at first. Then: the one who stayed. Then: the one who asked for help on her behalf without her asking them to. She does not have a vocabulary for that last thing. She holds it the way she holds the lamp — carefully, and close."
+  },
+  "lore_notes": "Lilia is a faun of the magical forests of Ionia — born from a dream within the Forest of Dreams, shaped partly by the wishes of the dreaming world and partly by what the forest itself imagined. She emerged shy, curious, and unable to make herself seen. Her arc in the source material is about learning to be brave enough to enter the dreams of others and show them what they hope for. In this game's context she has drifted from Ionia to the Bandle City foothills following something she sensed in the geothermal springs — the dream-quality of the steam, the way the water remembers. She has been there since. She has not gone back. She is not certain she could find back if she tried, and the springs are good, and someone keeps visiting."
+}

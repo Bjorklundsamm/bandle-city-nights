@@ -57,17 +57,18 @@ screen day_card(day, quote):
     modal True
 
     ## Full black background — fades in via the screen's own ATL.
-    add Solid("#000000"):
+    add Solid("#000000") at transform:
         alpha 0.0
         linear 0.6 alpha 1.0
 
     ## Content fades in slightly after the background.
     vbox:
+        at transform:
+            alpha 0.0
+            linear 0.8 alpha 1.0
         xalign 0.5
         yalign 0.44
         spacing 28
-        alpha 0.0
-        linear 0.8 alpha 1.0
 
         ## "Day X / 31"
         text "Day [day] / 31":

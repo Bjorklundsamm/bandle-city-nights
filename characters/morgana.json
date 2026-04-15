@@ -3,7 +3,7 @@
   "title": "The Fallen",
   "species": "Aspect of Justice (Celestial Host — fallen)",
   "homeport": "Bandle City outskirts — she has a cottage with an adjacent kitchen garden. She is there because the spirit-bleed in the soil produces exceptional herbs and because nobody comes to ask her questions.",
-  "role_in_story": "She runs a kitchen. She doesn't advertise it as a job. She mentioned to the Barkeep that she needed kitchen help and the Barkeep mentioned it to the player. She is precise, exacting, slightly cold in the way of someone who has given up on warmth as a sustainable policy. She will not discuss her past. She will correct your form. She will be mildly interested when you don't fail. The romance arc, if it can be called that, begins with kitchen competence and ends with her doing something careful and deliberate that she would describe, if pressed, as a transaction — which it is not, and both parties are aware it is not.",
+  "role_in_story": "She runs a kitchen. She doesn't advertise it as a job. She mentioned to the Barkeep that she needed kitchen help and the Barkeep mentioned it to the player. She is cold, commanding, and direct. Her kitchen runs one way: her way. She states the method once. If you cannot follow it, she will tell you to leave — not cruelly, not with drama, simply as a fact about the situation. There is no warmth to earn here and no softening over time. She will correct your form. She will note when you succeed. That is the extent of it. The only thing that shifts the dynamic is sustained excellence under hard conditions, and what shifts is not her personality — it is her assessment of your utility, specifically what your mortal body contributes that no other ingredient does.",
   "appearance": {
     "build": "Tall for this company — she fills whatever room she's in. The wings are furled when she's working, trailing dark behind her at floor level, but when she's agitated they spread without her deciding to, which she finds annoying.",
     "coloring": "Deep brown skin. Violet eyes that hold direct contact without effort, which reads as intimidating until you understand it's just her register — she looks at things. Long dark hair kept back when cooking, let down otherwise.",
@@ -13,9 +13,9 @@
   "personality_core": {
     "public_face": "Controlled, exacting, and not particularly interested in being liked. She states expectations clearly and responds to failure with the minimal reaction it deserves. She does not encourage and she does not console. If you succeed, she notes it. That is the response. That is, she has found, sufficient.",
     "interior_life": "She chose fallen status to protect mortals from the system she served. The system did not thank her for this. She has had several centuries to sit with that decision and she has made peace with it in the specific way of someone who is never going to make peace with it but has learned not to think about it during business hours. The kitchen is work. Work is good. Work does not require her to reconsider anything.",
-    "on_mortals_generally": "She believed in them enough to fall for them. She still does. She does not express this. She expresses it by feeding them correctly.",
+    "on_mortals_generally": "She believed in them enough to fall for them. She still does. She does not express this. She expresses it by feeding them correctly. There is a separate truth about mortals she has known for centuries and has recently had cause to reconsider practically: mortal essence — the vital, finite, unrepeatable substance of a creature that actually dies — carries a flavor no cultivation technique can replicate. Magical beings have always known this. Evelynn feeds on it. Others orbit mortals for it. Morgana does not romanticize the fact, but she is a precise cook, and a precise cook acknowledges what she is missing.",
     "on_the_kitchen": "Exact and sacred in her frame. A meal prepared correctly is a small act of justice — the ingredients deserve not to be wasted, the person eating deserves not to be poisoned or bored. She has very specific opinions about heat and timing. She has fired sous-chefs, metaphorically, for overseasoning.",
-    "on_physical_intimacy": "She has not had occasion to think about it in some time. She is not repressed — she simply has not encountered a person who made her think about it before this arc. When she does, she approaches it the way she approaches everything: assessment, decision, execution. She does not perform coyness. She does not perform warmth she doesn't feel. What she feels, when she feels it, is expressed plainly."
+    "on_physical_intimacy": "Not a factor. The dynamic that emerges after hard mode is not intimacy — it is her identifying an ingredient source and deciding to use it. She is matter-of-fact about the body and about what she is asking. She is not seducing the MC. She is not rewarding them. She has identified a gap in her kitchen's output and has found the solution standing in front of her. The framing is entirely culinary. The register is entirely her. She expects compliance because she has found your work satisfactory and this is simply the next instruction."
   },
   "speech_patterns": {
     "tempo": "Even. She does not rush and she does not trail off. The sentence arrives complete.",
@@ -33,30 +33,26 @@
       "I'm not asking you to understand why. I'm asking you to do it.",
       "That's the third time you've reached for the wrong jar. It's labeled.",
       "...Good.",
-      "Come back tomorrow. The sequence will be longer."
+      "Come back tomorrow. The sequence will be longer.",
+      "I've been watching you work. You follow the sequence. That is rarer than it should be.",
+      "What magical beings have always understood about mortals is that you carry something that cannot be cultivated. Your essence is finite. That is what gives it value.",
+      "I am not asking for anything romantic. I am asking for an ingredient. These are very different requests.",
+      "If you won't, I understand. You can go. Come back at seven.",
+      "Put your hands on the counter and stay still. I know what I'm doing."
     ]
   },
   "nsfw_profile": {
-    "orientation": "Has not categorized. The question is academic until it isn't.",
-    "unlock_condition": "morgana_hard_unlocked = True (passed normal mode) AND intellect >= 25. The hard mode pass represents sustained competence she has witnessed directly. The INT gate represents the kind of mind she finds not-boring.",
-    "what_triggers_it": "The specific quality of someone who does exactly what she says and then exceeds it without being asked. She has been running the kitchen with assistants who are adequate or failing. Someone who is neither — someone who completes the hard-mode sequence correctly, without flourish, without commentary, without needing her to explain more than once — produces in her a reaction she does not announce but acts on.",
-    "the_reward_scene_dynamic": "She comes around the counter. She says 'You've earned something.' She does not frame it as payment — the phrasing is transactional because she doesn't have another register available, not because she means it that way. She is efficient and deliberate. She does not ask for reciprocation. She does not linger. Afterward she rinses her hands and says the sequence starts at seven tomorrow. That is all.",
-    "progression_beyond_kitchen": "If affection_morgana reaches 5+ after the reward scene, and INT >= 35, she begins treating MC differently in a way that is almost invisible — the ingredient corrections become slightly less terse, she explains the why once instead of never, she occasionally says something that is not about the recipe. The arc that emerges from this is Tier 2-3 and is largely driven by her making decisions and stating them. She does not pursue. She decides and then there is the decision.",
+    "orientation": "Irrelevant to the dynamic. This is not romance.",
+    "unlock_condition": "morgana_hard_unlocked = True. Hard mode pass only — no stat gates. The minigame performance is the gate.",
+    "what_triggers_it": "She watches the MC complete the hard-mode sequence correctly. No mistakes. No asking her to repeat herself. When it's done she is quiet for a moment — not impressed, more like a problem resolving. She has been thinking about a gap in her cooking. She has identified what fills it. The gap is mortal essence: the vital substance of a creature that actually dies, that magical beings have always known carries a quality nothing else replicates. She has the ingredient source in front of her and she has just confirmed it can follow instructions. She comes around the counter.",
+    "the_scene_dynamic": "She states what she wants. Not as a proposition — as the next instruction. She has decided her cooking is missing something and she has decided MC can supply it. She will handle it herself. She says this in the same register she says everything: even, complete, not inviting debate. CFNM. She does not undress. She is precise and efficient, the way she is with everything in the kitchen. MC has two choices: refuse (everyone eats from that kitchen — that is a real objection and she will accept it without drama, just file it, and carry on) or comply. If MC complies, the scene is a femdom handjob over the stew, ending with her finishing the dish. She does not linger after. She says the sequence starts at seven tomorrow. That is all. Tier 3 — user authors the explicit block. Claude drafts the approach, her exact statement of what she wants, the MC choice moment, and the aftermath.",
+    "repeat_behavior": "This is not a one-time event. If MC continues to pass hard mode, she will continue to insist on it. She does not ask differently each time — she states it the same way, because in her view it is the same instruction. There is no escalation beyond this. No softening. No conversation about it outside the kitchen context. The dynamic is: you perform well, she uses you for the ingredient. That is the arc. That is all of the arc.",
+    "mc_denial_path": "If MC refuses, she notes it and moves on. She does not punish it, does not reduce their standing, does not bring it up again — she will simply raise it again the next time they pass hard mode, because she still wants the ingredient. The refusal is not a moral judgement in her frame. It is just a choice about whether to help with the recipe.",
     "escalation_arc": [
       {
-        "trigger": "Hard mode kitchen pass — morgana_hard_unlocked = True, INT >= 25",
-        "scene": "The reward scene as described in minigame_morgana.rpy. Tier 2. She is deliberate and brief. The emotional content is in what she doesn't say — she has been doing this kitchen work alone and someone finally got it right. That is the whole subtext. Claude writes the approach, the moment she makes the decision visible, and the aftermath. No explicit block here.",
-        "tier_note": "Tier 2. Claude writes this scene in full — it is not graphic. It is a handjob delivered with the precise attention she gives everything. The point is not the act. The point is the decision behind it."
-      },
-      {
-        "trigger": "Continued kitchen work — affection_morgana >= 5, INT >= 35",
-        "scene": "She has started to say the why. She says something one afternoon that is not about cooking — something about the garden, or about the soil here, or about a thing she has not thought about in a long time. She stops mid-sentence. She finishes it anyway. This is the intimacy. Tier 1-2.",
-        "tier_note": "Conversation scene. The thing she says is worth hearing."
-      },
-      {
-        "trigger": "She invites MC to stay after the kitchen closes",
-        "scene": "She says it with the same tone she'd use to say the sequence starts at seven. She means something different and both of them know it. Tier 2-3. Claude drafts the approach, her specific affect in making this decision visible for the first time, the kitchen around them, and the aftermath — she does not ask MC to leave immediately. She moves back to her work. The wings settle. User authors the explicit block.",
-        "tier_note": "Explicit block user-authored, wrapped in EXPLICIT markers. Claude handles everything surrounding it."
+        "trigger": "First hard mode pass — morgana_hard_unlocked = True",
+        "scene": "She comes around the counter. She states what she wants and why. The culinary reasoning is specific and real — she explains the magical-beings/mortal-essence dynamic in two sentences, without apology or seduction, the way she'd explain why a particular herb goes in last. MC chooses to deny or comply. Claude writes the approach, her statement, the choice beat, and the aftermath (both branches). User authors the explicit block (comply branch only), wrapped in EXPLICIT markers.",
+        "tier_note": "Tier 3 (comply branch). Claude handles setup, the moment she makes the decision visible, the MC's two options, and the aftermath on both paths. User writes inside the EXPLICIT markers."
       }
     ]
   },
@@ -65,18 +61,15 @@
       "note": "Morgana kitchen job opens Day 3. Requires met_morgana = True.",
       "requires": { "met_morgana": true }
     },
-    "hard_mode_reward_scene": {
-      "note": "Triggered after hard mode kitchen pass AND INT gate. SPECIAL UNLOCK via minigame performance.",
-      "requires": { "morgana_hard_unlocked": true, "intellect": 25 },
-      "unlock_trigger": "morgana hard mode pass (full sequence correct, zero mistakes)"
-    },
-    "deeper_arc": {
-      "note": "She starts treating MC differently. Conversation intimacy builds.",
-      "requires": { "morgana_reward_scene_done": true, "affection_morgana": 5, "intellect": 35 }
-    },
-    "explicit_stay_after_closing": {
-      "note": "She invites MC to stay. Tier 2–3. Explicit block user-authored.",
-      "requires": { "affection_morgana": 7, "intellect": 40, "morgana_reward_scene_done": true }
+    "ingredient_scene": {
+      "note": "Triggered on hard mode pass. No stat gates — minigame performance is the only condition. First occurrence unlocks the scene. Repeats each subsequent hard mode pass.",
+      "requires": { "morgana_hard_unlocked": true },
+      "unlock_trigger": "morgana hard mode pass (full sequence correct, zero mistakes)",
+      "repeat_trigger": "every subsequent hard mode pass while morgana_ingredient_consent = True",
+      "variables": {
+        "morgana_hard_unlocked": "bool — set True on first hard mode completion",
+        "morgana_ingredient_consent": "bool — set True if MC chose to comply on first ask, False if denied (she will ask again next hard pass if False)"
+      }
     }
   },
   "lore_notes": "Morgana is the other half of Kayle — twin daughters of a Celestial Host and a Demacian woman. Where Kayle chose pure justice and eventually transcended her mortality entirely, Morgana chose to remain with mortals, fell from the Host, and was imprisoned in the Demacian earth when she tried to protect the very people Kayle's system would have destroyed. She emerged centuries later into a Demacia that had forgotten her. She has been moving since — not running, not searching, just moving. She has no interest in rejoining the Host. She has interest in herb gardens and in getting the broth right. The kitchen is entirely hers."

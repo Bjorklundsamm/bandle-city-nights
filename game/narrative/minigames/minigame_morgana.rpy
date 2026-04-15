@@ -57,8 +57,10 @@ screen morgana_memorize(sequence, current_index):
                         else:
                             background "#2a1040"
                         vbox:
-                            add "bt morgana {}.png".format(ing.lower().replace(" ", "_")) \
-                                xsize 64 ysize 64 xalign 0.5
+                            add "bt morgana {}.png".format(ing.lower().replace(" ", "_")):
+                                xsize 64
+                                ysize 64
+                                xalign 0.5
                             text ing xalign 0.5 style "morgana_ingredient_label"
 
 
@@ -82,7 +84,9 @@ screen morgana_input(shuffled, entered, sequence, mistakes):
                         padding (4, 4)
                         background ("#2a5020" if i < len(entered) else "#2a1040")
                         if i < len(entered):
-                            text entered[i] xalign 0.5 yalign 0.5 \
+                            text entered[i]:
+                                xalign 0.5
+                                yalign 0.5
                                 style "morgana_ingredient_label"
 
             # Input buttons
