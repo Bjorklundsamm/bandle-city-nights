@@ -492,6 +492,13 @@ screen dev_menu():
 
                     null height 8
 
+                    ## Day 1
+                    text "DAY 1":
+                        size 11
+                        color "#444466"
+
+                    null height 4
+
                     grid 4 2:
                         spacing 8
                         xfill True
@@ -517,6 +524,44 @@ screen dev_menu():
                         textbutton "gameover1":
                             text_size 13
                             action [Hide("dev_menu"), Jump("gameover1")]
+                        textbutton "— ":
+                            text_size 13
+                            sensitive False
+
+                    null height 12
+
+                    ## Day 2
+                    text "DAY 2":
+                        size 11
+                        color "#444466"
+
+                    null height 4
+
+                    grid 4 2:
+                        spacing 8
+                        xfill True
+
+                        textbutton "d2 tavern":
+                            text_size 13
+                            action [Hide("dev_menu"), Jump("day2_tavern_loop")]
+                        textbutton "d2 outside":
+                            text_size 13
+                            action [Hide("dev_menu"), Jump("day2_outside_loop")]
+                        textbutton "d2 miss fortune":
+                            text_size 13
+                            action [Hide("dev_menu"), Jump("day2_meet_miss_fortune")]
+                        textbutton "d2 fizz":
+                            text_size 13
+                            action [Hide("dev_menu"), Jump("day2_meet_fizz")]
+                        textbutton "d2 kat peek":
+                            text_size 13
+                            action [Hide("dev_menu"), Jump("morning_day_2_peek_katarina")]
+                        textbutton "d2 steal dice":
+                            text_size 13
+                            action [Hide("dev_menu"), Jump("morning_day_2_steal_dice")]
+                        textbutton "kat dice scene":
+                            text_size 13
+                            action [Hide("dev_menu"), Jump("tavern_tutorial_katarina")]
                         textbutton "— ":
                             text_size 13
                             sensitive False
