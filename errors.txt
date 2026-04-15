@@ -2,8 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script_main.rpy", line 281: unterminated string literal
-    """
+File "game/screens.rpy", line 127: 'alpha' is not a keyword argument or valid child of the window statement.
+    alpha 0.0
+         ^
 
-Ren'Py Version: Ren'Py 8.4.1.25072401
-Sun Apr 12 01:56:12 2026
+Ren'Py Version: Ren'Py 8.6.0.00000000+unofficial.unknown
+Mon Apr 13 13:57:23 2026

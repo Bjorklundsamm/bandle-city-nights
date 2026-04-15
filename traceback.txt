@@ -1,45 +1,53 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script_tavern.rpy", line 35, in script
-    call screen tavern_hub
-  File "game/screens.rpy", line 382, in execute
-    screen tavern_hub():
-  File "game/screens.rpy", line 382, in execute
-    screen tavern_hub():
-  File "game/screens.rpy", line 386, in execute
-    imagebutton:
-  File "game/screens.rpy", line 386, in keywords
-    imagebutton:
-  File "game/screens.rpy", line 389, in <module>
-    hover Transform("ch barkeep tavern position", matrixcolor=BrightenMatrix(0.15))
-                                                              ^^^^^^^^^^^^^^       
-NameError: name 'BrightenMatrix' is not defined. Did you mean: 'BrightnessMatrix'?
+  File "game/script_tavern.rpy", line 42, in script call
+    call tavern_tutorial_barkeep
+  File "game/script_tavern.rpy", line 105, in script call
+    call barkeep_ask_about
+  File "game/script_room.rpy", line 40, in script
+    menu:
+  File "game/screens.rpy", line 225, in execute
+    screen choice(items):
+  File "game/screens.rpy", line 225, in execute
+    screen choice(items):
+  File "game/screens.rpy", line 226, in execute
+    vbox:
+  File "game/screens.rpy", line 232, in execute
+    for i in items:
+  File "game/screens.rpy", line 233, in execute
+    button:
+  File "game/screens.rpy", line 240, in execute
+    fixed:
+  File "game/screens.rpy", line 243, in execute
+    add Transform(
+  File "game/screens.rpy", line 244, in <module>
+    Gradient(
+    ^^^^^^^^ 
+NameError: name 'Gradient' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Traceback (most recent call last):
-  File "game/script_tavern.rpy", line 35, in script
-    call screen tavern_hub
-  File "renpy/ast.py", line 2231, in execute
-    self.call("execute")
-    ~~~~~~~~~^^^^^^^^^^^
-  File "renpy/ast.py", line 2195, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/statements.py", line 379, in call
-    return method(parsed, *args, **kwargs)
-           ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/common/000statements.rpy", line 695, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-                    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/exports/statementexports.py", line 348, in call_screen
-    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/ui.py", line 304, in interact
+  File "game/script_tavern.rpy", line 42, in script call
+    call tavern_tutorial_barkeep
+  File "game/script_tavern.rpy", line 105, in script call
+    call barkeep_ask_about
+  File "game/script_room.rpy", line 40, in script
+    menu:
+  File "renpy/ast.py", line 1843, in execute
+    choice = renpy.exports.menu(choices, self.set, args, kwargs, item_arguments)
+             ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/exports/menuexports.py", line 135, in menu
+    rv = renpy.store.menu(new_items)
+         ~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "renpy/exports/menuexports.py", line 418, in display_menu
+    rv = renpy.ui.interact(mouse="menu", type=type, roll_forward=roll_forward)
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/ui.py", line 306, in interact
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/core.py", line 2219, in interact
+  File "renpy/display/core.py", line 2164, in interact
     repeat, rv = self.interact_core(
                  ~~~~~~~~~~~~~~~~~~^
         preloads=preloads,
@@ -47,24 +55,24 @@ Traceback (most recent call last):
     ...<4 lines>...
         **kwargs,
         ^^^^^^^^^
-    )  # type: ignore
-    ^                
-  File "renpy/display/core.py", line 2757, in interact_core
+    )
+    ^
+  File "renpy/display/core.py", line 2710, in interact_core
     root_widget.visit_all(lambda d: d.per_interact())
     ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/displayable.py", line 432, in visit_all
+  File "renpy/display/displayable.py", line 460, in visit_all
     d.visit_all(callback, seen)
     ~~~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "renpy/display/displayable.py", line 432, in visit_all
+  File "renpy/display/displayable.py", line 460, in visit_all
     d.visit_all(callback, seen)
     ~~~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "renpy/display/displayable.py", line 432, in visit_all
+  File "renpy/display/displayable.py", line 460, in visit_all
     d.visit_all(callback, seen)
     ~~~~~~~~~~~^^^^^^^^^^^^^^^^
   File "renpy/display/screen.py", line 503, in visit_all
     callback(self)
     ~~~~~~~~^^^^^^
-  File "renpy/display/core.py", line 2757, in <lambda>
+  File "renpy/display/core.py", line 2710, in <lambda>
     root_widget.visit_all(lambda d: d.per_interact())
                                     ~~~~~~~~~~~~~~^^ 
   File "renpy/display/screen.py", line 514, in per_interact
@@ -73,26 +81,32 @@ Traceback (most recent call last):
   File "renpy/display/screen.py", line 715, in update
     self.screen.function(**self.scope)
     ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-  File "game/screens.rpy", line 382, in execute
-    screen tavern_hub():
-  File "game/screens.rpy", line 382, in execute
-    screen tavern_hub():
-  File "game/screens.rpy", line 386, in execute
-    imagebutton:
-  File "game/screens.rpy", line 386, in keywords
-    imagebutton:
-  File "renpy/python.py", line 1292, in py_eval
+  File "game/screens.rpy", line 225, in execute
+    screen choice(items):
+  File "game/screens.rpy", line 225, in execute
+    screen choice(items):
+  File "game/screens.rpy", line 226, in execute
+    vbox:
+  File "game/screens.rpy", line 232, in execute
+    for i in items:
+  File "game/screens.rpy", line 233, in execute
+    button:
+  File "game/screens.rpy", line 240, in execute
+    fixed:
+  File "game/screens.rpy", line 243, in execute
+    add Transform(
+  File "renpy/python.py", line 1369, in py_eval
     return py_eval_bytecode(code, globals, locals)
            ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/python.py", line 1285, in py_eval_bytecode
+  File "renpy/python.py", line 1362, in py_eval_bytecode
     return eval(bytecode, globals, locals)
            ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "game/screens.rpy", line 389, in <module>
-    hover Transform("ch barkeep tavern position", matrixcolor=BrightenMatrix(0.15))
-                                                              ^^^^^^^^^^^^^^       
-NameError: name 'BrightenMatrix' is not defined. Did you mean: 'BrightnessMatrix'?
+  File "game/screens.rpy", line 244, in <module>
+    Gradient(
+    ^^^^^^^^ 
+NameError: name 'Gradient' is not defined
 
-Windows-10-10.0.19045-SP0 AMD64
-Ren'Py 8.4.1.25072401
+macOS-15.6.1-arm64-arm-64bit arm64
+Ren'Py 8.6.0.00000000+unofficial.unknown
 Bandle City Nights 1.0
-Sun Apr 12 14:54:32 2026
+Mon Apr 13 13:55:31 2026

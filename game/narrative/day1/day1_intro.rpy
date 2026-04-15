@@ -1,73 +1,14 @@
-﻿# The script of the game goes in this file.
+# narrative/day1/day1_intro.rpy
+# The opening sequence: the chase, waking up, meeting the barkeep,
+# and the tutorial introductions to Tristana, Poppy, and Lulu.
+#
+# Flow: start → wakingUp → introductions → gameStart → tavern_tutorial_loop
 
-# Declare characters used by this game. The color argument colorizes the
-# name of the character.
-
-define n = Character("Narrator")
-define b = Character("Barkeep")
-define mc = Character("[player_name]")
-define s = Character("System")
-
-define unkwn = Character("???")
-
-define t = Character("Tristana")
-define p = Character("Poppy")
-define l = Character("Lulu")
-define f = Character("Fizz")
-define vx = Character("Vex")
-define k = Character("Katarina")
-define a = Character("Ahri")
-define ez = Character("Ezreal")
-define neo = Character("Neeko")
-define ni = Character("Nidalee")
-define j = Character("Jinx")
-
-default persistent.fizz_met = False
-default persistent.constitution = 1
-default persistent.strength = 1
-default persistent.charisma = 1
-default persistent.intellect = 1
-default constitution_hud_visible = False
-default player_name = "Stranger"
-
-# Tavern presence flags — set each night before entering the tavern loop.
-# All True for the tutorial night; adjust per future night scripts.
-# Barkeep and Poppy are unconditional in the screen — no flags needed.
-default tristana_in_tavern = True
-default vex_in_tavern = True
-default katarina_in_tavern = True
-default ahri_in_tavern = True
-default ezreal_in_tavern = True
-default nidalee_neeko_in_tavern = True
-default jinx_in_tavern = True
-
-# First-meeting flags for tutorial night introductions.
-# Tristana and Poppy are already met via the gameStart sequence.
-# met_tristana uses an integer — 1 = met in gameStart, 2+ = tavern scene done.
-default met_tristana = 1
-default met_poppy = True
-default met_vex = False
-default met_katarina = False
-default met_ahri = False
-default met_ezreal = False
-default met_nidalee_neeko = False
-default met_jinx = False
-default met_barkeep = True
-
-
-# The game starts here.
 
 label start:
 
     stop music fadeout 1.5
-
     scene bg black default
-
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
-
-    # These display lines of dialogue.
 
     n "The sound of the leaves rushing past barely even registers as you dash forward, your heart thundering in your chest."
     n "Every step seems to jolt you with the force of an explosion, your eyes fixed desperately on what lies ahead."
@@ -93,11 +34,11 @@ label start:
     n "You collapse, tumbling in a violent burst of leaves and dust, your breath coming in desperate and panicked gasps."
 
     n """
-    You're... 
-    
+    You're...
+
     You're... going to die here...
     """
-    
+
     n """
      Your skin grows cold, your breath ragged... The haunting blue eyes of your pursuer growing closer...
     """
@@ -109,6 +50,7 @@ label start:
     n "The words grow more distant as the world slips further away and then it is gone completely."
 
     jump wakingUp
+
 
 label introductions:
 
@@ -233,10 +175,10 @@ menu:
         $ renpy.block_rollback()
         jump gameover1
 
+
 label gameStart:
 
     scene bg tavern empty
-
     show ch bartender profile default smiling
 
     n "You take her hand. It's smaller than yours, and cooler."
@@ -298,7 +240,6 @@ label gameStart:
 
     t "If anything, this place was due for a fresh face — gambling with the same people over and over gets old fast."
     t "If you ever wanna join me, I'm here just about every night at that table in the back."
-
     t "You should swing by for a few games, that is if you're ready to hand over all your hard earned money."
 
     n "She shoots you a teasing smirk and a wink before taking her drink from the bar and making her way across the room."
@@ -336,7 +277,6 @@ label gameStart:
 
     n "You start, for the second time, turning to see a pair of big blonde pigtails and a set of bright pink eyes."
     n "Another blue Yordle is looking up at you, quietly judging and weighing you with her gaze."
-
     n "She was a bit taller than Tristana, but not by much. What she did have though was muscle and the way she crossed her arms showed it."
 
     unkwn "You're a new face. My name is Poppy."
@@ -352,7 +292,7 @@ label gameStart:
     p "Glad to hear it. I overheard you mention your name was [player_name] — welcome to the city. I'm sure we'll be seeing each other around."
 
     n "Her eyes drift past you and she raises a hand to the Imp at the counter before returning to her position near the door."
-    n "Hopping up onto a stool, she resumes her vigil, keepng a careful eye on the room."
+    n "Hopping up onto a stool, she resumes her vigil, keeping a careful eye on the room."
 
     hide ch poppy profile default with dissolve
 

@@ -724,8 +724,6 @@ screen tavern_hub():
 ## The journal tracks relationships, stats, and days elapsed.
 ## Unlocked alongside the journal system announcement in gameStart.
 
-default journal_unlocked = False
-
 screen journal_button():
     zorder 260
     if journal_unlocked and quick_menu:
@@ -780,33 +778,7 @@ init python:
         ("morgana",       "Morgana",       "met_morgana",        "affection_morgana"),
     ]
 
-## Default affection values (0–5 hearts each).
-default affection_barkeep = 0
-default affection_tristana = 0
-default affection_poppy = 0
-default affection_lulu = 0
-default affection_vex = 0
-default affection_katarina = 0
-default affection_ahri = 0
-default affection_ezreal = 0
-default affection_nidalee = 0
-default affection_neeko = 0
-default affection_jinx = 0
-default affection_kindred = 0
-default affection_lilia = 0
-default affection_miss_fortune = 0
-default affection_fizz = 0
-default affection_morgana = 0
-
-## Met flags for characters not already declared elsewhere.
-default met_lulu = True
-default met_kindred = False
-default met_lilia = False
-default met_miss_fortune = False
-default met_morgana = False
-
-## Current in-game day (starts at 1, cap at 31).
-default current_day = 1
+## All defaults (affection, met flags, current_day) are in narrative/defines.rpy.
 
 screen journal_screen():
     modal True
@@ -2333,3 +2305,86 @@ style slider_vbox:
 style slider_slider:
     variant "small"
     xsize 900
+
+
+################################################################################
+## Placeholder asset system
+##
+## Used wherever a real asset (bg, ch sprite, bt button) doesn't exist yet.
+## ph_bg        — full-screen background stand-in (dark slate + label)
+## ph_sprite    — character sprite stand-in (tall outlined box + label)
+## ph_button    — interactive button stand-in (small outlined box + label)
+##
+## Usage in script:
+##   call screen ph_bg("bg patron room")
+##   call screen ph_sprite("ch katarina sleeping")
+##   show screen ph_button("bt dice", 0.72, 0.55)
+################################################################################
+
+screen ph_bg(label="[ MISSING BG ]"):
+    ## Full-screen dark fill so the scene isn't blank.
+    zorder 1
+    add Solid("#1a1e24")
+    frame:
+        xfill True
+        yfill True
+        background None
+        text "[label]":
+            xalign 0.5
+            yalign 0.5
+            color "#ff6b3580"
+            size 28
+            font gui.name_text_font
+
+
+screen ph_sprite(label="[ MISSING SPRITE ]", xalign=0.5, yalign=1.0):
+    ## Tall outlined box standing in for a character sprite.
+    zorder 50
+    frame:
+        xalign xalign
+        yalign yalign
+        xsize 280
+        ysize 520
+        background Solid("#ff6b3518")
+        foreground Frame(Solid("#ff6b3560"), Borders(2, 2, 2, 2))
+        vbox:
+            xalign 0.5
+            yalign 0.5
+            spacing 12
+            text "[ ART NEEDED ]":
+                xalign 0.5
+                color "#ff6b35cc"
+                size 18
+                font gui.name_text_font
+            text "[label]":
+                xalign 0.5
+                color "#ff6b3599"
+                size 14
+                font gui.name_text_font
+
+
+screen ph_button(label="[ MISSING BTN ]", xalign=0.5, yalign=0.5):
+    ## Small clickable outlined box standing in for a button/item sprite.
+    ## Returns label string on click so the caller can check _return.
+    zorder 200
+    frame:
+        xalign xalign
+        yalign yalign
+        xsize 120
+        ysize 80
+        background Solid("#f5c84218")
+        foreground Frame(Solid("#f5c84280"), Borders(2, 2, 2, 2))
+        button:
+            xfill True
+            yfill True
+            background None
+            hover_background Solid("#f5c84230")
+            hover_sound "audio/sfx/hover_selectable.mp3"
+            activate_sound "audio/sfx/click_selectable.mp3"
+            action Return(label)
+            text "[label]":
+                xalign 0.5
+                yalign 0.5
+                color "#f5c842cc"
+                size 13
+                font gui.name_text_font

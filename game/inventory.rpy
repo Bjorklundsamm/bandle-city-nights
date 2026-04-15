@@ -1,7 +1,6 @@
 # Inventory system for Bandle City Nights
 
-# Initialize inventory variables
-default inventory_unlocked = False
+## inventory_unlocked default is in narrative/defines.rpy.
 
 transform inventory_button_zoom:
     zoom 0.5

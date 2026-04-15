@@ -1,8 +1,11 @@
-define s = Character("System", color="#ececec")
-define n = Character("Narrator")
+# narrative/endings/gameovers.rpy
+# All game-over / dead-end labels. Add new ones here as the story grows.
+
 
 label gameover1:
+
     scene bg black default
+
     n "Unwilling to waste time hanging around with the smallfolk you decide you're better risking the dangers of the forest."
 
     n "You are wrong."
