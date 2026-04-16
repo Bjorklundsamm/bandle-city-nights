@@ -375,7 +375,7 @@ screen system_got_it():
         background None
         hover_background None
         padding (0, 0)
-        action Return()
+        action [Function(renpy.block_rollback), Return()]
         hover_sound "audio/sfx/hover_selectable.mp3"
         activate_sound "audio/sfx/click_selectable.mp3"
         fixed:

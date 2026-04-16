@@ -89,11 +89,10 @@ label morning_day_2_peek_katarina:
         call screen katarina_room_peek_dice
 
         if _return == "steal":
+            hide screen katarina_room_display
             jump morning_day_2_steal_dice
 
-    else:
-        pass
-
+    hide screen katarina_room_display
     jump morning_day_2_downstairs
 
 
