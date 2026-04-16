@@ -326,7 +326,7 @@ screen dev_menu():
                             action ToggleVariable("constitution_hud_visible")
                         textbutton "inventory_unlocked":
                             text_size 12
-                            action ToggleVariable("inventory_unlocked")
+                            action [ToggleVariable("inventory_unlocked"), Show("inventory_button")]
                         textbutton "journal_unlocked":
                             text_size 12
                             action ToggleVariable("journal_unlocked")
