@@ -22,7 +22,7 @@
 ## ── Normal Mode ───────────────────────────────────────────────────────────────
 
 label teemo_job:
-    $ persistent.energy -= 1
+    $ energy -= 1
     $ persistent.teemo_visits += 1
 
     scene bg bandlewood trail
@@ -131,8 +131,8 @@ label teemo_clear:
     show ch teemo pleased
     te "Route complete. Time to spare."
     te "You're not terrible. Don't let it go to your head."
-    $ persistent.strength  += 3
-    $ persistent.intellect += 2
+    $ strength  += 3
+    $ intellect += 2
     $ persistent.teemo_hard_unlocked = True
     show screen system_overlay
     s "Strength +3. Intellect +2."
@@ -143,8 +143,8 @@ label teemo_partial:
     show ch teemo neutral
     te "Time's up. Route incomplete."
     te "You'd be dead in a real op. Come back tomorrow."
-    $ persistent.strength  += 1
-    $ persistent.intellect += 1
+    $ strength  += 1
+    $ intellect += 1
     show screen system_overlay
     s "Strength +1. Intellect +1."
     hide screen system_overlay
@@ -154,7 +154,7 @@ label teemo_partial:
 ## ── Hard Mode ─────────────────────────────────────────────────────────────────
 
 label teemo_job_hard:
-    $ persistent.energy -= 1
+    $ energy -= 1
     $ persistent.teemo_visits += 1
 
     scene bg bandlewood trail
@@ -273,8 +273,8 @@ label teemo_hard_clear:
     te "The gym. Sixth bell. Bring boots that fit."
     n "He produces a small badge and slides it across the ground toward you with his foot."
     te "Don't lose it. It means something where I'm from."
-    $ persistent.strength  += 4
-    $ persistent.intellect += 3
+    $ strength  += 4
+    $ intellect += 3
     $ persistent.teemo_hard_unlocked = True
     show screen system_overlay
     s "Strength +4. Intellect +3. Scout badge earned."
@@ -284,8 +284,8 @@ label teemo_hard_clear:
 label teemo_hard_partial:
     show ch teemo neutral
     te "Time's up. Hard mode. Were you expecting sympathy?"
-    $ persistent.strength  += 1
-    $ persistent.intellect += 1
+    $ strength  += 1
+    $ intellect += 1
     show screen system_overlay
     s "Strength +1. Intellect +1."
     hide screen system_overlay

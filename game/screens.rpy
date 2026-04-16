@@ -443,10 +443,10 @@ screen journal_arrow():
 ## Constitution HUD ############################################################
 ##
 ## Five hearts displayed in the top-left. Each heart has 5 sections (25 total).
-## persistent.constitution tracks the total filled sections (starts at 1).
+## constitution tracks the total filled sections (starts at 1).
 ## Formula per heart i:  min(max(constitution - i*5, 0), 5)
 ##
-## To gain a constitution point:  $ persistent.constitution += 1
+## To gain a constitution point:  $ constitution += 1
 ## Images live at:  game/gui/hud/Heart - N.png  (N = 0..5)
 ## Adjust zoom (currently 0.5) here if hearts appear too large or small.
 
@@ -460,7 +460,7 @@ screen constitution_hud():
             spacing 6
             for i in range(5):
                 add Transform(
-                    "gui/hud/Heart - %d.png" % min(max(persistent.constitution - i * 5, 0), 5),
+                    "gui/hud/Heart - %d.png" % min(max(constitution - i * 5, 0), 5),
                     zoom=0.5
                 )
 
@@ -832,16 +832,16 @@ screen journal_screen():
                     grid 2 2:
                         xfill True
                         spacing 4
-                        text "Constitution  [persistent.constitution] / 25":
+                        text "Constitution  [constitution] / 25":
                             color "#e8e0d0"
                             size 19
-                        text "Strength  [persistent.strength] / 10":
+                        text "Strength  [strength] / 10":
                             color "#e8e0d0"
                             size 19
-                        text "Charisma  [persistent.charisma] / 10":
+                        text "Charisma  [charisma] / 10":
                             color "#e8e0d0"
                             size 19
-                        text "Intellect  [persistent.intellect] / 10":
+                        text "Intellect  [intellect] / 10":
                             color "#e8e0d0"
                             size 19
 

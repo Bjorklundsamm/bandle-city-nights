@@ -114,7 +114,7 @@ style ez_label:
 ## ── Labels ────────────────────────────────────────────────────────────────────
 
 label ezreal_job:
-    $ persistent.energy -= 1
+    $ energy -= 1
     $ persistent.ezreal_visits += 1
 
     scene bg ezreal range
@@ -135,7 +135,7 @@ label ezreal_job:
     jump ezreal_resolve
 
 label ezreal_job_hard:
-    $ persistent.energy -= 1
+    $ energy -= 1
     $ persistent.ezreal_visits += 1
 
     scene bg ezreal range
@@ -205,7 +205,7 @@ label ezreal_resolve:
         ez "Eighty percent. That's... not nothing."
         ez "Seriously, no luck? All skill?"
         n "He says it like a question. The question is for himself."
-        $ persistent.strength += 5
+        $ strength += 5
         $ persistent.ezreal_hard_unlocked = True
         if _acc > persistent.ezreal_best:
             $ persistent.ezreal_best = _acc
@@ -214,14 +214,14 @@ label ezreal_resolve:
         hide screen system_overlay
     elif _acc >= 50:
         ez "Not bad. Not good. Mediocre, which in target practice is still mediocre."
-        $ persistent.strength += 3
+        $ strength += 3
         show screen system_overlay
         s "Strength +3. Accuracy: [_acc]%."
         hide screen system_overlay
     else:
         ez "Under fifty percent. That's concerning."
         ez "Come back when you've practiced basic hand-eye coordination."
-        $ persistent.strength += 1
+        $ strength += 1
         show screen system_overlay
         s "Strength +1. Accuracy: [_acc]%."
         hide screen system_overlay
@@ -238,7 +238,7 @@ label ezreal_resolve_hard:
         ez "..."
         ez "Showers are that way. I need to cool down the gauntlet."
         n "It is not about the gauntlet."
-        $ persistent.strength += 7
+        $ strength += 7
         $ persistent.ezreal_shower_unlocked = True
         if _acc > persistent.ezreal_best:
             $ persistent.ezreal_best = _acc
@@ -247,7 +247,7 @@ label ezreal_resolve_hard:
         hide screen system_overlay
 
         # Gate check: STR must be >= 30 for the shower scene to actually trigger
-        if persistent.strength >= 30 and not ezreal_shower_scene_done:
+        if strength >= 30 and not ezreal_shower_scene_done:
             jump ezreal_shower_scene
         else:
             return
@@ -255,7 +255,7 @@ label ezreal_resolve_hard:
     elif _acc >= 50:
         show ch ezreal casual
         ez "Fifty to eighty. In hard mode. I'll give you that."
-        $ persistent.strength += 3
+        $ strength += 3
         show screen system_overlay
         s "Strength +3. Accuracy: [_acc]%."
         hide screen system_overlay
@@ -263,7 +263,7 @@ label ezreal_resolve_hard:
         show ch ezreal smirk
         ez "You hit three decoys. Three."
         ez "Go home."
-        $ persistent.strength += 1
+        $ strength += 1
         show screen system_overlay
         s "Strength +1."
         hide screen system_overlay

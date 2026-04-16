@@ -199,7 +199,7 @@ label gameStart:
     call screen system_got_it
 
     $ inventory_unlocked = True
-    $ persistent.gold = 250
+    $ gold = 250
     hide screen backpack_arrow
     hide screen backpack_intro
     hide screen system_overlay

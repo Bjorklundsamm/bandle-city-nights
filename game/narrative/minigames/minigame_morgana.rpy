@@ -115,7 +115,7 @@ style morgana_ingredient_label:
 ## ── Labels ────────────────────────────────────────────────────────────────────
 
 label morgana_job:
-    $ persistent.energy -= 1
+    $ energy -= 1
     $ persistent.morgana_visits += 1
 
     scene bg morgana kitchen
@@ -175,7 +175,7 @@ label morgana_job:
         jump morgana_fail
 
 label morgana_job_hard:
-    $ persistent.energy -= 1
+    $ energy -= 1
     $ persistent.morgana_visits += 1
 
     scene bg morgana kitchen
@@ -229,8 +229,8 @@ label morgana_success:
     mo "Correct. All of it."
     mo "..."
     mo "You may come back tomorrow."
-    $ persistent.intellect += 2
-    $ persistent.gold      += 100
+    $ intellect += 2
+    $ gold      += 100
     $ persistent.morgana_hard_unlocked = True
     show screen system_overlay
     s "Intellect +2. [100]g earned."
@@ -240,7 +240,7 @@ label morgana_success:
 label morgana_fail:
     show ch morgana neutral
     mo "Wrong. At least you tried to pay attention."
-    $ persistent.intellect += 1
+    $ intellect += 1
     show screen system_overlay
     s "Intellect +1."
     hide screen system_overlay
@@ -254,8 +254,8 @@ label morgana_hard_success:
     mo "You're not useless after all."
 
     # Reward scene trigger (INT gate checked in hub before calling this label)
-    $ persistent.intellect += 4
-    $ persistent.gold      += 150
+    $ intellect += 4
+    $ gold      += 150
     $ persistent.morgana_reward_seen = True
     show screen system_overlay
     s "Intellect +4. [150]g earned."
@@ -280,7 +280,7 @@ label morgana_hard_success:
 label morgana_hard_fail:
     show ch morgana neutral
     mo "I expected as much."
-    $ persistent.intellect += 1
+    $ intellect += 1
     show screen system_overlay
     s "Intellect +1."
     hide screen system_overlay

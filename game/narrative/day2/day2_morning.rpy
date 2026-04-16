@@ -25,7 +25,7 @@ label morning_day_2:
 
     if not persistent.day2_morning_rested:
         $ persistent.day2_morning_rested = True
-        $ persistent.constitution += 1
+        $ constitution += 1
         show screen system_overlay
         show screen constitution_arrow
         s "Your body has recovered a little. Rest and a good meal each day will keep you on your feet."
@@ -102,8 +102,8 @@ screen katarina_room_display():
     ## Non-interactive overlay: Katarina and dice visible during narration,
     ## before the player has any clickable options.
     zorder 200
-    add "ch kat sleeping" xalign 0.5 yalign 1.0
-    add Transform("bt dice", zoom=0.5, alpha=0.65) xalign 0.88 yalign 0.88
+    add "ch kat sleeping position" xalign 0.0 yalign 0.0
+    add Transform("bt dice", alpha=0.65) xalign 0.0 yalign 0.0
 
 
 screen katarina_room_peek():
@@ -112,14 +112,14 @@ screen katarina_room_peek():
     ## The dice button sits quietly in the lower right for observant players.
     zorder 200
 
-    add "ch kat sleeping" xalign 0.5 yalign 1.0
+    add "ch kat sleeping position" xalign 0.0 yalign 0.0
 
     ## Subtle placement — lower right, easy to miss.
     imagebutton:
-        idle Transform("bt dice", zoom=0.5, alpha=0.65)
-        hover Transform("bt dice", zoom=0.56, alpha=1.0)
-        xalign 0.88
-        yalign 0.88
+        idle Transform("bt dice", alpha=0.65)
+        hover Transform("bt dice", alpha=1.0)
+        xalign 0.0
+        yalign 0.0
         action Return("bt dice")
         hover_sound "audio/sfx/hover_selectable.mp3"
         activate_sound "audio/sfx/click_selectable.mp3"
@@ -154,13 +154,13 @@ screen katarina_room_peek_dice():
     ## Now two options: leave cleanly or take them.
     zorder 200
 
-    add "ch kat sleeping" xalign 0.5 yalign 1.0
+    add "ch kat sleeping position" xalign 0.0 yalign 0.0
 
     imagebutton:
-        idle Transform("bt dice", zoom=0.5, alpha=0.65)
-        hover Transform("bt dice", zoom=0.56, alpha=1.0)
-        xalign 0.88
-        yalign 0.88
+        idle Transform("bt dice", alpha=0.65)
+        hover Transform("bt dice", alpha=1.0)
+        xalign 0.0
+        yalign 0.0
         action Return("bt dice")
         hover_sound "audio/sfx/hover_selectable.mp3"
         activate_sound "audio/sfx/click_selectable.mp3"

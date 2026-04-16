@@ -20,7 +20,7 @@ screen jobs_hub():
             spacing 8
             text "Energy:" style "jobs_label"
             for i in range(3):
-                if i < persistent.energy:
+                if i < energy:
                     add "bt energy full.png" xsize 28 ysize 28
                 else:
                     add "bt energy empty.png" xsize 28 ysize 28
@@ -30,7 +30,7 @@ screen jobs_hub():
         xalign 0.98
         yalign 0.02
         padding (14, 10)
-        text "[persistent.gold]g" style "jobs_label" xalign 1.0
+        text "[gold]g" style "jobs_label" xalign 1.0
 
     # Job buttons — 5 stacked vertically, centered
     vbox:
@@ -41,7 +41,7 @@ screen jobs_hub():
         # Corki
         frame:
             padding (12, 8)
-            background ("#3a2a00" if persistent.energy > 0 else "#1a1a1a")
+            background ("#3a2a00" if energy > 0 else "#1a1a1a")
             hbox:
                 spacing 12
                 add "bt job corki.png" xsize 48 ysize 48
@@ -51,7 +51,7 @@ screen jobs_hub():
                     text "Pipe puzzle — STR, CHA, Gold" style "jobs_sub"
                     if persistent.corki_hard_unlocked:
                         text "[hard_badge()]" style "jobs_hard"
-                if persistent.energy > 0:
+                if energy > 0:
                     textbutton "Work (1 energy)" action Jump("corki_hub_choice") style "jobs_btn"
                 else:
                     textbutton "Too tired" action NullAction() style "jobs_btn_grey"
@@ -59,7 +59,7 @@ screen jobs_hub():
         # Rumble
         frame:
             padding (12, 8)
-            background ("#3a2a00" if persistent.energy > 0 else "#1a1a1a")
+            background ("#3a2a00" if energy > 0 else "#1a1a1a")
             hbox:
                 spacing 12
                 add "bt job rumble.png" xsize 48 ysize 48
@@ -69,7 +69,7 @@ screen jobs_hub():
                     text "Parts sorter — STR, CHA, INT, Gold" style "jobs_sub"
                     if persistent.rumble_hard_unlocked:
                         text "[hard_badge()]" style "jobs_hard"
-                if persistent.energy > 0:
+                if energy > 0:
                     textbutton "Work (1 energy)" action Jump("rumble_hub_choice") style "jobs_btn"
                 else:
                     textbutton "Too tired" action NullAction() style "jobs_btn_grey"
@@ -77,7 +77,7 @@ screen jobs_hub():
         # Morgana
         frame:
             padding (12, 8)
-            background ("#3a2a00" if persistent.energy > 0 else "#1a1a1a")
+            background ("#3a2a00" if energy > 0 else "#1a1a1a")
             hbox:
                 spacing 12
                 add "bt job morgana.png" xsize 48 ysize 48
@@ -87,7 +87,7 @@ screen jobs_hub():
                     text "Recipe memory — INT, Gold" style "jobs_sub"
                     if persistent.morgana_hard_unlocked:
                         text "[hard_badge()]" style "jobs_hard"
-                if persistent.energy > 0:
+                if energy > 0:
                     textbutton "Work (1 energy)" action Jump("morgana_hub_choice") style "jobs_btn"
                 else:
                     textbutton "Too tired" action NullAction() style "jobs_btn_grey"
@@ -95,7 +95,7 @@ screen jobs_hub():
         # Teemo
         frame:
             padding (12, 8)
-            background ("#3a2a00" if persistent.energy > 0 else "#1a1a1a")
+            background ("#3a2a00" if energy > 0 else "#1a1a1a")
             hbox:
                 spacing 12
                 add "bt job teemo.png" xsize 48 ysize 48
@@ -105,7 +105,7 @@ screen jobs_hub():
                     text "Timed decisions — STR, INT" style "jobs_sub"
                     if persistent.teemo_hard_unlocked:
                         text "[hard_badge()]" style "jobs_hard"
-                if persistent.energy > 0:
+                if energy > 0:
                     textbutton "Work (1 energy)" action Jump("teemo_hub_choice") style "jobs_btn"
                 else:
                     textbutton "Too tired" action NullAction() style "jobs_btn_grey"
@@ -113,7 +113,7 @@ screen jobs_hub():
         # Ezreal
         frame:
             padding (12, 8)
-            background ("#3a2a00" if persistent.energy > 0 else "#1a1a1a")
+            background ("#3a2a00" if energy > 0 else "#1a1a1a")
             hbox:
                 spacing 12
                 add "bt job ezreal.png" xsize 48 ysize 48
@@ -123,7 +123,7 @@ screen jobs_hub():
                     text "Click targets — STR" style "jobs_sub"
                     if persistent.ezreal_hard_unlocked:
                         text "[hard_badge()]" style "jobs_hard"
-                if persistent.energy > 0:
+                if energy > 0:
                     textbutton "Work (1 energy)" action Jump("ezreal_hub_choice") style "jobs_btn"
                 else:
                     textbutton "Too tired" action NullAction() style "jobs_btn_grey"

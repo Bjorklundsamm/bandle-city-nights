@@ -88,10 +88,10 @@ screen dev_menu():
                             python:
                                 dev_vars = [
                                     ## Stats
-                                    ("persistent.constitution",   persistent.constitution),
-                                    ("persistent.strength",       persistent.strength),
-                                    ("persistent.charisma",       persistent.charisma),
-                                    ("persistent.intellect",      persistent.intellect),
+                                    ("constitution",   constitution),
+                                    ("strength",       strength),
+                                    ("charisma",       charisma),
+                                    ("intellect",      intellect),
                                     ## Misc persistent
                                     ("persistent.fizz_met",       persistent.fizz_met),
                                     ## Session flags
@@ -167,9 +167,9 @@ screen dev_menu():
                                         text_color "#ff8888"
                                         text_hover_color "#ffffff"
                                         padding (8, 2)
-                                        action If(persistent.constitution > 1,
-                                            SetField(persistent, "constitution", persistent.constitution - 1))
-                                    text "[persistent.constitution]":
+                                        action If(constitution > 1,
+                                            SetVariable("constitution", constitution - 1))
+                                    text "[constitution]":
                                         size 15
                                         color "#ffdd88"
                                         xalign 0.5
@@ -179,8 +179,8 @@ screen dev_menu():
                                         text_color "#88ff88"
                                         text_hover_color "#ffffff"
                                         padding (8, 2)
-                                        action If(persistent.constitution < 25,
-                                            SetField(persistent, "constitution", persistent.constitution + 1))
+                                        action If(constitution < 25,
+                                            SetVariable("constitution", constitution + 1))
 
                         ## Strength (1–10)
                         frame:
@@ -200,9 +200,9 @@ screen dev_menu():
                                         text_color "#ff8888"
                                         text_hover_color "#ffffff"
                                         padding (8, 2)
-                                        action If(persistent.strength > 1,
-                                            SetField(persistent, "strength", persistent.strength - 1))
-                                    text "[persistent.strength]":
+                                        action If(strength > 1,
+                                            SetVariable("strength", strength - 1))
+                                    text "[strength]":
                                         size 15
                                         color "#ffdd88"
                                         xalign 0.5
@@ -212,8 +212,8 @@ screen dev_menu():
                                         text_color "#88ff88"
                                         text_hover_color "#ffffff"
                                         padding (8, 2)
-                                        action If(persistent.strength < 10,
-                                            SetField(persistent, "strength", persistent.strength + 1))
+                                        action If(strength < 10,
+                                            SetVariable("strength", strength + 1))
 
                         ## Charisma (1–10)
                         frame:
@@ -233,9 +233,9 @@ screen dev_menu():
                                         text_color "#ff8888"
                                         text_hover_color "#ffffff"
                                         padding (8, 2)
-                                        action If(persistent.charisma > 1,
-                                            SetField(persistent, "charisma", persistent.charisma - 1))
-                                    text "[persistent.charisma]":
+                                        action If(charisma > 1,
+                                            SetVariable("charisma", charisma - 1))
+                                    text "[charisma]":
                                         size 15
                                         color "#ffdd88"
                                         xalign 0.5
@@ -245,8 +245,8 @@ screen dev_menu():
                                         text_color "#88ff88"
                                         text_hover_color "#ffffff"
                                         padding (8, 2)
-                                        action If(persistent.charisma < 10,
-                                            SetField(persistent, "charisma", persistent.charisma + 1))
+                                        action If(charisma < 10,
+                                            SetVariable("charisma", charisma + 1))
 
                         ## Intellect (1–10)
                         frame:
@@ -266,9 +266,9 @@ screen dev_menu():
                                         text_color "#ff8888"
                                         text_hover_color "#ffffff"
                                         padding (8, 2)
-                                        action If(persistent.intellect > 1,
-                                            SetField(persistent, "intellect", persistent.intellect - 1))
-                                    text "[persistent.intellect]":
+                                        action If(intellect > 1,
+                                            SetVariable("intellect", intellect - 1))
+                                    text "[intellect]":
                                         size 15
                                         color "#ffdd88"
                                         xalign 0.5
@@ -278,8 +278,8 @@ screen dev_menu():
                                         text_color "#88ff88"
                                         text_hover_color "#ffffff"
                                         padding (8, 2)
-                                        action If(persistent.intellect < 10,
-                                            SetField(persistent, "intellect", persistent.intellect + 1))
+                                        action If(intellect < 10,
+                                            SetVariable("intellect", intellect + 1))
 
                     null height 12
 

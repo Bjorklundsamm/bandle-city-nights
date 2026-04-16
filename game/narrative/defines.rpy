@@ -34,18 +34,19 @@ define ru   = Character("Rumble")
 define te   = Character("Teemo")
 
 
-## ── Persistent stats ─────────────────────────────────────────────────────────
+## ── Stats ────────────────────────────────────────────────────────────────────
 # Max values: constitution 50 (10 hearts × 5), strength/charisma/intellect 50 each.
 # Stats are displayed per-heart only for constitution; STR/CHA/INT are raw numbers.
+# These are per-playthrough — use default, not persistent.
 
-default persistent.constitution = 1
-default persistent.strength     = 1
-default persistent.charisma     = 1
-default persistent.intellect    = 1
+default constitution = 1
+default strength     = 1
+default charisma     = 1
+default intellect    = 1
 
 ## Energy & Gold
-default persistent.energy       = 3   # resets to 3 each morning
-default persistent.gold         = 0
+default energy       = 3   # resets to 3 each morning
+default gold         = 0
 
 
 ## ── Minigame tracking ────────────────────────────────────────────────────────

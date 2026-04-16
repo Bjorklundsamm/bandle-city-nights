@@ -134,7 +134,7 @@ style rumble_bin_label:
 
 
 label rumble_job:
-    $ persistent.energy -= 1
+    $ energy -= 1
     $ persistent.rumble_visits += 1
 
     scene bg rumble workshop
@@ -177,7 +177,7 @@ label rumble_job:
     jump rumble_resolve
 
 label rumble_job_hard:
-    $ persistent.energy -= 1
+    $ energy -= 1
     $ persistent.rumble_visits += 1
 
     scene bg rumble workshop
@@ -220,10 +220,10 @@ label rumble_resolve:
         ru "..."
         ru "Hm."
         # First time hitting 20+ he almost faces you — but doesn't quite.
-        $ persistent.strength  += 2
-        $ persistent.charisma  += 2
-        $ persistent.intellect += 2
-        $ persistent.gold      += 50
+        $ strength  += 2
+        $ charisma  += 2
+        $ intellect += 2
+        $ gold      += 50
         $ persistent.rumble_hard_unlocked = True
         if _sorted > persistent.rumble_best:
             $ persistent.rumble_best = _sorted
@@ -234,10 +234,10 @@ label rumble_resolve:
     elif _sorted >= 10:
         show ch rumble back
         ru "Passable."
-        $ persistent.strength  += 1
-        $ persistent.charisma  += 1
-        $ persistent.intellect += 1
-        $ persistent.gold      += 50
+        $ strength  += 1
+        $ charisma  += 1
+        $ intellect += 1
+        $ gold      += 50
         $ persistent.rumble_hard_unlocked = True
         show screen system_overlay
         s "Strength +1. Charisma +1. Intellect +1. [50]g earned."
@@ -245,8 +245,8 @@ label rumble_resolve:
     else:
         show ch rumble back
         ru "Disappointing."
-        $ persistent.intellect += 1
-        $ persistent.gold      += 25
+        $ intellect += 1
+        $ gold      += 25
         show screen system_overlay
         s "Intellect +1. [25]g earned."
         hide screen system_overlay
@@ -259,10 +259,10 @@ label rumble_resolve_hard:
         show ch rumble back
         ru "..."
         n "Rumble almost looks up. Not quite."
-        $ persistent.strength  += 3
-        $ persistent.charisma  += 3
-        $ persistent.intellect += 3
-        $ persistent.gold      += 75
+        $ strength  += 3
+        $ charisma  += 3
+        $ intellect += 3
+        $ gold      += 75
         if _sorted > persistent.rumble_best:
             $ persistent.rumble_best = _sorted
             ru "New record. Still not enough to run the press."
@@ -272,18 +272,18 @@ label rumble_resolve_hard:
     elif _sorted >= 10:
         show ch rumble back
         ru "Made a dent."
-        $ persistent.strength  += 1
-        $ persistent.charisma  += 1
-        $ persistent.intellect += 1
-        $ persistent.gold      += 50
+        $ strength  += 1
+        $ charisma  += 1
+        $ intellect += 1
+        $ gold      += 50
         show screen system_overlay
         s "Strength +1. Charisma +1. Intellect +1. [50]g earned."
         hide screen system_overlay
     else:
         show ch rumble back
         ru "Five bins and you couldn't manage ten. Go home."
-        $ persistent.intellect += 1
-        $ persistent.gold      += 25
+        $ intellect += 1
+        $ gold      += 25
         show screen system_overlay
         s "Intellect +1. [25]g earned."
         hide screen system_overlay

@@ -145,7 +145,7 @@ style corki_label:
 ## ── Labels ────────────────────────────────────────────────────────────────────
 
 label corki_job:
-    $ persistent.energy -= 1
+    $ energy -= 1
     $ persistent.corki_visits += 1
 
     scene bg corki shop
@@ -179,7 +179,7 @@ label corki_job:
         jump corki_fail
 
 label corki_job_hard:
-    $ persistent.energy -= 1
+    $ energy -= 1
     $ persistent.corki_visits += 1
 
     scene bg corki shop
@@ -210,9 +210,9 @@ label corki_success:
     show ch corki pleased
     co "Hm. Not terrible."
     co "Here's your cut."
-    $ persistent.strength += 2
-    $ persistent.charisma += 1
-    $ persistent.gold += 50
+    $ strength += 2
+    $ charisma += 1
+    $ gold += 50
     $ persistent.corki_hard_unlocked = True
     show screen system_overlay
     s "Strength +2. Charisma +1. [50]g earned."
@@ -222,7 +222,7 @@ label corki_success:
 label corki_fail:
     show ch corki neutral
     co "Forget it. Watch a professional next time."
-    $ persistent.strength += 1
+    $ strength += 1
     show screen system_overlay
     s "Strength +1."
     hide screen system_overlay
@@ -235,9 +235,9 @@ label corki_hard_success:
     show ch rumble back
     ru "..."
     # Rumble says nothing. That means something.
-    $ persistent.strength += 3
-    $ persistent.charisma += 2
-    $ persistent.gold += 75
+    $ strength += 3
+    $ charisma += 2
+    $ gold += 75
     show screen system_overlay
     s "Strength +3. Charisma +2. [75]g earned."
     hide screen system_overlay
@@ -246,7 +246,7 @@ label corki_hard_success:
 label corki_hard_fail:
     show ch corki neutral
     co "Two circuits. You couldn't even do one."
-    $ persistent.strength += 1
+    $ strength += 1
     show screen system_overlay
     s "Strength +1."
     hide screen system_overlay
