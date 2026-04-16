@@ -79,7 +79,6 @@ label morning_day_2_peek_katarina:
 
     n "You linger a moment longer than you probably should."
 
-    hide screen katarina_room_display
     call screen katarina_room_peek
 
     if _return == "bt dice":
