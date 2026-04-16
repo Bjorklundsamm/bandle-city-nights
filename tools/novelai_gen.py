@@ -107,7 +107,8 @@ def load_character(char_name: str) -> dict:
 # Author's note builder
 # ---------------------------------------------------------------------------
 
-def build_authors_note(char: dict, scene_note: str | None, explicit: bool) -> str:
+def build_authors_note(char: dict, scene_note: str | None, explicit: bool,
+                       corrections: str | None = None) -> str:
     """
     Build a focused author's note for Xialong.
 
@@ -122,6 +123,10 @@ def build_authors_note(char: dict, scene_note: str | None, explicit: bool) -> st
       - Distinguishing physical features relevant to the act
       - nsfw_profile anatomy and fixation notes from the JSON
       - The user-supplied scene_note (which may contain explicit direction)
+
+    corrections: if provided (from --regen-note), placed at the top of the note
+      so Xialong sees it before anything else. Used to fix specific problems
+      with a previous generation without changing the scene direction.
     """
     name = char.get("name", "Unknown")
     species = char.get("species", "")
@@ -134,6 +139,17 @@ def build_authors_note(char: dict, scene_note: str | None, explicit: bool) -> st
     coloring = appearance.get("coloring", "")
 
     lines = []
+
+    # --- Corrections from previous attempt (shown first so Xialong prioritises them) ---
+    if corrections:
+        lines += [
+            "CORRECTIONS FROM PREVIOUS ATTEMPT — strictly follow these:",
+        ]
+        for point in re.split(r'(?<=[a-zA-Z\'\"])\.\s+', corrections):
+            point = point.strip().rstrip(".")
+            if point:
+                lines.append(f"  - {point}.")
+        lines.append("")
 
     # --- Always: Ren'Py format block ---
     lines += [
@@ -534,6 +550,9 @@ def main():
     parser.add_argument("--segments", type=int, default=3, help="Number of chained segments (default 3)")
     parser.add_argument("--context-lines", type=int, default=80, help="Lines of context to send (default 80)")
     parser.add_argument("--regen", action="store_true", help="Replace existing explicit block at [GEN START]")
+    parser.add_argument("--regen-note", default=None,
+                        help="What was wrong with the last attempt. Default: just try again. "
+                             "Example: 'Fizz keeps kneeling — he is short enough to deepthroat standing, no kneeling needed. Too repetitive.'")
     parser.add_argument("--dry-run", action="store_true", help="Print what would be sent, no API call")
     parser.add_argument("--advance", action="store_true",
                         help="Move [GEN START] to after last complete sentence in accepted block")
@@ -617,12 +636,15 @@ def main():
         sys.exit(1)
 
     scene_note = args.scene_note or markers["scene_note"]
-    authors_note = build_authors_note(char, scene_note, args.explicit)
+    regen_note = getattr(args, "regen_note", None)
+    authors_note = build_authors_note(char, scene_note, args.explicit, corrections=regen_note)
     context = extract_context(lines, markers["gen_start"], args.context_lines)
 
     if args.dry_run:
         print("=== CONTEXT (last 20 lines) ===")
         print("".join(context.splitlines(keepends=True)[-20:]))
+        if regen_note:
+            print(f"\n=== CORRECTIONS (--regen-note) ===\n{regen_note}")
         print("\n=== AUTHOR'S NOTE ===")
         print(authors_note)
         print(f"\n=== Model: {args.model}  Tokens/seg: {args.tokens}  Segments: {args.segments} ===")

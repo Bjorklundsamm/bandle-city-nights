@@ -117,46 +117,58 @@ label day2_fizz_accept:
     # [GEN START]
 
     # [EXPLICIT START]
-    n "Behind the Bandy Blossom, in the strip of gravel between the wall and the trees, Fizz drops his trident and immediately drops to his knees."
-    n "He pulls your belt loose without hesitation, pops your fly, and tugs everything down in one motion."
+    n "Behind the tavern, there's an alley. Fizz turns and hits you with the most impatient look you have ever seen."
+    n "Then he gestures impatiently at your trousers."
 
-    mc "Enthusiastic, huh?"
+    f "Out."
 
-    f "Don't make fun. It has been the most boring three days."
-    f "And then — this."
+    n "You could be offended, but he's vibrating with eagerness and his skin is starting to glow in patches."
+    n "You undo your belt. The moment your waistband clears your hips, Fizz's pupils blow wide."
 
-    n "He makes a noise. Not words. A drawn-out 'hhhhhh' as your cock springs free."
-    n "Then he looks up at you."
-    n "What he says next is soft. Reverent, almost."
+    f "Oh, fuck yes."
 
-    f "Okay. Okay. You're— you're huge."
-    f "This is gonna fix me."
+    n "His hand is already out. He doesn't touch. His fingers just hover, an inch from your shaft, almost shaking."
 
-    n "His hands come up and wrap around you, stroking once, twice."
-    n "You're still half-hard but Fizz clearly does not care about the state of completion. He just leans forward and takes you into his mouth."
-    n "No hesitation. No warm-up. His tongue curls around the head and he just... slides down."
+    f "This is why I travel with her."
+    f "All the men who try to impress her. Like there's a cock shortage in Bilgewater or something."
+    f "But they all want her, so when one of them finally looks my way..."
+    f "It's not this."
 
-    n "His mouth is slimy. Warm. Far too warm for any normal creature."
-    n "The texture is odd — slick, coating everything it touches, like being licked by an octopus. There's resistance, a pleasant pressure, but no pain. No scraping."
-    n "He goes deep immediately. Takes more than half your length on the first dive and just stays there."
-    n "His throat moves. He swallows around you. Once. Twice."
-    n "Then he pulls back, lips still sealed tight, a long slow drag of tongue against shaft, and lets you pop free with a wet gasp."
+    n "He moves his hand closer. His fingertips brush your length and he makes a noise that should be illegal."
 
-    mc "Fuck —"
+    f "You feel heavy. I love it."
+    f "Can I put it in my mouth now."
+    f "Please let me put it in my mouth. I'll be really good at it."
 
-    f "No jokes about fish puns. I'm not in the mood."
-    f "Just — hold still. Need this."
+    mc "You don't need to ask twice."
 
-    n "And he goes back down. Further this time."
-    n "You feel your cock hit the back of his throat. He doesn't pause. Doesn't adjust. Just keeps sinking."
-    n "You watch as a bulge appears in his neck. Watch as he keeps going until his nose is pressed flush against your stomach."
-    n "His eyes roll up. His whole body shivers."
-    n "Then he swallows again. Repeatedly. His throat squeezes around you like he's trying to milk you."
-    n "It feels incredible. It's tight and hot and he never seems to need air."
+    n "Fizz's mouth is on you before you finish the sentence."
+    n "And he is just as good as he thinks he is."
+    n "His tongue is long and textured. He knows how to use it. He swallows you down like he's been starving for weeks and you are the first meal he's seen."
+    n "His hands are on your thighs, nails pricking just enough to keep you anchored in the moment."
+    n "You thread your fingers through his hair — cool and damp, smells like the ocean — and he groans."
+    n "The sound vibrates right up your spine."
 
-    n "You catch movement out of the corner of your eye."
-    n "Fizz is hard. His cock is nothing like a human's — pinkish-white and flexible, almost tentacle-like, already beading with something clear and slick. He doesn't touch it. His hands stay on your hips, thumbs stroking
+    f "Don't hold back."
+    n "He pulls back just enough to say it, then goes right back to work, one hand working your base while his mouth takes the rest."
+    n "There's no hesitation. No teasing. Just pure, focused enthusiasm."
+    n "He wants this. He wants you."
+    n "It doesn't take long. Not with that mouth on you."
+    n "You tighten your grip on his hair, warn him — he doubles down."
+    n "When you come, he doesn't spill a drop."
+    n "He pulls back, lips swollen, eyes heavy-lidded, and licks them slow."
+
+    f "Fuck."
+
+    mc "Language."
+
+    f "I meant it as a compliment."
+    f "You taste good. Salty. I like it."
+    f "Thank you. That was... thank you."
+
+    n "He tucks himself back in his shorts with a dreamy look on his
     # [EXPLICIT END]
+
 
 
 
