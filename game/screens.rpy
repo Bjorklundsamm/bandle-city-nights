@@ -608,6 +608,13 @@ transform patron_zoom:
     on idle:
         linear 0.15 zoom 1.0
 
+transform dice_hover:
+    alpha 0.65
+    on hover:
+        linear 0.1 alpha 1.0
+    on idle:
+        linear 0.1 alpha 0.65
+
 screen tavern_hub():
     zorder 1
 

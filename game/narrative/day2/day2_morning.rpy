@@ -103,7 +103,7 @@ screen katarina_room_display():
     ## before the player has any clickable options.
     zorder 200
     add "ch kat sleeping position" xalign 0.0 yalign 0.0
-    add Transform("bt dice", alpha=0.65) xalign 0.0 yalign 0.0
+    add "bt dice" at dice_hover xalign 0.0 yalign 0.0
 
 
 screen katarina_room_peek():
@@ -116,8 +116,9 @@ screen katarina_room_peek():
 
     ## Subtle placement — lower right, easy to miss.
     imagebutton:
-        idle Transform("bt dice", alpha=0.65)
-        hover Transform("bt dice", alpha=1.0)
+        idle "bt dice" at dice_hover
+        hover "bt dice" at dice_hover
+        focus_mask True
         xalign 0.0
         yalign 0.0
         action Return("bt dice")
@@ -157,8 +158,9 @@ screen katarina_room_peek_dice():
     add "ch kat sleeping position" xalign 0.0 yalign 0.0
 
     imagebutton:
-        idle Transform("bt dice", alpha=0.65)
-        hover Transform("bt dice", alpha=1.0)
+        idle "bt dice" at dice_hover
+        hover "bt dice" at dice_hover
+        focus_mask True
         xalign 0.0
         yalign 0.0
         action Return("bt dice")
