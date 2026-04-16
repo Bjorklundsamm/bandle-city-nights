@@ -117,7 +117,6 @@ screen katarina_room_peek():
     ## Subtle placement — lower right, easy to miss.
     imagebutton:
         idle "bt dice" at dice_hover
-        hover "bt dice" at dice_hover
         focus_mask True
         xalign 0.0
         yalign 0.0
@@ -159,7 +158,6 @@ screen katarina_room_peek_dice():
 
     imagebutton:
         idle "bt dice" at dice_hover
-        hover "bt dice" at dice_hover
         focus_mask True
         xalign 0.0
         yalign 0.0
