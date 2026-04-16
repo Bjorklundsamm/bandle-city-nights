@@ -8,6 +8,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This is a private, solo-managed project. Operate with high autonomy — edit files, reorganize scripts, rename things, run git commands without asking permission. Reserve confirmation only for permanent deletion or force-push operations.
 
+**Git push:** Never push automatically after commits. Only push when the user explicitly says to push.
+
 ## Running the Game
 
 Open in the **Ren'Py launcher** and click "Launch Project". There is no CLI build step — Ren'Py compiles `.rpy` → `.rpyc` automatically on launch. Use the launcher's "Build Distributions" to package a release.
