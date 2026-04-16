@@ -62,9 +62,8 @@ label morning_day_2:
 
 label morning_day_2_peek_katarina:
 
-    # MISSING: bg patron room — generic inn bedroom, dim, curtains drawn.
-    # Darker/messier read than bg bedroom default. Reuse for any patron room visit.
-    show screen ph_bg("bg patron room")
+    scene bg patron bedroom with dissolve
+    show screen katarina_room_display()
 
     n "You ease forward, just enough to see through the gap."
     n "The room is dim — curtains still drawn, the kind of dark a person makes deliberately."
@@ -80,6 +79,7 @@ label morning_day_2_peek_katarina:
 
     n "You linger a moment longer than you probably should."
 
+    hide screen katarina_room_display
     call screen katarina_room_peek
 
     if _return == "bt dice":
@@ -89,18 +89,21 @@ label morning_day_2_peek_katarina:
 
         call screen katarina_room_peek_dice
 
-        hide screen ph_sprite
-        hide screen ph_bg
-
         if _return == "steal":
             jump morning_day_2_steal_dice
 
     else:
-
-        hide screen ph_sprite
-        hide screen ph_bg
+        pass
 
     jump morning_day_2_downstairs
+
+
+screen katarina_room_display():
+    ## Non-interactive overlay: Katarina and dice visible during narration,
+    ## before the player has any clickable options.
+    zorder 200
+    add "ch kat sleeping" xalign 0.5 yalign 1.0
+    add Transform("bt dice", zoom=0.5, alpha=0.65) xalign 0.88 yalign 0.88
 
 
 screen katarina_room_peek():
@@ -109,13 +112,17 @@ screen katarina_room_peek():
     ## The dice button sits quietly in the lower right for observant players.
     zorder 200
 
-    # MISSING: ch katarina sleeping — fully dressed, sprawled on bed,
-    # one arm off the edge, completely out cold.
-    use ph_sprite("ch katarina sleeping", xalign=0.5, yalign=1.0)
+    add "ch kat sleeping" xalign 0.5 yalign 1.0
 
-    # MISSING: bt dice — small worn dice on table corner.
     ## Subtle placement — lower right, easy to miss.
-    use ph_button("bt dice", xalign=0.88, yalign=0.88)
+    imagebutton:
+        idle Transform("bt dice", zoom=0.5, alpha=0.65)
+        hover Transform("bt dice", zoom=0.56, alpha=1.0)
+        xalign 0.88
+        yalign 0.88
+        action Return("bt dice")
+        hover_sound "audio/sfx/hover_selectable.mp3"
+        activate_sound "audio/sfx/click_selectable.mp3"
 
     vbox:
         xalign 0.5
@@ -147,9 +154,16 @@ screen katarina_room_peek_dice():
     ## Now two options: leave cleanly or take them.
     zorder 200
 
-    use ph_sprite("ch katarina sleeping", xalign=0.5, yalign=1.0)
+    add "ch kat sleeping" xalign 0.5 yalign 1.0
 
-    use ph_button("bt dice", xalign=0.88, yalign=0.88)
+    imagebutton:
+        idle Transform("bt dice", zoom=0.5, alpha=0.65)
+        hover Transform("bt dice", zoom=0.56, alpha=1.0)
+        xalign 0.88
+        yalign 0.88
+        action Return("bt dice")
+        hover_sound "audio/sfx/hover_selectable.mp3"
+        activate_sound "audio/sfx/click_selectable.mp3"
 
     vbox:
         xalign 0.5

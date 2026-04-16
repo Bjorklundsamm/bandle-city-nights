@@ -166,7 +166,7 @@ label day2_fizz_accept:
     f "You taste good. Salty. I like it."
     f "Thank you. That was... thank you."
 
-    n "He tucks himself back in his shorts with a dreamy look on his
+    n "He tucks himself back in his shorts with a dreamy look on his face."
     # [EXPLICIT END]
 
 

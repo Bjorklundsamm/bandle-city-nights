@@ -2,9 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/narrative/ui/day_card.rpy", line 62: 'linear' is not a keyword argument or valid child of the add statement.
-    linear 0.6 alpha 1.0
-          ^
+File "game/narrative/day2/day2_fizz.rpy", line 169: unterminated string literal
+    n "He tucks himself back in his shorts with a dreamy look on his
 
 Ren'Py Version: Ren'Py 8.4.1.25072401
-Wed Apr 15 13:58:36 2026
+Wed Apr 15 19:28:59 2026
