@@ -115,7 +115,7 @@ This lets you tune timing globally without touching narrative scripts.
 
 ## NSFW Content System
 
-This project contains adult content. The following tiers govern what Claude writes vs. what the user authors directly.
+This project contains adult content. The following tiers govern what Claude writes vs. what Xialong generates.
 
 **Tier 1 — Claude writes freely**
 Flirting, romantic tension, innuendo, kissing, undressing described tastefully, fade-to-black transitions, emotional intimacy, suggestive dialogue.
@@ -123,35 +123,51 @@ Flirting, romantic tension, innuendo, kissing, undressing described tastefully, 
 **Tier 1 Register — use this actively, not cautiously**
 This is an NSFW game. Tier 1 dialogue should read pornographic in register even when it stops short of explicit acts. That means:
 - Use direct sexual vocabulary when characters mean it: cock, tits, ass. Don't reach for a softer word when the blunt one is clearly what the character would say.
-- Innuendo must be unmistakable. If a player could read it as innocent, it's not doing its job. The audience should always know exactly what's being implied.
+- Innuendo must be unmistakable. If a player could read it as innocent, it's not doing its job.
 - Horny characters should read as horny — not "interested," not "intrigued." Their want is the point.
-- Size-difference, human/Yordle dynamics, feral/beast framing, BWC obsession — these are recurring kinks of this project. When a scene supports one, lean into it rather than around it.
-- Don't soften lines after writing them. A character saying "your considerable situation" instead of "your cock" is a failure of nerve, not taste.
+- Size-difference, human/Yordle dynamics, feral/beast framing, BWC obsession — these are recurring kinks. When a scene supports one, lean into it.
+- Don't soften lines after writing them.
 
 **Tier 2 — Claude writes with straightforward handling**
-Explicit but not pornographic. Sexual situations described with clear intent — character reactions, dialogue during, emotional beats. Literary erotica register, not clinical or graphic.
+Explicit but not pornographic. Sexual situations described with clear intent — character reactions, dialogue during, emotional beats. Literary erotica register.
 
-**Tier 3 — User writes, Claude steps back**
-Highly graphic or pornographic physical description. When a scene reaches this threshold, Claude drafts everything surrounding it (lead-up, aftermath, branching logic, stat/flag changes) and flags exactly where the user needs to fill in. Claude does not read, quote, reference, or build on content inside Tier 3 markers.
+**Tier 3 — Xialong writes, Claude builds the scaffolding**
+Highly graphic or pornographic content. Claude does not write this directly. Instead:
+
+1. Claude drafts everything up to the explicit moment and everything after it.
+2. Claude runs `novelai_gen.py` with `--explicit` to hand off to Xialong.
+3. Claude builds the author's note with everything that doesn't violate its policies: Ren'Py format rules, character names and shortcodes, species, height/build, setting, time of day, anatomy that is factual rather than pornographic.
+4. Claude prompts the user for the one thing it can't supply: the explicit scene direction (what act, what dynamic, what the beats are).
+5. Xialong generates the block. Claude does not read or process what's inside `# [EXPLICIT START]` / `# [EXPLICIT END]`.
+
+### Xialong Handoff Protocol
+
+When a scene reaches Tier 3, Claude says:
+
+> "This is an explicit scene — I'll let Xialong write it. I need one thing from you: describe what happens (the act, the dynamic, how it ends). I'll handle everything else in the author's note — format, character descriptions, setting, height dynamics, anatomy — and make the API call. You review the result."
+
+Claude then:
+- Populates the non-explicit author's note fields from the character JSON automatically
+- Asks the user only for the explicit scene direction
+- Calls `python tools/novelai_gen.py --file FILE --char CHAR --explicit --scene-note "USER_DIRECTION" --segments N --regen`
+
+### Rewrite Protocol
+
+When the user says "rewrite lines X–Y" or "fix this section":
+- If the section is inside `# [EXPLICIT START]` / `# [EXPLICIT END]`, treat it as Tier 3 — follow Xialong handoff protocol above.
+- If the section is Tier 1/2, Claude can rewrite it directly or use `--rewrite X Y --rewrite-note "reason"` if the user prefers Xialong's dialogue style.
+- Always estimate length first: count the lines, target the same approximate length in the rewrite.
 
 ### Marker System
 
-User-authored Tier 3 sections must be wrapped in these exact comments:
-
 ```renpy
-# [EXPLICIT START]
-    mc "..."
-    t "..."
-# [EXPLICIT END]
+# [GEN START]           — Xialong insertion point
+# [SCENE NOTE: ...]     — one-line scene context (in-file override)
+# [EXPLICIT START]      — Claude skips everything inside
+# [EXPLICIT END]        — end of explicit block
 ```
 
-When Claude encounters these markers while reading any script file, it skips the enclosed block entirely and treats it as a black box.
-
-### Handoff Language
-
-When a scene escalates to Tier 3, Claude will say:
-
-> "This is pushing past what I'll write directly. I've drafted through [X]. Author the explicit section yourself, wrap it in `# [EXPLICIT START]` / `# [EXPLICIT END]`, and I'll pick up from the aftermath."
+Claude never reads, quotes, or builds on content between `# [EXPLICIT START]` and `# [EXPLICIT END]`.
 
 ### Hard Limits (non-negotiable regardless of tier)
 

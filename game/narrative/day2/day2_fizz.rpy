@@ -113,13 +113,60 @@ label day2_fizz_accept:
     n "He is already moving, trident tucked under his arm, tail going absolutely berserk."
     n "He is not playing it cool. He has stopped trying."
 
-    # This is pushing past what I'll write directly. I've drafted through the lead-up above.
-    # Author the explicit section yourself, wrap it in the markers below,
-    # then jump continues to day2_fizz_aftermath.
+
+    # [GEN START]
 
     # [EXPLICIT START]
+    n "Behind the Bandy Blossom, in the strip of gravel between the wall and the trees, Fizz drops his trident and immediately drops to his knees."
+    n "He pulls your belt loose without hesitation, pops your fly, and tugs everything down in one motion."
 
+    mc "Enthusiastic, huh?"
+
+    f "Don't make fun. It has been the most boring three days."
+    f "And then — this."
+
+    n "He makes a noise. Not words. A drawn-out 'hhhhhh' as your cock springs free."
+    n "Then he looks up at you."
+    n "What he says next is soft. Reverent, almost."
+
+    f "Okay. Okay. You're— you're huge."
+    f "This is gonna fix me."
+
+    n "His hands come up and wrap around you, stroking once, twice."
+    n "You're still half-hard but Fizz clearly does not care about the state of completion. He just leans forward and takes you into his mouth."
+    n "No hesitation. No warm-up. His tongue curls around the head and he just... slides down."
+
+    n "His mouth is slimy. Warm. Far too warm for any normal creature."
+    n "The texture is odd — slick, coating everything it touches, like being licked by an octopus. There's resistance, a pleasant pressure, but no pain. No scraping."
+    n "He goes deep immediately. Takes more than half your length on the first dive and just stays there."
+    n "His throat moves. He swallows around you. Once. Twice."
+    n "Then he pulls back, lips still sealed tight, a long slow drag of tongue against shaft, and lets you pop free with a wet gasp."
+
+    mc "Fuck —"
+
+    f "No jokes about fish puns. I'm not in the mood."
+    f "Just — hold still. Need this."
+
+    n "And he goes back down. Further this time."
+    n "You feel your cock hit the back of his throat. He doesn't pause. Doesn't adjust. Just keeps sinking."
+    n "You watch as a bulge appears in his neck. Watch as he keeps going until his nose is pressed flush against your stomach."
+    n "His eyes roll up. His whole body shivers."
+    n "Then he swallows again. Repeatedly. His throat squeezes around you like he's trying to milk you."
+    n "It feels incredible. It's tight and hot and he never seems to need air."
+
+    n "You catch movement out of the corner of your eye."
+    n "Fizz is hard. His cock is nothing like a human's — pinkish-white and flexible, almost tentacle-like, already beading with something clear and slick. He doesn't touch it. His hands stay on your hips, thumbs stroking
     # [EXPLICIT END]
+
+
+
+
+
+
+
+
+
+
 
     jump day2_fizz_aftermath
 

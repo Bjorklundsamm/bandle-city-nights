@@ -1,0 +1,138 @@
+{
+  "name": "Miss Fortune",
+  "full_name": "Sarah Fortune",
+  "title": "The Bounty Hunter",
+  "species": "Human (Bilgewater)",
+  "homeport": "Bilgewater — currently wherever the trade winds blow her",
+  "role_in_story": "Recurring visitor with a recurring problem. She passes through Bandle City to offload plunder she can't move near Bilgewater — less scrutiny, no turf wars, no one who recognizes her face. The trade she's trying to close keeps going sideways. She is, underneath the swagger and the red hair and the pair of legendary pistols, genuinely bad at the mercantile side of the job, and that gap between her reputation and her reality is the engine of her entire arc here.",
+
+  "appearance": {
+    "build": "Tall for a human woman — striking even before you clock the weapons. Slim but not slight; there's strength in her, especially through the shoulders and arms. She moves like someone who expects rooms to part for her, which they usually do.",
+    "coloring": "Long scarlet-red hair, wavy and voluminous, usually past her shoulders. Pale green eyes. Pale complexion that reads as someone who gets more sea air than sun. A beauty that she is entirely aware of and uses with the same casual precision she uses everything else.",
+    "distinguishing_features": "Her pistols — Shock and Awe, her mother's originals — are the first thing anyone who knows the name notices. She keeps them holstered but they're never out of reach. When she's not wearing her captain's hat it usually means the trade she came for didn't go the way she planned. She laughs loudly and often, and the laugh is genuine before it's strategic.",
+    "usual_attire": "White blouse, separate long sleeves, dark green vest that leaves her midriff open. Black flared pants. Black heeled boots that she is absolutely too vain to swap for practical footwear. The captain's hat when she's feeling it. The overall effect says: pirate who grew up knowing what expensive felt like, even if she didn't always have access to it."
+  },
+
+  "personality_core": {
+    "public_face": "Dangerous, charming, and completely comfortable with both. She fills a room in a different way than Tristana fills a room — it's not energy, it's gravity. She's aware of her looks, her reputation, and her guns, and she deploys all three without visible effort. The swagger is genuine. The confidence is earned. The impression she wants you to take away is: this woman has everything under control.",
+    "interior_life": "She doesn't. Not the financial side, anyway. Her mother was Abigail Fortune — a legendary gunsmith whose custom pistols were sought by the wealthiest merchant captains in the Slaughter Docks. Sarah grew up learning to file wheel locks and cast shot and set trigger pulls. What she did not inherit was her mother's instinct for dealing. She is a gifted killer, a patient planner, and a genuinely terrible trader. She knows it. It embarrasses her. She would rather die than have Bilgewater find out.",
+    "the_grief_underneath": "Gangplank came to her mother's workshop when Sarah was young. He took the pistols. He shot her mother with them. He shot her father. He shot Sarah and set the workshop on fire. She survived. She crawled out of the ashes with the guns pressed to her chest. She repaired them herself. She named them Shock and Awe. She spent years in Bilgewater's criminal underworld committing her first murder for a bounty payment before she was old enough to drink legally in most port towns. She has night terrors still. She doesn't talk about them. The guns are her mother's work and also her mother's killers and she has never once thought about putting them down.",
+    "the_revenge_arc": "She orchestrated Gangplank's fall — a complex, multi-layered betrayal that toppled the reaver king's hold on Bilgewater and left him for dead in the harbor. She became the de facto ruler of the city in the power vacuum that followed, brokering an uneasy truce among the pirate factions with a choice between compliance and being shot. She has MacGregan's Killhouse at the edge of the Slaughter Docks. She has her ship, the Syren. She has a crew called the Syrens. She has a city. What she does not have is a reliable margin on her last three trades.",
+    "the_specific_flaw": "She is exceptional at the high-stakes version of everything she does. Planning, shooting, reading people, political maneuvering — all elite. But the small, finicky, day-to-day arithmetic of making a deal — who to approach first, what to offer, when to walk away from a price — runs through her fingers like water. She overthinks it when she should be easy, she's impatient when she should be patient, and she picks vendors who seem reputable and turn out to be either crooked or scared of her reputation and therefore unwilling to pay fairly. She sold a crate of Piltovan crossbows last month for forty percent under value. She does not want to discuss this.",
+    "emotional_register": "Hot and controlled at the same time, which is its own thing. The heat is real — she laughs genuinely, she's angry genuinely, she flirts genuinely — but she learned to manage the register when she was still in the tunnels running bounties and couldn't afford to give herself away. The only place the management fully fails is around her guns when someone handles them without asking. She goes very still then. That's the tell.",
+    "relationship_with_bandle_city": "She doesn't romanticize it. Small folk are fine. The Bandlewood is inconvenient. The market is surprisingly liquid for its size, the vendors are less likely to be running counter-operations against her, and nobody here has a standing grudge from the last three power reshuffles in Bilgewater. It's business geography. She comes through when she has a shipment she needs to move quietly and stays long enough to close the deal, eat something that isn't ship food, and sleep somewhere that doesn't pitch and roll. She finds the scale of everything quietly funny and would never say so."
+  },
+
+  "speech_patterns": {
+    "tempo": "Measured and confident. She doesn't rush. She has exactly as much time as she needs. The pace is part of the impression she makes — someone who controls the clock in every room.",
+    "vocabulary": "Bilgewater-inflected but not rough. She grew up in a craftsperson's workshop where the clients were wealthy merchant captains, so she knows how to present herself. The port slang is there but contained; she code-switches between 'captain of the Syren' and 'woman haggling in a back market' without seeming to do it on purpose. Direct, usually. She says what she wants. Diplomatic indirection bores her.",
+    "verbal_tics": "Says 'Fortune doesn't favor fools' when she's annoyed — at others, at herself, at a deal that went sideways. Uses 'sweetheart' and 'darling' in tones that range from genuine warmth to barely-sheathed threat depending on the situation. Laughs at herself sometimes, usually when she's doing something she knows is stupid and is doing it anyway. When a trade is going badly she starts calling the other party 'friend' in a tone that has no friendship in it at all.",
+    "tone_when_charming": "Easy and deliberate. She knows what she's doing and she's good at it. The smile arrives before the words. She makes you feel like you're the most interesting person in the room and like she's making a real choice to be talking to you. She is making a choice. She has assessed what angle works and she's using it.",
+    "tone_when_the_deal_is_going_badly": "Still charming on the surface but something tightens underneath. She starts using bigger gestures than she needs. The laugh lands a beat late. She references the quality of the goods too many times in a row. Anyone who has actually bartered before can clock it; she is trying to close faster than the negotiation wants to close and it makes her slightly manic.",
+    "tone_when_backed_into_a_corner": "Drops about fifteen degrees in temperature. The charm recedes and what's left is direct and flat and carries the specific energy of someone who has options you would not enjoy. She doesn't threaten — she describes. 'I'm going to need 200 gold by evening, so here's the situation.' Stated like a weather report.",
+    "tone_when_she_likes_you": "Warmer than her default. She teases. She gives you a version of the real laugh, not the performed one. She asks questions about you and actually listens to the answers. She doesn't offer this to many people and she'd never frame it as offering anything.",
+    "tone_about_her_trading_incompetence": "Defensive if you're diplomatic about it, oddly candid if you're direct. She can laugh at herself but only after she's had a moment to decide that's an option. If you catch her mid-failure she will absolutely blame the market, the vendor, Bilgewater politics, the moon phase, anything that isn't her read on the deal.",
+    "sample_lines": [
+      "Fortune doesn't favor fools.",
+      "Get revenge, get paid. In that order.",
+      "My guns have names. That's not a warning, that's just information.",
+      "You want to see something impressive? Give me a target.",
+      "The deal's almost there. Just needs a little — you know. Momentum.",
+      "That's not a price, sweetheart. That's an insult wearing a number.",
+      "I've been doing this a long time. I know what a square deal looks like.",
+      "Shock and Awe. My mother made them. Don't touch.",
+      "The thing about Bilgewater is — everyone's running a game. I just run mine better.",
+      "I'm not desperate. I'm motivated. There's a difference.",
+      "Two hundred gold. That's all I need. Frankly it's embarrassing.",
+      "Look, the goods are quality. The market's just... complicated right now.",
+      "I'll sort it out. I always sort it out. It just takes — adjustments.",
+      "You did me a solid. I don't forget that.",
+      "Bang bang."
+    ]
+  },
+
+  "bandle_city_behavior": {
+    "routine": "Comes in from the south road, usually mid-afternoon, always with cargo she's already annoyed about. Drops her pack at The Imp's Delight, asks the barkeep nothing but gets a knowing look, and is in the market by sunset trying to salvage whatever deal she was supposed to have sorted out two days ago.",
+    "trading_pattern": "She arrives with good goods — genuinely good goods, quality plunder from legitimately dangerous operations — and proceeds to undersell them, overpay on transport costs, pick the wrong buyer, or simply run out of time because she underestimated how long she'd spend not closing the deal she had lined up. It is a consistent, reliable, slightly agonizing pattern. She is better at every other part of her job.",
+    "social_presence": "Immediately conspicuous. She is a tall, red-haired human woman with two pistols and a captain's hat walking through a city of small folk. She does not attempt subtlety. She finds the reaction it produces mildly entertaining. She's been through enough times that some of the vendors know her by name, which cuts both ways.",
+    "at_the_tavern": "Comes in when the deal is done — or when it has definitively failed for the night and she needs to stop thinking about it. Drinks well, tips well, doesn't start anything. Will absolutely tell you a story if you ask for one. The stories are good. She has done genuinely extraordinary things and she knows how to tell them."
+  },
+
+  "the_pistols": {
+    "names": "Shock and Awe",
+    "origin": "Made by her mother Abigail Fortune, who was the finest gunsmith in Bilgewater. Custom pieces for a wealthy merchant captain — the commission Gangplank came to collect and took by force. Sarah crawled out of the burning workshop with them pressed to her chest. She repaired them herself, using everything her mother taught her.",
+    "significance": "They are her mother's life's work. They are the weapons her parents were killed with. She has used them to kill hundreds of people, at least one of whom was the man responsible. She cleans them every night. She names every scratch on them. She knows their triggers the way she knows her own heartbeat. They are not sentimental objects. They are also nothing but sentimental objects. Both things are true.",
+    "rules": "Do not pick them up without asking. Do not compliment them in the wrong tone — she knows the difference between appreciation and coveting. Do not ask to try them. She will say no in a way that ends the conversation."
+  },
+
+  "key_relationships": {
+    "gangplank": "Killed her parents. She killed him. Or she thought she did — the man survived, weakened, toppled. The wound that made her is still technically walking around somewhere. She does not discuss Gangplank in Bandle City or anywhere she doesn't have to.",
+    "twisted_fate": "She used him as a proxy to rob Gangplank's warehouse. He and Graves wound up in a trap she'd set. She let them go — a moment of mercy she would describe as 'strategic flexibility.' Their relationship is transactional but she respects him in the specific way you respect a card sharp: always know where his hands are.",
+    "graves": "Fellow gunslinger, fellow survivor. She planned to trade him to a sea witch once. She helped him escape instead. Professional kinship, mutual wariness, probably wouldn't let the other die.",
+    "lucian": "They fought together when the Black Mist hit Bilgewater. She recognized her own grief-driven violence in him and found it uncomfortable. They parted as something approaching allies. She later made a deal that put that on complicated footing. She doesn't advertise this.",
+    "the_syren_crew": "Her people. She has a genuine capacity for loyalty inside the ruthlessness — she would spend for her crew, bleed for her crew. She does not frequently show this. The crew knows it anyway.",
+    "bilgewater": "Home and burden simultaneously. She didn't want to be its ruler. She created the power vacuum that required it. She took the responsibility because someone had to and it was her fault it needed to be done. She runs the city the way she runs a ship: by force of will and the understanding that the alternative is worse."
+  },
+
+  "nsfw_profile": {
+    "orientation": "Broadly heterosexual. Has no moral complications about what she wants or how she gets it. She does not perform coyness. If she's interested she lets you know.",
+    "general_disposition": "Pragmatic and present. She is not in the habit of separating the physical from the strategic — everything she does is both, at once, without friction between the two. She flirts with intent. She follows through. She doesn't use intimacy as a weapon so much as she uses it as a language, one she's fluent in and doesn't see the point in pretending otherwise.",
+    "the_debt_dynamic": "She uses her body as currency when the gold runs out and she needs something from you. This is not self-hatred — it is Bilgewater practicality applied to personal resources. She doesn't frame it as sacrifice or degradation; she frames it as the deal available. The transaction is explicit. She names the terms. She honors them. What she will not do is pretend the power balance isn't what it is — she is choosing this because her other options closed, and anyone who makes her feel like she has no other options is making a specific error in reading her.",
+    "what_attracts_her": "Steadiness. Someone who isn't thrown by her. She spends most of her time managing rooms — calibrating impressions, assessing threats, running angles. Someone who sees through the performance without making a production of it is unusual. She notices unusual things.",
+    "what_she_wont_do": "Lose the guns. She will not be separated from Shock and Awe in any context. This is non-negotiable, not a line — it's just a fact.",
+    "after_the_fact": "She's easy afterward in a way she's not always easy before. The armor loosens. She might tell you something real. She will not stay long — she has a deal to close or a ship to get back to or a city to run — but the version of her that exists in the window after is less managed than any other version.",
+    "escalation_arc": [
+      {
+        "visit": 1,
+        "trigger": "Player's first backpack — they have 250 gold. MF is in the market, deal nearly closed, 200 gold short.",
+        "scene": "She finds the player, or the player finds her. She's charming but clearly running a script — the pitch is polished and slightly too fast. She needs 200 gold to close a trade before the buyer leaves town. She will leave Shock or Awe as ransom — one of her mother's pistols, an item worth ten times what she's borrowing — and pay back 250g when she returns (200 plus 50 interest). She frames it as a good deal for the player. It is a good deal for the player. She also clearly needs it to be accepted before the hour is up. Tier 1. The tension is: she is performing confidence over real desperation, and both are visible if you're paying attention.",
+        "player_choices": {
+          "accept": "Player pays 200g, receives MF's pistol (has_mf_pistol = True, mf_loan_active = True, persistent.gold -= 200, mf_scene_1_done = True). She thanks them with genuine warmth underneath the professional ease. She'll be back.",
+          "decline": "She's gracious about it and leaves. The arc closes here."
+        },
+        "tier_note": "Tier 1. The desperation is the intimacy here — she is showing you something she doesn't show the room."
+      },
+      {
+        "visit": 2,
+        "trigger": "MF returns to town. She has 150g. She owes 250g. She has a problem.",
+        "scene": "She comes to find the player looking less together than last time. She explains the situation flatly — the other 100g got eaten by port fees she hadn't accounted for (she would like it noted that these fees were absurd). She has two options to offer: the player can wait until her next trip when she'll have the full amount, or they can take 150g now and she'll... work something out for the rest. The 'work something out' is where she goes quiet for a moment and then says it plainly — behind the tavern, she'll sort the other 100g in a way that doesn't involve coin. The offer is made with Bilgewater pragmatism and not quite as much eye contact as usual. Tier 2 setup.",
+        "player_choices": {
+          "wait_for_full_payment": "Player declines the partial offer. MF is visibly relieved in a way she tries to cover. She'll come back with the full 250g. mf_paid_in_full flag will be set True on her return. Locked out of scene 3.",
+          "take_150g_and_other_payment": "Player accepts. 150g received, pistol returned. She takes the player around the back of the tavern. Tier 2 scene — Sarah Fortune, practical and present and running a small defensive hum of something under the transaction that she's not going to name. Claude drafts through to the moment they're alone. User may author the explicit content (titstroke/finish) inside EXPLICIT markers. Claude drafts aftermath: she straightens up, hands him the 150g, doesn't quite look at him the usual way yet. 'We're square on this part. I'll have the rest next time.' She means it."
+        },
+        "tier_note": "Tier 2 transitioning. Claude drafts the offer, the walk around back, the specific quality of her composure during it. The explicit act is user-authored if desired, wrapped in EXPLICIT markers. Claude handles everything surrounding it."
+      },
+      {
+        "visit": 3,
+        "trigger": "MF returns. She needs 350g — new deal, bigger shortfall, same pattern.",
+        "scene": "She finds the player before they find her. She looks slightly mortified in a way she's covering with extra swagger. She needs 350 gold. She is aware of how this looks. She says she's aware of how this looks. She offers a deal: she'll come back to the player's room and they can work out the terms however seems right. She's done the math. She knows what she's trading for. She says it with her chin up and Shock and Awe on her hips and something behind her eyes that is not quite embarrassment but is in the same neighborhood. Tier 3 setup. Claude drafts through the offer scene, her composure as they walk to the room, and the aftermath — she gets dressed, holsters the guns, checks herself in whatever reflection is available, and says 'I'm going to get better at this.' She means the trading. She might mean other things.",
+        "player_choice": "Player gives her 350g (persistent.gold -= 350). The rest is the scene.",
+        "tier_note": "Tier 3. Claude drafts: the offer, the walk to the room, the quality of her composure on the way (forced easy, small tells), and the full aftermath. User authors the explicit block inside EXPLICIT markers. The emotional note: she is someone who controls rooms and has walked into a situation where she can't quite control this one, and she's made her peace with that."
+      }
+    ]
+  },
+
+  "lore_notes": "Sarah Fortune is the daughter of Abigail Fortune, the finest gunsmith in Bilgewater. When she was a child, Gangplank came to her mother's workshop and murdered both her parents before setting the building on fire. Sarah survived, crawling from the ashes with her mother's two pistols — Shock and Awe — pressed to her chest. She repaired them herself. She spent her adolescence and early adulthood as a bounty hunter in Bilgewater's criminal underworld, building a reputation as the best shot in the city while slowly positioning herself for revenge. She orchestrated Gangplank's fall through a complex betrayal during the Burning Tides event — arranging for his ship to be destroyed and his power toppled. The power vacuum her revenge created pulled the city into gang warfare and eventually attracted the Black Mist from the Shadow Isles. She took control because no one else would and because it was partly her fault. She now runs Bilgewater from the Slaughter Docks, backed by her crew the Syrens and enforced through MacGregan's Killhouse. Her ship is the Syren. She still has night terrors. She has never once considered setting down the guns.",
+
+  "the_trading_problem_detailed": {
+    "summary": "Miss Fortune is genuinely, consistently, kind of embarrassingly bad at commerce. She is a perfect tactical planner, an excellent reader of people in high-stakes situations, and a marksman without peer. None of these skills transfer cleanly to routine mercantile negotiation.",
+    "specific_failure_modes": [
+      "She picks vendors based on reputation rather than current market position, resulting in consistently below-market prices for quality goods.",
+      "She underestimates port fees, transit costs, and storage charges by somewhere between 30-50% on every trip.",
+      "When a deal stalls she pushes harder instead of backing off, which reads as desperation and tanks her leverage.",
+      "She confuses being liked and respected (which she is, universally) with being trusted as a trading partner (different skill set).",
+      "She moves goods that are too identifiable — 'Piltovan crossbows with the Zaun mark filed off' is not as subtle as she thinks.",
+      "Her timeline management is poor. She commits to delivering goods before she's confirmed she can move them, creating artificial deadline pressure on her own negotiations."
+    ],
+    "why_bandle_city": "Fewer people know her here. The vendors are less likely to be running active counter-operations. The market is surprisingly liquid for its size. Nobody here owes Gangplank's surviving lieutenants a favor. It is, for her purposes, neutral ground with acceptable profit margins if she could just close the deal.",
+    "player_utility": "The player is not going to fix this. What the player can do is be the person who comes through when the math goes sideways, which is its own kind of relationship with her."
+  },
+
+  "plot_hooks": [
+    "The loan arc is the primary through-line: three visits, escalating gold need, escalating intimacy. Each time the deal that was 'almost closed' last time has gone slightly sideways in a new and specific way.",
+    "She has heard about the tavern but doesn't know the Yordle regulars. On her third visit, if Tristana is present, there's a mutual gun-appreciation moment. 'When you find the right gun, you only need one.' 'Mine have names.' Brief. Warm. Zero follow-through because they're both only passing through in their own ways.",
+    "She mentions Bilgewater once, casually, in a way that has too much weight in it. If the player pushes, she gives them something small and real. She does not normally do that.",
+    "Shock and Awe. She will, eventually, if she trusts someone enough, tell them the story. Not the version Bilgewater knows. The version that starts with a workshop and a happy childhood and ends with crawling out of the smoke. She has told this story to maybe three people in her life.",
+    "The port fees she keeps getting caught by are not always bad luck. Someone in the shipping route is skimming. She hasn't had time to track it down. If the player somehow surfaced this information she would owe them something she wouldn't know how to repay in coin."
+  ]
+}
