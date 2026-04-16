@@ -1,0 +1,234 @@
+{
+  "meta": {
+    "note": "Tag reference for Bandle City Nights image generation. Style: natural language, space-separated multi-word tags, no underscores unless the model expects them. Order matters — put the most defining tags first."
+  },
+
+  "quality_style": [
+    "masterpiece", "best quality", "highly detailed", "sharp focus",
+    "digital art", "flat color", "cel shading", "anime style", "cartoon",
+    "clean lineart", "vibrant colors", "soft shading", "illustration"
+  ],
+
+  "scene": {
+    "bandle_city_outdoors": [
+      "outdoors", "fantasy setting", "bandle city", "yordle city",
+      "cobblestone", "wooden buildings", "forest edge", "bandlewood",
+      "daytime", "night", "dusk", "warm lighting", "lantern light",
+      "behind building", "alleyway", "treeline", "grass", "flowers",
+      "mushrooms", "oversized props"
+    ],
+    "tavern": [
+      "tavern interior", "wooden walls", "wooden floor", "candlelight",
+      "warm interior", "bar counter", "tankards", "shelves", "dim lighting",
+      "medieval fantasy interior", "inn"
+    ],
+    "bedroom": [
+      "bedroom", "bed", "wooden bed frame", "red blanket", "pillow",
+      "nighttime", "lamp", "candlelight", "desk", "window", "shutters",
+      "cozy", "warm lighting", "inn room", "medieval bedroom"
+    ],
+    "modifiers": [
+      "size difference", "height difference", "human on anthro",
+      "male on anthro", "hidden", "stealth", "public", "semi-public",
+      "no humans background", "solo focus", "duo", "pov"
+    ]
+  },
+
+  "characters": {
+    "mc": {
+      "identity": ["boy", "human", "male", "human male", "pov"],
+      "body": [
+        "tall", "broad shoulders", "muscular", "toned", "large hands",
+        "blonde hair", "short hair", "light eyes", "blue eyes",
+        "stubble", "defined jawline"
+      ],
+      "pov_tags": [
+        "pov", "view from above", "looking down", "hand on another's head",
+        "first person view", "out of frame male", "male pov"
+      ]
+    },
+    "fizz": {
+      "identity": ["fizz (league of legends)", "fizz", "yordle", "male", "smaller male", "anthro"],
+      "body": [
+        "blue-green scales", "bioluminescent markings", "gills", "finned tail",
+        "webbed fingers", "amber eyes", "large eyes", "small", "short",
+        "wiry", "lean", "athletic build", "always damp", "aquatic",
+        "scale covered", "fins", "fish tail", "no clothing", "nude"
+      ],
+      "personality_tags": ["grin", "excited", "mischievous", "happy", "tongue out"]
+    },
+    "tristana": {
+      "identity": ["tristana (league of legends)", "tristana", "yordle", "female", "anthro", "smaller female"],
+      "body": [
+        "blue-grey fur", "blue fur", "white hair", "messy hair", "pigtails",
+        "golden eyes", "amber eyes", "large ears", "pointy ears",
+        "small breasts", "toned stomach", "abs", "muscular", "compact build",
+        "short", "missing digits", "sharp teeth", "blush"
+      ],
+      "outfit": [
+        "green clothes", "green vest", "crop top", "baggy pants",
+        "goggles", "wristguards", "black gloves", "sandals", "belts"
+      ],
+      "personality_tags": ["smug", "cocky", "grin", "excited", "waving", "hand on hip"]
+    },
+    "jinx": {
+      "identity": ["jinx (league of legends)", "jinx", "human", "female", "girl"],
+      "body": [
+        "blue hair", "long hair", "twin braids", "pale skin", "pink eyes",
+        "magenta eyes", "tattoos", "cloud tattoos", "thin", "skinny",
+        "toned stomach", "thigh gap", "small breasts"
+      ],
+      "outfit": [
+        "pink crop top", "ripped denim shorts", "black denim shorts",
+        "dark pink panties", "belts", "multiple belts", "sneakers",
+        "socks", "choker"
+      ],
+      "personality_tags": ["grin", "smug", "manic", "raised eyebrow", "looking at viewer"]
+    },
+    "miss_fortune": {
+      "identity": ["miss fortune (league of legends)", "miss fortune", "human", "female", "girl"],
+      "body": [
+        "red hair", "long hair", "wavy hair", "green eyes", "pale skin",
+        "large breasts", "curvy", "wide hips", "tall", "strong build",
+        "toned arms", "athletic"
+      ],
+      "outfit": [
+        "white blouse", "green vest", "midriff", "black pants", "flared pants",
+        "heeled boots", "captain hat", "dual pistols", "holsters"
+      ],
+      "personality_tags": ["confident", "smirk", "looking at viewer", "hand on hip"]
+    },
+    "midna": {
+      "identity": ["midna", "imp", "minigirl", "smaller female", "anthro", "fantasy"],
+      "body": [
+        "pale skin", "dark skin", "orange markings", "glowing markings",
+        "teal markings", "helmet hair", "hood", "floating", "levitating",
+        "thick thighs", "toned stomach", "skinny", "thigh gap",
+        "missing digits", "sharp teeth", "glowing eyes", "eyes hidden"
+      ],
+      "outfit": [
+        "hood", "hood up", "brown hood", "crop top", "leather vest",
+        "leather shorts", "bartender outfit", "tray", "beer mug",
+        "black thong", "unbuttoned shirt"
+      ],
+      "personality_tags": ["grin", "mischievous", "smug", "side view"]
+    },
+    "katarina": {
+      "identity": ["katarina (league of legends)", "katarina", "human", "female", "girl"],
+      "body": [
+        "red hair", "short hair", "green eyes", "pale skin", "scar",
+        "facial scar", "toned", "athletic build", "medium breasts"
+      ],
+      "outfit": ["assassin outfit", "daggers", "leather armor", "thigh high boots"]
+    },
+    "poppy": {
+      "identity": ["poppy (league of legends)", "poppy", "yordle", "female", "anthro", "smaller female"],
+      "body": [
+        "blue hair", "long hair", "blue eyes", "purple fur", "lavender fur",
+        "short", "stout", "muscular", "strong build", "large ears"
+      ],
+      "outfit": ["armor", "hammer", "knight outfit", "shield", "gauntlets"]
+    },
+    "ahri": {
+      "identity": ["ahri (league of legends)", "ahri", "human", "fox girl", "kemonomimi", "female"],
+      "body": [
+        "black hair", "long hair", "brown eyes", "fox ears", "multiple tails",
+        "nine tails", "fox tail", "pale skin", "slender", "curvy",
+        "large breasts"
+      ],
+      "outfit": ["traditional outfit", "orb", "fox fire", "flowing clothes"]
+    },
+    "lulu": {
+      "identity": ["lulu (league of legends)", "lulu", "yordle", "female", "anthro", "smaller female"],
+      "body": [
+        "purple hair", "long hair", "purple eyes", "blue fur", "short",
+        "large hat", "witch hat", "big hat", "small build", "large ears"
+      ],
+      "outfit": ["witch outfit", "staff", "large hat", "cloak", "dress"]
+    }
+  },
+
+  "acts": {
+    "oral": [
+      "fellatio", "oral", "oral sex", "blowjob", "deepthroat",
+      "standing fellatio", "throat bulge", "bulging throat",
+      "hand on penis", "stroking", "licking", "tongue on penis",
+      "penis on face", "nose on shaft", "face fuck", "irrumatio"
+    ],
+    "penetration": [
+      "sex", "vaginal sex", "anal sex", "penetration", "from behind",
+      "mating press", "missionary", "cowgirl position", "reverse cowgirl",
+      "size difference sex", "stomach bulge", "womb bulge", "x-ray",
+      "cervix", "deep penetration", "bottoming out"
+    ],
+    "general_sexual": [
+      "nude", "naked", "topless", "bottomless", "undressing",
+      "clothes pull", "clothes lift", "panties aside", "panties pull",
+      "erection", "large penis", "thick penis", "veiny penis",
+      "precum", "cum", "cumshot", "facial", "cum inside", "creampie",
+      "cum drip", "multiple orgasms", "orgasm", "ahegao",
+      "eyes rolling back", "drool", "saliva", "tears", "teary eyes",
+      "sweat", "heavy breathing", "panting", "moaning"
+    ],
+    "size_difference_specific": [
+      "size difference", "height difference", "smaller partner",
+      "larger male", "smaller female", "smaller male",
+      "human on anthro", "male on anthro", "held up", "lifted",
+      "carried", "size contrast", "micro on macro"
+    ]
+  },
+
+  "body_descriptors": {
+    "general": [
+      "full body", "upper body", "lower body", "close up", "face",
+      "bust", "waist up", "thighs", "legs", "feet", "toes", "hands"
+    ],
+    "build": [
+      "skinny", "slim", "slender", "toned", "muscular", "athletic",
+      "curvy", "thick thighs", "wide hips", "big hips", "flat chest",
+      "small breasts", "medium breasts", "large breasts", "huge breasts",
+      "abs", "toned stomach", "soft belly", "pudgy"
+    ],
+    "genitals_female": [
+      "pussy", "vagina", "wet", "aroused", "spread legs",
+      "cameltoe", "puffy vulva", "labia"
+    ],
+    "genitals_male": [
+      "penis", "erection", "large penis", "thick penis", "veiny",
+      "foreskin", "circumcised", "balls", "testicles", "pubic hair",
+      "blonde pubic hair", "trimmed"
+    ]
+  },
+
+  "clothing_states": [
+    "fully clothed", "partially clothed", "partially undressed",
+    "clothes pull", "shirt lift", "skirt lift", "panties visible",
+    "bra visible", "topless", "bottomless", "nude", "naked",
+    "torn clothes", "ripped clothes", "clothes around ankles",
+    "panties down", "panties aside", "shorts pulled down"
+  ],
+
+  "expressions_poses": {
+    "expressions": [
+      "ahegao", "blush", "heavy blush", "drunk", "dazed", "eyes rolling back",
+      "tongue out", "open mouth", "smug", "grin", "smile", "wink",
+      "tears", "teary eyes", "crying", "surprised", "shocked",
+      "pleased", "satisfied", "embarrassed", "determined", "focused"
+    ],
+    "poses": [
+      "standing", "sitting", "kneeling", "lying down", "on all fours",
+      "bent over", "leaning forward", "leaning back", "hips forward",
+      "arm up", "hand behind head", "hand on hip", "arms behind back",
+      "looking at viewer", "looking up", "looking down", "looking away",
+      "from behind", "from below", "from above", "side view",
+      "three quarter view", "pov"
+    ]
+  },
+
+  "lighting_atmosphere": [
+    "warm lighting", "soft lighting", "dramatic lighting", "rim lighting",
+    "candlelight", "lantern light", "moonlight", "sunlight", "dappled light",
+    "dark background", "white background", "simple background",
+    "dark", "night", "daytime", "dusk", "dawn", "foggy", "misty"
+  ]
+}
