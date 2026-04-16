@@ -209,6 +209,7 @@ screen katarina_room_peek_dice():
 
 label morning_day_2_steal_dice:
 
+    hide screen katarina_room_display
     n "Your hand moves before your better judgment can catch up."
     n "Through the gap. Slow. Two fingers."
     n "The dice are heavier than they look."
@@ -235,6 +236,7 @@ label morning_day_2_steal_dice:
 
 label morning_day_2_downstairs:
 
+    hide screen katarina_room_display
     scene bg black with Dissolve(0.8)
     stop ambient fadeout 1.0
 
