@@ -41,6 +41,8 @@ label day2_tavern_loop:
 
 
 screen day2_tavern_hub():
+    default outside_hovered = False
+    default room_hovered = False
     zorder 100
     modal True
 
@@ -87,6 +89,8 @@ screen day2_tavern_hub():
         padding (14, 8)
         hover_sound "audio/sfx/hover_selectable.mp3"
         activate_sound "audio/sfx/click_selectable.mp3"
+        hovered SetScreenVariable("outside_hovered", True)
+        unhovered SetScreenVariable("outside_hovered", False)
         action Return("outside")
         vbox:
             xalign 0.5
@@ -97,7 +101,10 @@ screen day2_tavern_hub():
                 hover_color "#e8e0d0ee"
                 size 22
                 font gui.name_text_font
-            add Transform("pointer arrow", zoom=0.5, rotate=90, alpha=0.6) xalign 0.5
+            if outside_hovered:
+                add Transform("pointer arrow", zoom=0.5, rotate=90, alpha=0.6) at nav_arrow_bounce xalign 0.5
+            else:
+                add Transform("pointer arrow", zoom=0.5, rotate=90, alpha=0.6) xalign 0.5
 
     ## Return to your room — always present; redirects outside during day 2.
     button:
@@ -108,11 +115,16 @@ screen day2_tavern_hub():
         padding (14, 8)
         hover_sound "audio/sfx/hover_selectable.mp3"
         activate_sound "audio/sfx/click_selectable.mp3"
+        hovered SetScreenVariable("room_hovered", True)
+        unhovered SetScreenVariable("room_hovered", False)
         action Return("leave")
         hbox:
             spacing 10
             yalign 0.5
-            add Transform("pointer arrow", zoom=0.63, rotate=135, alpha=0.6) yalign 0.5
+            if room_hovered:
+                add Transform("pointer arrow", zoom=0.63, rotate=135, alpha=0.6) at nav_arrow_bounce_diag yalign 0.5
+            else:
+                add Transform("pointer arrow", zoom=0.63, rotate=135, alpha=0.6) yalign 0.5
             text "Return to your room":
                 size 22
                 color "#d4c4a800"
@@ -235,7 +247,7 @@ label day2_lulu:
     n "The frustration is real — not hot, not sharp. Just old. The kind that's been sitting long enough."
 
     l "I am not new to this world. I have been in it longer than most people in this darn village."
-    l "I have done things alone that would make half this village sit down."
+    l "I have done things alone that would make half this village's brains melt!"
 
     l "But I walk in here and everyone decides I need minding."
     l "I get sent home before the interesting hours."
@@ -243,7 +255,7 @@ label day2_lulu:
 
     mc "How long has it been like that?"
 
-    l "Here? Since I arrived. Before here, longer."
+    l "Here? Since long, longggggg before you were born bucko. Us magic folk age a bit more gracefully."
     l "The village is very good at deciding what people need without asking them."
 
     n "A pause. Pix does something small and pointed near your ear."
@@ -260,7 +272,7 @@ label day2_lulu:
 
     mc "About what?"
 
-    l "About you. About humans in general."
+    l "About you. About humans in general. You'd be surprised how many Yordles have certain... preferences for humans."
     l "About a particular — attribute — that apparently makes everyone lose their composure entirely."
 
     n "She is not blushing. She is delivering this as field notes."
@@ -286,7 +298,7 @@ label day2_lulu:
     n "She glances at Poppy again. Poppy has not moved."
 
     l "She does take days off. She has a gym she likes."
-    l "I always know when she's gone because the room is about thirty percent less supervised."
+    l "And when she's gone, let's just say there is a lot less concern about where I sneak off to. And who I sneak off with."
 
     # [GEN START]
 
@@ -303,7 +315,7 @@ label day2_lulu:
     # [EXPLICIT END]
 
     menu:
-        "Not the right person for this.":
+        "Sorry Lulu, I think... Mabye someone else.":
             $ affection_lulu -= 1
             mc "I don't think I'm the right person for this."
 
@@ -324,7 +336,7 @@ label day2_lulu:
             n "She hops off the stool, staff in hand. Poppy tracks her across the room — always."
             n "Pix watches you from her shoulder as she goes."
 
-        "When Poppy's not here — come find me.":
+        "So just find some time she's gone? Deal.":
             $ affection_lulu += 1
             mc "When Poppy takes that day off — come find me."
 
@@ -335,9 +347,21 @@ label day2_lulu:
 
             n "She picks up her drink and finishes it in one go."
 
-            l "You'll know when. She always takes Thursdays."
-            l "I'll be here in the morning. Earlier than usual."
-            l "Don't be late — she gets back by noon."
+            l "I'll be patient, kinda. But you better not forget."
+            l "And be excited, I've got a list."
+            
+            mc "A list?"
+
+            l """
+            Oh yeah. I'm not gonna let you go until all my curiousities are
+
+            Oh yeah. I'm not gonna let you go until all my curiousities are.
+
+            Oh yeah. I'm not gonna let you go until all my curiousities are..
+
+            Oh yeah. I'm not gonna let you go until all my curiousities are...
+            """
+            l "Satisfied."
 
             n "She hops off the stool and grabs her staff."
             n "Pix darts from her shoulder to hover briefly in front of your face — inspecting something — then rejoins her."

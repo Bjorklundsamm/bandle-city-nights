@@ -427,6 +427,22 @@ transform journal_arrow_anim:
     linear 0.45 xoffset 0
     repeat
 
+## Navigation arrow hover bounces — used by travel buttons in hub screens.
+
+transform nav_arrow_bounce:
+    ## Vertical bob for down-pointing arrows (rotate=90).
+    yoffset 0
+    linear 0.3 yoffset 7
+    linear 0.3 yoffset 0
+    repeat
+
+transform nav_arrow_bounce_diag:
+    ## Down-left bob for diagonal arrows (rotate=135).
+    xoffset 0 yoffset 0
+    linear 0.3 xoffset -5 yoffset 5
+    linear 0.3 xoffset 0 yoffset 0
+    repeat
+
 screen constitution_arrow():
     zorder 310
     add Transform("pointer arrow", xzoom=-1.0, zoom=0.5, alpha=0.6) at const_arrow_anim

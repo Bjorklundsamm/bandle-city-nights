@@ -7,10 +7,7 @@
 
 label day2_outside_loop:
 
-    # MISSING: bg bandle city street — Bandle City daytime exterior.
-    # Colorful, low Yordle-scale buildings. Cobblestones. Warm morning light.
-    # Tavern exterior visible at one edge. Maybe a market stall or two.
-    show screen ph_bg("bg bandle city street")
+    scene bg city outside daytime
     play ambient "audio/sfx/Tavern_ambience.mp3" fadein 1.5 volume 0.3
 
     n "The air outside is warm and bright, the city going about its morning."
@@ -27,16 +24,41 @@ label day2_outside_loop:
             $ _day2_outside_running = False
 
         elif _return == "miss_fortune":
-            hide screen ph_bg
             call day2_meet_miss_fortune
-            show screen ph_bg("bg bandle city street")
+            scene bg city outside daytime
 
         elif _return == "fizz":
-            hide screen ph_bg
             call day2_meet_fizz
-            show screen ph_bg("bg bandle city street")
+            scene bg city outside daytime
 
-    hide screen ph_bg
+        elif _return == "auto_repair":
+            call loc_auto_repair
+            scene bg city outside daytime
+
+        elif _return == "roboshop":
+            call loc_roboshop
+            scene bg city outside daytime
+
+        elif _return == "scout_training":
+            call loc_scout_training
+            scene bg city outside daytime
+
+        elif _return == "hot_springs":
+            call loc_hot_springs
+            scene bg city outside daytime
+
+        elif _return == "deep_woods":
+            call loc_deep_woods
+            scene bg city outside daytime
+
+        elif _return == "kitchen":
+            call loc_kitchen
+            scene bg city outside daytime
+
+        elif _return == "impish_delight":
+            call loc_impish_delight
+            scene bg city outside daytime
+
     stop ambient fadeout 1.0
 
     # TODO: jump to rest of day 2 when written
@@ -44,18 +66,105 @@ label day2_outside_loop:
 
 
 screen day2_outside_hub():
+    default back_hovered = False
     zorder 100
     modal True
 
-    # MISSING: ch miss fortune tavern position — standing, arms crossed, confident,
-    # merchant's pack at her side, two pistols at her hips.
-    use ph_button("miss_fortune", xalign=0.30, yalign=0.45)
+    ## All images are 1920x1088 full-canvas composites.
+    ## focus_mask True restricts clicks to non-transparent pixels only.
+    ## All positioned at (0,0) — the canvas composition places each element.
 
-    # MISSING: ch fizz tavern position — leaning against the tavern wall,
-    # one foot up, tail flicking, trying to look casual.
-    use ph_button("fizz", xalign=0.65, yalign=0.50)
+    # Characters — size change on hover, no sound.
+    imagebutton:
+        idle "ch miss fortune outside position"
+        hover Transform("ch miss fortune outside position", zoom=1.04, anchor=(0.5, 1.0))
+        focus_mask True
+        xalign 0.0
+        yalign 0.0
+        activate_sound "audio/sfx/click_selectable.mp3"
+        action Return("miss_fortune")
 
-    ## Up arrow — back inside.
+    imagebutton:
+        idle "ch fizz outside position"
+        hover Transform("ch fizz outside position", zoom=1.04, anchor=(0.5, 1.0))
+        focus_mask True
+        xalign 0.0
+        yalign 0.0
+        activate_sound "audio/sfx/click_selectable.mp3"
+        action Return("fizz")
+
+    # Navigation signs — size change + hover sound.
+    imagebutton:
+        idle "bt auto repair"
+        hover Transform("bt auto repair", zoom=1.05, anchor=(0.5, 0.5))
+        focus_mask True
+        xalign 0.0
+        yalign 0.0
+        hover_sound "audio/sfx/hover_selectable.mp3"
+        activate_sound "audio/sfx/click_selectable.mp3"
+        action Return("auto_repair")
+
+    imagebutton:
+        idle "bt roboshop"
+        hover Transform("bt roboshop", zoom=1.05, anchor=(0.5, 0.5))
+        focus_mask True
+        xalign 0.0
+        yalign 0.0
+        hover_sound "audio/sfx/hover_selectable.mp3"
+        activate_sound "audio/sfx/click_selectable.mp3"
+        action Return("roboshop")
+
+    imagebutton:
+        idle "bt scout training"
+        hover Transform("bt scout training", zoom=1.05, anchor=(0.5, 0.5))
+        focus_mask True
+        xalign 0.0
+        yalign 0.0
+        hover_sound "audio/sfx/hover_selectable.mp3"
+        activate_sound "audio/sfx/click_selectable.mp3"
+        action Return("scout_training")
+
+    imagebutton:
+        idle "bt hot springs"
+        hover Transform("bt hot springs", zoom=1.05, anchor=(0.5, 0.5))
+        focus_mask True
+        xalign 0.0
+        yalign 0.0
+        hover_sound "audio/sfx/hover_selectable.mp3"
+        activate_sound "audio/sfx/click_selectable.mp3"
+        action Return("hot_springs")
+
+    imagebutton:
+        idle "bt deep woods"
+        hover Transform("bt deep woods", zoom=1.05, anchor=(0.5, 0.5))
+        focus_mask True
+        xalign 0.0
+        yalign 0.0
+        hover_sound "audio/sfx/hover_selectable.mp3"
+        activate_sound "audio/sfx/click_selectable.mp3"
+        action Return("deep_woods")
+
+    imagebutton:
+        idle "bt kitchen"
+        hover Transform("bt kitchen", zoom=1.05, anchor=(0.5, 0.5))
+        focus_mask True
+        xalign 0.0
+        yalign 0.0
+        hover_sound "audio/sfx/hover_selectable.mp3"
+        activate_sound "audio/sfx/click_selectable.mp3"
+        action Return("kitchen")
+
+    imagebutton:
+        idle "bt impish delight"
+        hover Transform("bt impish delight", zoom=1.05, anchor=(0.5, 0.5))
+        focus_mask True
+        xalign 0.0
+        yalign 0.0
+        hover_sound "audio/sfx/hover_selectable.mp3"
+        activate_sound "audio/sfx/click_selectable.mp3"
+        action Return("impish_delight")
+
+    ## Back inside the tavern.
     frame:
         xalign 0.5
         yalign 0.05
@@ -65,11 +174,16 @@ screen day2_outside_hub():
             hover_background None
             hover_sound "audio/sfx/hover_selectable.mp3"
             activate_sound "audio/sfx/click_selectable.mp3"
+            hovered SetScreenVariable("back_hovered", True)
+            unhovered SetScreenVariable("back_hovered", False)
             action Return("back_inside")
             vbox:
                 xalign 0.5
                 spacing 4
-                add Transform("pointer arrow", zoom=0.5, rotate=90, alpha=0.6) xalign 0.5
+                if back_hovered:
+                    add Transform("pointer arrow", zoom=0.5, rotate=90, alpha=0.6) at nav_arrow_bounce xalign 0.5
+                else:
+                    add Transform("pointer arrow", zoom=0.5, rotate=90, alpha=0.6) xalign 0.5
                 text "Back inside":
                     xalign 0.5
                     color "#e8e0d0cc"
@@ -96,9 +210,9 @@ label day2_meet_miss_fortune:
 
     $ met_miss_fortune = True
 
-    # MISSING: ch miss fortune profile default — human woman, red hair,
-    # two pistols at her hips, fitted trader's coat. Confident posture.
-    show screen ph_sprite("ch miss fortune profile default", xalign=0.5, yalign=1.0)
+    show ch miss fortune profile default:
+        xalign 0.5
+        yalign 1.0
 
     n "She spots you before you're close enough to speak."
     n "Red hair. Long coat. Two pistols that look like they've been fired recently and cleaned immediately after."
@@ -205,5 +319,43 @@ label day2_meet_miss_fortune:
 
             $ mf_scene_1_done = True
 
-    hide screen ph_sprite
+    hide ch miss fortune profile default
+    return
+
+
+## ── Stub location labels ─────────────────────────────────────────────────────
+
+label loc_auto_repair:
+    scene bg black
+    n "PLACEHOLDER: Auto Repair — bg auto repair interior needed"
+    return
+
+label loc_roboshop:
+    scene bg black
+    n "PLACEHOLDER: Roboshop — bg roboshop interior needed"
+    return
+
+label loc_scout_training:
+    scene bg black
+    n "PLACEHOLDER: Scout Training — bg scout training grounds needed"
+    return
+
+label loc_hot_springs:
+    scene bg hot springs
+    n "PLACEHOLDER: Hot Springs — scene not yet built"
+    return
+
+label loc_deep_woods:
+    scene bg black
+    n "PLACEHOLDER: Deep Woods — bg deep woods needed"
+    return
+
+label loc_kitchen:
+    scene bg black
+    n "PLACEHOLDER: Kitchen — bg kitchen interior needed"
+    return
+
+label loc_impish_delight:
+    scene bg black
+    n "PLACEHOLDER: Impish Delight — bg impish delight interior needed"
     return

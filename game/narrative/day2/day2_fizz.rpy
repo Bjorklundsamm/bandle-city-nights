@@ -18,7 +18,9 @@ label day2_meet_fizz:
         return
 
     if met_fizz:
-        show screen ph_sprite("ch fizz profile default", xalign=0.5, yalign=1.0)
+        show ch fizz profile default:
+            xalign 0.5
+            yalign 1.0
         n "He spots you before you've taken two steps."
         n "Something in his whole posture comes back online."
         f "Hey. You came back."
@@ -26,15 +28,15 @@ label day2_meet_fizz:
         f "You will not regret it. I guarantee that on my professional honor as a travel guard."
         n "He holds up the trident slightly."
         f "Which is considerable."
-        hide screen ph_sprite
+        hide ch fizz profile default
         return
 
     $ met_fizz = True
     $ persistent.fizz_met = True
 
-    # MISSING: ch fizz profile default — small, bright-eyed, aquatic Yordle.
-    # Barely-contained excited energy. Trident propped nearby.
-    show screen ph_sprite("ch fizz profile default", xalign=0.5, yalign=1.0)
+    show ch fizz profile default:
+        xalign 0.5
+        yalign 1.0
 
     n "You almost miss him — he's propped against the outside wall of the tavern with his arms crossed and his trident leaning in the crook of his elbow."
     n "He sees you first. His whole posture changes in about half a second."
@@ -338,9 +340,9 @@ label day2_fizz_accept:
 
 label day2_fizz_aftermath:
 
-    # MISSING: ch fizz profile default — same sprite, now looking thoroughly
-    # wrecked. Smug about it. Barely holding himself upright.
-    show screen ph_sprite("ch fizz profile default", xalign=0.5, yalign=1.0)
+    show ch fizz profile default:
+        xalign 0.5
+        yalign 1.0
 
     n "He's on the ground for a while."
     n "Not moving. Not particularly trying to."
@@ -391,7 +393,7 @@ label day2_fizz_aftermath:
 
     n "He heads back around the corner. His tail is high."
 
-    hide screen ph_sprite
+    hide ch fizz profile default
     return
 
 
@@ -427,5 +429,5 @@ label day2_fizz_decline:
     n "He says it like he's leaving you a key under a rock."
     n "With that an a wink he lets you go and heads back to his post."
 
-    hide screen ph_sprite
+    hide ch fizz profile default
     return

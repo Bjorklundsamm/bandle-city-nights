@@ -63,43 +63,36 @@ label morning_day_2_peek_katarina:
     scene bg patron bedroom with dissolve
     show screen katarina_room_display()
 
-    n "You ease forward, just enough to see through the gap."
-    n "The room is dim — curtains still drawn, the kind of dark a person makes deliberately."
-
-    n "A shape on the bed. Sprawled out, completely unconscious, one arm hanging off the edge."
-    n "Red hair. The unmistakable stillness of someone who ran themselves completely dry."
-
+    n "You ease forward. The room is dim — curtains drawn, deliberately dark."
+    n "A shape on the bed. Sprawled, arm hanging off the edge. Red hair."
     n "Katarina."
-
-    n "The room tells the story on its own."
-    n "Two mugs. A chair at a bad angle. And on the small table by the window — Tristana's money, you'd guess."
+    n "Two mugs. A chair at a bad angle. Tristana's money on the table, you'd guess."
     n "Whatever she'd promised herself last night, she'd collected."
-
-    n "You linger a moment longer than you probably should."
 
     call screen katarina_room_peek
 
     if _return == "bt dice":
 
-        n "A pair of dice, sitting on the corner of the table. Small. Worn."
-        n "A pair of dice. Small. Worn smooth."
+        n "A pair of dice on the corner of the table. Small. Worn smooth."
 
         call screen katarina_room_peek_dice
 
         if _return == "steal":
-            hide screen katarina_room_display
+            show screen katarina_room_display(False)
             jump morning_day_2_steal_dice
 
     hide screen katarina_room_display
     jump morning_day_2_downstairs
 
 
-screen katarina_room_display():
+screen katarina_room_display(show_dice=True):
     ## Non-interactive overlay: Katarina and dice visible during narration,
     ## before the player has any clickable options.
+    ## Pass show_dice=False to hide the dice without removing Katarina.
     zorder 200
     add "ch kat sleeping position" xalign 0.0 yalign 0.0
-    add "bt dice" at dice_hover xalign 0.0 yalign 0.0
+    if show_dice:
+        add "bt dice" at dice_hover xalign 0.0 yalign 0.0
 
 
 screen katarina_room_peek():
@@ -148,18 +141,10 @@ screen katarina_room_peek():
 screen katarina_room_peek_dice():
     ## Second look — player has spotted the dice.
     ## Now two options: leave cleanly or take them.
+    ## Dice are visible via katarina_room_display but no longer clickable.
     zorder 200
 
     add "ch kat sleeping position" xalign 0.0 yalign 0.0
-
-    imagebutton:
-        idle "bt dice" at dice_hover
-        focus_mask True
-        xalign 0.0
-        yalign 0.0
-        action Return("bt dice")
-        hover_sound "audio/sfx/hover_selectable.mp3"
-        activate_sound "audio/sfx/click_selectable.mp3"
 
     vbox:
         xalign 0.5
@@ -207,14 +192,9 @@ screen katarina_room_peek_dice():
 
 label morning_day_2_steal_dice:
 
-    hide screen katarina_room_display
     n "Your hand moves before your better judgment can catch up."
-    n "Through the gap. Slow. Two fingers."
-    n "The dice are heavier than they look."
-
-    n "You pull back. Ease the door to exactly where it was."
-    n "Katarina doesn't move."
-
+    n "Through the gap. Slow. Two fingers. The dice are heavier than they look."
+    n "You ease the door back to exactly where it was. Katarina doesn't move."
     n "You hold your breath all the way to the end of the hallway."
 
     $ has_loaded_dice = True
