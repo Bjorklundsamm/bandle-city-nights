@@ -20,10 +20,7 @@ label day2_outside_loop:
         call screen day2_outside_hub
         window show
 
-        if _return == "back_inside":
-            $ _day2_outside_running = False
-
-        elif _return == "miss_fortune":
+        if _return == "miss_fortune":
             call day2_meet_miss_fortune
             scene bg city outside daytime
 
@@ -56,6 +53,7 @@ label day2_outside_loop:
             scene bg city outside daytime
 
         elif _return == "impish_delight":
+            $ _day2_outside_running = False
             call loc_impish_delight
             scene bg city outside daytime
 
@@ -66,130 +64,89 @@ label day2_outside_loop:
 
 
 screen day2_outside_hub():
-    default back_hovered = False
     zorder 100
     modal True
 
-    ## All images are 1920x1088 full-canvas composites.
-    ## focus_mask True restricts clicks to non-transparent pixels only.
-    ## All positioned at (0,0) — the canvas composition places each element.
-
-    # Characters — size change on hover, no sound.
+    # Characters
     imagebutton:
-        idle "ch miss fortune outside position"
-        hover Transform("ch miss fortune outside position", zoom=1.04, anchor=(0.5, 1.0))
+        idle Transform("ch miss fortune outside position", alpha=0.88)
+        hover Fixed(Transform("ch miss fortune outside position", zoom=1.005, anchor=(0.5, 1.0), align=(0.5, 1.0)), xysize=(1920, 1088))
         focus_mask True
-        xalign 0.0
-        yalign 0.0
+        pos (0, 0)
         activate_sound "audio/sfx/click_selectable.mp3"
         action Return("miss_fortune")
 
     imagebutton:
-        idle "ch fizz outside position"
-        hover Transform("ch fizz outside position", zoom=1.04, anchor=(0.5, 1.0))
+        idle Transform("ch fizz outside position", alpha=0.88)
+        hover Fixed(Transform("ch fizz outside position", zoom=1.005, anchor=(0.5, 1.0), align=(0.5, 1.0)), xysize=(1920, 1088))
         focus_mask True
-        xalign 0.0
-        yalign 0.0
+        pos (0, 0)
         activate_sound "audio/sfx/click_selectable.mp3"
         action Return("fizz")
 
-    # Navigation signs — size change + hover sound.
+    # Navigation signs
     imagebutton:
-        idle "bt auto repair"
-        hover Transform("bt auto repair", zoom=1.05, anchor=(0.5, 0.5))
+        idle Transform("bt auto repair", alpha=0.5)
+        hover Fixed(Transform("bt auto repair", zoom=1.005, anchor=(0.5, 0.5), align=(0.5, 0.5)), xysize=(1920, 1088))
         focus_mask True
-        xalign 0.0
-        yalign 0.0
+        pos (-2, -5)
         hover_sound "audio/sfx/hover_selectable.mp3"
         activate_sound "audio/sfx/click_selectable.mp3"
         action Return("auto_repair")
 
     imagebutton:
-        idle "bt roboshop"
-        hover Transform("bt roboshop", zoom=1.05, anchor=(0.5, 0.5))
+        idle Transform("bt roboshop", alpha=0.5)
+        hover Fixed(Transform("bt roboshop", zoom=1.005, anchor=(0.5, 0.5), align=(0.5, 0.5)), xysize=(1920, 1088))
         focus_mask True
-        xalign 0.0
-        yalign 0.0
+        pos (-2, -5)
         hover_sound "audio/sfx/hover_selectable.mp3"
         activate_sound "audio/sfx/click_selectable.mp3"
         action Return("roboshop")
 
     imagebutton:
-        idle "bt scout training"
-        hover Transform("bt scout training", zoom=1.05, anchor=(0.5, 0.5))
+        idle Transform("bt scout training", alpha=0.5)
+        hover Fixed(Transform("bt scout training", zoom=1.005, anchor=(0.5, 0.5), align=(0.5, 0.5)), xysize=(1920, 1088))
         focus_mask True
-        xalign 0.0
-        yalign 0.0
+        pos (-2, -5)
         hover_sound "audio/sfx/hover_selectable.mp3"
         activate_sound "audio/sfx/click_selectable.mp3"
         action Return("scout_training")
 
     imagebutton:
-        idle "bt hot springs"
-        hover Transform("bt hot springs", zoom=1.05, anchor=(0.5, 0.5))
+        idle Transform("bt hot springs", alpha=0.5)
+        hover Fixed(Transform("bt hot springs", zoom=1.005, anchor=(0.5, 0.5), align=(0.5, 0.5)), xysize=(1920, 1088))
         focus_mask True
-        xalign 0.0
-        yalign 0.0
+        pos (-2, -5)
         hover_sound "audio/sfx/hover_selectable.mp3"
         activate_sound "audio/sfx/click_selectable.mp3"
         action Return("hot_springs")
 
     imagebutton:
-        idle "bt deep woods"
-        hover Transform("bt deep woods", zoom=1.05, anchor=(0.5, 0.5))
+        idle Transform("bt deep woods", alpha=0.5)
+        hover Fixed(Transform("bt deep woods", zoom=1.005, anchor=(0.5, 0.5), align=(0.5, 0.5)), xysize=(1920, 1088))
         focus_mask True
-        xalign 0.0
-        yalign 0.0
+        pos (-2, -5)
         hover_sound "audio/sfx/hover_selectable.mp3"
         activate_sound "audio/sfx/click_selectable.mp3"
         action Return("deep_woods")
 
     imagebutton:
-        idle "bt kitchen"
-        hover Transform("bt kitchen", zoom=1.05, anchor=(0.5, 0.5))
+        idle Transform("bt kitchen", alpha=0.78)
+        hover Fixed(Transform("bt kitchen", zoom=1.005, anchor=(0.5, 0.5), align=(0.5, 0.5)), xysize=(1920, 1088))
         focus_mask True
-        xalign 0.0
-        yalign 0.0
+        pos (-2, -6)
         hover_sound "audio/sfx/hover_selectable.mp3"
         activate_sound "audio/sfx/click_selectable.mp3"
         action Return("kitchen")
 
     imagebutton:
-        idle "bt impish delight"
-        hover Transform("bt impish delight", zoom=1.05, anchor=(0.5, 0.5))
+        idle Transform("bt impish delight", alpha=0.78)
+        hover Fixed(Transform("bt impish delight", zoom=1.005, anchor=(0.5, 0.5), align=(0.5, 0.5)), xysize=(1920, 1088))
         focus_mask True
-        xalign 0.0
-        yalign 0.0
+        pos (0, -6)
         hover_sound "audio/sfx/hover_selectable.mp3"
         activate_sound "audio/sfx/click_selectable.mp3"
         action Return("impish_delight")
-
-    ## Back inside the tavern.
-    frame:
-        xalign 0.5
-        yalign 0.05
-        background None
-        button:
-            background None
-            hover_background None
-            hover_sound "audio/sfx/hover_selectable.mp3"
-            activate_sound "audio/sfx/click_selectable.mp3"
-            hovered SetScreenVariable("back_hovered", True)
-            unhovered SetScreenVariable("back_hovered", False)
-            action Return("back_inside")
-            vbox:
-                xalign 0.5
-                spacing 4
-                if back_hovered:
-                    add Transform("pointer arrow", zoom=0.5, rotate=90, alpha=0.6) at nav_arrow_bounce xalign 0.5
-                else:
-                    add Transform("pointer arrow", zoom=0.5, rotate=90, alpha=0.6) xalign 0.5
-                text "Back inside":
-                    xalign 0.5
-                    color "#e8e0d0cc"
-                    hover_color "#ffffff"
-                    size 22
-                    font gui.name_text_font
 
 
 ## ── Miss Fortune ─────────────────────────────────────────────────────────────
