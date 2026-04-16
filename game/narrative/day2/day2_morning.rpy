@@ -23,7 +23,20 @@ label morning_day_2:
     n "You sit up. Your body registers every complaint about yesterday in rough order of severity."
     n "Still, you slept. Actually slept — the kind that erases things."
 
+    if not persistent.day2_morning_rested:
+        $ persistent.day2_morning_rested = True
+        $ persistent.constitution += 1
+        show screen system_overlay
+        show screen constitution_arrow
+        s "Your body has recovered a little. Rest and a good meal each day will keep you on your feet."
+        s "Don't skip either if you can help it."
+        call screen system_got_it
+        hide screen constitution_arrow
+        hide screen system_overlay
+
     n "You push yourself upright and reach for the door."
+
+    scene bg black with dissolve
 
     if met_katarina:
 
@@ -65,34 +78,35 @@ label morning_day_2_peek_katarina:
     n "Two mugs. A chair at a bad angle. And on the small table by the window — Tristana's money, you'd guess."
     n "Whatever she'd promised herself last night, she'd collected."
 
-    n "You're about to pull back when something on the table catches your eye."
+    n "You linger a moment longer than you probably should."
 
-    # MISSING: bt dice — small worn pair of dice on the table corner.
-    # katarina_room_peek screen: click dice → Return("bt dice"), step back → Return("leave").
     call screen katarina_room_peek
-
-    hide screen ph_sprite
-    hide screen ph_bg
 
     if _return == "bt dice":
 
-        n "A pair of dice, sitting in plain view on the corner of the table."
-        n "Small. Worn. The kind that have seen a lot of hands."
-        n "One of them is sitting at a very specific angle, and something about the weight looks... off."
+        n "A pair of dice, sitting on the corner of the table. Small. Worn."
+        n "A pair of dice. Small. Worn smooth."
 
-        menu:
-            "Take them.":
-                jump morning_day_2_steal_dice
-            "Leave them. Not worth it.":
-                n "You pull back from the door before your luck runs out."
+        call screen katarina_room_peek_dice
+
+        hide screen ph_sprite
+        hide screen ph_bg
+
+        if _return == "steal":
+            jump morning_day_2_steal_dice
+
+    else:
+
+        hide screen ph_sprite
+        hide screen ph_bg
 
     jump morning_day_2_downstairs
 
 
 screen katarina_room_peek():
-    ## Overlaid on the patron room ph_bg.
-    ## bt dice placeholder — table position right-center.
-    ## "Step back" — bottom-left exits without touching anything.
+    ## First look into Katarina's room.
+    ## "Time to get out of here" is the obvious exit — lower left.
+    ## The dice button sits quietly in the lower right for observant players.
     zorder 200
 
     # MISSING: ch katarina sleeping — fully dressed, sprawled on bed,
@@ -100,15 +114,85 @@ screen katarina_room_peek():
     use ph_sprite("ch katarina sleeping", xalign=0.5, yalign=1.0)
 
     # MISSING: bt dice — small worn dice on table corner.
-    use ph_button("bt dice", xalign=0.72, yalign=0.52)
+    ## Subtle placement — lower right, easy to miss.
+    use ph_button("bt dice", xalign=0.88, yalign=0.88)
 
-    textbutton "Step back":
-        xalign 0.02
-        yalign 0.96
-        text_color "#e8e0d0cc"
-        text_hover_color "#ffffff"
-        hover_sound "audio/sfx/hover_selectable.mp3"
-        action Return("leave")
+    vbox:
+        xalign 0.5
+        yalign 0.5
+        spacing 10
+        button:
+            background None
+            hover_background None
+            padding (0, 0)
+            action Return("leave")
+            hover_sound "audio/sfx/hover_selectable.mp3"
+            activate_sound "audio/sfx/click_selectable.mp3"
+            fixed:
+                xsize 640
+                ysize 54
+                add "gui/fade_choice_bar.png" xpos 0 ypos 0
+                text "Time to get out of here before she notices.":
+                    xalign 0.5
+                    yalign 0.5
+                    color "#d4c4a8"
+                    hover_color "#ffffff"
+                    size 26
+                    font gui.choice_button_text_font
+                    text_align 0.5
+
+
+screen katarina_room_peek_dice():
+    ## Second look — player has spotted the dice.
+    ## Now two options: leave cleanly or take them.
+    zorder 200
+
+    use ph_sprite("ch katarina sleeping", xalign=0.5, yalign=1.0)
+
+    use ph_button("bt dice", xalign=0.88, yalign=0.88)
+
+    vbox:
+        xalign 0.5
+        yalign 0.5
+        spacing 10
+        button:
+            background None
+            hover_background None
+            padding (0, 0)
+            action Return("steal")
+            hover_sound "audio/sfx/hover_selectable.mp3"
+            activate_sound "audio/sfx/click_selectable.mp3"
+            fixed:
+                xsize 640
+                ysize 54
+                add "gui/fade_choice_bar.png" xpos 0 ypos 0
+                text "Take the dice.":
+                    xalign 0.5
+                    yalign 0.5
+                    color "#d4c4a8"
+                    hover_color "#ffffff"
+                    size 26
+                    font gui.choice_button_text_font
+                    text_align 0.5
+        button:
+            background None
+            hover_background None
+            padding (0, 0)
+            action Return("leave")
+            hover_sound "audio/sfx/hover_selectable.mp3"
+            activate_sound "audio/sfx/click_selectable.mp3"
+            fixed:
+                xsize 640
+                ysize 54
+                add "gui/fade_choice_bar.png" xpos 0 ypos 0
+                text "Time to get out of here before she notices.":
+                    xalign 0.5
+                    yalign 0.5
+                    color "#d4c4a8"
+                    hover_color "#ffffff"
+                    size 26
+                    font gui.choice_button_text_font
+                    text_align 0.5
 
 
 label morning_day_2_steal_dice:
@@ -127,9 +211,8 @@ label morning_day_2_steal_dice:
     show screen system_overlay
 
     s "You've obtained: Loaded Dice"
-    s "A worn pair of dice lifted from Katarina's table."
-    s "They're weighted — subtly, expertly. They won't guarantee anything, but they'll tilt the odds."
-    s "Don't use them too often. Katarina counts everything."
+    s "A pair of dice stolen from a famed Noxian assassin."
+    s "Don't overuse them. Even drunks and fools can catch on when the fix is too obvious."
 
     call screen system_got_it
 

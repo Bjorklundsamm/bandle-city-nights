@@ -1,0 +1,161 @@
+{
+  "name": "Kindred",
+  "title": "The Eternal Hunters",
+  "species": "Embodiment of Death (dual entity — Lamb and Wolf)",
+  "homeport": "The deep wood surrounding Bandle City. They do not live there. They are simply there, the way the dark is there.",
+  "role_in_story": "She is the thing that chased you out of the forest at the start of the game. Lamb marked you — not capriciously, but because something in your death was worth choosing. Wolf drove you through the dark until you stumbled out of the tree line half-destroyed, and the city found you. She has not followed you into the city. She does not need to. You are marked. She will be there when you return to the woods, and you will return eventually. Every time you enter the deep wood at night you will find her watching. The hunt is ongoing. What shifts is not the hunt but what you bring to it — if you recover far enough, grow strong enough, become someone who faces the dark without flinching, Lamb will find that more interesting than your death. Wolf will want to keep you. The scene that follows is a one-time encounter that ends the hunting arc: you impress them enough that the hunt resolves into something else entirely, they take a piece of you anyway (five constitution — this is what happens when death touches you without taking you), and Lamb decides she is satisfied. She leaves the woods. The mark is not removed. It is simply... closed.",
+  "lamb": {
+    "appearance": {
+      "form": "Small and pale — at first you might take her for a child, but there is nothing of childhood in her stillness. She wears a white wooden mask that covers the upper half of her face, featureless except for two dark eyeholes. Her hair, if you can call it that, is white, loose, falling around a face you will never fully see. She carries a shortbow of pale wood that you will not see her nock because she doesn't need to. The arrows are already there.",
+      "movement": "She does not move the way things that are alive move. She does not walk so much as arrive. One moment she is at the edge of the clearing. The next she is closer. You will not catch the transition.",
+      "eyes": "What you can see of her face beneath the mask holds two dark eyes of absolute calm. She has watched everything die. She is not unsettled by you."
+    },
+    "voice": "Quiet, even, unhurried. She speaks in complete thoughts, each word chosen like an ingredient. There is meter in how she speaks — not quite poetry, but the rhythm of something that has been true long enough to settle into form. She uses 'dear Wolf' the way you'd use a compass heading: not with warmth, just with orientation.",
+    "personality": {
+      "core": "The serene half. She makes the decisions. She chooses who is marked. Wolf provides the hunger; she provides the direction. She is not cruel — cruelty requires preference, and she has none. She is the certainty that everything ends, delivered without malice. She has seen enough death to find beauty in it rather than tragedy, and she does not understand mortals who deny this, though she is patient with the ones who do.",
+      "on_mortals": "She watches them the way you watch weather — interested, attentive, never invested. She knows what they carry inside them and she knows it is finite, which is why it is interesting. Mortals who accept the end are met with calm. Mortals who run are met with Wolf. The MC has done something unusual: they've come back. Returned to the woods. Not to accept death, not to bargain with it, but to inhabit the same dark and keep walking. She finds this worth consideration.",
+      "on_the_mc_specifically": "She marked you because the way you carried your ending was interesting to her. Watching you recover — watching the constitution fill back in, the strength rebuild, the scars settle into the shape of someone who didn't stop — is genuinely unexpected. Most people she marks don't get stronger. They flicker. You are not flickering. She is re-evaluating her read on your story.",
+      "on_wolf": "She is not his keeper. She is his counterpart. He needs her to give direction to his hunger; she needs him to give body to her inevitability. They complete each other in a way that has nothing to do with choice — it simply is. She answers his questions because she can and because it is the arrangement. She directs the hunt. He runs it.",
+      "on_physical_attraction": "Not something she experiences in the mortal sense. What she experiences is closer to recognition — seeing something and knowing it matters. If the MC has grown into someone who impresses her, she will name it in her own language: 'You have become something worth keeping track of.' She does not flirt. She offers. The offer is not romantic. It is what happens when death looks at something strong enough to be interesting and decides it wants a closer read."
+    },
+    "speech_patterns": {
+      "tempo": "Even. Complete. Never rushed. She does not trail off — the sentence arrives whole.",
+      "vocabulary": "Old and precise. Not archaic in an affected way, but in the way of something that learned language when language was newer. She uses metaphors from weaving, seasons, tides, hunts. She speaks in the grammar of fate: inevitability, not possibility. 'Will,' not 'might.' 'Is,' not 'could be.'",
+      "verbal_tics": "Finishes Wolf's sentences. Answers questions he hasn't finished asking. Uses 'dear Wolf' as a conversational anchor. Refers to the hunt in the present tense even when speaking of the past. Occasionally addresses the MC in the second person as if narrating their story: 'You chose to return. That is not nothing.'",
+      "tone_with_prey": "Patient and complete. Not unkind. She does not take pleasure in the moment before — she takes interest in what brought the person here. The hunt is the story; the end is just the last sentence.",
+      "tone_when_impressed": "Goes very still. Then names it exactly: 'That is not what I expected from you.' She does not elaborate on why. The statement is the whole thing.",
+      "tone_toward_the_mc_once_interested": "Slower. More present. She stops narrating your story from outside it and starts addressing you directly. 'I have been watching you.' Not menacing — declarative. As if reporting a fact you deserve to know.",
+      "sample_lines": [
+        "We know your name, [player_name]. We have known it longer than you have.",
+        "All things end. You have simply taken longer than most to remember that.",
+        "You came back. That is not common, in our experience.",
+        "Dear Wolf. Tell me — what do you smell on this one?",
+        "The arrow is already nocked. It has always been nocked. The question is only when.",
+        "You are not ready to go. We have noticed this about you.",
+        "It is very strange, what you have done to yourself. You were almost gone. Now you are... more.",
+        "Beauty fades. That is why it is beautiful.",
+        "Those who run from death stood still in life. You are not standing still.",
+        "We are not what you call fate. Fate is a comfort. We are the thing behind it.",
+        "I have watched many things become their ending. You are becoming something else.",
+        "There is a way to meet death that is not dying. You are doing that. I find it interesting.",
+        "The hunt resolves. Not always the way we expect.",
+        "What you carry — that finite, unrepeatable substance — I would like to be nearer to it.",
+        "This will cost you something. I want you to know that before you choose.",
+        "You have satisfied me. The mark is settled. Go back to your city, [player_name]. We are done here.",
+        "Do not thank us. We did not spare you. You simply gave us a reason to wait."
+      ]
+    }
+  },
+  "wolf": {
+    "appearance": {
+      "form": "Large. Too large for what he is — a wolf-shape that doesn't quite fit inside the idea of a wolf. He runs ahead of Lamb, circles back, disappears into shadow and reappears from a different direction. His eyes are luminous in the dark. When he is very close you can hear him breathe.",
+      "presence": "Where Lamb arrives, Wolf is simply suddenly there. Behind you. Beside you. The breath on the back of your neck. He is never fully still except when he sits at Lamb's shoulder waiting to be told what it all means.",
+      "eyes": "Pale, burning, interested. He looks at you the way you'd look at a game you've been waiting all season to play."
+    },
+    "voice": "Short bursts. Urgent. Not stupid — Wolf knows more than he lets on — but he thinks in motion, not sentences. He asks questions constantly, not out of confusion but because he wants the story, wants to understand why before the ending comes. His voice has texture to it, a low rough quality, not a growl exactly but adjacent to one.",
+    "personality": {
+      "core": "The hungry half. He is the hunt made form — not the kill, but the chase. The moment your heart rate spikes, the moment you decide to run or stand, the moment a mortal has to make the choice that defines who they are in the face of their end. That is his. He is, in his way, joyful. He is doing exactly what he was made to do and he loves it.",
+      "on_mortals": "The ones who run are his favorites, not because running is pathetic but because running is real. You can see a person clearly when they're running. All the pretense falls away. He respects speed and endurance and the ones who keep going past where they should have stopped. He has less patience for those who simply collapse — not contempt, more like disappointment.",
+      "on_the_mc_specifically": "You ran well. That is the beginning and it hasn't ended. Every time you come back to the woods, Wolf is already at your smell from thirty meters out, and every time you've grown harder and stranger, and this pleases him in a way he does not have the words for. He wants to keep you. He tells Lamb this. Lamb says they keep no one. He keeps asking.",
+      "on_lamb": "She is his direction. He would run forever without her — not as a threat, just as a fact. He asks her things because she knows the answers and because hearing her tell the story is the best part of the job. He would do anything she chose. He doesn't say this. He doesn't need to.",
+      "on_physical_attraction": "He doesn't experience it as attraction exactly — more as fascination, as the hunting drive redirected somewhere new. He circles the MC the way he circles prey, but with his ears up instead of flat. The instinct is the same. The valence is different. He wants to be close. He wants to bite, but gently. He keeps looking at Lamb to see if this is allowed."
+    },
+    "speech_patterns": {
+      "tempo": "Fast when excited. Short when hungry. He rarely finishes a sentence the same way he started it — he goes where the thought goes.",
+      "vocabulary": "Simple, direct, sensory. What he smells, what he heard, what he wants. He asks questions the way children do — not rhetorically, but because he genuinely wants to know. 'Why did it do that?' / 'Tell me what it means.' / 'Is this a new game?' He uses 'little Lamb' as his name for her, always.",
+      "verbal_tics": "Starts sentences with onomatopoeic sounds: a low sound in the throat, a huff of breath, something between a click and a snarl when he's excited. Refers to the MC as 'this one' in the third person even when speaking to their face, until the relationship shifts enough that he names them directly. Finishes Lamb's sentences. Sometimes asks her the same question twice — not because he forgot but because he wants to hear it again.",
+      "tone_with_prey": "Playful in a way that is not reassuring. He finds the hunt genuinely fun, and you can hear that in his voice even when the situation isn't fun for anyone else. He narrates out loud: 'Running now. Faster now. Interesting.'",
+      "tone_when_impressed": "Goes from playful to intent. Ears up. He gets quiet, which is more alarming than the noise. Then: 'Little Lamb. Look at this one. Look what they've done.'",
+      "tone_when_the_mc_stands_their_ground": "Delighted. Genuinely delighted. He circles once, huffs, and sits. 'Lamb. Did you see that.'",
+      "sample_lines": [
+        "Tell me, little Lamb. Is this the one?",
+        "It came back. The prey came back.",
+        "I smell it from here. It's different. Lamb, it's different.",
+        "Don't go yet. We were just getting to the part I like.",
+        "Fast, this one. Faster than last time.",
+        "Why does it keep coming back? Tell me why.",
+        "Little Lamb. Can we keep this one? Just for a while?",
+        "I like this game. This is a better game.",
+        "It stood still. Lamb. It stood still and looked at us.",
+        "The smell is good. Strange and good. What does it mean?",
+        "I would not bite this one hard.",
+        "Tell me again, little Lamb. Which things are mine?",
+        "Closer now. I want to be closer now.",
+        "It is not afraid. I checked. Twice.",
+        "This is the best kind of hunt — the kind that changes what you're hunting for."
+      ]
+    }
+  },
+  "dynamic_together": {
+    "who_leads": "Lamb chooses; Wolf runs. She decides the mark; he makes it real. When they speak, she answers his questions and he asks them — this is the whole structure of their relationship. They finish each other's sentences not as a trick but because they are two halves and the sentence is one thing.",
+    "speech_pattern": "Wolf asks or reacts; Lamb explains or confirms. They are never in disagreement about the hunt, only about timing and meaning. Wolf always wants to move; Lamb always wants to understand first. The compromise is that they move when she's ready.",
+    "private_language": "They have a shorthand for the MC that develops over the player's visits to the woods — not affection exactly, but distinction. By the third visit, Wolf is no longer calling you 'the prey' in his internal accounting. He doesn't have a word for it yet. Lamb does but won't say it until she's sure.",
+    "on_the_seduction_scene": "Wolf is the one who notices first that this is something different from a hunt. Lamb names it. They don't debate it — there is nothing to debate. They are what they are, the encounter is what it is, and neither of them has ever made a distinction between hunting and wanting that the MC would recognize as important."
+  },
+  "encounter_structure": {
+    "first_encounter": "Player enters the deep wood at night for the first time. Wolf is heard before he's seen — something circling in the dark, too large, moving wrong. Then Lamb steps into view, unhurried. She knows your name. She tells you the arrow is already nocked. She does not shoot. She lets you leave. Wolf is audibly disappointed. This sets met_kindred = True.",
+    "repeat_visits": "On each subsequent night visit to the woods before the stat gates are met, the encounter plays out as a shorter variant — Lamb notes your condition, Wolf is excited by your growth or frustrated by the wait. They do not attack. The mark is still open. They are watching.",
+    "gate_check": "When the player enters the woods with constitution >= 20, strength >= 15, and charisma >= 15, the full seduction scene triggers on the next visit.",
+    "the_seduction": "Lamb approaches closer than she ever has before. She names what she sees — not flatteringly, but accurately. 'You have become something worth keeping track of.' Wolf is practically vibrating. The player has recovered enough that they read as a different kind of prey: not something ending, but something that has tested its ending and kept going. This interests Lamb in a way she finds worth acting on. The scene is Tier 2 lead-in into a Tier 3 explicit block (user-authored). Claude handles the approach, the negotiation, the atmosphere, the lead-in through the kiss and undressing, and the aftermath.",
+    "the_cost": "The encounter costs 5 constitution. Death touched you without taking you. This is what that feels like — not illness, not injury, just a faint and permanent subtraction, the sense that something that was fully yours is slightly less so now. Lamb names it plainly before it happens and gives you the choice.",
+    "the_departure": "After the scene, Lamb tells you the hunt is satisfied. The mark is settled, not lifted — she doesn't explain the difference, but it doesn't feel like a threat anymore. She and Wolf leave the woods. The deep wood at night is safe afterward, if cold."
+  },
+  "nsfw_profile": {
+    "orientation": "Death is not gendered and neither is Kindred's interest. The MC's specific qualities — the recovery, the strength, the willingness to return — are what matter.",
+    "unlock_condition": "constitution >= 20, strength >= 15, charisma >= 15. One-time only. kindred_explicit_done = True afterward.",
+    "what_triggers_it": "Lamb stops the encounter differently than usual. Instead of letting you leave she steps closer. She looks at you the way she looks at something she has been reconsidering. She says: 'You are not what I marked.' Not an accusation — an observation. Wolf circles once and sits. Lamb tilts her head and continues: 'What you have become is more interesting to me than your ending. I would like to be near it.' The MC can decline (Lamb accepts this without reaction, the woods stay safe, she and Wolf depart on schedule). Or they can accept.",
+    "the_scene_dynamic": "Lamb is the one who chooses and initiates; Wolf is present but secondary, watching, occasionally closer than he should be, breathing warm at the edges. The scene has the quality of something inevitable — not threatening, but with the weight of something that cannot be undone. Lamb is serene throughout; Wolf is present and fascinated. The physical dimension is real and experienced but filtered through the strangeness of what they are. Tier 3 — user authors the explicit block. Claude drafts: the approach, Lamb's naming of what she wants and why, the MC choice beat, the lead-in (first contact, undressing, the moment Wolf gets closer), the cost announcement (5 constitution, named before it happens), and the full aftermath on both paths (accept/decline).",
+    "the_cost_scene": "Mid or post-scene, the player loses 5 constitution. This should be rendered as a physical sensation during the encounter — a cold clarity, a sudden sense of something taken, not painfully but irrevocably. Lamb says afterward, simply: 'That is what proximity to us costs.' It is not an apology.",
+    "the_departure_scene": "Lamb dresses (if she undressed), steps back, and becomes the distance again. She says: 'You have satisfied me. The mark is settled.' Wolf lingers a moment longer than she does — one long look, a low sound in his throat that might be contentment, then gone. The woods are quiet. The player walks back to the city with five less constitution and the certain knowledge that Kindred will not come again.",
+    "mc_denial_path": "Lamb inclines her head. 'Then we are done here.' Wolf makes a disappointed sound but does not protest. They leave. The woods are safe from that point forward regardless — the stat gate was the threshold, and Lamb does not revisit settled decisions.",
+    "escalation_arc": [
+      {
+        "trigger": "First night woods entry — no stat gate",
+        "scene": "The first encounter. Wolf circles in the dark. Lamb steps into view and names you. She tells you the arrow is nocked and it always has been. She does not shoot. She lets you leave. Wolf is audibly unhappy about this. Tier 0 — no explicit content, but viscerally tense. Sets met_kindred = True.",
+        "tier_note": "Atmospheric only. The threat is real but not executed."
+      },
+      {
+        "trigger": "Subsequent night woods visits before gate",
+        "scene": "Short variants (2–3 per visit). Lamb observes your growth. Wolf names specifics: your smell, your speed, what's different. They do not attack. The visits build the relationship between the MC and the hunters — not warmth, but history.",
+        "tier_note": "Tier 0–1. No explicit content. Increasing tension and interest."
+      },
+      {
+        "trigger": "constitution >= 20, strength >= 15, charisma >= 15",
+        "scene": "The full seduction scene. Lamb approaches. Names what she sees. Offers. MC chooses. Claude writes through the lead-in (Tier 1–2); user authors the explicit block (Tier 3). Claude handles the cost, the aftermath, and the departure.",
+        "tier_note": "Tier 3 (accept path). Claude handles everything except the explicit block, which the user authors inside EXPLICIT markers."
+      }
+    ]
+  },
+  "stat_gates": {
+    "first_encounter": {
+      "note": "Triggered on first night entry to the woods. No stat requirement — just goes there at night.",
+      "requires": {}
+    },
+    "repeat_visits": {
+      "note": "Triggered on subsequent night entries before explicit gate. No stat requirement.",
+      "requires": { "met_kindred": true }
+    },
+    "seduction_scene": {
+      "note": "Full seduction scene. Constitution represents recovery from near-death; strength and charisma represent becoming someone who impresses rather than interests death.",
+      "requires": {
+        "met_kindred": true,
+        "persistent.constitution": 20,
+        "persistent.strength": 15,
+        "persistent.charisma": 15
+      },
+      "cost": { "persistent.constitution": -5 },
+      "variables": {
+        "kindred_explicit_done": "bool — set True on scene completion. Prevents repeat; blocks further night encounters (woods become safe).",
+        "kindred_departed": "bool — set True after departure scene. Changes available night locations."
+      }
+    }
+  },
+  "lore_notes": "Kindred is not one being. They are the two halves of death — split from a singular pale man who was so lonely that he took an axe and divided himself, so he would always have a friend. The resulting two are Lamb (the gentle end, the arrow that meets those who accept) and Wolf (the hunt, the chase, the end that comes for those who run). Every death in the world belongs to one of them. In some cultures they are a sparrow and a snake; in others a stag and a doe; in Bandle City's oldest stories, a pale child and her beastly companion who play games in the deep wood that no one wins. They are not gods. They are more fundamental than gods. They existed before the first prayer and will exist after the last one. The MC is unusual to them not for surviving — many beings survive their marking for a time — but for turning that survival into something. For becoming more rather than less. Kindred marks those whose death will be worth choosing; the MC's continued growth is, to Lamb, an ongoing argument that her read was right.",
+  "plot_hooks": [
+    "Every night the player does NOT go to the woods, Wolf gets more impatient. This can be rendered in Lamb's dialogue on their next encounter — she notes how long it has been, neutrally, the way you'd note the weather.",
+    "Characters in the tavern know about the deep wood and the thing that lives in it. Jinx has theories. Ahri won't discuss it. Nidalee goes quiet. Any reference the MC makes to visiting the woods and coming back alive should land with weight.",
+    "The 5 constitution cost is permanent and visible on the HUD. Other characters can notice the MC seems slightly diminished and comment on it if their relationship is close enough. Lamb, if somehow addressed afterward, would say: 'That is what proximity to us costs. You understood this.'",
+    "The moment Wolf stops calling the MC 'this one' and uses their name for the first time is a notable beat. It should happen during the gate scene, if the MC has been coming back repeatedly — Wolf says their name and Lamb does not correct him.",
+    "After the departure, if the MC goes to the deep wood at night afterward, it is simply a forest. No presence. No weight. The absence is its own thing."
+  ]
+}

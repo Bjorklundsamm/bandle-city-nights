@@ -62,6 +62,9 @@ define gui.text_font = "/fonts/Jester.ttf"
 ## The font used for character names.
 define gui.name_text_font = "/fonts/Godiaz.ttf"
 
+## Font used where numbers or periods appear — Godiaz is missing those glyphs.
+define gui.number_font = "fonts/Planewalker.otf"
+
 ## The font used for out-of-game text.
 define gui.interface_text_font = "/fonts/Newyear Coffee.ttf"
 
@@ -209,7 +212,7 @@ define gui.choice_button_width = 1185
 define gui.choice_button_height = None
 define gui.choice_button_tile = False
 define gui.choice_button_borders = Borders(150, 8, 150, 8)
-define gui.choice_button_text_font = "/fonts/Knight2.ttf"
+define gui.choice_button_text_font = "fonts/Planewalker.otf"
 define gui.choice_button_text_size = gui.text_size
 define gui.choice_button_text_xalign = 0.5
 define gui.choice_button_text_idle_color = '#a09070'

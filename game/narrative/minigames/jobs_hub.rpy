@@ -135,6 +135,7 @@ style jobs_label:
     color "#e8c87a"
     size 20
     bold True
+    font gui.number_font
 
 style jobs_title:
     color "#ffffff"

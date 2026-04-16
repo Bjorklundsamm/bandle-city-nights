@@ -120,6 +120,14 @@ This project contains adult content. The following tiers govern what Claude writ
 **Tier 1 — Claude writes freely**
 Flirting, romantic tension, innuendo, kissing, undressing described tastefully, fade-to-black transitions, emotional intimacy, suggestive dialogue.
 
+**Tier 1 Register — use this actively, not cautiously**
+This is an NSFW game. Tier 1 dialogue should read pornographic in register even when it stops short of explicit acts. That means:
+- Use direct sexual vocabulary when characters mean it: cock, tits, ass. Don't reach for a softer word when the blunt one is clearly what the character would say.
+- Innuendo must be unmistakable. If a player could read it as innocent, it's not doing its job. The audience should always know exactly what's being implied.
+- Horny characters should read as horny — not "interested," not "intrigued." Their want is the point.
+- Size-difference, human/Yordle dynamics, feral/beast framing, BWC obsession — these are recurring kinks of this project. When a scene supports one, lean into it rather than around it.
+- Don't soften lines after writing them. A character saying "your considerable situation" instead of "your cock" is a failure of nerve, not taste.
+
 **Tier 2 — Claude writes with straightforward handling**
 Explicit but not pornographic. Sexual situations described with clear intent — character reactions, dialogue during, emotional beats. Literary erotica register, not clinical or graphic.
 

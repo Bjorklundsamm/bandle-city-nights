@@ -11,7 +11,7 @@ label day2_meet_fizz:
         # MISSING: ch fizz profile default
         show screen ph_sprite("ch fizz profile default", xalign=0.5, yalign=1.0)
         f "Hey. You came back."
-        n "He says it like he's surprised. His tail gives him away."
+        n "His tail gives him away."
         hide screen ph_sprite
         return
 
@@ -22,116 +22,96 @@ label day2_meet_fizz:
     # Barely-contained excited energy. Trident propped nearby.
     show screen ph_sprite("ch fizz profile default", xalign=0.5, yalign=1.0)
 
-    n "You almost miss him — he's leaning against the wall of the tavern, half behind a barrel."
-    n "But he spots you first and immediately stands up a little too straight."
+    n "You almost miss him — he's leaning against the tavern wall, half behind a barrel, arms crossed."
+    n "He spots you first and immediately stands up a little too straight."
 
-    f "Oh. Oh! You're — you're the human. The new human."
-
-    n "He says 'human' the way someone says a word they've been turning over in their mouth."
+    f "Oh. Oh! You're — you're the human. The new one."
 
     mc "That's me."
 
-    f "I didn't — okay, I knew there was a human but I didn't think I'd run into you outside."
-    f "I'm Fizz. I work for Katarina."
+    f "I knew there was a human but I didn't think you'd be — I mean, I knew humans were tall but you're—"
 
-    mc "Her bodyguard?"
+    n "He gestures at you. All of you. Helplessly."
 
-    f "Yeah! Well. Sort of. She says bodyguard, I say I keep an eye on things for her."
-    f "It's the same thing. She just doesn't like me saying bodyguard because she thinks it implies she needs protecting."
+    f "...really tall."
 
-    n "He glances around reflexively, as though Katarina might be nearby."
-    n "She isn't."
+    n "He closes his mouth. Seems to remember he has a job."
 
-    f "She doesn't need protecting. I'm more like... a very small very mobile asset."
+    f "Fizz. I'm a travel guard. For her."
 
-    mc "Sure."
+    n "He jerks his thumb toward where Miss Fortune is standing without looking."
 
-    f "You've met her, right? She mentioned a new human was in town."
+    mc "The pirate?"
 
-    mc "Yeah. Last night."
+    f "Merchant. She prefers merchant. The pistols are for commerce."
 
-    f "What did you think?"
+    n "You glance over. Miss Fortune has that effect — the red hair, the coat, the way she's built like the universe was making a point."
+    n "Fizz watches you look. His face goes flat."
 
-    mc "She's intense."
+    f "Yeah."
 
-    f "She's incredible."
-    n "He says it with complete sincerity and then seems to realize that wasn't what you meant."
-    f "I mean — yeah. Intense. That too."
+    mc "She's—"
 
-    n "He fidgets with the trident he's been half-hiding behind him."
+    f "Enormous, I know."
 
-    f "So — you're from the mainland? A city?"
+    n "He holds both hands out in front of his chest, palms facing inward, a good foot apart."
+    n "He stares at you."
 
-    mc "Something like that."
+    f "The tits get everyone. Every single man, every single time."
+    f "I have been standing next to those tits for three days."
+    f "Three. Days."
 
-    f "I've always wanted to go to the mainland."
-    f "Well. More specifically I've always wanted to meet more humans."
-    n "A beat."
-    f "I just think humans are really interesting."
+    mc "That sounds—"
 
-    mc "We're not that remarkable."
+    f "I can describe every cobblestone in this city because I have been staring at the ground trying to look professional."
+    f "She doesn't even notice. She just stands there being... aggressively shaped."
+    f "And every cock in a hundred feet points directly at her and completely forgets I exist."
 
-    f "No, you are. You really are."
-    f "The — the proportions are just very. You know."
-    n "He gestures vaguely at your general person."
-    f "Impressive."
+    n "He looks at you. Actually at you, this time — the set of your shoulders, lower."
+    n "His expression changes. The frustration doesn't leave but something else sharpens behind it."
 
-    n "There's a pause. He seems to be deciding something."
+    f "And then you walk out that door."
 
-    f "Okay I'm going to be honest."
-    f "I have a type."
+    n "He tilts his head. His tail flicks once."
 
-    mc "Okay."
+    f "You've got the build. The hands."
 
-    f "Tall. Pale. Kind of the whole — prince charming thing. You know."
-    f "The jaw. The shoulders."
-    f "And, um."
+    n "His eyes drop. Stay there. He doesn't pretend he isn't looking."
 
-    n "He glances down briefly and then back up at you with an expression of profound restraint."
+    f "And you are packing."
 
-    f "The, uh. Everything else."
+    mc "Excuse me?"
 
-    mc "Are you flirting with me?"
+    f "Your cock. You're hung. I can tell."
+    f "Three days of nothing and you walk out with that."
 
-    f "I'm complimenting you. There's a difference."
-    f "Flirting would be if I told you I haven't stopped thinking about certain things since I saw you come out of the tavern this morning."
+    n "He says it with the flat energy of a man who has endured a great deal and deserves this."
 
-    n "A beat."
+    f "Do you want to go behind the tavern."
 
-    f "Okay that might have been flirting."
+    n "Not a question. A proposal."
 
-    n "He tugs one ear with an expression that suggests the line between 'telling you something' and 'asking you something' is getting harder to find."
-
-    f "I guess what I'm wondering is whether you're — you know. Open."
-
-    mc "Open to what, exactly?"
-
-    n "He gives up on the approach."
-
-    f "Do you want to go behind the tavern and let me suck your cock."
-
-    n "He says it completely flat. Then immediately:"
-
-    f "That came out more direct than I intended."
+    f "I have been waiting three days to get my mouth around something worth the wait."
 
     menu:
-        "Yeah, alright.":
+        "Lead the way.":
             jump day2_fizz_accept
 
-        "No thanks.":
+        "Not today.":
             jump day2_fizz_decline
 
 
 label day2_fizz_accept:
 
-    mc "Yeah. Alright."
+    mc "Lead the way."
 
-    n "Fizz blinks. Then his whole face rearranges into something much brighter."
+    n "Fizz blinks. Then his entire face rearranges into something much brighter."
 
-    f "Okay. Cool. Yeah. Okay."
-    f "Around the back. There's a — there's a spot. I know the spot."
+    f "Okay. Yes. Around the back."
+    f "There's a spot. Good spot. I know it very well."
 
-    n "He is already moving, trident in hand, tail flicking with a speed that suggests 'casual' is no longer in play."
+    n "He is already moving, trident tucked under his arm, tail going absolutely berserk."
+    n "He is not playing it cool. He has stopped trying."
 
     # This is pushing past what I'll write directly. I've drafted through the lead-up above.
     # Author the explicit section yourself, wrap it in the markers below,
@@ -171,31 +151,30 @@ label day2_fizz_aftermath:
 
 label day2_fizz_decline:
 
-    mc "I'm going to pass."
+    mc "Not today."
 
-    f "Oh — yeah, no, totally."
-    n "He holds up both hands."
-    f "That's fine. That's completely fine."
+    n "He takes it well. Holds up both hands."
 
-    n "A pause. He tilts his head."
+    f "Valid. Completely valid."
 
-    f "Do you know what free use is?"
+    n "A pause. His tail flicks."
+
+    f "You know what free use is?"
 
     mc "I have a general sense."
 
-    f "I'm just saying — the offer stands. Permanently."
-    f "You never have to ask. You never have to think about it in advance."
-    f "If you ever want to — for any reason, at any time, literally any time — I'm available."
-    f "You don't even have to say anything. You can just — show up."
+    f "Open offer. No appointment. No asking."
+    f "Any time you want your cock sucked, you come find me."
+    f "I'm not joking. I'll drop whatever I'm doing."
 
-    n "He says it with the same matter-of-fact energy he'd use to give you directions."
+    n "He says it with the same energy he'd use to give you directions to the market."
 
-    f "Just come find me."
-    f "I'll know what it's about."
+    f "Literally anything."
+    f "I mean it."
 
-    n "He picks up his trident, gives you a small nod, and pushes off the wall."
-    n "Completely casual. As though that was a perfectly ordinary thing to say."
-    n "His tail, however, is wagging."
+    n "He picks up his trident and pushes off the wall."
+    n "Completely casual. As if this was a perfectly normal thing to say to someone you met thirty seconds ago."
+    n "His tail is wagging."
 
     hide screen ph_sprite
     return

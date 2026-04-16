@@ -388,7 +388,7 @@ screen system_got_it():
                 color "#d4c4a8"
                 hover_color "#ffffff"
                 size 26
-                font gui.name_text_font
+                font gui.number_font
 
 
 ## Announcement arrows #########################################################
@@ -816,6 +816,7 @@ screen journal_screen():
                     color "#a09880"
                     size 26
                     yalign 0.7
+                    font gui.number_font
 
             ## ── Stats ────────────────────────────────────────────────────────
             frame:
@@ -2351,7 +2352,7 @@ screen ph_sprite(label="[ MISSING SPRITE ]", xalign=0.5, yalign=1.0):
             xalign 0.5
             yalign 0.5
             spacing 12
-            text "[ ART NEEDED ]":
+            text "[[ ART NEEDED ]]":
                 xalign 0.5
                 color "#ff6b35cc"
                 size 18

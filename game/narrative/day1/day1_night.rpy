@@ -80,18 +80,30 @@ label tavern_night_end:
     n "The weight of the day — all of it, the chase, the fall, the barkeep, the faces, the noise — pulls you under like a current."
     n "And you are gone."
 
+    scene bg black with Dissolve(1.2)
+
     n "..."
 
     n "You don't know what time it is when the sound reaches you."
-    n "Not far. Next room, maybe two down the hall — close enough that the thin walls don't do much."
+    n "Your body knows before your brain does — something pulls you half-awake, every nerve already braced."
+    n "Last night is still in your muscles. The dark, the running, whatever was behind you."
+    n "For one bad second you are certain someone is being hurt."
 
-    n "A voice. Low. Breathless."
-    n "Then another — rougher, urgent, with a rhythm to it that leaves nothing to interpretation."
+    n "You lie still and listen."
 
-    n "You drift half-open for a moment, long enough to register what it is, and then the warmth of the bed pulls you back under."
+    n "It's coming from close. Next room, maybe. The walls here are not thick."
+    n "There is impact in it. Rhythm. Something being taken and not entirely given."
+    n "A voice — low, controlled, with the patience of someone who has all night and knows it."
+    n "And another — shorter sounds, cut off, like breath that keeps getting interrupted."
 
-    n "The sounds fade into the ambient murmur of the inn."
-    n "Whoever they are, they sound like they're having a better night than you."
+    n "It does not sound gentle."
+    n "It does not sound like something that pauses to ask."
+
+    n "You can't hear enough to be sure of anything except that one of them is in charge and the other one is not, and whoever is making those sounds..."
+    n "...is not running."
+
+    n "You lie there a moment longer than you should."
+    n "Then the warmth closes back over you and you let it."
 
     n "You are asleep before the thought finishes."
 

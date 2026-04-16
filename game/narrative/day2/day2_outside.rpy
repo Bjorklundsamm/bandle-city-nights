@@ -49,11 +49,11 @@ screen day2_outside_hub():
 
     # MISSING: ch miss fortune tavern position — standing, arms crossed, confident,
     # merchant's pack at her side, two pistols at her hips.
-    use ph_button("Miss Fortune", xalign=0.30, yalign=0.45)
+    use ph_button("miss_fortune", xalign=0.30, yalign=0.45)
 
     # MISSING: ch fizz tavern position — leaning against the tavern wall,
     # one foot up, tail flicking, trying to look casual.
-    use ph_button("Fizz", xalign=0.65, yalign=0.50)
+    use ph_button("fizz", xalign=0.65, yalign=0.50)
 
     ## Up arrow — back inside.
     frame:

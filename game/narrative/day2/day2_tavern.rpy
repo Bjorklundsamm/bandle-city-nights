@@ -134,15 +134,89 @@ label day2_lulu:
     l "He'll recover."
 
     n "She pats the stool beside her. You sit."
-    n "A flicker of motion from across the room — Poppy shifts her weight, gaze steady."
-    n "She's not staring exactly. She's just... aware."
+    n "A flicker of motion from across the room — Poppy shifts her weight, gaze moving to Lulu."
+    n "Not to the room. Not to the door. To Lulu specifically."
 
     mc "Is Poppy watching us?"
 
-    l "Poppy watches everyone. It's her job."
-    l "She watches you slightly more than everyone, which means she's decided you're worth the effort."
+    l "Poppy is always watching me."
+    l "Everyone is always watching me."
 
-    n "She says it cheerfully, as though being kept under quiet surveillance is a compliment."
+    n "She doesn't say it darkly. She says it the way you'd describe a persistent weather pattern."
+
+    l "It comes from love. I know that. Poppy loves me and she's very good at it and I would not trade her for anything."
+
+    n "A pause. Pix drifts off her shoulder and begins orbiting your head slowly."
+
+    l "And I am going to lose my mind."
+
+    mc "What?"
+
+    l "There are things I want to know about."
+    l "Things everyone else in this city apparently gets to know about freely and loudly and repeatedly based on what I hear through walls."
+
+    n "She gestures vaguely at the ceiling. The rooms above. The inn in general."
+
+    l "Things that seem to make everyone absolutely feral and I have no idea why because nobody will explain it to me properly."
+    l "I ask questions and people change the subject. Or they laugh nervously. Or they look at Poppy."
+
+    mc "What kind of things?"
+
+    l "The kind of things Katarina was doing to her latest victim last night."
+
+    n "She watches you for a reaction with enormous interest."
+
+    l "See, you heard it too. You went a very specific color just now."
+    l "That's the reaction. Everyone does that. And nobody will tell me why."
+
+    n "Pix lands back on her shoulder and pats her ear once, sympathetically."
+
+    l "I've read about it. Theory is very thorough."
+    l "But theory and practical are different things and I am very much a practical learner."
+
+    mc "You've — read about it?"
+
+    l "Extensively."
+
+    n "She says it without a trace of embarrassment. With, if anything, mild academic pride."
+
+    l "I understand the mechanics. I understand the vocabulary. I just haven't — experienced any of it."
+    l "Because every single time there's even a possibility, someone decides I need protecting and the possibility disappears."
+
+    n "She looks across the room at Poppy. Poppy, as if sensing this, looks back immediately."
+    n "Lulu waves. Poppy does not wave back."
+
+    l "She means well."
+
+    n "The frustration underneath it is real — not hot, not sharp, just old. The kind that's been sitting a long time."
+
+    l "I'm not fragile. I'm not new. I've done things most people in this city couldn't imagine and I've done them alone."
+    l "I just want — I want one thing that everyone else gets to have, and I want somebody to take it seriously instead of changing the subject."
+
+    n "She looks back at you. Direct, steady, nothing coy about it."
+
+    l "You're not changing the subject."
+
+    mc "No."
+
+    l "That's interesting."
+
+    n "Pix tilts toward you with an expression that would, on a creature with a face, be a raised eyebrow."
+
+    l "The problem is Poppy. She's here every day. Very dedicated."
+    l "Very committed to making sure nothing interesting happens to me."
+
+    n "She picks up her drink. Takes a slow sip."
+
+    l "She does take days off sometimes. She mentioned the gym."
+    l "I always know when she's gone because the room gets about thirty percent less supervised."
+
+    n "She sets the drink down."
+
+    l "Hypothetically, if someone wanted to — teach me things — practically, properly, without anyone changing the subject..."
+    l "That would be the window."
+
+    n "She says 'hypothetically' the way people say it when they mean the opposite."
 
     menu:
         "What do you do during the day?":
@@ -188,14 +262,26 @@ label day2_lulu:
 
             n "Pix tilts his head at you, deeply satisfied with this description."
 
-    n "She hops off the stool eventually, staff in hand, looking perfectly comfortable."
+    n "She hops off the stool eventually, staff in hand, glancing briefly toward Poppy — who is, of course, still watching."
 
-    l "Come find me if anything strange happens. Stranger than normal, I mean."
-    l "Pix will know before you even get to me, but come find me anyway."
+    l "One of these days she's going to take a day off."
+    l "Go do her hammer thing. Be somewhere that isn't here for a few hours."
 
-    n "She gives you one last look — warm, knowing, like she's checking a box she already knew would be checked."
-    n "Pix glances back at you from her shoulder as she goes. His expression is hard to read."
-    n "You're pretty sure he's pleased."
+    n "She says it casually. Conversationally. But Pix tilts toward you with a very specific kind of attention."
+
+    l "I have a list."
+
+    mc "A list of what?"
+
+    l "Things I've been meaning to get around to."
+
+    n "She smiles — the bright, uncomplicated one she uses when she's saying exactly what she means and counting on you not to realise it."
+
+    l "Come find me if anything strange happens."
+    l "Or if Poppy leaves early."
+
+    n "Pix watches you from her shoulder as she goes. Whatever he's thinking, he keeps it to himself."
+    n "For once."
 
     hide ch lulu profile default with dissolve
     return

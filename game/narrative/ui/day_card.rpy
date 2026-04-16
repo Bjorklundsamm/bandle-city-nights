@@ -16,37 +16,37 @@
 
 init python:
     _day_card_quotes = [
-        "Every morning is a fresh opportunity to rise to the occasion.",
-        "The early bird gets the worm. The question is what you do with it.",
-        "Don't let a single day go to waste. Wring everything out of it.",
-        "Another day, another chance to leave someone breathless.",
-        "A hard day's work always ends in deep, satisfying relief.",
-        "Make it count. The nights are long but the days are longer.",
-        "Push through the resistance. The payoff is always worth it.",
-        "You only get thirty-one. Use every single one.",
-        "Some days you lead. Some days you follow. Either way — commit.",
-        "Leave nothing on the table. Or the floor. Or wherever.",
-        "The city won't explore itself. Get out there.",
-        "Pace yourself. It's a long month and you'll need your stamina.",
-        "Do the thing you've been putting off. You'll feel much better after.",
-        "A little effort goes a long way. A lot of effort goes further.",
-        "The best experiences rarely happen indoors. Mostly.",
-        "Don't be shy. Everyone's waiting for someone to make the first move.",
-        "Today could be the day everything comes together. Or comes apart. Either's interesting.",
-        "Breathe. Stretch. Go find something worth doing.",
-        "A good day starts with intention and ends with exhaustion.",
-        "You came this far. Might as well see how deep it goes.",
-        "The only bad move is no move at all.",
-        "Some doors only open if you knock. Some open if you just lean on them.",
-        "Whatever you're after — it's closer than you think.",
-        "Stay hungry. Stay curious. Stay hydrated.",
-        "Make someone's day. It costs nothing and pays out endlessly.",
-        "The city has a lot to offer. Most of it you haven't found yet.",
-        "Every day is a gift. Unwrap it with enthusiasm.",
-        "Fortune favors the bold. And the bold tend to have more fun.",
-        "Don't overthink it. Just go.",
-        "Last few days. Make them memorable.",
-        "Final day. No regrets. Well — the good kind of regrets.",
+        "You'd be surprised what fits where, if everyone involved is enthusiastic enough.",
+        "The claws are part of it. Don't ask them to hold back on your account.",
+        "Small doesn't mean gentle. It means concentrated.",
+        "The bite marks will fade. The memory won't.",
+        "Go slow at first. Then don't.",
+        "Something half your size wanting all of you is its own kind of flattering.",
+        "The ones raised wild don't ask permission. They just take. Keep up.",
+        "Fur is warmer than you expect. So is everything else.",
+        "She'll scratch. That's not a warning — it's a review.",
+        "The gap is significant. Close it anyway. That's the whole point.",
+        "They were feral long before they were charming. Some nights, only one of those shows.",
+        "When something that small looks up at you like that, you stop thinking about the logistics.",
+        "A tail that lashes isn't angry. Learn to read the difference.",
+        "The sounds they make aren't something you'll find a word for. That's fine.",
+        "She will fit. She always fits. Don't make it weird by mentioning it.",
+        "Teeth are a love language here. Adjust your expectations accordingly.",
+        "The ones built low to the ground have the strongest grip. You'll understand soon.",
+        "Don't go easy. They don't want easy. They want to feel it.",
+        "The instinct is older than language. Stop using language and just follow it.",
+        "Small hands know exactly what they're doing. Stop being surprised.",
+        "When something feral decides you're worth keeping around, you'll know. You'll have marks.",
+        "Half your height doesn't mean half anything else.",
+        "They purr. They also bite. Same situation, sometimes simultaneously.",
+        "The claws retract when they want to. They'll let you know when they want to.",
+        "She doesn't need your help reaching. She'll climb if she wants to.",
+        "The ones with ears that move are listening to more than your words. Mind your breathing.",
+        "Going soft gets you nothing here. That goes for attitude as much as anything.",
+        "What you think is too much is usually exactly enough.",
+        "They don't do careful. They do thorough. There's a difference.",
+        "You're almost out of time. Stop being polite about what you want.",
+        "Last day. The ones worth remembering were never the ones you were cautious with.",
     ]
 
 
@@ -54,7 +54,6 @@ init python:
 
 screen day_card(day, quote):
     zorder 900
-    modal True
 
     ## Full black background — fades in via the screen's own ATL.
     add Solid("#000000") at transform:
@@ -75,14 +74,14 @@ screen day_card(day, quote):
             xalign 0.5
             color "#e8e0d0"
             size 72
-            font gui.name_text_font
+            font gui.number_font
 
         ## Days remaining
-        text "[31 - day] days remaining":
+        text "[31 - day + 1] days remaining":
             xalign 0.5
             color "#a09070"
             size 28
-            font gui.name_text_font
+            font gui.number_font
 
         ## Divider
         add Solid("#a0907044") xsize 320 ysize 1 xalign 0.5
@@ -93,8 +92,8 @@ screen day_card(day, quote):
             text_align 0.5
             color "#c8b88088"
             size 22
-            font gui.name_text_font
-            xmaximum 640
+            font gui.number_font
+            xmaximum 1760
 
 
 ## ── Label ────────────────────────────────────────────────────────────────────
@@ -106,8 +105,8 @@ label show_day_card:
 
     show screen day_card(current_day, _day_quote)
 
-    ## Hold long enough to read the quote comfortably.
-    $ renpy.pause(3.2, hard=True)
+    ## Click to advance.
+    $ renpy.pause()
 
     hide screen day_card with Dissolve(0.6)
 

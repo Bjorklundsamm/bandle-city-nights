@@ -3,6 +3,11 @@
 # Add new characters and variables here — nowhere else.
 
 
+## ── Solid-color images ───────────────────────────────────────────────────────
+
+image bg black = "#000000"
+
+
 ## ── Character defines ────────────────────────────────────────────────────────
 
 define n    = Character("Narrator")
@@ -186,6 +191,11 @@ default mf_scene_3_done         = False   # titjob scene (tier 2)
 default mf_scene_4_done         = False   # room scene (tier 3)
 default mf_paid_in_full         = False   # waited and received full 200g repayment
 default mf_times_visited        = 0       # visit counter for MF arriving in town
+
+
+## ── One-time constitution recovery flags ─────────────────────────────────────
+
+default persistent.day2_morning_rested = False
 
 
 ## ── Inventory / item flags ───────────────────────────────────────────────────
