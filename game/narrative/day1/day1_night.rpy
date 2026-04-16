@@ -183,7 +183,6 @@ label tavern_tutorial_vex:
         "Rough night?":
             mc "Rough night?"
             vx "Every night."
-            n "She says it so flatly you can't tell if it's a joke."
             vx "This one in particular is loud. And bright. And there are too many people."
             mc "Then why come to a bar?"
             vx "..."
@@ -384,13 +383,11 @@ label tavern_tutorial_ezreal:
             mc "What were you doing in Shurima?"
             ez "Recovering an artifact that three separate academic institutions said was unrecoverable."
             ez "They were wrong. Obviously."
-            n "He says it with total sincerity, like he's correcting a minor error in a ledger."
             ez "No luck. All skill."
 
         "You said 'occasional legend'?":
             mc "Occasional legend?"
             ez "I'm being modest. It's a new thing I'm trying."
-            n "He doesn't look like he's tried it very long."
 
         "I'll let you get back to your story.":
             mc "Don't let me interrupt."

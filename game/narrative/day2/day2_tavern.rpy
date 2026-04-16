@@ -55,16 +55,17 @@ screen day2_tavern_hub():
         activate_sound "audio/sfx/click_selectable.mp3"
         add "ch barkeep tavern position" at patron_zoom
 
-    ## Lulu — seated at bar, center
-    button:
-        style "patron_button"
-        focus_mask True
-        xsize 1920
-        ysize 1088
-        action Return("lulu")
-        hover_sound "audio/sfx/hover_selectable.mp3"
-        activate_sound "audio/sfx/click_selectable.mp3"
-        add "ch lulu tavern position" at patron_zoom
+    ## Lulu — seated at bar, center (only while she hasn't left for the day)
+    if lulu_in_tavern:
+        button:
+            style "patron_button"
+            focus_mask True
+            xsize 1920
+            ysize 1088
+            action Return("lulu")
+            hover_sound "audio/sfx/hover_selectable.mp3"
+            activate_sound "audio/sfx/click_selectable.mp3"
+            add "ch lulu tavern position" at patron_zoom
 
     ## Poppy — near the door, right side
     button:
@@ -160,17 +161,22 @@ label day2_lulu:
     n "Lulu is already facing you as you approach, as though she heard you coming from across the room."
     n "Pix sits on her shoulder, pointing at you with the energy of someone who has been waiting to do exactly that."
 
-    l "You slept! I could tell you were going to sleep well."
-    l "You have a very restful face when you're unconscious."
+    l "You slept well! I checked."
 
-    mc "That's... thanks."
+    mc "You — what?"
 
-    l "Pix noticed you come downstairs. He went to go tell me and I said I already knew."
-    l "He was very put out about it."
+    l "I sent Pix. He said you were very still."
+    l "Some people make faces. You didn't make any faces."
 
-    n "Pix makes a small, indignant sound."
+    n "She says this like it is a perfectly normal thing to have done. Pix offers nothing in his defense."
 
-    l "He'll recover."
+    l "I wanted to see what you looked like when you weren't doing anything. It's important data."
+
+    mc "...About me specifically?"
+
+    l "Mm-hm!"
+
+    n "No elaboration. Completely cheerful about it."
 
     n "She pats the stool beside her. You sit."
     n "A flicker of motion from across the room — Poppy shifts her weight, gaze moving to Lulu."
@@ -183,145 +189,163 @@ label day2_lulu:
 
     n "She doesn't say it darkly. She says it the way you'd describe a persistent weather pattern."
 
-    l "It comes from love. I know that. Poppy loves me and she's very good at it and I would not trade her for anything."
+    l "It comes from love. I know that. Poppy loves me and she's very good at it."
 
-    n "A pause. Pix drifts off her shoulder and begins orbiting your head slowly."
+    n "A pause. Pix drifts off her shoulder and begins a slow orbit of your head."
 
     l "And I am going to lose my mind."
 
     mc "What?"
 
     l "There are things I want to know about."
-    l "Things everyone else in this city apparently gets to know about freely and loudly and repeatedly based on what I hear through walls."
+    l "Things everyone else in this city apparently gets to know about — freely, loudly, repeatedly."
+    l "Based on what I hear through walls."
 
-    n "She gestures vaguely at the ceiling. The rooms above. The inn in general."
+    n "She gestures at the ceiling. The rooms above. The inn in general."
 
-    l "Things that seem to make everyone absolutely feral and I have no idea why because nobody will explain it to me properly."
-    l "I ask questions and people change the subject. Or they laugh nervously. Or they look at Poppy."
+    l "Things that make everyone absolutely feral and I have no idea why because nobody explains it."
+    l "I ask. People change the subject. Or laugh nervously. Or look at Poppy."
 
     mc "What kind of things?"
 
-    l "The kind of things Katarina was doing to her latest victim last night."
+    l "The kind of things Katarina was doing to her latest visitor last night."
 
-    n "She watches you for a reaction with enormous interest."
+    n "She watches you for a reaction with complete, scientific interest."
 
-    l "See, you heard it too. You went a very specific color just now."
-    l "That's the reaction. Everyone does that. And nobody will tell me why."
+    l "See. You went a very specific color just now."
+    l "That is the reaction. Everyone does that. And nobody will tell me why."
 
-    n "Pix lands back on her shoulder and pats her ear once, sympathetically."
+    n "Pix lands back on her shoulder and pats her ear once."
 
-    l "I've read about it. Theory is very thorough."
-    l "But theory and practical are different things and I am very much a practical learner."
+    l "I've read about it. My theories are very thorough."
+    l "But theory and practice are different things and I am very much a practical learner."
 
     mc "You've — read about it?"
 
     l "Extensively."
 
-    n "She says it without a trace of embarrassment. With, if anything, mild academic pride."
+    l "I understand the mechanics. I understand the vocabulary."
+    l "I just haven't — experienced any of it."
 
-    l "I understand the mechanics. I understand the vocabulary. I just haven't — experienced any of it."
-    l "Because every single time there's even a possibility, someone decides I need protecting and the possibility disappears."
-
-    n "She looks across the room at Poppy. Poppy, as if sensing this, looks back immediately."
+    n "She looks across the room. Poppy looks back immediately, the way she always does."
     n "Lulu waves. Poppy does not wave back."
 
     l "She means well."
 
-    n "The frustration underneath it is real — not hot, not sharp, just old. The kind that's been sitting a long time."
+    n "The frustration is real — not hot, not sharp. Just old. The kind that's been sitting long enough."
 
-    l "I'm not fragile. I'm not new. I've done things most people in this city couldn't imagine and I've done them alone."
-    l "I just want — I want one thing that everyone else gets to have, and I want somebody to take it seriously instead of changing the subject."
+    l "I am not new to this world. I have been in it longer than most people in this darn village."
+    l "I have done things alone that would make half this village sit down."
 
-    n "She looks back at you. Direct, steady, nothing coy about it."
+    l "But I walk in here and everyone decides I need minding."
+    l "I get sent home before the interesting hours."
+    l "And the interesting hours are the whole point."
+
+    mc "How long has it been like that?"
+
+    l "Here? Since I arrived. Before here, longer."
+    l "The village is very good at deciding what people need without asking them."
+
+    n "A pause. Pix does something small and pointed near your ear."
+
+    l "They think I'm a girl."
+    l "They look at me and they see a tiny little girl and they act accordingly."
+    l "I am not! I am older than most of the people in... in... in probably most the world!"
+    l "I am not fragile. I am not confused. I am just — annoyed."
+
+    n "She picks up her drink. Takes a slow sip."
+
+    l "All the other yordle women come back from the evenings ranting."
+    l "In very specific terms. Very specific."
+
+    mc "About what?"
+
+    l "About you. About humans in general."
+    l "About a particular — attribute — that apparently makes everyone lose their composure entirely."
+
+    n "She is not blushing. She is delivering this as field notes."
+
+    l "I have heard this rant from many sources. In detail. With comparisons."
+    l "I have no firsthand data and it is driving me actually mad."
+
+    n "She sets the drink down and looks at you directly."
+    n "Not performing. Not hinting. Just looking."
 
     l "You're not changing the subject."
 
     mc "No."
 
-    l "That's interesting."
+    l "Good."
 
-    n "Pix tilts toward you with an expression that would, on a creature with a face, be a raised eyebrow."
+    n "Pix tilts toward you with an expression that is, on a creature his size, unmistakably pointed."
 
-    l "The problem is Poppy. She's here every day. Very dedicated."
-    l "Very committed to making sure nothing interesting happens to me."
+    l "The problem is Poppy."
+    l "She is here every day. She is very dedicated."
+    l "She has decided protecting me from interesting things is a service she provides."
 
-    n "She picks up her drink. Takes a slow sip."
+    n "She glances at Poppy again. Poppy has not moved."
 
-    l "She does take days off sometimes. She mentioned the gym."
-    l "I always know when she's gone because the room gets about thirty percent less supervised."
+    l "She does take days off. She has a gym she likes."
+    l "I always know when she's gone because the room is about thirty percent less supervised."
 
-    n "She sets the drink down."
+    # [GEN START]
 
-    l "Hypothetically, if someone wanted to — teach me things — practically, properly, without anyone changing the subject..."
-    l "That would be the window."
+    # [EXPLICIT START]
+    l "The next time she's not here, I'm not going home early."
+    l "I'm going with you."
+    l "And we are going to fill a notable gap in my education."
 
-    n "She says 'hypothetically' the way people say it when they mean the opposite."
+    n "No coyness. No question in her voice."
+    n "This is a presentation. You are the subject of a study."
+
+    l "Is that acceptable?"
+
+    # [EXPLICIT END]
 
     menu:
-        "What do you do during the day?":
-            mc "What do you actually do during the day? When the bar's quiet like this?"
+        "Not the right person for this.":
+            $ affection_lulu -= 1
+            mc "I don't think I'm the right person for this."
 
-            l "Spells, mostly. Research. Pix and I have a project."
-            l "We're trying to find out if you can enchant sound."
-            l "Not just make noise magical — make the magic be the noise."
-            l "We haven't gotten it right yet but we're very close."
+            n "Something crosses her face. Not hurt — more like someone gave her an answer she's heard before and she is choosing not to argue it."
 
-            mc "What does 'close' look like?"
+            l "Right."
 
-            l "The other day Pix laughed and it made a flower grow."
-            l "We're not sure if that was us or just Pix, but we're counting it."
+            n "She picks up her drink. Takes a sip."
 
-        "What's your read on this place?":
-            mc "You've been here a while. What's your honest read on Bandle City?"
+            l "Everyone finds a reason."
+            l "I hoped you'd be different."
 
-            l "It's small and loud and everyone knows everything about everyone."
-            l "I wouldn't live anywhere else."
+            n "She doesn't push. She doesn't explain herself. She's heard enough versions of this that the energy's gone out of it."
+            n "Pix drifts back to her shoulder and sits there quietly."
 
-            n "She says it simply, without any wistfulness, the way you'd say the sky is blue."
+            l "Enjoy your morning."
 
-            l "It has a heart. Most places don't."
-            l "The Bandlewood keeps it honest. You can't get too comfortable when the forest is right there."
+            n "She hops off the stool, staff in hand. Poppy tracks her across the room — always."
+            n "Pix watches you from her shoulder as she goes."
 
-        "Tell me about Pix.":
-            mc "Tell me about Pix. What is he, exactly?"
+        "When Poppy's not here — come find me.":
+            $ affection_lulu += 1
+            mc "When Poppy takes that day off — come find me."
 
-            l "He's Pix."
-            l "I know that's not the answer you were looking for."
+            n "She looks at you for a moment. The bright, evaluating kind of look."
+            n "Then she smiles — wide, genuine, nothing complicated about it."
 
-            n "She considers it for a moment, genuinely."
+            l "Good."
 
-            l "He showed up when I was very small and we've been together since."
-            l "I don't know what he is in the way you mean the question."
-            l "But he knows things before they happen. He knew you were going to be important."
+            n "She picks up her drink and finishes it in one go."
 
-            mc "Important how?"
+            l "You'll know when. She always takes Thursdays."
+            l "I'll be here in the morning. Earlier than usual."
+            l "Don't be late — she gets back by noon."
 
-            l "He didn't specify. He usually doesn't."
-            l "He said you had an interesting thread."
+            n "She hops off the stool and grabs her staff."
+            n "Pix darts from her shoulder to hover briefly in front of your face — inspecting something — then rejoins her."
+            n "Poppy watches her go from across the room and sighs once, quietly."
 
-            n "Pix tilts his head at you, deeply satisfied with this description."
+    # [SCENE NOTE: Lulu, Poppy-guarded tavern, daytime. Lulu names what she actually wants — directly, in her matter-of-fact idiom. She's not seducing, she's stating. She wants you to take her to your room the next time Poppy isn't here. She names the specific thing she wants from the rant-reports: to finally see and explore a cock. Her framing is entirely her own — fae-matter-of-fact, no nervousness, maybe even slight impatience at how long this has taken. Ren'Py format: l "..." lines. No narration lines in this block. 4-6 lines of dialogue.]
 
-    n "She hops off the stool eventually, staff in hand, glancing briefly toward Poppy — who is, of course, still watching."
-
-    l "One of these days she's going to take a day off."
-    l "Go do her hammer thing. Be somewhere that isn't here for a few hours."
-
-    n "She says it casually. Conversationally. But Pix tilts toward you with a very specific kind of attention."
-
-    l "I have a list."
-
-    mc "A list of what?"
-
-    l "Things I've been meaning to get around to."
-
-    n "She smiles — the bright, uncomplicated one she uses when she's saying exactly what she means and counting on you not to realise it."
-
-    l "Come find me if anything strange happens."
-    l "Or if Poppy leaves early."
-
-    n "Pix watches you from her shoulder as she goes. Whatever he's thinking, he keeps it to himself."
-    n "For once."
-
+    $ lulu_in_tavern = False
     hide ch lulu profile default with dissolve
     return
 

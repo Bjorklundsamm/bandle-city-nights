@@ -103,8 +103,6 @@ label introductions:
     b "You collapsed at the edge of the Bandlewood. Someone brought you in. I gave you a room."
     b "You've been out the better part of a day."
 
-    n "She says it plainly, like she's reading a weather report."
-
     n "You look around the room — the pointed ears, the tails, the sheer variety of creatures occupying a perfectly ordinary-looking tavern."
     n "Most of them barely come up to your hips."
 

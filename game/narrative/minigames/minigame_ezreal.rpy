@@ -204,7 +204,6 @@ label ezreal_resolve:
     if _acc >= 80:
         ez "Eighty percent. That's... not nothing."
         ez "Seriously, no luck? All skill?"
-        n "He says it like a question. The question is for himself."
         $ strength += 5
         $ persistent.ezreal_hard_unlocked = True
         if _acc > persistent.ezreal_best:

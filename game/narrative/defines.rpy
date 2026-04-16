@@ -152,6 +152,7 @@ default poppy_orlon_told        = False
 default poppy_hammer_told       = False
 default poppy_explicit_done     = False
 
+default lulu_in_tavern          = True    # set False when she leaves after day2 conversation
 default lulu_pix_talk_done      = False
 default lulu_scene_1_done       = False
 default lulu_explicit_done      = False
