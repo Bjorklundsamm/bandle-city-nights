@@ -23,16 +23,14 @@ label morning_day_2:
     n "You sit up. Your body registers every complaint about yesterday in rough order of severity."
     n "Still, you slept. Actually slept — the kind that erases things."
 
-    if not persistent.day2_morning_rested:
-        $ persistent.day2_morning_rested = True
-        $ constitution += 1
-        show screen system_overlay
-        show screen constitution_arrow
-        s "Your body has recovered a little. Rest and a good meal each day will keep you on your feet."
-        s "Don't skip either if you can help it."
-        call screen system_got_it
-        hide screen constitution_arrow
-        hide screen system_overlay
+    $ constitution = 2
+    show screen system_overlay
+    show screen constitution_arrow
+    s "Your body has recovered a little. Rest and a good meal each day will keep you on your feet."
+    s "Don't skip either if you can help it."
+    call screen system_got_it
+    hide screen constitution_arrow
+    hide screen system_overlay
 
     n "You push yourself upright and reach for the door."
 

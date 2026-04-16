@@ -58,7 +58,7 @@ label tavern_night_end:
 
     menu:
         "Call it a night.":
-            pass
+            $ renpy.block_rollback()
         "Actually, head back in.":
             jump tavern_tutorial_loop
 
@@ -92,20 +92,18 @@ label tavern_night_end:
     n "You lie still and listen."
 
     n "It's coming from close. Next room, maybe. The walls here aren't thick."
-    n "There's Rhythm to it. Something being taken and not entirely given."
+    n "There's rhythm to it. Something being taken and not entirely given."
     n "A voice — low, controlled, with the patience of someone who has all night and knows it."
     n "And another — shorter sounds, cut off, like breath that keeps getting interrupted."
 
     n "It does't sound gentle."
     n "Not something that pauses to ask."
 
-    n "You can't hear enough to be sure of anything except that one of them is in charge and the other one is not, and whoever is making those sounds..."
+    n "You can't hear enough to be sure of anything except that one of them is in charge and the other one is not, and whoever the victim is..."
     n "...isn't exactly hating it."
 
-    n "You lie there a moment more be sleep creeps back in."
+    n "You lie there a moment more before sleep creeps back in."
     n "Then the warmth closes back over you and you let it."
-
-    n "You are asleep before the thought finishes."
 
     jump morning_day_2
 

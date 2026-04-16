@@ -429,15 +429,15 @@ transform journal_arrow_anim:
 
 screen constitution_arrow():
     zorder 310
-    add Transform("pointer arrow", xzoom=-1.0, zoom=0.5) at const_arrow_anim
+    add Transform("pointer arrow", xzoom=-1.0, zoom=0.5, alpha=0.6) at const_arrow_anim
 
 screen backpack_arrow():
     zorder 310
-    add Transform("pointer arrow", zoom=0.5) at pack_arrow_anim
+    add Transform("pointer arrow", zoom=0.5, alpha=0.6) at pack_arrow_anim
 
 screen journal_arrow():
     zorder 310
-    add Transform("pointer arrow", zoom=0.5) at journal_arrow_anim
+    add Transform("pointer arrow", zoom=0.5, alpha=0.6) at journal_arrow_anim
 
 
 ## Constitution HUD ############################################################
@@ -711,14 +711,14 @@ screen tavern_hub():
     button:
         xalign 0.0
         yalign 1.0
-        background Frame(Solid("#00000000"), 14, 10)
-        hover_background Frame(Solid("#00000022"), 14, 10)
-        padding (6, 6)
-        action Return("leave")
+        background None
+        hover_background Frame("gui/fade_choice_bar.png", 80, 0)
+        padding (14, 8)
+        action [Function(renpy.block_rollback), Return("leave")]
         hbox:
             spacing 10
             yalign 0.5
-            add Transform("pointer arrow", zoom=0.63, rotate=135) yalign 0.5
+            add Transform("pointer arrow", zoom=0.63, rotate=135, alpha=0.6) yalign 0.5
             text "Return to your room":
                 size 22
                 color "#d4c4a800"

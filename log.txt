@@ -633,3 +633,1270 @@ Cleaning stores took 0 ms
 Load screen analysis took 18 ms
 Analyze screens took 0 ms
 Running _start took 2 ms
+Resetting cache.
+Early init took 8 ms
+Loading error handling took 12 ms
+Loading script took 971 ms
+Loading save slot metadata took 15 ms
+Loading persistent took 0 ms
+Running init code took 184 ms
+Loading analysis data took 4 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 9 ms
+Backing up script files to 'C:\\Users\\brofe\\AppData\\Roaming/RenPy/backups/Bandle City Nights':
+Dump and make backups took 12 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 71 ms
+DPI scale factor: 1.000000
+Creating interface object took 1 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 0 ms
+Analyze screens took 17 ms
+Save screen analysis took 18 ms
+Save pyanalysis took 5 ms
+Save bytecode took 2 ms
+Running _start took 1 ms
+Interface start took 298 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce GTX 1070/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 560.94'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 9 ms
+Loading error handling took 12 ms
+Loading script took 191 ms
+Loading save slot metadata took 15 ms
+Loading persistent took 1 ms
+Running init code took 189 ms
+Loading analysis data took 4 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 9 ms
+Backing up script files to 'C:\\Users\\brofe\\AppData\\Roaming/RenPy/backups/Bandle City Nights':
+Dump and make backups took 2 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 78 ms
+DPI scale factor: 1.000000
+Creating interface object took 0 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 1 ms
+Analyze screens took 18 ms
+Save screen analysis took 25 ms
+Save pyanalysis took 0 ms
+Save bytecode took 1 ms
+Running _start took 1 ms
+Interface start took 319 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce GTX 1070/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 560.94'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 7 ms
+Loading error handling took 10 ms
+Loading script took 183 ms
+Loading save slot metadata took 16 ms
+Loading persistent took 0 ms
+Running init code took 192 ms
+Loading analysis data took 4 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 8 ms
+Backing up script files to 'C:\\Users\\brofe\\AppData\\Roaming/RenPy/backups/Bandle City Nights':
+Dump and make backups took 3 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 56 ms
+DPI scale factor: 1.000000
+Creating interface object took 0 ms
+Init translation took 1 ms
+Cleaning stores took 0 ms
+Load screen analysis took 0 ms
+Analyze screens took 13 ms
+Save screen analysis took 15 ms
+Save pyanalysis took 0 ms
+Save bytecode took 0 ms
+Running _start took 2 ms
+Interface start took 303 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce GTX 1070/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 560.94'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 8 ms
+Loading error handling took 11 ms
+Loading script took 413 ms
+Loading save slot metadata took 16 ms
+Loading persistent took 0 ms
+Running init code took 186 ms
+Loading analysis data took 4 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 9 ms
+Backing up script files to 'C:\\Users\\brofe\\AppData\\Roaming/RenPy/backups/Bandle City Nights':
+Dump and make backups took 2 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 59 ms
+DPI scale factor: 1.000000
+Creating interface object took 0 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 1 ms
+Analyze screens took 12 ms
+Save screen analysis took 16 ms
+Save pyanalysis took 0 ms
+Save bytecode took 1 ms
+Running _start took 1 ms
+Interface start took 300 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce GTX 1070/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 560.94'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 8 ms
+Loading error handling took 10 ms
+Loading script took 411 ms
+Loading save slot metadata took 15 ms
+Loading persistent took 0 ms
+Running init code took 186 ms
+Loading analysis data took 4 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 9 ms
+Backing up script files to 'C:\\Users\\brofe\\AppData\\Roaming/RenPy/backups/Bandle City Nights':
+Dump and make backups took 2 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 65 ms
+DPI scale factor: 1.000000
+Creating interface object took 0 ms
+Init translation took 0 ms
+Cleaning stores took 1 ms
+Load screen analysis took 0 ms
+Analyze screens took 13 ms
+Save screen analysis took 15 ms
+Save pyanalysis took 1 ms
+Save bytecode took 0 ms
+Running _start took 1 ms
+Interface start took 303 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce GTX 1070/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 560.94'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 8 ms
+Loading error handling took 11 ms
+Loading script took 218 ms
+Loading save slot metadata took 16 ms
+Loading persistent took 0 ms
+Running init code took 185 ms
+Loading analysis data took 8 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 9 ms
+Backing up script files to 'C:\\Users\\brofe\\AppData\\Roaming/RenPy/backups/Bandle City Nights':
+Dump and make backups took 3 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 60 ms
+DPI scale factor: 1.000000
+Creating interface object took 0 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 1 ms
+Analyze screens took 12 ms
+Save screen analysis took 16 ms
+Save pyanalysis took 0 ms
+Save bytecode took 1 ms
+Running _start took 1 ms
+Interface start took 337 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce GTX 1070/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 560.94'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 7 ms
+Loading error handling took 11 ms
+Loading script took 178 ms
+Loading save slot metadata took 15 ms
+Loading persistent took 0 ms
+Running init code took 191 ms
+Loading analysis data took 3 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 9 ms
+Backing up script files to 'C:\\Users\\brofe\\AppData\\Roaming/RenPy/backups/Bandle City Nights':
+Dump and make backups took 2 ms
+Cleaning cache took 0 ms
+Making clean stores took 1 ms
+Initial gc took 59 ms
+DPI scale factor: 1.000000
+Creating interface object took 1 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 0 ms
+Analyze screens took 13 ms
+Save screen analysis took 17 ms
+Save pyanalysis took 0 ms
+Save bytecode took 1 ms
+Running _start took 1 ms
+Interface start took 303 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce GTX 1070/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 560.94'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 8 ms
+Loading error handling took 10 ms
+Loading script took 176 ms
+Loading save slot metadata took 21 ms
+Loading persistent took 0 ms
+Running init code took 197 ms
+Loading analysis data took 4 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 9 ms
+Backing up script files to 'C:\\Users\\brofe\\AppData\\Roaming/RenPy/backups/Bandle City Nights':
+Dump and make backups took 2 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 62 ms
+DPI scale factor: 1.000000
+Creating interface object took 0 ms
+Init translation took 1 ms
+Cleaning stores took 0 ms
+Load screen analysis took 0 ms
+Analyze screens took 13 ms
+Save screen analysis took 16 ms
+Save pyanalysis took 0 ms
+Save bytecode took 0 ms
+Running _start took 1 ms
+Interface start took 317 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce GTX 1070/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 560.94'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 8 ms
+Loading error handling took 10 ms
+Loading script took 211 ms
+Loading save slot metadata took 16 ms
+Loading persistent took 0 ms
+Running init code took 184 ms
+Loading analysis data took 8 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 8 ms
+Backing up script files to 'C:\\Users\\brofe\\AppData\\Roaming/RenPy/backups/Bandle City Nights':
+Dump and make backups took 3 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 59 ms
+DPI scale factor: 1.000000
+Creating interface object took 0 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 1 ms
+Analyze screens took 12 ms
+Save screen analysis took 15 ms
+Save pyanalysis took 0 ms
+Save bytecode took 0 ms
+Running _start took 1 ms
+Interface start took 296 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce GTX 1070/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 560.94'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 8 ms
+Loading error handling took 11 ms
+Loading script took 204 ms
+Loading save slot metadata took 16 ms
+Loading persistent took 1 ms
+Running init code took 187 ms
+Loading analysis data took 4 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 8 ms
+Backing up script files to 'C:\\Users\\brofe\\AppData\\Roaming/RenPy/backups/Bandle City Nights':
+Dump and make backups took 3 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 64 ms
+DPI scale factor: 1.000000
+Creating interface object took 1 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 0 ms
+Analyze screens took 13 ms
+Save screen analysis took 15 ms
+Save pyanalysis took 0 ms
+Save bytecode took 0 ms
+Running _start took 1 ms
+Interface start took 314 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce GTX 1070/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 560.94'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 9 ms
+Loading error handling took 10 ms
+Loading script took 212 ms
+Loading save slot metadata took 16 ms
+Loading persistent took 0 ms
+Running init code took 183 ms
+Loading analysis data took 8 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 8 ms
+Backing up script files to 'C:\\Users\\brofe\\AppData\\Roaming/RenPy/backups/Bandle City Nights':
+Dump and make backups took 3 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 62 ms
+DPI scale factor: 1.000000
+Creating interface object took 1 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 0 ms
+Analyze screens took 13 ms
+Save screen analysis took 18 ms
+Save pyanalysis took 0 ms
+Save bytecode took 1 ms
+Running _start took 1 ms
+Interface start took 306 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce GTX 1070/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 560.94'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 8 ms
+Loading error handling took 11 ms
+Loading script took 168 ms
+Loading save slot metadata took 17 ms
+Loading persistent took 0 ms
+Running init code took 194 ms
+Loading analysis data took 4 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 9 ms
+Backing up script files to 'C:\\Users\\brofe\\AppData\\Roaming/RenPy/backups/Bandle City Nights':
+Dump and make backups took 2 ms
+Cleaning cache took 0 ms
+Making clean stores took 1 ms
+Initial gc took 91 ms
+DPI scale factor: 1.000000
+Creating interface object took 0 ms
+Init translation took 1 ms
+Cleaning stores took 0 ms
+Load screen analysis took 0 ms
+Analyze screens took 22 ms
+Save screen analysis took 21 ms
+Save pyanalysis took 0 ms
+Save bytecode took 1 ms
+Running _start took 1 ms
+Interface start took 322 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce GTX 1070/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 560.94'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 8 ms
+Loading error handling took 11 ms
+Loading script took 122 ms
+Loading save slot metadata took 16 ms
+Loading persistent took 0 ms
+Running init code took 193 ms
+Loading analysis data took 3 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 9 ms
+Dump and make backups took 1 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 65 ms
+DPI scale factor: 1.000000
+Creating interface object took 1 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 22 ms
+Analyze screens took 1 ms
+Save screen analysis took 0 ms
+Save pyanalysis took 0 ms
+Save bytecode took 0 ms
+Running _start took 1 ms
+Interface start took 316 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce GTX 1070/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 560.94'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 9 ms
+Loading error handling took 10 ms
+Loading script took 149 ms
+Loading save slot metadata took 17 ms
+Loading persistent took 0 ms
+Running init code took 194 ms
+Loading analysis data took 4 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 9 ms
+Backing up script files to 'C:\\Users\\brofe\\AppData\\Roaming/RenPy/backups/Bandle City Nights':
+Dump and make backups took 2 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 64 ms
+DPI scale factor: 1.000000
+Creating interface object took 0 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 1 ms
+Analyze screens took 13 ms
+Save screen analysis took 17 ms
+Save pyanalysis took 0 ms
+Save bytecode took 1 ms
+Running _start took 1 ms
+Interface start took 305 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce GTX 1070/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 560.94'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/narrative/day2/day2_morning.rpy", line 13, in script call
+    call show_day_card
+  File "game/narrative/ui/day_card.rpy", line 326, in script
+    python:
+  File "renpy/ast.py", line 1187, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/python.py", line 1260, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "game/narrative/ui/day_card.rpy", line 327, in <module>
+    _day_quote = _get_day_quote(current_day)
+                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "game/narrative/ui/day_card.rpy", line 269, in _get_day_quote
+    if not hasattr(persistent, "_day_card_perm") or len(persistent._day_card_perm) != n:
+                                                    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^      
+TypeError: object of type 'NoneType' has no len()
+
+While running game code:
+  File "game/narrative/day2/day2_morning.rpy", line 13, in script call
+    call show_day_card
+  File "game/narrative/ui/day_card.rpy", line 326, in script
+    python:
+  File "game/narrative/ui/day_card.rpy", line 327, in <module>
+    _day_quote = _get_day_quote(current_day)
+                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "game/narrative/ui/day_card.rpy", line 269, in _get_day_quote
+    if not hasattr(persistent, "_day_card_perm") or len(persistent._day_card_perm) != n:
+                                                    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^      
+TypeError: object of type 'NoneType' has no len()
+Resetting cache.
+Early init took 11 ms
+Loading error handling took 12 ms
+Loading script took 156 ms
+Loading save slot metadata took 16 ms
+Loading persistent took 0 ms
+Running init code took 196 ms
+Loading analysis data took 4 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 9 ms
+Backing up script files to 'C:\\Users\\brofe\\AppData\\Roaming/RenPy/backups/Bandle City Nights':
+Dump and make backups took 2 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 66 ms
+DPI scale factor: 1.000000
+Creating interface object took 0 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 1 ms
+Analyze screens took 13 ms
+Save screen analysis took 15 ms
+Save pyanalysis took 0 ms
+Save bytecode took 1 ms
+Running _start took 1 ms
+Interface start took 323 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce GTX 1070/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 560.94'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 8 ms
+Loading error handling took 11 ms
+Loading script took 122 ms
+Loading save slot metadata took 16 ms
+Loading persistent took 0 ms
+Running init code took 192 ms
+Loading analysis data took 4 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 9 ms
+Dump and make backups took 0 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 66 ms
+DPI scale factor: 1.000000
+Creating interface object took 0 ms
+Init translation took 1 ms
+Cleaning stores took 0 ms
+Load screen analysis took 24 ms
+Analyze screens took 1 ms
+Save screen analysis took 0 ms
+Save pyanalysis took 0 ms
+Save bytecode took 0 ms
+Running _start took 1 ms
+Interface start took 316 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce GTX 1070/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 560.94'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 9 ms
+Loading error handling took 10 ms
+Loading script took 122 ms
+Loading save slot metadata took 16 ms
+Loading persistent took 0 ms
+Running init code took 194 ms
+Loading analysis data took 4 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 9 ms
+Dump and make backups took 0 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 65 ms
+DPI scale factor: 1.000000
+Creating interface object took 0 ms
+Init translation took 1 ms
+Cleaning stores took 0 ms
+Load screen analysis took 22 ms
+Analyze screens took 1 ms
+Save screen analysis took 0 ms
+Save pyanalysis took 0 ms
+Save bytecode took 0 ms
+Running _start took 1 ms
+Interface start took 316 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce GTX 1070/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 560.94'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 8 ms
+Loading error handling took 11 ms
+Loading script took 164 ms
+Loading save slot metadata took 18 ms
+Loading persistent took 0 ms
+Running init code took 197 ms
+Loading analysis data took 3 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 9 ms
+Backing up script files to 'C:\\Users\\brofe\\AppData\\Roaming/RenPy/backups/Bandle City Nights':
+Dump and make backups took 3 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 68 ms
+DPI scale factor: 1.000000
+Creating interface object took 1 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 1 ms
+Analyze screens took 13 ms
+Save screen analysis took 16 ms
+Save pyanalysis took 0 ms
+Save bytecode took 1 ms
+Running _start took 1 ms
+Interface start took 331 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce GTX 1070/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 560.94'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 7 ms
+Loading error handling took 10 ms
+Loading script took 175 ms
+Loading save slot metadata took 16 ms
+Loading persistent took 0 ms
+Running init code took 196 ms
+Loading analysis data took 5 ms
+Analyze and compile ATL took 3 ms
+Reloading save slot metadata took 9 ms
+Backing up script files to 'C:\\Users\\brofe\\AppData\\Roaming/RenPy/backups/Bandle City Nights':
+Dump and make backups took 2 ms
+Cleaning cache took 0 ms
+Making clean stores took 1 ms
+Initial gc took 67 ms
+DPI scale factor: 1.000000
+Creating interface object took 0 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 1 ms
+Analyze screens took 13 ms
+Save screen analysis took 18 ms
+Save pyanalysis took 0 ms
+Save bytecode took 0 ms
+Running _start took 1 ms
+Interface start took 320 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce GTX 1070/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 560.94'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 9 ms
+Loading error handling took 10 ms
+Loading script took 148 ms
+Loading save slot metadata took 17 ms
+Loading persistent took 0 ms
+Running init code took 196 ms
+Loading analysis data took 3 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 9 ms
+Backing up script files to 'C:\\Users\\brofe\\AppData\\Roaming/RenPy/backups/Bandle City Nights':
+Dump and make backups took 2 ms
+Cleaning cache took 0 ms
+Making clean stores took 1 ms
+Initial gc took 101 ms
+DPI scale factor: 1.000000
+Creating interface object took 1 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 1 ms
+Analyze screens took 15 ms
+Save screen analysis took 23 ms
+Save pyanalysis took 0 ms
+Save bytecode took 1 ms
+Running _start took 1 ms
+Interface start took 310 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce GTX 1070/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 560.94'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/narrative/day2/day2_morning.rpy", line 13, in script call
+    call show_day_card
+  File "game/narrative/ui/day_card.rpy", line 319, in script
+    python:
+  File "renpy/ast.py", line 1187, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/python.py", line 1260, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "game/narrative/ui/day_card.rpy", line 320, in <module>
+    _day_quote = _get_day_quote(current_day)
+                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+TypeError: _get_day_quote() takes 0 positional arguments but 1 was given
+
+While running game code:
+  File "game/narrative/day2/day2_morning.rpy", line 13, in script call
+    call show_day_card
+  File "game/narrative/ui/day_card.rpy", line 319, in script
+    python:
+  File "game/narrative/ui/day_card.rpy", line 320, in <module>
+    _day_quote = _get_day_quote(current_day)
+                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+TypeError: _get_day_quote() takes 0 positional arguments but 1 was given
+Resetting cache.
+Early init took 8 ms
+Loading error handling took 10 ms
+Loading script took 157 ms
+Loading save slot metadata took 20 ms
+Loading persistent took 0 ms
+Running init code took 200 ms
+Loading analysis data took 4 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 9 ms
+Backing up script files to 'C:\\Users\\brofe\\AppData\\Roaming/RenPy/backups/Bandle City Nights':
+Dump and make backups took 2 ms
+Cleaning cache took 0 ms
+Making clean stores took 1 ms
+Initial gc took 73 ms
+DPI scale factor: 1.000000
+Creating interface object took 1 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 0 ms
+Analyze screens took 13 ms
+Save screen analysis took 15 ms
+Save pyanalysis took 0 ms
+Save bytecode took 0 ms
+Running _start took 1 ms
+Interface start took 353 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce GTX 1070/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 560.94'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 8 ms
+Loading error handling took 10 ms
+Loading script took 120 ms
+Loading save slot metadata took 16 ms
+Loading persistent took 0 ms
+Running init code took 191 ms
+Loading analysis data took 3 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 9 ms
+Dump and make backups took 0 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 62 ms
+DPI scale factor: 1.000000
+Creating interface object took 0 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 22 ms
+Analyze screens took 1 ms
+Save screen analysis took 0 ms
+Save pyanalysis took 0 ms
+Save bytecode took 0 ms
+Running _start took 1 ms
+Interface start took 311 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce GTX 1070/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 560.94'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 8 ms
+Loading error handling took 10 ms
+Loading script took 122 ms
+Loading save slot metadata took 16 ms
+Loading persistent took 0 ms
+Running init code took 189 ms
+Loading analysis data took 4 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 8 ms
+Dump and make backups took 0 ms
+Cleaning cache took 0 ms
+Making clean stores took 1 ms
+Initial gc took 61 ms
+DPI scale factor: 1.000000
+Creating interface object took 1 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 21 ms
+Analyze screens took 1 ms
+Save screen analysis took 1 ms
+Save pyanalysis took 0 ms
+Save bytecode took 0 ms
+Running _start took 0 ms
+Interface start took 309 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce GTX 1070/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 560.94'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 7 ms
+Loading error handling took 10 ms
+Loading script took 118 ms
+Loading save slot metadata took 16 ms
+Loading persistent took 0 ms
+Running init code took 189 ms
+Loading analysis data took 3 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 9 ms
+Dump and make backups took 0 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 62 ms
+DPI scale factor: 1.000000
+Creating interface object took 0 ms
+Init translation took 1 ms
+Cleaning stores took 0 ms
+Load screen analysis took 21 ms
+Analyze screens took 1 ms
+Save screen analysis took 0 ms
+Save pyanalysis took 0 ms
+Save bytecode took 0 ms
+Running _start took 1 ms
+Interface start took 306 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce GTX 1070/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 560.94'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 8 ms
+Loading error handling took 10 ms
+Loading script took 117 ms
+Loading save slot metadata took 15 ms
+Loading persistent took 0 ms
+Running init code took 189 ms
+Loading analysis data took 4 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 8 ms
+Dump and make backups took 0 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 63 ms
+DPI scale factor: 1.000000
+Creating interface object took 0 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 22 ms
+Analyze screens took 1 ms
+Save screen analysis took 0 ms
+Save pyanalysis took 0 ms
+Save bytecode took 0 ms
+Running _start took 1 ms
+Interface start took 311 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce GTX 1070/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 560.94'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 9 ms
+Loading error handling took 10 ms
+Loading script took 119 ms
+Loading save slot metadata took 16 ms
+Loading persistent took 0 ms
+Running init code took 211 ms
+Loading analysis data took 3 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 9 ms
+Dump and make backups took 0 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 62 ms
+DPI scale factor: 1.000000
+Creating interface object took 0 ms
+Init translation took 1 ms
+Cleaning stores took 0 ms
+Load screen analysis took 22 ms
+Analyze screens took 1 ms
+Save screen analysis took 0 ms
+Save pyanalysis took 0 ms
+Save bytecode took 0 ms
+Running _start took 1 ms
+Interface start took 305 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce GTX 1070/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 560.94'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 8 ms
+Loading error handling took 10 ms
+Loading script took 119 ms
+Loading save slot metadata took 16 ms
+Loading persistent took 0 ms
+Running init code took 190 ms
+Loading analysis data took 4 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 9 ms
+Dump and make backups took 0 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 62 ms
+DPI scale factor: 1.000000
+Creating interface object took 1 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 21 ms
+Analyze screens took 2 ms
+Save screen analysis took 0 ms
+Save pyanalysis took 0 ms
+Save bytecode took 0 ms
+Running _start took 1 ms
+Interface start took 310 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce GTX 1070/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 560.94'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 8 ms
+Loading error handling took 11 ms
+Loading script took 121 ms
+Loading save slot metadata took 16 ms
+Loading persistent took 0 ms
+Running init code took 190 ms
+Loading analysis data took 3 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 9 ms
+Dump and make backups took 0 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 63 ms
+DPI scale factor: 1.000000
+Creating interface object took 0 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 22 ms
+Analyze screens took 1 ms
+Save screen analysis took 0 ms
+Save pyanalysis took 0 ms
+Save bytecode took 0 ms
+Running _start took 1 ms
+Interface start took 306 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce GTX 1070/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 560.94'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 8 ms
+Loading error handling took 10 ms
+Loading script took 120 ms
+Loading save slot metadata took 16 ms
+Loading persistent took 0 ms
+Running init code took 188 ms
+Loading analysis data took 4 ms
+Analyze and compile ATL took 1 ms
+Reloading save slot metadata took 10 ms
+Dump and make backups took 0 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 65 ms
+DPI scale factor: 1.000000
+Creating interface object took 0 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 22 ms
+Analyze screens took 1 ms
+Save screen analysis took 0 ms
+Save pyanalysis took 0 ms
+Save bytecode took 0 ms
+Running _start took 1 ms
+Interface start took 308 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce GTX 1070/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 560.94'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 7 ms
+Loading error handling took 10 ms
+Loading script took 118 ms
+Loading save slot metadata took 15 ms
+Loading persistent took 1 ms
+Running init code took 187 ms
+Loading analysis data took 4 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 9 ms
+Dump and make backups took 0 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 63 ms
+DPI scale factor: 1.000000
+Creating interface object took 0 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 22 ms
+Analyze screens took 1 ms
+Save screen analysis took 0 ms
+Save pyanalysis took 0 ms
+Save bytecode took 0 ms
+Running _start took 1 ms
+Interface start took 307 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce GTX 1070/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 560.94'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 8 ms
+Loading error handling took 10 ms
+Loading script took 185 ms
+Loading save slot metadata took 16 ms
+Loading persistent took 0 ms
+Running init code took 191 ms
+Loading analysis data took 5 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 10 ms
+Backing up script files to 'C:\\Users\\brofe\\AppData\\Roaming/RenPy/backups/Bandle City Nights':
+Dump and make backups took 2 ms
+Cleaning cache took 0 ms
+Making clean stores took 1 ms
+Initial gc took 68 ms
+DPI scale factor: 1.000000
+Creating interface object took 1 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 0 ms
+Analyze screens took 13 ms
+Save screen analysis took 15 ms
+Save pyanalysis took 0 ms
+Save bytecode took 1 ms
+Running _start took 1 ms
+Interface start took 383 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce GTX 1070/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 560.94'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 8 ms
+Loading error handling took 10 ms
+Loading script took 183 ms
+Loading save slot metadata took 16 ms
+Loading persistent took 0 ms
+Running init code took 216 ms
+Loading analysis data took 6 ms
+Analyze and compile ATL took 3 ms
+Reloading save slot metadata took 10 ms
+Backing up script files to 'C:\\Users\\brofe\\AppData\\Roaming/RenPy/backups/Bandle City Nights':
+Dump and make backups took 2 ms
+Cleaning cache took 0 ms
+Making clean stores took 1 ms
+Initial gc took 72 ms
+DPI scale factor: 1.000000
+Creating interface object took 1 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 0 ms
+Analyze screens took 13 ms
+Save screen analysis took 16 ms
+Save pyanalysis took 0 ms
+Save bytecode took 1 ms
+Running _start took 1 ms
+Interface start took 315 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce GTX 1070/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 560.94'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 8 ms
+Loading error handling took 12 ms
+Loading script took 203 ms
+Loading save slot metadata took 16 ms
+Loading persistent took 0 ms
+Running init code took 195 ms
+Loading analysis data took 4 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 9 ms
+Backing up script files to 'C:\\Users\\brofe\\AppData\\Roaming/RenPy/backups/Bandle City Nights':
+Dump and make backups took 2 ms
+Cleaning cache took 0 ms
+Making clean stores took 1 ms
+Initial gc took 69 ms
+DPI scale factor: 1.000000
+Creating interface object took 1 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 0 ms
+Analyze screens took 15 ms
+Save screen analysis took 18 ms
+Save pyanalysis took 0 ms
+Save bytecode took 1 ms
+Running _start took 1 ms
+Interface start took 329 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Fullscreen mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce GTX 1070/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 560.94'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096

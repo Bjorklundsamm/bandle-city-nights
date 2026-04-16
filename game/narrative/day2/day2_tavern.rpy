@@ -9,9 +9,7 @@
 
 label day2_tavern_loop:
 
-    # MISSING: bg tavern daytime — same layout as bg tavern empty, morning light
-    # through the windows, a few chairs still up, quieter than the night version.
-    show screen ph_bg("bg tavern daytime")
+    scene bg tavern empty - daytime with Dissolve(1.0)
     show screen inventory_button
     play music "audio/music/impish_delight.mp3" fadein 2.0 volume 0.5
 
@@ -25,22 +23,18 @@ label day2_tavern_loop:
         if _return == "outside":
             $ _day2_tavern_running = False
 
+        elif _return == "leave":
+            call day2_tavern_nudge_outside
+
         elif _return == "barkeep":
-            hide screen ph_bg
             call day2_barkeep
-            show screen ph_bg("bg tavern daytime")
 
         elif _return == "lulu":
-            hide screen ph_bg
             call day2_lulu
-            show screen ph_bg("bg tavern daytime")
 
         elif _return == "poppy":
-            hide screen ph_bg
             call day2_poppy
-            show screen ph_bg("bg tavern daytime")
 
-    hide screen ph_bg
     stop music fadeout 1.5
 
     jump day2_outside_loop
@@ -50,43 +44,88 @@ screen day2_tavern_hub():
     zorder 100
     modal True
 
-    # MISSING: ch barkeep tavern position daytime — behind bar, relaxed, hood up.
-    use ph_button("barkeep", xalign=0.18, yalign=0.45)
+    ## Barkeep — behind the bar, left side
+    button:
+        style "patron_button"
+        focus_mask True
+        xsize 1920
+        ysize 1088
+        action Return("barkeep")
+        hover_sound "audio/sfx/hover_selectable.mp3"
+        activate_sound "audio/sfx/click_selectable.mp3"
+        add "ch barkeep tavern position" at patron_zoom
 
-    # MISSING: ch lulu tavern position daytime — seated at bar, feet off floor,
-    # staff propped against the stool.
-    use ph_button("lulu", xalign=0.45, yalign=0.40)
+    ## Lulu — seated at bar, center
+    button:
+        style "patron_button"
+        focus_mask True
+        xsize 1920
+        ysize 1088
+        action Return("lulu")
+        hover_sound "audio/sfx/hover_selectable.mp3"
+        activate_sound "audio/sfx/click_selectable.mp3"
+        add "ch lulu tavern position" at patron_zoom
 
-    # MISSING: ch poppy tavern position daytime — near the door, arms crossed,
-    # mildly impatient, clearly would rather be at the gym.
-    use ph_button("poppy", xalign=0.75, yalign=0.45)
+    ## Poppy — near the door, right side
+    button:
+        style "patron_button"
+        focus_mask True
+        xsize 1920
+        ysize 1088
+        action Return("poppy")
+        hover_sound "audio/sfx/hover_selectable.mp3"
+        activate_sound "audio/sfx/click_selectable.mp3"
+        add "ch poppy tavern position" at patron_zoom
 
     ## Down arrow — head outside.
-    frame:
+    button:
         xalign 0.5
         yalign 0.93
         background None
-        button:
-            background None
-            hover_background None
-            hover_sound "audio/sfx/hover_selectable.mp3"
-            activate_sound "audio/sfx/click_selectable.mp3"
-            action Return("outside")
-            vbox:
+        hover_background Frame("gui/fade_choice_bar.png", 80, 0)
+        padding (14, 8)
+        hover_sound "audio/sfx/hover_selectable.mp3"
+        activate_sound "audio/sfx/click_selectable.mp3"
+        action Return("outside")
+        vbox:
+            xalign 0.5
+            spacing 4
+            text "Head outside":
                 xalign 0.5
-                spacing 4
-                text "Head outside":
-                    xalign 0.5
-                    color "#e8e0d0cc"
-                    hover_color "#ffffff"
-                    size 22
-                    font gui.name_text_font
-                text "▼":
-                    xalign 0.5
-                    color "#e8e0d0cc"
-                    hover_color "#ffffff"
-                    size 28
-                    font gui.name_text_font
+                color "#e8e0d000"
+                hover_color "#e8e0d0ee"
+                size 22
+                font gui.name_text_font
+            add Transform("pointer arrow", zoom=0.5, rotate=90, alpha=0.6) xalign 0.5
+
+    ## Return to your room — always present; redirects outside during day 2.
+    button:
+        xalign 0.0
+        yalign 1.0
+        background None
+        hover_background Frame("gui/fade_choice_bar.png", 80, 0)
+        padding (14, 8)
+        hover_sound "audio/sfx/hover_selectable.mp3"
+        activate_sound "audio/sfx/click_selectable.mp3"
+        action Return("leave")
+        hbox:
+            spacing 10
+            yalign 0.5
+            add Transform("pointer arrow", zoom=0.63, rotate=135, alpha=0.6) yalign 0.5
+            text "Return to your room":
+                size 22
+                color "#d4c4a800"
+                hover_color "#d4c4a8ee"
+
+
+## ── Room nudge ───────────────────────────────────────────────────────────────
+
+label day2_tavern_nudge_outside:
+
+    n "You glance toward the stairs."
+    n "There's nothing waiting for you up there right now."
+    n "You promised Barkeep you'd make yourself useful around town. Better get to it."
+    return
 
 
 ## ── Barkeep ──────────────────────────────────────────────────────────────────

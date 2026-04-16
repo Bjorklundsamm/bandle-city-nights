@@ -1,126 +1,34 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/narrative/day2/day2_morning.rpy", line 83, in script
-    call screen katarina_room_peek
-  File "game/narrative/day2/day2_morning.rpy", line 107, in execute
-    screen katarina_room_peek():
-  File "game/narrative/day2/day2_morning.rpy", line 107, in execute
-    screen katarina_room_peek():
-  File "game/narrative/day2/day2_morning.rpy", line 115, in execute
-    use ph_sprite("ch katarina sleeping", xalign=0.5, yalign=1.0)
-  File "game/screens.rpy", line 2341, in execute
-    screen ph_sprite(label="[ MISSING SPRITE ]", xalign=0.5, yalign=1.0):
-  File "game/screens.rpy", line 2341, in execute
-    screen ph_sprite(label="[ MISSING SPRITE ]", xalign=0.5, yalign=1.0):
-  File "game/screens.rpy", line 2344, in execute
-    frame:
-  File "game/screens.rpy", line 2351, in execute
-    vbox:
-  File "<none>", line 1
-    ART NEEDED
-        ^^^^^^
-SyntaxError: invalid syntax
+  File "game/narrative/day2/day2_morning.rpy", line 13, in script call
+    call show_day_card
+  File "game/narrative/ui/day_card.rpy", line 319, in script
+    python:
+  File "game/narrative/ui/day_card.rpy", line 320, in <module>
+    _day_quote = _get_day_quote(current_day)
+                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+TypeError: _get_day_quote() takes 0 positional arguments but 1 was given
 
 -- Full Traceback ------------------------------------------------------------
 
 Traceback (most recent call last):
-  File "game/narrative/day2/day2_morning.rpy", line 83, in script
-    call screen katarina_room_peek
-  File "renpy/ast.py", line 2231, in execute
-    self.call("execute")
-    ~~~~~~~~~^^^^^^^^^^^
-  File "renpy/ast.py", line 2195, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/statements.py", line 379, in call
-    return method(parsed, *args, **kwargs)
-           ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/common/000statements.rpy", line 695, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-                    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/exports/statementexports.py", line 348, in call_screen
-    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/ui.py", line 304, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/core.py", line 2219, in interact
-    repeat, rv = self.interact_core(
-                 ~~~~~~~~~~~~~~~~~~^
-        preloads=preloads,
-        ^^^^^^^^^^^^^^^^^^
-    ...<4 lines>...
-        **kwargs,
-        ^^^^^^^^^
-    )  # type: ignore
-    ^                
-  File "renpy/display/core.py", line 2757, in interact_core
-    root_widget.visit_all(lambda d: d.per_interact())
-    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/displayable.py", line 432, in visit_all
-    d.visit_all(callback, seen)
-    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "renpy/display/displayable.py", line 432, in visit_all
-    d.visit_all(callback, seen)
-    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "renpy/display/displayable.py", line 432, in visit_all
-    d.visit_all(callback, seen)
-    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "renpy/display/screen.py", line 503, in visit_all
-    callback(self)
-    ~~~~~~~~^^^^^^
-  File "renpy/display/core.py", line 2757, in <lambda>
-    root_widget.visit_all(lambda d: d.per_interact())
-                                    ~~~~~~~~~~~~~~^^ 
-  File "renpy/display/screen.py", line 514, in per_interact
-    self.update()
-    ~~~~~~~~~~~^^
-  File "renpy/display/screen.py", line 715, in update
-    self.screen.function(**self.scope)
-    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-  File "game/narrative/day2/day2_morning.rpy", line 107, in execute
-    screen katarina_room_peek():
-  File "game/narrative/day2/day2_morning.rpy", line 107, in execute
-    screen katarina_room_peek():
-  File "game/narrative/day2/day2_morning.rpy", line 115, in execute
-    use ph_sprite("ch katarina sleeping", xalign=0.5, yalign=1.0)
-  File "game/screens.rpy", line 2341, in execute
-    screen ph_sprite(label="[ MISSING SPRITE ]", xalign=0.5, yalign=1.0):
-  File "game/screens.rpy", line 2341, in execute
-    screen ph_sprite(label="[ MISSING SPRITE ]", xalign=0.5, yalign=1.0):
-  File "game/screens.rpy", line 2344, in execute
-    frame:
-  File "game/screens.rpy", line 2351, in execute
-    vbox:
-  File "renpy/text/text.py", line 2292, in _scope
-    return self.set_text(self.text_parameter, scope, self.substitute, update)
-           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/text/text.py", line 2329, in set_text
-    i, did_sub = renpy.substitutions.substitute(i, scope, substitute)  # type: ignore
-                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^                
-  File "renpy/substitutions.py", line 355, in substitute
-    s = interpolate(s, variables)  # type: ignore
-        ~~~~~~~~~~~^^^^^^^^^^^^^^                
-  File "renpy/substitutions.py", line 89, in interpolate
-    raise e
-  File "renpy/substitutions.py", line 81, in interpolate
-    value = renpy.python.py_eval(code, {}, scope)
-            ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
-  File "renpy/python.py", line 1290, in py_eval
-    code = py_compile(code, "eval")
-           ~~~~~~~~~~^^^^^^^^^^^^^^
-  File "renpy/python.py", line 1247, in py_compile
-    raise e
-  File "renpy/python.py", line 1177, in py_compile
-    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, True)
-           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "<none>", line 1
-    ART NEEDED
-        ^^^^^^
-SyntaxError: invalid syntax
+  File "game/narrative/day2/day2_morning.rpy", line 13, in script call
+    call show_day_card
+  File "game/narrative/ui/day_card.rpy", line 319, in script
+    python:
+  File "renpy/ast.py", line 1187, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/python.py", line 1260, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "game/narrative/ui/day_card.rpy", line 320, in <module>
+    _day_quote = _get_day_quote(current_day)
+                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+TypeError: _get_day_quote() takes 0 positional arguments but 1 was given
 
 Windows-10-10.0.19045-SP0 AMD64
 Ren'Py 8.4.1.25072401
 Bandle City Nights 1.0
-Wed Apr 15 15:34:42 2026
+Wed Apr 15 20:28:21 2026

@@ -69,12 +69,7 @@ screen day2_outside_hub():
             vbox:
                 xalign 0.5
                 spacing 4
-                text "▲":
-                    xalign 0.5
-                    color "#e8e0d0cc"
-                    hover_color "#ffffff"
-                    size 28
-                    font gui.name_text_font
+                add Transform("pointer arrow", zoom=0.5, rotate=90, alpha=0.6) xalign 0.5
                 text "Back inside":
                     xalign 0.5
                     color "#e8e0d0cc"

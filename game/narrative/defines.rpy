@@ -194,11 +194,6 @@ default mf_paid_in_full         = False   # waited and received full 200g repaym
 default mf_times_visited        = 0       # visit counter for MF arriving in town
 
 
-## ── One-time constitution recovery flags ─────────────────────────────────────
-
-default persistent.day2_morning_rested = False
-
-
 ## ── Inventory / item flags ───────────────────────────────────────────────────
 
 default inventory_unlocked  = False
