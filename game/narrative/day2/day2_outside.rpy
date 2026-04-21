@@ -52,6 +52,10 @@ label day2_outside_loop:
             call loc_kitchen
             scene bg city outside daytime
 
+        elif _return == "ezreal_range":
+            call loc_ezreal_range
+            scene bg city outside daytime
+
         elif _return == "impish_delight":
             $ _day2_outside_running = False
             call loc_impish_delight
@@ -66,6 +70,9 @@ label day2_outside_loop:
 screen day2_outside_hub():
     zorder 100
     modal True
+
+    # Energy display — top-left placeholder until HUD is designed
+    text "Energy: [energy]/3" xpos 20 ypos 20 size 28 color "#ffffff" outlines [(2, "#000000", 0, 0)]
 
     # Characters
     imagebutton:
@@ -84,9 +91,10 @@ screen day2_outside_hub():
         activate_sound "audio/sfx/click_selectable.mp3"
         action Return("fizz")
 
-    # Navigation signs
+    # Navigation signs — gated by energy (NPC conversations are free; jobs cost 1)
     imagebutton:
-        idle Transform("bt auto repair", alpha=0.5)
+        sensitive energy > 0
+        idle Transform("bt auto repair", alpha=(0.5 if energy > 0 else 0.2))
         hover Fixed(Transform("bt auto repair", zoom=1.005, anchor=(0.5, 0.5), align=(0.5, 0.5)), xysize=(1920, 1088))
         focus_mask True
         pos (-2, -5)
@@ -95,7 +103,8 @@ screen day2_outside_hub():
         action Return("auto_repair")
 
     imagebutton:
-        idle Transform("bt roboshop", alpha=0.5)
+        sensitive energy > 0
+        idle Transform("bt roboshop", alpha=(0.5 if energy > 0 else 0.2))
         hover Fixed(Transform("bt roboshop", zoom=1.005, anchor=(0.5, 0.5), align=(0.5, 0.5)), xysize=(1920, 1088))
         focus_mask True
         pos (-2, -5)
@@ -104,7 +113,8 @@ screen day2_outside_hub():
         action Return("roboshop")
 
     imagebutton:
-        idle Transform("bt scout training", alpha=0.5)
+        sensitive energy > 0
+        idle Transform("bt scout training", alpha=(0.5 if energy > 0 else 0.2))
         hover Fixed(Transform("bt scout training", zoom=1.005, anchor=(0.5, 0.5), align=(0.5, 0.5)), xysize=(1920, 1088))
         focus_mask True
         pos (-2, -5)
@@ -113,7 +123,8 @@ screen day2_outside_hub():
         action Return("scout_training")
 
     imagebutton:
-        idle Transform("bt hot springs", alpha=0.5)
+        sensitive energy > 0
+        idle Transform("bt hot springs", alpha=(0.5 if energy > 0 else 0.2))
         hover Fixed(Transform("bt hot springs", zoom=1.005, anchor=(0.5, 0.5), align=(0.5, 0.5)), xysize=(1920, 1088))
         focus_mask True
         pos (-2, -5)
@@ -122,7 +133,8 @@ screen day2_outside_hub():
         action Return("hot_springs")
 
     imagebutton:
-        idle Transform("bt deep woods", alpha=0.5)
+        sensitive energy > 0
+        idle Transform("bt deep woods", alpha=(0.5 if energy > 0 else 0.2))
         hover Fixed(Transform("bt deep woods", zoom=1.005, anchor=(0.5, 0.5), align=(0.5, 0.5)), xysize=(1920, 1088))
         focus_mask True
         pos (-2, -5)
@@ -131,13 +143,25 @@ screen day2_outside_hub():
         action Return("deep_woods")
 
     imagebutton:
-        idle Transform("bt kitchen", alpha=0.78)
+        sensitive energy > 0
+        idle Transform("bt kitchen", alpha=(0.78 if energy > 0 else 0.2))
         hover Fixed(Transform("bt kitchen", zoom=1.005, anchor=(0.5, 0.5), align=(0.5, 0.5)), xysize=(1920, 1088))
         focus_mask True
         pos (-2, -6)
         hover_sound "audio/sfx/hover_selectable.mp3"
         activate_sound "audio/sfx/click_selectable.mp3"
         action Return("kitchen")
+
+    # Placeholder button — replace with imagebutton when bt ezreal range.png exists
+    textbutton "[ EZREAL'S RANGE ]":
+        sensitive energy > 0
+        xpos 1440
+        ypos 360
+        text_size 22
+        text_color ("#ffffff" if energy > 0 else "#444444")
+        hover_sound "audio/sfx/hover_selectable.mp3"
+        activate_sound "audio/sfx/click_selectable.mp3"
+        action Return("ezreal_range")
 
     imagebutton:
         idle Transform("bt impish delight", alpha=0.78)
@@ -175,6 +199,7 @@ label day2_meet_miss_fortune:
     n "Red hair. Long coat. Two pistols that look like they've been fired recently and cleaned immediately after."
     n "The kind of posture that says she's already assessed you and filed the report."
 
+    $ emotion_icon = "ch miss fortune icon confident"
     mf "Another human. Interesting day."
 
     n "She extends a hand. The grip is firm and practiced."
@@ -196,13 +221,20 @@ label day2_meet_miss_fortune:
     n "A pause."
     n "Something shifts slightly in her posture. A hair. Almost nothing."
 
+    $ emotion_icon = "ch miss fortune icon irritated"
     mf "Which makes this current situation particularly — irritating."
 
     mc "What situation?"
 
-    mf "I may have. Slightly."
+    mf """
+    I may have
 
-    n "She stops. Starts again."
+    I may have.
+
+    I may have..
+
+    I may have... Slightly.
+    """
 
     mf "There was a celebration. Last port. A deal came through and I — commemorated it."
     mf "Appropriately. Enthusiastically. With other people's transport money."
@@ -226,6 +258,7 @@ label day2_meet_miss_fortune:
     n "It's enormous — engraved along the barrel, heavier than it has any right to be."
     n "It looks less like a pistol and more like someone miniaturized a cannon and added a handle."
 
+    $ emotion_icon = "ch miss fortune icon confident"
     mf "One of mine. She's worth considerably more than two hundred gold."
     mf "You hold her while I'm gone. Trade closes, you get your money back plus fifty."
     mf "Deal falls through for any reason — she's yours."
@@ -255,6 +288,7 @@ label day2_meet_miss_fortune:
             else:
                 mc "I'd lend it if I had it. I'm short right now."
                 n "She takes the pistol back."
+                $ emotion_icon = "ch miss fortune icon irritated"
                 mf "Story of this port."
                 mf "If that changes before I leave — come find me."
 
@@ -264,6 +298,7 @@ label day2_meet_miss_fortune:
             n "She looks at you for a moment."
             n "Then she exhales through her nose — slow, deflated."
 
+            $ emotion_icon = "ch miss fortune icon resigned"
             mf "Right."
 
             n "She clips the pistol back to her hip."
@@ -277,25 +312,17 @@ label day2_meet_miss_fortune:
             $ mf_scene_1_done = True
 
     hide ch miss fortune profile default
+    $ emotion_icon = None
     return
 
 
 ## ── Stub location labels ─────────────────────────────────────────────────────
 
-label loc_auto_repair:
-    scene bg black
-    n "PLACEHOLDER: Auto Repair — bg auto repair interior needed"
-    return
-
-label loc_roboshop:
-    scene bg black
-    n "PLACEHOLDER: Roboshop — bg roboshop interior needed"
-    return
-
-label loc_scout_training:
-    scene bg black
-    n "PLACEHOLDER: Scout Training — bg scout training grounds needed"
-    return
+# loc_auto_repair  → day2_corki.rpy
+# loc_roboshop      → day2_rumble.rpy
+# loc_scout_training → day2_teemo.rpy
+# loc_kitchen       → day2_morgana.rpy
+# loc_ezreal_range  → day2_ezreal.rpy
 
 label loc_hot_springs:
     scene bg hot springs
@@ -305,11 +332,6 @@ label loc_hot_springs:
 label loc_deep_woods:
     scene bg black
     n "PLACEHOLDER: Deep Woods — bg deep woods needed"
-    return
-
-label loc_kitchen:
-    scene bg black
-    n "PLACEHOLDER: Kitchen — bg kitchen interior needed"
     return
 
 label loc_impish_delight:

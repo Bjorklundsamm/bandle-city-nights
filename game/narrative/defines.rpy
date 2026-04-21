@@ -49,6 +49,15 @@ default energy       = 3   # resets to 3 each morning
 default gold         = 0
 
 
+## ── Pipe puzzle (Corki's Auto-Repair) ───────────────────────────────────────
+
+default pipe_grid      = []
+default pipe_rows      = 4
+default pipe_cols      = 5
+default pipe_start_row = 1   # row index on the left edge
+default pipe_end_row   = 2   # row index on the right edge
+
+
 ## ── Minigame tracking ────────────────────────────────────────────────────────
 # visit_counts — scale difficulty on repeat visits
 default persistent.corki_visits    = 0
@@ -80,6 +89,14 @@ default persistent.ezreal_shower_unlocked = False
 default player_name             = "Stranger"
 default constitution_hud_visible = False
 default current_day             = 1
+
+
+## ── Emotion icon ─────────────────────────────────────────────────────────────
+# Set to an image tag string (e.g. "ch tristana icon horny") to show the icon
+# in the bottom-left of the textbox. Set to None to hide.
+# If the image doesn't exist yet, the tag name is displayed as placeholder text.
+
+default emotion_icon = None
 
 
 ## ── Met flags ────────────────────────────────────────────────────────────────

@@ -122,6 +122,29 @@ screen say(who, what):
 
             text what id "what"
 
+            ## Emotion icon — left side of textbox, set via emotion_icon variable.
+            if emotion_icon is not None and not renpy.variant("small"):
+                if renpy.has_image(emotion_icon):
+                    add emotion_icon at emotion_icon_pos
+                else:
+                    frame:
+                        xanchor 0.0
+                        yanchor 0.5
+                        xpos 240
+                        ypos 105
+                        xsize 240
+                        ysize 50
+                        background Solid("#ff6b3530")
+                        foreground Frame(Solid("#ff6b3570"), Borders(1, 1, 1, 1))
+                        padding (6, 4)
+                        text "[emotion_icon]":
+                            xalign 0.5
+                            yalign 0.5
+                            color "#ff6b35dd"
+                            size 12
+                            font gui.name_text_font
+                            text_align 0.5
+
     else:
         ## No content — still render the required ids so Ren'Py internals don't break.
         window at Transform(alpha=0.0):
@@ -442,6 +465,15 @@ transform nav_arrow_bounce_diag:
     linear 0.3 xoffset -5 yoffset 5
     linear 0.3 xoffset 0 yoffset 0
     repeat
+
+transform emotion_icon_pos:
+    ## Positions the emotion icon in the bottom-left of the textbox.
+    zoom 0.375
+    alpha 0.6
+    xanchor 0.0
+    yanchor 0.5
+    xpos 240
+    ypos 105
 
 screen constitution_arrow():
     zorder 310

@@ -106,7 +106,15 @@ label introductions:
     n "You look around the room — the pointed ears, the tails, the sheer variety of creatures occupying a perfectly ordinary-looking tavern."
     n "Most of them barely come up to your hips."
 
-    mc "This is Bandle City."
+    mc """
+    This is
+
+    This is.
+
+    This is..
+
+    This is... Bandle City.
+    """
 
     b "It is. Home of the Yordles, the small folk, the hidden city — whichever version you heard growing up."
     b "I take it you didn't come here on purpose."
@@ -212,10 +220,12 @@ label gameStart:
     n "The room is loud and lively, filled with chatter, the clattering of silverware, and the thumping of mugs against tables."
     n "You're almost startled as an upbeat voice calls out from behind you."
 
+    $ emotion_icon = "ch tristana icon horny"
     unkwn "Well hey there, you're a big fella!"
 
     show ch tristana profile with dissolve
 
+    $ emotion_icon = "ch tristana icon smiling"
     n "The voice rings familiar. As you turn, some part of you manages to sort through your hazy memories."
     n "This was the one who saved your life — it's not hard to piece together what must have happened."
 
@@ -239,6 +249,7 @@ label gameStart:
     n "She grins and waves it off. You can't help but notice an odd warmth in your chest as you're overcome by her upbeat energy."
 
     t "If anything, this place was due for a fresh face — gambling with the same people over and over gets old fast."
+    $ emotion_icon = "ch tristana icon nervous grin"
     t "If you ever wanna join me, I'm here just about every night at that table in the back."
     t "You should swing by for a few games, that is if you're ready to hand over all your hard earned money."
 
@@ -248,6 +259,7 @@ label gameStart:
     $ met_tristana = 2
 
     hide ch tristana profile with dissolve
+    $ emotion_icon = None
 
     n """
     You had always instinctively thought of Yordles as
@@ -279,6 +291,7 @@ label gameStart:
     n "Another blue Yordle is looking up at you, quietly judging and weighing you with her gaze."
     n "She was a bit taller than Tristana, but not by much. What she did have though was muscle and the way she crossed her arms showed it."
 
+    $ emotion_icon = "ch poppy icon bored"
     unkwn "You're a new face. My name is Poppy."
 
     mc "Oh, uh... Hi."
@@ -289,12 +302,14 @@ label gameStart:
 
     n "You nod and she seems satisfied, her stern expression relaxing and a small smile breaking across her features."
 
+    $ emotion_icon = "ch poppy icon smile"
     p "Glad to hear it. I overheard you mention your name was [player_name] — welcome to the city. I'm sure we'll be seeing each other around."
 
     n "Her eyes drift past you and she raises a hand to the Imp at the counter before returning to her position near the door."
     n "Hopping up onto a stool, she resumes her vigil, keeping a careful eye on the room."
 
     hide ch poppy profile default with dissolve
+    $ emotion_icon = None
 
     n "It's odd — the situation hasn't gotten any less overwhelming, but with each smile and greeting the anxiety is slowly fading."
     n "These Yordles, these people, are nothing like the monsters that pursued you into the forest. They're good people."
@@ -309,6 +324,7 @@ label gameStart:
     n "Swaying in the seat next to you is another patron — purple fur, long hair, a little red dress, feet that don't quite reach the floor."
     n "She's looking at you with bright green eyes and an air of someone who has been waiting patiently for exactly this moment."
 
+    $ emotion_icon = "ch lulu icon smile"
     l "He does that to people he finds interesting. You should feel good about it."
     l "My name's Lulu. The great sorceress supreme, ultimate magician of Bandle City. It's official."
 
@@ -324,11 +340,13 @@ label gameStart:
 
     n "She says it like this settles the matter completely."
 
+    $ emotion_icon = "ch lulu icon surprised"
     l "Oh! Speaking of which—"
 
     n "She snatches a gnarled wooden staff from the bar and swings it toward Tristana's table across the room."
     n "After a moment of intense, furrowed concentration, Trist reaches up and scratches slowly at one of her large furry ears."
 
+    $ emotion_icon = "ch lulu icon smile"
     l "See that?"
 
     mc "What did you just do?"
@@ -347,6 +365,7 @@ label gameStart:
     l "I'm usually around during the day. Come find me. Or Pix will find you, which is the same thing."
 
     hide ch lulu profile default with dissolve
+    $ emotion_icon = None
 
     n "She gives you one last smile — warm, genuine, slightly like she knows something you don't — and skips off into the crowd."
     n "You let out a slow breath. Bedtime is starting to sound reasonable."

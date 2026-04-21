@@ -10,6 +10,7 @@
 label morning_day_2:
 
     $ current_day = 2
+    $ energy = 3
     call show_day_card
 
     stop ambient fadeout 1.5

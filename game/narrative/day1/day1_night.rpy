@@ -163,6 +163,7 @@ label tavern_tutorial_vex:
     n "She's working on another, baggy hoodie pulled up around her ears, staring at nothing."
     n "A small shadow flickers at her shoulder — something between a cat and a smudge of ink — watching you approach."
 
+    $ emotion_icon = "ch vex icon annoyed"
     vx "Don't."
 
     n "She says it before you've even opened your mouth."
@@ -191,16 +192,19 @@ label tavern_tutorial_vex:
         "Is your shadow... alive?":
             mc "Is your shadow alive?"
             n "For the first time she looks at you — a slow, flat assessment."
+            $ emotion_icon = "ch vex icon grin"
             vx "What do you think?"
             mc "I think it is."
             vx "Then you're smarter than most people who talk to me."
             n "Shadow tilts its head. She looks back at the middle distance."
+            $ emotion_icon = "ch vex icon annoyed"
             vx "Don't make it weird."
 
     n "She pulls her cloak a little tighter and resumes staring at nothing."
     n "Conversation clearly over. You're not sure whether that counted as a good first impression, but somehow you doubt she gives those out."
 
     hide ch vex profile default with dissolve
+    $ emotion_icon = None
     return
 
 
@@ -223,6 +227,7 @@ label tavern_tutorial_katarina:
 
     n "As you approach she catches you in her periphery. She lets the silence sit for a moment, then speaks — low, easy, not loud enough to carry."
 
+    $ emotion_icon = "ch katarina icon cold"
     k "You've been standing there for a few seconds."
 
     mc "Sorry, I—"
@@ -249,6 +254,7 @@ label tavern_tutorial_katarina:
 
     n "She keeps her voice level, unhurried — just two people making conversation while Tristana stares at the dice."
 
+    $ emotion_icon = "ch katarina icon predatory"
     k "She's spoken for tonight, by the way. I've put a lot of work into this table."
     k "By the time we're done she'll owe me enough that I'll be collecting on it for quite a while."
     k "In whatever form I see fit. For as long as I like."
@@ -257,6 +263,7 @@ label tavern_tutorial_katarina:
 
     n "She says it pleasantly. Like she's doing you a favor."
 
+    $ emotion_icon = "ch katarina icon cold"
     k "Sit if you want. But I don't go easy on anyone at this table."
 
     menu:
@@ -269,11 +276,13 @@ label tavern_tutorial_katarina:
         "I'll keep that in mind.":
             mc "I'll keep that in mind."
             n "The faintest smile. Not warm exactly, but real."
+            $ emotion_icon = "ch katarina icon amused"
             k "Good answer."
             n "She glances back at the dice, signaling that's about all the welcome you're going to get."
             n "Somehow it still feels like passing a test."
 
     hide ch katarina profile default with dissolve
+    $ emotion_icon = None
     return
 
 
@@ -300,6 +309,7 @@ label tavern_tutorial_ahri:
 
     n "Two small blue-gold embers drift from her fingertips and dissolve before they reach the table."
 
+    $ emotion_icon = "ch ahri icon mysterious"
     a "You're the one they found out there last night, all mangled up by something wild and angry."
 
     n "It isn't a question."
@@ -316,6 +326,7 @@ label tavern_tutorial_ahri:
 
     mc "Should I be flattered?"
 
+    $ emotion_icon = "ch ahri icon amused"
     a "Probably not. I expected very little."
 
     n "She says it with something that might be a smile."
@@ -323,10 +334,12 @@ label tavern_tutorial_ahri:
     n "Then her eyes drift — not away from you, but through you, like she's reading something written underneath."
     n "Her nostrils flicker almost imperceptibly. The tails slow."
 
+    $ emotion_icon = "ch ahri icon intrigued"
     a "You smell like the city. Roads. Iron. Other people's fires."
 
     n "She considers that for a moment."
 
+    $ emotion_icon = "ch ahri icon mysterious"
     a "Nothing wrong with it. It's just... ordinary. I've read that story before."
     a "Come back when you've spent some time out here. When the wood is in you a little."
     a "When you smell like something that's touched this world and let it touch back."
@@ -339,6 +352,7 @@ label tavern_tutorial_ahri:
     n "The tails settle. You get the sense she's still aware of exactly where you are."
 
     hide ch ahri profile default with dissolve
+    $ emotion_icon = None
     return
 
 
@@ -356,6 +370,7 @@ label tavern_tutorial_ezreal:
 
     n "You hear him before you see him."
 
+    $ emotion_icon = "ch ezreal icon excited"
     ez "— no, no, the real problem was the trap was already sprung, right? So I had about two seconds to decide."
     ez "Most people freeze. I ran the numbers, flipped the panel, and just — gone. Completely clean."
 
@@ -383,14 +398,17 @@ label tavern_tutorial_ezreal:
             mc "What were you doing in Shurima?"
             ez "Recovering an artifact that three separate academic institutions said was unrecoverable."
             ez "They were wrong. Obviously."
+            $ emotion_icon = "ch ezreal icon smug"
             ez "No luck. All skill."
 
         "You said 'occasional legend'?":
             mc "Occasional legend?"
+            $ emotion_icon = "ch ezreal icon smug"
             ez "I'm being modest. It's a new thing I'm trying."
 
         "I'll let you get back to your story.":
             mc "Don't let me interrupt."
+            $ emotion_icon = "ch ezreal icon excited"
             ez "You're not interrupting, you're improving the audience-to-story ratio."
             ez "Sit down, this next part is genuinely impressive."
 
@@ -398,6 +416,7 @@ label tavern_tutorial_ezreal:
     n "You suspect he might not know either."
 
     hide ch ezreal profile default with dissolve
+    $ emotion_icon = None
     return
 
 
@@ -416,15 +435,19 @@ label tavern_tutorial_nidalee_neeko:
     show ch neeko and nidalee profile with dissolve
     n "You hear them before you reach the table."
 
+    $ emotion_icon = "ch nidalee icon stern"
     show ch nidalee profile default with Dissolve(0.15)
     ni "You said you weren't going to do it again."
 
+    $ emotion_icon = "ch neeko icon curious"
     show ch neeko profile default with Dissolve(0.15)
     neo "Neeko did not agree to that. Nidalee said it. Neeko was quiet."
 
+    $ emotion_icon = "ch nidalee icon stern"
     show ch nidalee profile default with Dissolve(0.15)
     ni "Quiet is agreement."
 
+    $ emotion_icon = "ch neeko icon curious"
     show ch neeko profile default with Dissolve(0.15)
     neo "Quiet is quiet. They are not the same thing."
 
@@ -432,34 +455,41 @@ label tavern_tutorial_nidalee_neeko:
     n "The taller one has the posture of someone who hunts for a living — still, coiled, zero wasted energy."
     n "The shorter one has scales along her jaw and eyes that are doing several things at once, including noticing you."
 
+    $ emotion_icon = "ch neeko icon surprised"
     show ch neeko profile default with Dissolve(0.15)
     neo "Oh."
 
     show ch neeko and nidalee profile with Dissolve(0.15)
     n "Neeko looks at you the way you'd look at something you weren't expecting but are immediately glad exists."
 
+    $ emotion_icon = "ch neeko icon curious"
     show ch neeko profile default with Dissolve(0.15)
     neo "Nidalee. There is a human."
 
+    $ emotion_icon = "ch nidalee icon stern"
     show ch nidalee profile default with Dissolve(0.15)
     ni "I know."
 
     show ch neeko and nidalee profile with Dissolve(0.15)
     n "She doesn't look at you yet. Still watching Neeko."
 
+    $ emotion_icon = "ch neeko icon curious"
     show ch neeko profile default with Dissolve(0.15)
     neo "Neeko thinks you should tell the human what we are arguing about."
     neo "So that they can decide for themselves."
 
+    $ emotion_icon = "ch nidalee icon stern"
     show ch nidalee profile default with Dissolve(0.15)
     ni "We're not doing that."
 
+    $ emotion_icon = "ch neeko icon defiant"
     show ch neeko profile default with Dissolve(0.15)
     neo "Neeko is doing it."
 
     show ch neeko and nidalee profile with Dissolve(0.15)
     n "She turns to you fully, earnest and completely without embarrassment."
 
+    $ emotion_icon = "ch neeko icon curious"
     show ch neeko profile default with Dissolve(0.15)
     neo "Nidalee believes that Neeko belongs to her. Like territory."
     neo "Neeko believes Nidalee is wrong. But also correct. It is complicated."
@@ -474,27 +504,33 @@ label tavern_tutorial_nidalee_neeko:
     show ch neeko and nidalee profile with Dissolve(0.15)
     n "Nidalee finally looks at you. It's a slow, complete assessment — the kind that takes inventory."
 
+    $ emotion_icon = "ch nidalee icon stern"
     show ch nidalee profile default with Dissolve(0.15)
     ni "Don't."
 
+    $ emotion_icon = "ch neeko icon curious"
     show ch neeko profile default with Dissolve(0.15)
     neo "Nidalee."
 
+    $ emotion_icon = "ch nidalee icon stern"
     show ch nidalee profile default with Dissolve(0.15)
     ni "He doesn't need to be part of this."
 
+    $ emotion_icon = "ch neeko icon curious"
     show ch neeko profile default with Dissolve(0.15)
     neo "Neeko disagrees. Neeko thinks outside perspective is useful."
 
     show ch neeko and nidalee profile with Dissolve(0.15)
     n "A silence. Nidalee holds it the way someone holds a weapon they've decided not to use yet."
 
+    $ emotion_icon = "ch nidalee icon territorial"
     show ch nidalee profile default with Dissolve(0.15)
     ni "You smell like the deep wood. Whatever came for you out there didn't finish the job."
 
     show ch neeko and nidalee profile with Dissolve(0.15)
     n "She says it like it's a fact worth filing."
 
+    $ emotion_icon = "ch nidalee icon stern"
     show ch nidalee profile default with Dissolve(0.15)
     ni "Stay out of things that aren't yours."
 
@@ -502,6 +538,7 @@ label tavern_tutorial_nidalee_neeko:
     n "It's not entirely clear if she's talking to you or to Neeko."
     n "Neeko, for her part, gives you an apologetic look — the kind that says this is a normal Tuesday."
 
+    $ emotion_icon = "ch neeko icon smile"
     show ch neeko profile default with Dissolve(0.15)
     neo "Neeko is sorry about her. She is like this."
     neo "You can come find Neeko again later. When she is less territorial."
@@ -511,6 +548,7 @@ label tavern_tutorial_nidalee_neeko:
     n "You get the sense the argument isn't over. It's just been set down somewhere they'll pick it up again later."
 
     hide ch neeko and nidalee profile with dissolve
+    $ emotion_icon = None
     return
 
 
@@ -528,6 +566,7 @@ label tavern_tutorial_jinx:
 
     n "She finds you before you find her."
 
+    $ emotion_icon = "ch jinx icon excited"
     j "Hey. Hey, you. Big guy."
 
     n "A blue-haired girl is leaning backwards off a barstool, pigtails nearly touching the floor, pointing at you upside-down."
@@ -546,6 +585,7 @@ label tavern_tutorial_jinx:
 
     n "She rights herself, dropping back upright with zero apparent effort, and stares at you."
 
+    $ emotion_icon = "ch jinx icon annoyed"
     j "You have to give me something. I've been thinking about this since last night."
 
     n "She seems genuinely aggrieved. Like you've personally inconvenienced her by not having better information about your own near-death experience."
@@ -553,6 +593,7 @@ label tavern_tutorial_jinx:
     menu:
         "Big. Blue eyes. Fast.":
             mc "Big. Blue eyes. Fast."
+            $ emotion_icon = "ch jinx icon excited"
             j "Okay, okay. Blue eyes."
             n "She points at you."
             j "That's something. Fishbones, blue eyes."
@@ -561,10 +602,12 @@ label tavern_tutorial_jinx:
 
         "I'd rather not think about it.":
             mc "I'd rather not think about it, honestly."
+            $ emotion_icon = "ch jinx icon annoyed"
             j "Ugh. Fair. Fine."
             n "She says 'fine' the way someone says it when it is not fine."
             j "I'm putting 'big and scary' in my notes."
 
+    $ emotion_icon = "ch jinx icon excited"
     j "I'm Jinx, by the way. And this is Fishbones."
 
     n "She pats the rocket launcher. It does not respond. She seems satisfied anyway."
@@ -582,6 +625,7 @@ label tavern_tutorial_jinx:
 
     mc "That's the plan."
 
+    $ emotion_icon = "ch jinx icon grin"
     j "Good. Come find me if anything explodes."
     j "Actually come find me anyway. Things are more likely to explode if I'm involved."
 
@@ -590,4 +634,5 @@ label tavern_tutorial_jinx:
     n "Conversation over. You've been filed somewhere."
 
     hide ch jinx profile default with dissolve
+    $ emotion_icon = None
     return

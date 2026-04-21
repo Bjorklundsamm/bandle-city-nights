@@ -1,34 +1,78 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/narrative/day2/day2_morning.rpy", line 13, in script call
-    call show_day_card
-  File "game/narrative/ui/day_card.rpy", line 319, in script
-    python:
-  File "game/narrative/ui/day_card.rpy", line 320, in <module>
-    _day_quote = _get_day_quote(current_day)
-                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^
-TypeError: _get_day_quote() takes 0 positional arguments but 1 was given
+  File "game/narrative/day1/day1_intro.rpy", line 224, in script
+    unkwn "Well hey there, you're a big fella!"
+  File "game/screens.rpy", line 109, in execute
+    screen say(who, what):
+  File "game/screens.rpy", line 109, in execute
+    screen say(who, what):
+  File "game/screens.rpy", line 112, in execute
+    if who is not None or (what is not None and what != ""):
+  File "game/screens.rpy", line 113, in execute
+    window:
+  File "game/screens.rpy", line 126, in execute
+    if emotion_icon is not None and not renpy.variant("small"):
+  File "game/screens.rpy", line 127, in execute
+    if renpy.has_image(*emotion_icon.split()):
+  File "game/screens.rpy", line 127, in <module>
+    if renpy.has_image(*emotion_icon.split()):
+       ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^ 
+TypeError: image_exists() takes from 1 to 2 positional arguments but 4 were given
 
 -- Full Traceback ------------------------------------------------------------
 
 Traceback (most recent call last):
-  File "game/narrative/day2/day2_morning.rpy", line 13, in script call
-    call show_day_card
-  File "game/narrative/ui/day_card.rpy", line 319, in script
-    python:
-  File "renpy/ast.py", line 1187, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/python.py", line 1260, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "game/narrative/ui/day_card.rpy", line 320, in <module>
-    _day_quote = _get_day_quote(current_day)
-                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^
-TypeError: _get_day_quote() takes 0 positional arguments but 1 was given
+  File "game/narrative/day1/day1_intro.rpy", line 224, in script
+    unkwn "Well hey there, you're a big fella!"
+  File "renpy/ast.py", line 2915, in execute
+    Say.execute(self)
+    ~~~~~~~~~~~^^^^^^
+  File "renpy/ast.py", line 991, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/exports/sayexports.py", line 129, in say
+    who(what, *args, **kwargs)
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/character.py", line 1543, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/character.py", line 1198, in do_display
+    display_say(who, what, self.do_show, **display_args)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/character.py", line 820, in display_say
+    what_text = renpy.display.screen.get_widget(what_text[0], what_text[1], what_text[2])
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/screen.py", line 1565, in get_displayable
+    screen.update()
+    ~~~~~~~~~~~~~^^
+  File "renpy/display/screen.py", line 715, in update
+    self.screen.function(**self.scope)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "game/screens.rpy", line 109, in execute
+    screen say(who, what):
+  File "game/screens.rpy", line 109, in execute
+    screen say(who, what):
+  File "game/screens.rpy", line 112, in execute
+    if who is not None or (what is not None and what != ""):
+  File "game/screens.rpy", line 113, in execute
+    window:
+  File "game/screens.rpy", line 126, in execute
+    if emotion_icon is not None and not renpy.variant("small"):
+  File "game/screens.rpy", line 127, in execute
+    if renpy.has_image(*emotion_icon.split()):
+  File "renpy/python.py", line 1292, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/python.py", line 1285, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+           ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "game/screens.rpy", line 127, in <module>
+    if renpy.has_image(*emotion_icon.split()):
+       ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^ 
+TypeError: image_exists() takes from 1 to 2 positional arguments but 4 were given
 
 Windows-10-10.0.19045-SP0 AMD64
 Ren'Py 8.4.1.25072401
 Bandle City Nights 1.0
-Wed Apr 15 20:28:21 2026
+Fri Apr 17 12:35:29 2026

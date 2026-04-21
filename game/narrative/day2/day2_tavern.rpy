@@ -173,6 +173,7 @@ label day2_lulu:
     n "Lulu is already facing you as you approach, as though she heard you coming from across the room."
     n "Pix sits on her shoulder, pointing at you with the energy of someone who has been waiting to do exactly that."
 
+    $ emotion_icon = "ch lulu icon smile"
     l "You slept well! I checked."
 
     mc "You — what?"
@@ -205,7 +206,16 @@ label day2_lulu:
 
     n "A pause. Pix drifts off her shoulder and begins a slow orbit of your head."
 
-    l "And I am going to lose my mind."
+    $ emotion_icon = "ch lulu icon angry"
+    l """
+    And I am going to lose my mind
+
+    And I am going to lose my mind.
+
+    And I am going to lose my mind..
+
+    And I am going to lose my mind...
+    """
 
     mc "What?"
 
@@ -222,6 +232,7 @@ label day2_lulu:
 
     l "The kind of things Katarina was doing to her latest visitor last night."
 
+    $ emotion_icon = "ch lulu icon smile"
     n "She watches you for a reaction with complete, scientific interest."
 
     l "See. You went a very specific color just now."
@@ -242,10 +253,12 @@ label day2_lulu:
     n "She looks across the room. Poppy looks back immediately, the way she always does."
     n "Lulu waves. Poppy does not wave back."
 
+    $ emotion_icon = "ch lulu icon sad"
     l "She means well."
 
     n "The frustration is real — not hot, not sharp. Just old. The kind that's been sitting long enough."
 
+    $ emotion_icon = "ch lulu icon angry"
     l "I am not new to this world. I have been in it longer than most people in this darn village."
     l "I have done things alone that would make half this village's brains melt!"
 
@@ -267,6 +280,7 @@ label day2_lulu:
 
     n "She picks up her drink. Takes a slow sip."
 
+    $ emotion_icon = "ch lulu icon smile"
     l "All the other yordle women come back from the evenings ranting."
     l "In very specific terms. Very specific."
 
@@ -291,6 +305,7 @@ label day2_lulu:
 
     n "Pix tilts toward you with an expression that is, on a creature his size, unmistakably pointed."
 
+    $ emotion_icon = "ch lulu icon sad"
     l "The problem is Poppy."
     l "She is here every day. She is very dedicated."
     l "She has decided protecting me from interesting things is a service she provides."
@@ -299,6 +314,8 @@ label day2_lulu:
 
     l "She does take days off. She has a gym she likes."
     l "And when she's gone, let's just say there is a lot less concern about where I sneak off to. And who I sneak off with."
+
+    $ emotion_icon = None
 
     # [GEN START]
 
@@ -321,6 +338,7 @@ label day2_lulu:
 
             n "Something crosses her face. Not hurt — more like someone gave her an answer she's heard before and she is choosing not to argue it."
 
+            $ emotion_icon = "ch lulu icon sad"
             l "Right."
 
             n "She picks up her drink. Takes a sip."
@@ -343,13 +361,14 @@ label day2_lulu:
             n "She looks at you for a moment. The bright, evaluating kind of look."
             n "Then she smiles — wide, genuine, nothing complicated about it."
 
+            $ emotion_icon = "ch lulu icon smile"
             l "Good."
 
             n "She picks up her drink and finishes it in one go."
 
             l "I'll be patient, kinda. But you better not forget."
             l "And be excited, I've got a list."
-            
+
             mc "A list?"
 
             l """
@@ -382,6 +401,7 @@ label day2_poppy:
 
     n "Poppy tracks you as you approach. She doesn't move from her post."
 
+    $ emotion_icon = "ch poppy icon bored"
     p "Hey."
 
     mc "Hey. Slow morning?"
@@ -406,6 +426,7 @@ label day2_poppy:
 
     mc "You look like you'd rather be somewhere else."
 
+    $ emotion_icon = "ch poppy icon smile"
     p "I've got a session at the gym in an hour and I'm covering until Brea gets in."
     p "So yes."
 
@@ -418,6 +439,7 @@ label day2_poppy:
 
     n "She glances at the door again. Checks the room. Back to you."
 
+    $ emotion_icon = "ch poppy icon bored"
     p "You should find something like that. Something physical."
     p "You're in rough shape. I can tell."
 
@@ -433,10 +455,13 @@ label day2_poppy:
 
         "Could you train me?":
             mc "Any chance you'd take on a student?"
+            $ emotion_icon = "ch poppy icon surprised"
             n "She looks at you. A full, considered look."
+            $ emotion_icon = "ch poppy icon bored"
             p "Maybe. When you're not falling apart."
             p "Come back when you can move without looking like something the wood spat out."
             n "She turns back to the door. But there's something in it — not a dismissal, exactly."
 
     hide ch poppy profile default with dissolve
+    $ emotion_icon = None
     return
