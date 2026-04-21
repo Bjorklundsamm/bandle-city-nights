@@ -199,7 +199,7 @@ label day2_meet_miss_fortune:
     n "Red hair. Long coat. Two pistols that look like they've been fired recently and cleaned immediately after."
     n "The kind of posture that says she's already assessed you and filed the report."
 
-    $ emotion_icon = "ch miss fortune icon confident"
+    $ emotion_icon = "ch miss fortune icon smile"
     mf "Another human. Interesting day."
 
     n "She extends a hand. The grip is firm and practiced."
@@ -221,7 +221,7 @@ label day2_meet_miss_fortune:
     n "A pause."
     n "Something shifts slightly in her posture. A hair. Almost nothing."
 
-    $ emotion_icon = "ch miss fortune icon irritated"
+    $ emotion_icon = "ch miss fortune icon embarrassed"
     mf "Which makes this current situation particularly — irritating."
 
     mc "What situation?"
@@ -258,7 +258,7 @@ label day2_meet_miss_fortune:
     n "It's enormous — engraved along the barrel, heavier than it has any right to be."
     n "It looks less like a pistol and more like someone miniaturized a cannon and added a handle."
 
-    $ emotion_icon = "ch miss fortune icon confident"
+    $ emotion_icon = "ch miss fortune icon smile"
     mf "One of mine. She's worth considerably more than two hundred gold."
     mf "You hold her while I'm gone. Trade closes, you get your money back plus fifty."
     mf "Deal falls through for any reason — she's yours."
@@ -288,7 +288,7 @@ label day2_meet_miss_fortune:
             else:
                 mc "I'd lend it if I had it. I'm short right now."
                 n "She takes the pistol back."
-                $ emotion_icon = "ch miss fortune icon irritated"
+                $ emotion_icon = "ch miss fortune icon embarrassed"
                 mf "Story of this port."
                 mf "If that changes before I leave — come find me."
 
@@ -298,7 +298,7 @@ label day2_meet_miss_fortune:
             n "She looks at you for a moment."
             n "Then she exhales through her nose — slow, deflated."
 
-            $ emotion_icon = "ch miss fortune icon resigned"
+            $ emotion_icon = "ch miss fortune icon embarrassed"
             mf "Right."
 
             n "She clips the pistol back to her hip."

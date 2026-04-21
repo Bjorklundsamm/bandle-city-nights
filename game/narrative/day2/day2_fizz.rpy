@@ -23,7 +23,7 @@ label day2_meet_fizz:
             yalign 1.0
         n "He spots you before you've taken two steps."
         n "Something in his whole posture comes back online."
-        $ emotion_icon = "ch fizz icon excited"
+        $ emotion_icon = "ch fizz icon smile"
         f "Hey. You came back."
         f "Look — the offer still stands. Everything I said. All of it."
         f "You will not regret it. I guarantee that on my professional honor as a travel guard."
@@ -43,7 +43,7 @@ label day2_meet_fizz:
     n "You almost miss him — he's propped against the outside wall of the tavern with his arms crossed and his trident leaning in the crook of his elbow."
     n "He sees you first. His whole posture changes in about half a second."
 
-    $ emotion_icon = "ch fizz icon excited"
+    $ emotion_icon = "ch fizz icon smile"
     f "Wait."
 
     n "He pushes off the wall."
@@ -86,7 +86,7 @@ label day2_meet_fizz:
 
     n "Fizz clocks it immediately."
 
-    $ emotion_icon = "ch fizz icon exasperated"
+    $ emotion_icon = "ch fizz icon sad"
     f "*SIGH*"
 
     mc "I wasn't—"
@@ -111,7 +111,7 @@ label day2_meet_fizz:
 
     mc "You sound frustrated... or... jealous?"
 
-    $ emotion_icon = "ch fizz icon sly"
+    $ emotion_icon = "ch fizz icon smile"
     f "Jealous? No, no. It's just — observation."
     f "Like. Objectively. There are options people aren't considering."
 
@@ -140,7 +140,7 @@ label day2_meet_fizz:
 
     mc "Fizz."
 
-    $ emotion_icon = "ch fizz icon excited"
+    $ emotion_icon = "ch fizz icon smile"
     f "Okay yes. Obviously."
 
     n "He looks back. Done pretending."
@@ -356,7 +356,7 @@ label day2_fizz_aftermath:
     n "Not moving. Not particularly trying to."
     n "His tail does a slow, satisfied sweep through the dirt."
 
-    $ emotion_icon = "ch fizz icon dazed"
+    $ emotion_icon = "ch fizz icon horny"
     f "Okay."
 
     n "He says it at the sky."
@@ -375,7 +375,7 @@ label day2_fizz_aftermath:
 
     n "A pause. He looks past you, thoughtful."
 
-    $ emotion_icon = "ch fizz icon sly"
+    $ emotion_icon = "ch fizz icon smile"
     f "I would pay serious money to watch Miss Fortune try what you just did to me."
     f "She'd choke in three seconds. I'm telling you. Three."
 
@@ -385,7 +385,7 @@ label day2_fizz_aftermath:
 
     n "He finally sits all the way up. Shakes his head once like he's clearing water from his ears."
 
-    $ emotion_icon = "ch fizz icon excited"
+    $ emotion_icon = "ch fizz icon smile"
     f "Listen up, anytime you need to cum, you find me. Seriously, free use."
 
     mc "Free use?"
@@ -416,7 +416,7 @@ label day2_fizz_decline:
     n "He goes quiet."
     n "The tail stops."
 
-    $ emotion_icon = "ch fizz icon dejected"
+    $ emotion_icon = "ch fizz icon sad"
     f "Oh."
 
     n "A beat. He looks at you, then at the ground, then somewhere past your shoulder."
@@ -429,7 +429,7 @@ label day2_fizz_decline:
 
     n "He exhales through his nose. Perking up, clearly not the type of fish to stay down."
 
-    $ emotion_icon = "ch fizz icon sly"
+    $ emotion_icon = "ch fizz icon smile"
     f "Okay. Well, if you ever change your mind..."
 
     mc "Right. Gotcha."
