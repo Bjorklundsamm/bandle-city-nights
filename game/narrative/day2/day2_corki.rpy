@@ -82,7 +82,7 @@ screen pipe_puzzle(grid, rows, cols, start_row, end_row, reachable):
 
                 # Start arrow (left edge)
                 if r == start_row:
-                    text ">" xsize 32 ysize 50 size 28 color "#00ff88" text_xalign 0.5 text_yalign 0.5
+                    text ">" xsize 32 ysize 50 size 28 color "#00ff88" xalign 0.5 yalign 0.5
                 else:
                     null width 32
 
@@ -99,7 +99,7 @@ screen pipe_puzzle(grid, rows, cols, start_row, end_row, reachable):
 
                 # End arrow (right edge)
                 if r == end_row:
-                    text ">" xsize 32 ysize 50 size 28 color "#ff4444" text_xalign 0.5 text_yalign 0.5
+                    text ">" xsize 32 ysize 50 size 28 color "#ff4444" xalign 0.5 yalign 0.5
                 else:
                     null width 32
 
@@ -114,7 +114,7 @@ label loc_auto_repair:
         pipe_grid = make_pipe_grid(pipe_rows, pipe_cols)
 
     scene bg black  # placeholder — bg corki auto repair interior
-    n "[Corki's Auto-Repair — interior bg placeholder]"
+    n "[[Corki's Auto-Repair — interior bg placeholder]"
     # TODO: Corki intro dialogue
 
     # Puzzle loop — recalculate reachability after every rotation

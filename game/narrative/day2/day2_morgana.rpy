@@ -91,7 +91,7 @@ label loc_kitchen:
     $ renpy.block_rollback()
 
     scene bg black  # placeholder — bg morgana kitchen interior
-    n "[Morgana's Kitchen — bg placeholder]"
+    n "[[Morgana's Kitchen — bg placeholder]"
     # TODO: Morgana intro dialogue
 
     python:

@@ -11,6 +11,6 @@ if (Get-Process -Name 'renpy' -ErrorAction SilentlyContinue) {
     Start-Sleep -Milliseconds 200
     \$ws.SendKeys('+r')
 } else {
-    Start-Process '$RENPY' -ArgumentList '$PROJECT'
+    Start-Process '$RENPY' -ArgumentList '\"$PROJECT\"'
 }
 "

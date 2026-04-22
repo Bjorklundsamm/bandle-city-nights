@@ -2,8 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/narrative/day2/day2_fizz.rpy", line 169: unterminated string literal
-    n "He tucks himself back in his shorts with a dreamy look on his
+File "game/narrative/day2/day2_corki.rpy", line 85: 'text_xalign' is not a keyword argument or valid child of the text statement.
+    text ">" xsize 32 ysize 50 size 28 color "#00ff88" text_xalign 0.5 text_yalign 0.5
+                                                                  ^
 
 Ren'Py Version: Ren'Py 8.4.1.25072401
-Wed Apr 15 19:28:59 2026
+Tue Apr 21 12:06:36 2026

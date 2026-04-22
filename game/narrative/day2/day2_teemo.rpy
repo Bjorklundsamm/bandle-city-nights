@@ -14,7 +14,7 @@ label loc_scout_training:
     $ renpy.block_rollback()
 
     scene bg black  # placeholder — bg bandlewood exterior
-    n "[Teemo's Scout Trail — bg placeholder]"
+    n "[[Teemo's Scout Trail — bg placeholder]"
 
     $ scout_time = 10
 

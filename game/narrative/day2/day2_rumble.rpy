@@ -121,7 +121,7 @@ label loc_roboshop:
         rumble_spawn()  # seed one part before the screen opens
 
     scene bg black  # placeholder — bg rumble workshop interior
-    n "[Rumble's Workshop — bg placeholder]"
+    n "[[Rumble's Workshop — bg placeholder]"
     # TODO: Rumble intro dialogue
 
     call screen rumble_game()

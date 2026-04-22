@@ -38,7 +38,7 @@ label loc_ezreal_range:
     $ renpy.block_rollback()
 
     scene bg black  # placeholder — bg ezreal target range / rooftop
-    n "[Ezreal's Target Range — bg placeholder]"
+    n "[[Ezreal's Target Range — bg placeholder]"
     # TODO: Ezreal intro trash-talk
 
     python:
