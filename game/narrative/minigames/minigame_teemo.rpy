@@ -25,8 +25,8 @@ label teemo_job:
     $ energy -= 1
     $ persistent.teemo_visits += 1
 
-    scene bg bandlewood trail
-    show ch teemo neutral
+    scene bg training grounds
+    show ch teemo position training grounds
 
     if persistent.teemo_visits == 1:
         te "You want to train? Fine. Try not to get left behind."
@@ -128,7 +128,7 @@ label teemo_resolve:
         jump teemo_partial
 
 label teemo_clear:
-    show ch teemo pleased
+    show ch teemo profile default
     te "Route complete. Time to spare."
     te "You're not terrible. Don't let it go to your head."
     $ strength  += 3
@@ -140,7 +140,7 @@ label teemo_clear:
     return
 
 label teemo_partial:
-    show ch teemo neutral
+    show ch teemo position training grounds
     te "Time's up. Route incomplete."
     te "You'd be dead in a real op. Come back tomorrow."
     $ strength  += 1
@@ -157,8 +157,8 @@ label teemo_job_hard:
     $ energy -= 1
     $ persistent.teemo_visits += 1
 
-    scene bg bandlewood trail
-    show ch teemo neutral
+    scene bg training grounds
+    show ch teemo position training grounds
 
     te "Hard mode. Seven seconds. Some forks have three paths."
     te "One of them is a trap. Don't fall for it."
@@ -266,7 +266,7 @@ label teemo_job_hard:
         jump teemo_hard_partial
 
 label teemo_hard_clear:
-    show ch teemo pleased
+    show ch teemo profile default
     te "..."
     te "Route complete. Time remaining."
     n "He's not smiling but he's not moving either. That is, you have learned, the same thing."
@@ -282,7 +282,7 @@ label teemo_hard_clear:
     return
 
 label teemo_hard_partial:
-    show ch teemo neutral
+    show ch teemo position training grounds
     te "Time's up. Hard mode. Were you expecting sympathy?"
     $ strength  += 1
     $ intellect += 1

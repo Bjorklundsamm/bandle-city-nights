@@ -1,38 +1,48 @@
 # minigames/minigame_rumble.rpy
 # Rumble's Robo-Workshop — Parts Sorter
 #
-# Normal mode: 4 bin types, chaos threshold 8, target 10-20+ parts.
-# Hard mode:   5 bin types (add Capacitors), chaos threshold 5, spawn 20% faster.
+# Normal mode: 4 bin types (Bolt, Nut, Gear, Wheel), chaos threshold 8, target 10-20+ parts.
+# Hard mode:   5 bin types (Bolt, Nut, Wheel, Gear Large, Gear Small), chaos threshold 5.
+#              Hard mode distinguishes gear sizes — Gear Large and Gear Small are separate bins.
 #
 # Rewards
 #   Normal 20+ parts: +2 STR, +2 CHA, +2 INT, +50g
 #   Normal 10–19:     +1 STR, +1 CHA, +1 INT, +50g
 #   Normal <10:       +1 INT, +25g
-#   Hard 20+ parts:   normal + +1 STR, +1 CHA, +1 INT, +25g
-#   Hard <20:         normal rates only
+#   Hard 20+ parts:   +3 STR, +3 CHA, +3 INT, +75g
+#   Hard 10–19:       +1 STR, +1 CHA, +1 INT, +50g
+#   Hard <10:         +1 INT, +25g
 #
 # Hard mode unlocked: persistent.rumble_hard_unlocked after first normal 10+ pass.
 
 init python:
 
-    RUMBLE_BINS_NORMAL = ["Bolts", "Gears", "Wires", "Plates"]
-    RUMBLE_BINS_HARD   = ["Bolts", "Gears", "Wires", "Plates", "Capacitors"]
+    RUMBLE_BINS_NORMAL = ["Bolt", "Nut", "Gear", "Wheel"]
+    RUMBLE_BINS_HARD   = ["Bolt", "Nut", "Wheel", "Gear Large", "Gear Small"]
 
     RUMBLE_CHAOS_NORMAL = 8
     RUMBLE_CHAOS_HARD   = 5
 
-    # State container — lives at module level so screen can access it
+    RUMBLE_PART_IMAGES = {
+        "Bolt":       "bt bolt.png",
+        "Nut":        "bt nut.png",
+        "Gear":       "bt gear medium.png",
+        "Wheel":      "bt wheel.png",
+        "Gear Large": "bt gear large.png",
+        "Gear Small": "bt gear small.png",
+    }
+
     class _RumbleState:
         def __init__(self, hard_mode=False):
-            self.hard_mode   = hard_mode
-            self.bins        = RUMBLE_BINS_HARD if hard_mode else RUMBLE_BINS_NORMAL
-            self.chaos_max   = RUMBLE_CHAOS_HARD if hard_mode else RUMBLE_CHAOS_NORMAL
-            self.sorted      = 0
-            self.chaos       = 0
+            self.hard_mode    = hard_mode
+            self.bins         = RUMBLE_BINS_HARD if hard_mode else RUMBLE_BINS_NORMAL
+            self.chaos_max    = RUMBLE_CHAOS_HARD if hard_mode else RUMBLE_CHAOS_NORMAL
+            self.sorted       = 0
+            self.chaos        = 0
             self.active_parts = []  # list of {"id": int, "type": str, "x": float, "y": float}
-            self.next_id     = 0
-            self.game_over   = False
-            self.half_warned = False
+            self.next_id      = 0
+            self.game_over    = False
+            self.half_warned  = False
 
         def spawn_part(self):
             import random
@@ -70,7 +80,6 @@ init python:
 screen rumble_workshop(state):
     style_prefix "rumble"
 
-    # Background chaos meter
     frame:
         xalign 0.02
         yalign 0.1
@@ -84,7 +93,6 @@ screen rumble_workshop(state):
                 ysize 20
             text "[state.chaos]/[state.chaos_max]" style "rumble_label"
 
-    # Sorted counter
     frame:
         xalign 0.02
         yalign 0.02
@@ -100,8 +108,8 @@ screen rumble_workshop(state):
             yanchor 0.5
             padding (4, 4)
             imagebutton:
-                idle  "bt rumble {}.png".format(part["type"].lower())
-                hover "bt rumble {}.png".format(part["type"].lower())
+                idle  RUMBLE_PART_IMAGES.get(part["type"], "bt bolt.png")
+                hover RUMBLE_PART_IMAGES.get(part["type"], "bt bolt.png")
                 action NullAction()
                 xsize 64
                 ysize 64
@@ -114,7 +122,10 @@ screen rumble_workshop(state):
         for bin_name in state.bins:
             vbox:
                 spacing 4
-                add "bt rumble bin.png" xsize 80 ysize 70
+                frame:
+                    xsize 80
+                    ysize 70
+                    background "#3a2010"
                 text bin_name xalign 0.5 style "rumble_bin_label"
 
 style rumble_label:
@@ -137,35 +148,32 @@ label rumble_job:
     $ energy -= 1
     $ persistent.rumble_visits += 1
 
-    scene bg rumble workshop
-    show ch rumble back
+    scene bg rumbles roboshop
+    show ch rumble roboshop position
 
     if persistent.rumble_visits == 1:
         ru "..."
         ru "Grab the parts off the bench. Sort them. Don't touch Tristy."
     else:
-        ru "You're back. Good. Workshop is a disaster again."
+        ru "You're back. Good. Roboshop's a disaster again."
 
     $ _rumble_state = _RumbleState(hard_mode=False)
     $ _rumble_done = False
     $ _rumble_warned = False
 
-    # Spawn initial wave
     $ _rumble_state.spawn_part()
     $ _rumble_state.spawn_part()
     $ _rumble_state.spawn_part()
 
-    # Spawn loop — 30 rounds max, one part per round
     $ _rumble_rounds = 0
     while _rumble_rounds < 30 and not _rumble_state.game_over:
         call screen rumble_workshop(_rumble_state)
 
-        # Player made a sort attempt via _rumble_drop_result set by screen action
         if defined("_rumble_drop_result"):
             $ _sig = _rumble_state.check_chaos()
             if _sig == "half" and not _rumble_warned:
                 $ _rumble_warned = True
-                show ch rumble back
+                show ch rumble roboshop position
                 ru "Getting messy in here..."
             if _rumble_state.game_over:
                 $ _rumble_rounds = 999
@@ -180,8 +188,8 @@ label rumble_job_hard:
     $ energy -= 1
     $ persistent.rumble_visits += 1
 
-    scene bg rumble workshop
-    show ch rumble back
+    scene bg rumbles roboshop
+    show ch rumble roboshop position
 
     ru "Hard mode. Five bins. You'll fail."
     ru "Prove me wrong."
@@ -202,7 +210,7 @@ label rumble_job_hard:
             $ _sig = _rumble_state.check_chaos()
             if _sig == "half" and not _rumble_warned:
                 $ _rumble_warned = True
-                show ch rumble back
+                show ch rumble roboshop position
                 ru "Four loose parts. You're already behind."
             if _rumble_state.game_over:
                 $ _rumble_rounds = 999
@@ -216,10 +224,9 @@ label rumble_job_hard:
 label rumble_resolve:
     $ _sorted = _rumble_state.sorted
     if _sorted >= 20:
-        show ch rumble back
+        show ch rumble roboshop position
         ru "..."
         ru "Hm."
-        # First time hitting 20+ he almost faces you — but doesn't quite.
         $ strength  += 2
         $ charisma  += 2
         $ intellect += 2
@@ -232,7 +239,7 @@ label rumble_resolve:
         s "Strength +2. Charisma +2. Intellect +2. [50]g earned."
         hide screen system_overlay
     elif _sorted >= 10:
-        show ch rumble back
+        show ch rumble roboshop position
         ru "Passable."
         $ strength  += 1
         $ charisma  += 1
@@ -243,7 +250,7 @@ label rumble_resolve:
         s "Strength +1. Charisma +1. Intellect +1. [50]g earned."
         hide screen system_overlay
     else:
-        show ch rumble back
+        show ch rumble roboshop position
         ru "Disappointing."
         $ intellect += 1
         $ gold      += 25
@@ -254,9 +261,8 @@ label rumble_resolve:
 
 label rumble_resolve_hard:
     $ _sorted = _rumble_state.sorted
-    # Hard mode pays normal rate + bonus for 20+
     if _sorted >= 20:
-        show ch rumble back
+        show ch rumble roboshop position
         ru "..."
         n "Rumble almost looks up. Not quite."
         $ strength  += 3
@@ -270,7 +276,7 @@ label rumble_resolve_hard:
         s "Strength +3. Charisma +3. Intellect +3. [75]g earned."
         hide screen system_overlay
     elif _sorted >= 10:
-        show ch rumble back
+        show ch rumble roboshop position
         ru "Made a dent."
         $ strength  += 1
         $ charisma  += 1
@@ -280,7 +286,7 @@ label rumble_resolve_hard:
         s "Strength +1. Charisma +1. Intellect +1. [50]g earned."
         hide screen system_overlay
     else:
-        show ch rumble back
+        show ch rumble roboshop position
         ru "Five bins and you couldn't manage ten. Go home."
         $ intellect += 1
         $ gold      += 25

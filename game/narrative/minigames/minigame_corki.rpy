@@ -32,7 +32,7 @@ init python:
             2: {0, 3},   # up/left
             3: {0, 1},   # up/right
         },
-        "tjunction": {
+        "triple corner": {
             0: {1, 2, 3}, # right/down/left
             1: {0, 2, 3}, # up/down/left
             2: {0, 1, 3}, # up/right/left
@@ -90,7 +90,7 @@ init python:
         import random
         types = ["straight", "corner"]
         if hard_mode:
-            types.append("tjunction")
+            types.append("triple corner")
         grid = []
         for r in range(rows):
             row = []
@@ -148,17 +148,17 @@ label corki_job:
     $ energy -= 1
     $ persistent.corki_visits += 1
 
-    scene bg corki shop
+    scene bg corkis autoshop
     show screen corki_hud(False)
 
     # --- Intro dialogue (first visit only) ---
     if persistent.corki_visits == 1:
-        show ch corki neutral
+        show ch corki shop position
         co "Eh? You want work? Fine. See these pipes? They need connecting."
         co "Left side to right side. Click a tile to rotate it."
         co "Simple enough even for a human. Get going."
     else:
-        show ch corki neutral
+        show ch corki shop position
         co "Back again? The left wall's leaking. Same deal."
 
     hide screen corki_hud
@@ -182,13 +182,13 @@ label corki_job_hard:
     $ energy -= 1
     $ persistent.corki_visits += 1
 
-    scene bg corki shop
+    scene bg corkis autoshop
     show screen corki_hud(True)
 
-    show ch corki neutral
+    show ch corki shop position
     co "Hard mode? Two circuits. Both have to connect."
     co "Don't blow up the compressor this time."
-    show ch rumble back
+    show ch rumble roboshop position
     ru "I told you that coolant loop needed a T-fitting."
     co "Nobody asked you, Rumble."
 
@@ -207,7 +207,7 @@ label corki_job_hard:
         jump corki_hard_fail
 
 label corki_success:
-    show ch corki pleased
+    show ch corki profile
     co "Hm. Not terrible."
     co "Here's your cut."
     $ strength += 2
@@ -220,7 +220,7 @@ label corki_success:
     return
 
 label corki_fail:
-    show ch corki neutral
+    show ch corki shop position
     co "Forget it. Watch a professional next time."
     $ strength += 1
     show screen system_overlay
@@ -229,10 +229,10 @@ label corki_fail:
     return
 
 label corki_hard_success:
-    show ch corki pleased
+    show ch corki profile
     co "Both circuits. Clean run."
     co "You're almost useful."
-    show ch rumble back
+    show ch rumble roboshop position
     ru "..."
     # Rumble says nothing. That means something.
     $ strength += 3
@@ -244,7 +244,7 @@ label corki_hard_success:
     return
 
 label corki_hard_fail:
-    show ch corki neutral
+    show ch corki shop position
     co "Two circuits. You couldn't even do one."
     $ strength += 1
     show screen system_overlay

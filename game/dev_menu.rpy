@@ -98,6 +98,7 @@ screen dev_menu():
                                     ("player_name",               player_name),
                                     ("current_day",               current_day),
                                     ("constitution_hud_visible",  constitution_hud_visible),
+                                    ("energy_hud_visible",        energy_hud_visible),
                                     ("inventory_unlocked",        inventory_unlocked),
                                     ("journal_unlocked",          journal_unlocked),
                                     ## Met flags
@@ -308,6 +309,33 @@ screen dev_menu():
                             padding (6, 2)
                             action If(current_day < 31, SetVariable("current_day", current_day + 1))
 
+                    null height 6
+
+                    ## Energy adjuster
+                    hbox:
+                        spacing 10
+                        yalign 0.5
+                        text "Energy:":
+                            size 13
+                            color "#aaaaaa"
+                            yalign 0.5
+                        textbutton "−":
+                            text_size 15
+                            text_color "#ff8888"
+                            text_hover_color "#ffffff"
+                            padding (6, 2)
+                            action If(energy > 0, SetVariable("energy", energy - 1))
+                        text "[energy] / 3":
+                            size 14
+                            color "#ffdd88"
+                            yalign 0.5
+                        textbutton "+":
+                            text_size 15
+                            text_color "#88ff88"
+                            text_hover_color "#ffffff"
+                            padding (6, 2)
+                            action If(energy < 3, SetVariable("energy", energy + 1))
+
                     null height 18
 
                     ## ── Toggle flags ─────────────────────────────────────────
@@ -318,12 +346,15 @@ screen dev_menu():
                     null height 8
 
                     ## Unlocks
-                    grid 3 1:
+                    grid 4 1:
                         spacing 6
                         xfill True
                         textbutton "constitution_hud_visible":
                             text_size 12
                             action ToggleVariable("constitution_hud_visible")
+                        textbutton "energy_hud_visible":
+                            text_size 12
+                            action ToggleVariable("energy_hud_visible")
                         textbutton "inventory_unlocked":
                             text_size 12
                             action [ToggleVariable("inventory_unlocked"), Show("inventory_button")]

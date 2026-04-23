@@ -4,35 +4,61 @@
 # Phase 2: tap ingredients in the order shown. Wrong tap = Morgana reacts + full reset.
 # Sequence length starts at 4, grows by 1 per visit (cap 8).
 # Rewards: Intellect +2, Gold +100.
+#
+# NOTE: All Python functions/screens here use the d2_ prefix to avoid conflicts
+# with minigame_morgana.rpy which defines the standalone job version.
 
 
 ## ── Python logic ─────────────────────────────────────────────────────────────
 
 init python:
 
-    _MORGANA_POOL = ["carrot", "onion", "mushroom", "herb", "fish", "salt"]
+    _D2_MORGANA_POOL = ["carrot", "onion", "mushroom", "herb", "fish", "salt"]
 
-    def morgana_make_sequence(visits):
+    def d2_morgana_make_sequence(visits):
         import random
         length = min(4 + visits, 8)
-        return [random.choice(_MORGANA_POOL) for _ in range(length)]
+        return [random.choice(_D2_MORGANA_POOL) for _ in range(length)]
 
-    def morgana_unique_buttons(sequence):
+    def d2_morgana_unique_buttons(sequence):
         """All unique ingredients from the pool, shuffled — used as input buttons."""
         import random
-        buttons = list(_MORGANA_POOL)
+        buttons = list(_D2_MORGANA_POOL)
         random.shuffle(buttons)
         return buttons
 
 
-## ── Screens ──────────────────────────────────────────────────────────────────
+## ── Hub screen ────────────────────────────────────────────────────────────────
 
-screen morgana_memorize(ingredient, index, total):
+screen loc_kitchen_hub():
+    zorder 50
+
+    imagebutton:
+        idle  Transform("ch morgana kitchen position", alpha=0.9)
+        hover Fixed(Transform("ch morgana kitchen position", zoom=1.005, anchor=(0.5, 1.0), align=(0.5, 1.0)), xysize=(1920, 1088))
+        focus_mask True
+        pos (0, 0)
+        hover_sound "audio/sfx/hover_selectable.mp3"
+        activate_sound "audio/sfx/click_selectable.mp3"
+        action Return("interact")
+
+    textbutton "← Leave":
+        xalign 0.02
+        yalign 0.96
+        text_size 22
+        text_color "#c8c8c8"
+        text_hover_color "#ffffff"
+        activate_sound "audio/sfx/click_selectable.mp3"
+        action Return("leave")
+
+
+## ── Memorise screen ──────────────────────────────────────────────────────────
+
+screen d2_morgana_memorize(ingredient, index, total):
     """Shows one ingredient for 1.5s then auto-advances."""
     modal True
     zorder 100
 
-    text "[MORGANA'S KITCHEN — bg placeholder]" xalign 0.5 ypos 60 size 20 color "#888888"
     text "Memorise the recipe." xalign 0.5 ypos 100 size 22 color "#cccccc"
 
     text ingredient.upper():
@@ -47,12 +73,12 @@ screen morgana_memorize(ingredient, index, total):
     timer 1.5 action Return()
 
 
-screen morgana_input(sequence, buttons, progress):
+## ── Input screen ─────────────────────────────────────────────────────────────
+
+screen d2_morgana_input(sequence, buttons, progress):
     """Ingredient tap screen. Returns the ingredient name the player tapped."""
     modal True
     zorder 100
-
-    text "[MORGANA'S KITCHEN — bg placeholder]" xalign 0.5 ypos 60 size 20 color "#888888"
 
     # Progress track — checkmarks for done, question marks for remaining
     hbox:
@@ -87,39 +113,43 @@ screen morgana_input(sequence, buttons, progress):
 
 label loc_kitchen:
 
+    scene bg tavern kitchen with dissolve
+
+    call screen loc_kitchen_hub()
+    if _return == "leave":
+        return
+
     $ energy -= 1
     $ renpy.block_rollback()
 
-    scene bg black  # placeholder — bg morgana kitchen interior
-    n "[[Morgana's Kitchen — bg placeholder]"
+    show ch morgana kitchen position
     # TODO: Morgana intro dialogue
 
     python:
-        _mseq     = morgana_make_sequence(persistent.morgana_visits)
-        _mbtns    = morgana_unique_buttons(_mseq)
+        _mseq      = d2_morgana_make_sequence(persistent.morgana_visits)
+        _mbtns     = d2_morgana_unique_buttons(_mseq)
         _mprogress = 0
-        _mdone    = False
+        _mdone     = False
 
     # ── Phase 1: Memorise ─────────────────────────────────────────────────────
     n "Watch carefully."
 
     $ _memo_i = 0
     while _memo_i < len(_mseq):
-        call screen morgana_memorize(_mseq[_memo_i], _memo_i, len(_mseq))
+        call screen d2_morgana_memorize(_mseq[_memo_i], _memo_i, len(_mseq))
         $ _memo_i += 1
 
     # ── Phase 2: Recall ───────────────────────────────────────────────────────
     n "Now repeat it."
 
     while not _mdone:
-        call screen morgana_input(_mseq, _mbtns, _mprogress)
+        call screen d2_morgana_input(_mseq, _mbtns, _mprogress)
 
         if _return == _mseq[_mprogress]:
             $ _mprogress += 1
             if _mprogress >= len(_mseq):
                 $ _mdone = True
         else:
-            # Wrong tap — Morgana reacts, round resets
             mo "Wrong. From the beginning."
             $ _mprogress = 0
 

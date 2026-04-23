@@ -1,19 +1,20 @@
 # minigames/minigame_ezreal.rpy
 # Ezreal's Target Practice — Click Targets
 #
-# Normal mode: 10 targets, 1.5s shrink window, no decoys.
-# Hard mode:   15 targets, 1.0s shrink window, 3 decoys (subtract hit if clicked).
+# Normal mode: 10 targets, 1.5s window, no decoys.
+# Hard mode:   15 targets, 1.0s window, 3 decoys (rotated 45° visually; subtract hit if clicked).
+#
+# All hits build the consecutive streak. After 5 in a row Ezreal stops commentary.
 #
 # Rewards
-#   Normal 80%+:  +5 STR
+#   Normal 80%+:   +5 STR
 #   Normal 50–79%: +3 STR
-#   Normal <50%:  +1 STR
-#   Hard 80%+:    normal + +2 STR  → triggers ezreal_shower scene
-#   Hard 50–79%:  normal rate only
-#   Hard <50%:    +1 STR
+#   Normal <50%:   +1 STR
+#   Hard 80%+:     +7 STR  → triggers ezreal_shower_scene (if STR >= 30)
+#   Hard 50–79%:   +3 STR
+#   Hard <50%:     +1 STR
 #
 # Hard mode unlocked: persistent.ezreal_hard_unlocked after first 80%+ normal run.
-# Special: ezreal_hard_unlocked = True + STR >= 30 → shower invite available.
 
 init python:
 
@@ -25,9 +26,9 @@ init python:
             self.hits         = 0
             self.misses       = 0
             self.decoy_ids    = set()
-            self.bullseye_streak = 0
+            self.hit_streak   = 0
             self.max_streak   = 0
-            self.current      = 0   # index of current target
+            self.current      = 0
             self.silenced     = False  # Ezreal stops trash-talking at 5-streak
 
         def accuracy(self):
@@ -35,24 +36,20 @@ init python:
                 return 0
             return int((self.hits / self.total) * 100)
 
-        def record_hit(self, bullseye=False):
+        def record_hit(self):
             self.hits += 1
-            if bullseye:
-                self.bullseye_streak += 1
-                self.max_streak = max(self.max_streak, self.bullseye_streak)
-                if self.bullseye_streak >= 5:
-                    self.silenced = True
-            else:
-                self.bullseye_streak = 0
+            self.hit_streak += 1
+            self.max_streak = max(self.max_streak, self.hit_streak)
+            if self.hit_streak >= 5:
+                self.silenced = True
 
         def record_miss(self):
             self.misses += 1
-            self.bullseye_streak = 0
+            self.hit_streak = 0
 
         def record_decoy_click(self):
-            # Clicking a decoy subtracts a hit
             self.hits = max(0, self.hits - 1)
-            self.bullseye_streak = 0
+            self.hit_streak = 0
 
     _ezreal_state = None
 
@@ -79,31 +76,20 @@ screen ezreal_target_range(state, target_x, target_y, target_visible, is_decoy):
             yanchor 0.5
             padding 0
             if is_decoy:
+                # Decoy: rotated 45° to distinguish visually
                 imagebutton:
-                    idle  "bt ezreal target decoy.png"
-                    hover "bt ezreal target decoy.png"
+                    idle  At("bt target.png", Transform(rotate=45))
+                    hover At("bt target.png", Transform(rotate=45))
                     action Function(ezreal_click_decoy)
                     xsize 100
                     ysize 100
             else:
-                # Normal target — outer ring click = hit, center = bullseye
-                # We use two stacked imagebuttons (center on top)
                 imagebutton:
-                    idle  "bt ezreal target.png"
-                    hover "bt ezreal target.png"
-                    action Function(ezreal_click_outer)
+                    idle  "bt target.png"
+                    hover "bt target.png"
+                    action Function(ezreal_click_hit)
                     xsize 100
                     ysize 100
-                imagebutton:
-                    idle  "bt ezreal bullseye.png"
-                    hover "bt ezreal bullseye.png"
-                    action Function(ezreal_click_bullseye)
-                    xpos  0.5
-                    ypos  0.5
-                    xanchor 0.5
-                    yanchor 0.5
-                    xsize 36
-                    ysize 36
 
 style ez_label:
     color "#7acce8"
@@ -117,8 +103,8 @@ label ezreal_job:
     $ energy -= 1
     $ persistent.ezreal_visits += 1
 
-    scene bg ezreal range
-    show ch ezreal casual
+    scene bg training grounds
+    show ch ezreal profile default
 
     if persistent.ezreal_visits == 1:
         ez "Oh good, an audience. Just so we're clear, you're here to learn from a professional."
@@ -129,7 +115,6 @@ label ezreal_job:
 
     $ _ezreal_state = _EzrealState(hard_mode=False)
 
-    # Run target loop
     call ezreal_target_loop
 
     jump ezreal_resolve
@@ -138,18 +123,17 @@ label ezreal_job_hard:
     $ energy -= 1
     $ persistent.ezreal_visits += 1
 
-    scene bg ezreal range
-    show ch ezreal casual
+    scene bg training grounds
+    show ch ezreal profile default
 
     ez "Hard mode. Fifteen targets. One second each."
     ez "Three of them are decoys. Click a decoy and you lose a point."
-    ez "The decoys pulse differently. If you can't tell the difference, that's on you."
+    ez "The decoys are rotated. If you can't tell the difference, that's on you."
     ez "Try not to embarrass either of us."
 
     $ _ezreal_state = _EzrealState(hard_mode=True)
     python:
         import random
-        # Designate 3 decoy indices
         _ezreal_state.decoy_ids = set(random.sample(range(_ezreal_state.total), 3))
 
     call ezreal_target_loop
@@ -167,7 +151,6 @@ label ezreal_target_loop:
         show screen ezreal_target_range(
             _ezreal_state, _target_x, _target_y, True, _is_decoy)
 
-        # Shrink window — pause for shrink_time then auto-miss
         $ renpy.pause(_ezreal_state.shrink_time, hard=True)
 
         hide screen ezreal_target_range
@@ -178,16 +161,16 @@ label ezreal_target_loop:
         # Ezreal commentary
         if not _ezreal_state.silenced:
             if _ezreal_state.current == 0 and not _target_clicked:
-                show ch ezreal smirk
+                show ch ezreal profile default
                 ez "First one. And you missed."
             elif _ezreal_state.current == 0 and _target_clicked:
-                show ch ezreal casual
+                show ch ezreal profile default
                 ez "One hit. Don't celebrate yet."
-            elif _ezreal_state.bullseye_streak == 3:
-                show ch ezreal surprised
-                ez "Okay, three bullseyes. Fluke."
-            elif _ezreal_state.bullseye_streak == 5:
-                show ch ezreal neutral
+            elif _ezreal_state.hit_streak == 3:
+                show ch ezreal profile sitting
+                ez "Okay, three in a row. Fluke."
+            elif _ezreal_state.hit_streak == 5:
+                show ch ezreal profile default
                 n "Ezreal stops talking."
                 n "He watches the next target appear without saying a word."
 
@@ -199,7 +182,7 @@ label ezreal_target_loop:
 
 label ezreal_resolve:
     $ _acc = _ezreal_state.accuracy()
-    show ch ezreal neutral
+    show ch ezreal profile default
 
     if _acc >= 80:
         ez "Eighty percent. That's... not nothing."
@@ -230,7 +213,7 @@ label ezreal_resolve_hard:
     $ _acc = _ezreal_state.accuracy()
 
     if _acc >= 80:
-        show ch ezreal neutral
+        show ch ezreal profile default
         n "He hasn't said anything for the last four targets."
         n "He's still not saying anything."
         n "He picks up his gauntlet from the bench and adjusts the calibration settings."
@@ -245,21 +228,20 @@ label ezreal_resolve_hard:
         s "Strength +7. Accuracy: [_acc]%. Ezreal seems... different."
         hide screen system_overlay
 
-        # Gate check: STR must be >= 30 for the shower scene to actually trigger
         if strength >= 30 and not ezreal_shower_scene_done:
             jump ezreal_shower_scene
         else:
             return
 
     elif _acc >= 50:
-        show ch ezreal casual
+        show ch ezreal profile default
         ez "Fifty to eighty. In hard mode. I'll give you that."
         $ strength += 3
         show screen system_overlay
         s "Strength +3. Accuracy: [_acc]%."
         hide screen system_overlay
     else:
-        show ch ezreal smirk
+        show ch ezreal profile default
         ez "You hit three decoys. Three."
         ez "Go home."
         $ strength += 1
@@ -272,14 +254,16 @@ label ezreal_resolve_hard:
 ## ── Shower scene (Tier 2 lead-up + user Tier 3 block) ────────────────────────
 
 label ezreal_shower_scene:
-    scene bg ezreal range
-    show ch ezreal neutral
+    # placeholder bg — needs bg ezreal range art
+    scene bg city outside daytime
+    show ch ezreal profile default
 
     n "He's already heading toward the door at the back of the range."
     n "He doesn't invite you again. He also doesn't say not to follow."
 
-    scene bg ezreal showers
-    show ch ezreal neutral
+    # placeholder bg — needs bg ezreal showers art
+    scene bg hot springs
+    show ch ezreal profile default
 
     n "The showers are empty. He turns one on without looking at you."
     n "The performance infrastructure is completely down. He's just come off a hard session."
@@ -325,18 +309,11 @@ label ezreal_shower_scene:
 init python:
     _target_clicked = False
 
-    def ezreal_click_bullseye():
+    def ezreal_click_hit():
         global _target_clicked, _ezreal_state
         if not _target_clicked:
             _target_clicked = True
-            _ezreal_state.record_hit(bullseye=True)
-        renpy.return_statement()
-
-    def ezreal_click_outer():
-        global _target_clicked, _ezreal_state
-        if not _target_clicked:
-            _target_clicked = True
-            _ezreal_state.record_hit(bullseye=False)
+            _ezreal_state.record_hit()
         renpy.return_statement()
 
     def ezreal_click_decoy():

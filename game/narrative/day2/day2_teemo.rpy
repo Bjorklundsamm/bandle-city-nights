@@ -8,104 +8,142 @@
 # Scout doctrine: high ground, stealth, patience, cover, information first.
 
 
+screen loc_scout_training_hub():
+    zorder 50
+
+    imagebutton:
+        idle  Transform("ch teemo position training grounds", alpha=0.9)
+        hover Fixed(Transform("ch teemo position training grounds", zoom=1.005, anchor=(0.5, 1.0), align=(0.5, 1.0)), xysize=(1920, 1088))
+        focus_mask True
+        pos (0, 0)
+        hover_sound "audio/sfx/hover_selectable.mp3"
+        activate_sound "audio/sfx/click_selectable.mp3"
+        action Return("interact")
+
+    textbutton "← Leave":
+        xalign 0.02
+        yalign 0.96
+        text_size 22
+        text_color "#c8c8c8"
+        text_hover_color "#ffffff"
+        activate_sound "audio/sfx/click_selectable.mp3"
+        action Return("leave")
+
+
 label loc_scout_training:
 
-    $ energy -= 1
-    $ renpy.block_rollback()
+    scene bg training grounds with dissolve
 
-    scene bg black  # placeholder — bg bandlewood exterior
-    n "[[Teemo's Scout Trail — bg placeholder]"
+    call screen loc_scout_training_hub()
+    if _return == "leave":
+        return
 
-    $ scout_time = 10
+    show ch teemo position training grounds
+    n "The scout training grounds sit at the edge of the treeline, just past the last building on the north road."
+    n "A Yordle no taller than your knee is waiting, arms crossed, looking you over like you've already failed."
 
-    # TODO: brief Teemo intro dialogue before first fork
-
-    ## ── Decision 1: Entry point ──────────────────────────────────────────────
-    n "First fork. The ridge trail is slower but gives you clear line of sight."
-    n "The valley cuts twenty minutes off the route."
-
-    menu:
-        "Take the ridge trail." if scout_time > 0:
-            te "Eyes open, head up. That's the rule."
-            $ scout_time += 2
-        "Cut through the valley." if scout_time > 0:
-            te "Blind corners. You'd never make it as a scout."
-            $ scout_time -= 3
-
-    if scout_time <= 0:
-        jump scout_training_fail
-
-    ## ── Decision 2: Patrol spotted ───────────────────────────────────────────
-    n "You spot an enemy patrol ahead. They haven't seen you."
+    te "You're late. And you're loud. Two strikes."
+    te "I run a trail course through the wood. Six decision points. You make the right call each time, I pay."
+    te "You hesitate, you fail, you come back when your boots are broken in."
 
     menu:
-        "Rush across before they're fully through." if scout_time > 0:
-            te "You just bought them a free sighting. Awful."
-            $ scout_time -= 3
-        "Hold in cover and wait them out." if scout_time > 0:
-            te "That's it. Let them do the walking."
-            $ scout_time += 2
+        "Run the trail.":
+            $ energy -= 1
+            $ renpy.block_rollback()
 
-    if scout_time <= 0:
-        jump scout_training_fail
+            $ scout_time = 10
 
-    ## ── Decision 3: Strange sound ────────────────────────────────────────────
-    n "Something moves in the brush to your left. Could be anything."
+            ## ── Decision 1: Entry point ──────────────────────────────────────
+            n "First fork. The ridge trail is slower but gives you clear line of sight."
+            n "The valley cuts twenty minutes off the route."
 
-    menu:
-        "Investigate — could be useful intel." if scout_time > 0:
-            te "Could be a trap. Is a trap. You're terrible at this."
-            $ scout_time -= 3
-        "Mark the position and pull back to observe." if scout_time > 0:
-            te "Information, not engagement. You're getting it."
-            $ scout_time += 2
+            menu:
+                "Take the ridge trail." if scout_time > 0:
+                    te "Eyes open, head up. That's the rule."
+                    $ scout_time += 2
+                "Cut through the valley." if scout_time > 0:
+                    te "Blind corners. You'd never make it as a scout."
+                    $ scout_time -= 3
 
-    if scout_time <= 0:
-        jump scout_training_fail
+            if scout_time <= 0:
+                jump scout_training_fail
 
-    ## ── Decision 4: Open ground ──────────────────────────────────────────────
-    n "There's a shortcut across open ground. Faster, but no cover."
+            ## ── Decision 2: Patrol spotted ───────────────────────────────────
+            n "You spot an enemy patrol ahead. They haven't seen you."
 
-    menu:
-        "Stick to the tree line. Slower." if scout_time > 0:
-            te "Always cover. You move like a shadow or you don't move."
-            $ scout_time += 2
-        "Use the open ground. Save time." if scout_time > 0:
-            te "Every archer in range just lit up. Think."
-            $ scout_time -= 3
+            menu:
+                "Rush across before they're fully through." if scout_time > 0:
+                    te "You just bought them a free sighting. Awful."
+                    $ scout_time -= 3
+                "Hold in cover and wait them out." if scout_time > 0:
+                    te "That's it. Let them do the walking."
+                    $ scout_time += 2
 
-    if scout_time <= 0:
-        jump scout_training_fail
+            if scout_time <= 0:
+                jump scout_training_fail
 
-    ## ── Decision 5: Spotted at distance ──────────────────────────────────────
-    n "A figure at the edge of the tree line. They might have seen you."
+            ## ── Decision 3: Strange sound ─────────────────────────────────────
+            n "Something moves in the brush to your left. Could be anything."
 
-    menu:
-        "Move to new cover — confirm they haven't locked on." if scout_time > 0:
-            te "Movement confirms your position. You just told them where you are."
-            $ scout_time -= 3
-        "Go still. Don't move until they've passed." if scout_time > 0:
-            te "The forest hid you. You let it. Good."
-            $ scout_time += 2
+            menu:
+                "Investigate — could be useful intel." if scout_time > 0:
+                    te "Could be a trap. Is a trap. You're terrible at this."
+                    $ scout_time -= 3
+                "Mark the position and pull back to observe." if scout_time > 0:
+                    te "Information, not engagement. You're getting it."
+                    $ scout_time += 2
 
-    if scout_time <= 0:
-        jump scout_training_fail
+            if scout_time <= 0:
+                jump scout_training_fail
 
-    ## ── Decision 6: Return route ─────────────────────────────────────────────
-    n "You've got everything you need. Time to report back."
+            ## ── Decision 4: Open ground ──────────────────────────────────────
+            n "There's a shortcut across open ground. Faster, but no cover."
 
-    menu:
-        "Same route — you cleared it on the way in." if scout_time > 0:
-            te "A route cleared once is a route the enemy watches. Never the same path."
-            $ scout_time -= 3
-        "New route back. Never retrace your steps." if scout_time > 0:
-            te "That's the doctrine. You remembered."
-            $ scout_time += 2
+            menu:
+                "Stick to the tree line. Slower." if scout_time > 0:
+                    te "Always cover. You move like a shadow or you don't move."
+                    $ scout_time += 2
+                "Use the open ground. Save time." if scout_time > 0:
+                    te "Every archer in range just lit up. Think."
+                    $ scout_time -= 3
 
-    if scout_time <= 0:
-        jump scout_training_fail
+            if scout_time <= 0:
+                jump scout_training_fail
 
-    jump scout_training_success
+            ## ── Decision 5: Spotted at distance ──────────────────────────────
+            n "A figure at the edge of the tree line. They might have seen you."
+
+            menu:
+                "Move to new cover — confirm they haven't locked on." if scout_time > 0:
+                    te "Movement confirms your position. You just told them where you are."
+                    $ scout_time -= 3
+                "Go still. Don't move until they've passed." if scout_time > 0:
+                    te "The forest hid you. You let it. Good."
+                    $ scout_time += 2
+
+            if scout_time <= 0:
+                jump scout_training_fail
+
+            ## ── Decision 6: Return route ─────────────────────────────────────
+            n "You've got everything you need. Time to report back."
+
+            menu:
+                "Same route — you cleared it on the way in." if scout_time > 0:
+                    te "A route cleared once is a route the enemy watches. Never the same path."
+                    $ scout_time -= 3
+                "New route back. Never retrace your steps." if scout_time > 0:
+                    te "That's the doctrine. You remembered."
+                    $ scout_time += 2
+
+            if scout_time <= 0:
+                jump scout_training_fail
+
+            jump scout_training_success
+
+        "Not today.":
+            pass
+
+    return
 
 
 label scout_training_success:

@@ -71,7 +71,7 @@ screen pipe_puzzle(grid, rows, cols, start_row, end_row, reachable):
         yalign 0.5
         spacing 6
 
-        text "[CORKI'S AUTO-REPAIR — bg placeholder]" xalign 0.5 size 20 color "#888888"
+        text "[[CORKI'S AUTO-REPAIR — bg placeholder]" xalign 0.5 size 20 color "#888888"
         text "Rotate tiles to connect START to END" xalign 0.5 size 22
         null height 12
 
@@ -104,45 +104,83 @@ screen pipe_puzzle(grid, rows, cols, start_row, end_row, reachable):
                     null width 32
 
 
+## ── Hub screen ────────────────────────────────────────────────────────────────
+
+screen loc_auto_repair_hub():
+    zorder 50
+
+    imagebutton:
+        idle  Transform("ch corki shop position", alpha=0.9)
+        hover Fixed(Transform("ch corki shop position", zoom=1.005, anchor=(0.5, 1.0), align=(0.5, 1.0)), xysize=(1920, 1088))
+        focus_mask True
+        pos (0, 0)
+        hover_sound "audio/sfx/hover_selectable.mp3"
+        activate_sound "audio/sfx/click_selectable.mp3"
+        action Return("interact")
+
+    textbutton "← Leave":
+        xalign 0.02
+        yalign 0.96
+        text_size 22
+        text_color "#c8c8c8"
+        text_hover_color "#ffffff"
+        activate_sound "audio/sfx/click_selectable.mp3"
+        action Return("leave")
+
+
 ## ── Label ────────────────────────────────────────────────────────────────────
 
 label loc_auto_repair:
 
-    $ energy -= 1
+    scene bg corkis autoshop with dissolve
 
-    python:
-        pipe_grid = make_pipe_grid(pipe_rows, pipe_cols)
+    call screen loc_auto_repair_hub()
+    if _return == "leave":
+        return
 
-    scene bg black  # placeholder — bg corki auto repair interior
-    n "[[Corki's Auto-Repair — interior bg placeholder]"
-    # TODO: Corki intro dialogue
+    show ch corki shop position
+    n "Corki's Auto-Repair. The smell of engine oil and scorched copper hits you from half a block away."
+    n "A small Yordle in a flight helmet is halfway inside an engine block, legs kicking in the air."
 
-    # Puzzle loop — recalculate reachability after every rotation
-    python:
-        _reach = pipe_reachable(pipe_grid, pipe_rows, pipe_cols, pipe_start_row)
-        _solved = (pipe_end_row, pipe_cols - 1) in _reach
+    co "HEY! You there — big legs. You any good with your hands?"
+    n "He doesn't wait for an answer before rattling off the problem."
+    co "Coolant line's a mess. The whole pipe routing's gone to hell. Fix it and I'll make it worth your while."
 
-    while not _solved:
-        call screen pipe_puzzle(pipe_grid, pipe_rows, pipe_cols, pipe_start_row, pipe_end_row, _reach)
+    menu:
+        "Get to work.":
+            $ energy -= 1
+            $ renpy.block_rollback()
 
-        python:
-            _act = _return
-            if _act[0] == "rotate":
-                _r, _c = _act[1], _act[2]
-                pipe_grid[_r][_c]["rot"] = (pipe_grid[_r][_c]["rot"] + 1) % 4
-            _reach = pipe_reachable(pipe_grid, pipe_rows, pipe_cols, pipe_start_row)
-            _solved = (pipe_end_row, pipe_cols - 1) in _reach
+            python:
+                pipe_grid = make_pipe_grid(pipe_rows, pipe_cols)
 
-    # Victory
-    show screen system_overlay
-    s "Pipes connected. Corki's repairs are back on schedule."
-    s "Strength +2   Charisma +1   Gold +50"
-    call screen system_got_it
-    hide screen system_overlay
+            python:
+                _reach = pipe_reachable(pipe_grid, pipe_rows, pipe_cols, pipe_start_row)
+                _solved = (pipe_end_row, pipe_cols - 1) in _reach
 
-    $ strength += 2
-    $ charisma += 1
-    $ gold += 50
-    $ persistent.corki_visits += 1
+            while not _solved:
+                call screen pipe_puzzle(pipe_grid, pipe_rows, pipe_cols, pipe_start_row, pipe_end_row, _reach)
+
+                python:
+                    _act = _return
+                    if _act[0] == "rotate":
+                        _r, _c = _act[1], _act[2]
+                        pipe_grid[_r][_c]["rot"] = (pipe_grid[_r][_c]["rot"] + 1) % 4
+                    _reach = pipe_reachable(pipe_grid, pipe_rows, pipe_cols, pipe_start_row)
+                    _solved = (pipe_end_row, pipe_cols - 1) in _reach
+
+            show screen system_overlay
+            s "Pipes connected. Corki's repairs are back on schedule."
+            s "Strength +2   Charisma +1   Gold +50"
+            call screen system_got_it
+            hide screen system_overlay
+
+            $ strength += 2
+            $ charisma += 1
+            $ gold += 50
+            $ persistent.corki_visits += 1
+
+        "Head back.":
+            pass
 
     return

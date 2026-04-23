@@ -314,6 +314,7 @@ screen quick_menu():
 init python:
     config.overlay_screens.append("quick_menu")
     config.overlay_screens.append("constitution_hud")
+    config.overlay_screens.append("energy_hud")
     config.overlay_screens.append("journal_button")
 
 default quick_menu = True
@@ -450,6 +451,13 @@ transform journal_arrow_anim:
     linear 0.45 xoffset 0
     repeat
 
+transform energy_arrow_anim:
+    ## Sits to the right of the energy display, bobs left toward it.
+    xpos 90 ypos 90 yanchor 0.5 xoffset 0
+    linear 0.45 xoffset -20
+    linear 0.45 xoffset 0
+    repeat
+
 ## Navigation arrow hover bounces — used by travel buttons in hub screens.
 
 transform nav_arrow_bounce:
@@ -487,6 +495,23 @@ screen journal_arrow():
     zorder 310
     add Transform("pointer arrow", zoom=0.5, alpha=0.6) at journal_arrow_anim
 
+screen energy_arrow():
+    zorder 310
+    add Transform("pointer arrow", xzoom=-1.0, zoom=0.5, alpha=0.6) at energy_arrow_anim
+
+screen energy_intro():
+    ## Preview of the energy display shown during the system announcement.
+    zorder 300
+    hbox:
+        xpos 20
+        ypos 90
+        spacing 2
+        for i in range(3):
+            if i < energy:
+                add Transform("bt energy full", zoom=0.175)
+            else:
+                add Transform("bt energy empty", zoom=0.175)
+
 
 ## Constitution HUD ############################################################
 ##
@@ -511,6 +536,19 @@ screen constitution_hud():
                     "gui/hud/Heart - %d.png" % min(max(constitution - i * 5, 0), 5),
                     zoom=0.5
                 )
+
+screen energy_hud():
+    zorder 260
+    if energy_hud_visible and quick_menu:
+        hbox:
+            xpos 20
+            ypos 90
+            spacing 2
+            for i in range(3):
+                if i < energy:
+                    add Transform("bt energy full", zoom=0.175)
+                else:
+                    add Transform("bt energy empty", zoom=0.175)
 
 ## Barkeep: ask about someone ################################################
 ##

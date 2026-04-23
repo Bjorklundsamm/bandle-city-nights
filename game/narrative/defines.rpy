@@ -88,6 +88,8 @@ default persistent.ezreal_shower_unlocked = False
 
 default player_name             = "Stranger"
 default constitution_hud_visible = False
+default energy_hud_visible      = False
+default day2_outside_announced  = False
 default current_day             = 1
 
 
@@ -200,6 +202,8 @@ default ezreal_explicit_done    = False
 
 default morgana_reward_scene_done = False
 default morgana_explicit_done   = False
+
+default fizz_explicit_done      = False
 
 default jinx_gate_done          = False   # requires tristana affection max
 default jinx_explicit_done      = False

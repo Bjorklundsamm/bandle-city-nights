@@ -13,6 +13,20 @@ label day2_outside_loop:
     n "The air outside is warm and bright, the city going about its morning."
     n "You can hear the market a few streets over — the familiar sounds of people selling things at each other."
 
+    if not day2_outside_announced:
+        $ day2_outside_announced = True
+        $ energy_hud_visible = True
+        show screen energy_intro
+        show screen energy_arrow
+        show screen system_overlay
+        s "You have 3 Energy to spend today."
+        s "Each job or interaction costs 1 — when it's gone, your body needs to rest."
+        s "You can talk to people freely. It's the work that wears you down."
+        call screen system_got_it
+        hide screen energy_arrow
+        hide screen energy_intro
+        hide screen system_overlay
+
     $ _day2_outside_running = True
 
     while _day2_outside_running:
@@ -31,30 +45,38 @@ label day2_outside_loop:
         elif _return == "auto_repair":
             call loc_auto_repair
             scene bg city outside daytime
+            if energy <= 0:
+                $ _day2_outside_running = False
 
         elif _return == "roboshop":
             call loc_roboshop
             scene bg city outside daytime
+            if energy <= 0:
+                $ _day2_outside_running = False
 
         elif _return == "scout_training":
             call loc_scout_training
             scene bg city outside daytime
+            if energy <= 0:
+                $ _day2_outside_running = False
 
         elif _return == "hot_springs":
             call loc_hot_springs
             scene bg city outside daytime
+            if energy <= 0:
+                $ _day2_outside_running = False
 
         elif _return == "deep_woods":
             call loc_deep_woods
             scene bg city outside daytime
+            if energy <= 0:
+                $ _day2_outside_running = False
 
         elif _return == "kitchen":
             call loc_kitchen
             scene bg city outside daytime
-
-        elif _return == "ezreal_range":
-            call loc_ezreal_range
-            scene bg city outside daytime
+            if energy <= 0:
+                $ _day2_outside_running = False
 
         elif _return == "impish_delight":
             $ _day2_outside_running = False
@@ -70,9 +92,6 @@ label day2_outside_loop:
 screen day2_outside_hub():
     zorder 100
     modal True
-
-    # Energy display — top-left placeholder until HUD is designed
-    text "Energy: [energy]/3" xpos 20 ypos 20 size 28 color "#ffffff" outlines [(2, "#000000", 0, 0)]
 
     # Characters
     imagebutton:
@@ -145,27 +164,16 @@ screen day2_outside_hub():
     imagebutton:
         sensitive energy > 0
         idle Transform("bt kitchen", alpha=(0.78 if energy > 0 else 0.2))
-        hover Fixed(Transform("bt kitchen", zoom=1.005, anchor=(0.5, 0.5), align=(0.5, 0.5)), xysize=(1920, 1088))
+        hover Fixed(Transform("bt kitchen", zoom=1.002, anchor=(0.5, 0.5), align=(0.5, 0.5)), xysize=(1920, 1088))
         focus_mask True
         pos (-2, -6)
         hover_sound "audio/sfx/hover_selectable.mp3"
         activate_sound "audio/sfx/click_selectable.mp3"
         action Return("kitchen")
 
-    # Placeholder button — replace with imagebutton when bt ezreal range.png exists
-    textbutton "[ EZREAL'S RANGE ]":
-        sensitive energy > 0
-        xpos 1440
-        ypos 360
-        text_size 22
-        text_color ("#ffffff" if energy > 0 else "#444444")
-        hover_sound "audio/sfx/hover_selectable.mp3"
-        activate_sound "audio/sfx/click_selectable.mp3"
-        action Return("ezreal_range")
-
     imagebutton:
         idle Transform("bt impish delight", alpha=0.78)
-        hover Fixed(Transform("bt impish delight", zoom=1.005, anchor=(0.5, 0.5), align=(0.5, 0.5)), xysize=(1920, 1088))
+        hover Fixed(Transform("bt impish delight", zoom=1.002, anchor=(0.5, 0.5), align=(0.5, 0.5)), xysize=(1920, 1088))
         focus_mask True
         pos (0, -6)
         hover_sound "audio/sfx/hover_selectable.mp3"
@@ -322,7 +330,6 @@ label day2_meet_miss_fortune:
 # loc_roboshop      → day2_rumble.rpy
 # loc_scout_training → day2_teemo.rpy
 # loc_kitchen       → day2_morgana.rpy
-# loc_ezreal_range  → day2_ezreal.rpy
 
 label loc_hot_springs:
     scene bg hot springs
@@ -330,8 +337,21 @@ label loc_hot_springs:
     return
 
 label loc_deep_woods:
-    scene bg black
-    n "PLACEHOLDER: Deep Woods — bg deep woods needed"
+
+    scene bg black with dissolve
+
+    if constitution < 10:
+        n "The tree line at the edge of town. Older than the buildings, older than the road."
+        n "Something past the first row of trunks makes the air feel different — heavier."
+        n "Your body isn't ready for this. You can feel that clearly."
+
+        menu:
+            "Go in anyway.":
+                jump gameover1
+            "Turn back. Not today.":
+                return
+
+    n "PLACEHOLDER: Deep Woods / Kindred encounter — scene not yet built"
     return
 
 label loc_impish_delight:

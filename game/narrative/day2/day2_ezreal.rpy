@@ -30,15 +30,44 @@ screen ezreal_target(x, y, target_num):
     timer 1.5 action Return("miss")
 
 
+## ── Hub screen ────────────────────────────────────────────────────────────────
+
+screen loc_ezreal_range_hub():
+    zorder 50
+
+    imagebutton:
+        idle  Transform("ch ezreal profile default", alpha=0.9)
+        hover Fixed(Transform("ch ezreal profile default", zoom=1.005, anchor=(0.5, 1.0), align=(0.5, 1.0)), xysize=(1920, 1088))
+        focus_mask True
+        pos (0, 0)
+        hover_sound "audio/sfx/hover_selectable.mp3"
+        activate_sound "audio/sfx/click_selectable.mp3"
+        action Return("interact")
+
+    textbutton "← Leave":
+        xalign 0.02
+        yalign 0.96
+        text_size 22
+        text_color "#c8c8c8"
+        text_hover_color "#ffffff"
+        activate_sound "audio/sfx/click_selectable.mp3"
+        action Return("leave")
+
+
 ## ── Label ────────────────────────────────────────────────────────────────────
 
 label loc_ezreal_range:
 
+    scene bg training grounds with dissolve
+
+    call screen loc_ezreal_range_hub()
+    if _return == "leave":
+        return
+
     $ energy -= 1
     $ renpy.block_rollback()
 
-    scene bg black  # placeholder — bg ezreal target range / rooftop
-    n "[[Ezreal's Target Range — bg placeholder]"
+    show ch ezreal profile default
     # TODO: Ezreal intro trash-talk
 
     python:

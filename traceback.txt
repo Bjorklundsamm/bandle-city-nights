@@ -1,99 +1,37 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/narrative/day2/day2_outside.rpy", line 20, in script
-    call screen day2_outside_hub
-  File "game/narrative/day2/day2_outside.rpy", line 70, in execute
-    screen day2_outside_hub():
-  File "game/narrative/day2/day2_outside.rpy", line 70, in execute
-    screen day2_outside_hub():
-  File "game/narrative/day2/day2_outside.rpy", line 156, in execute
-    textbutton "[ EZREAL'S RANGE ]":
-Exception: String "[ EZREAL'S RANGE ]" ends with an open format operation.
+  File "game/narrative/day2/day2_outside.rpy", line 28, in script call
+    call day2_meet_fizz
+  File "game/narrative/day2/day2_fizz.rpy", line 10, in script
+    if fizz_explicit_done:
+  File "game/narrative/day2/day2_fizz.rpy", line 10, in <module>
+    if fizz_explicit_done:
+       ^^^^^^^^^^^^^^^^^^ 
+NameError: name 'fizz_explicit_done' is not defined. Did you mean: 'jinx_explicit_done'?
 
 -- Full Traceback ------------------------------------------------------------
 
 Traceback (most recent call last):
-  File "game/narrative/day2/day2_outside.rpy", line 20, in script
-    call screen day2_outside_hub
-  File "renpy/ast.py", line 2231, in execute
-    self.call("execute")
-    ~~~~~~~~~^^^^^^^^^^^
-  File "renpy/ast.py", line 2195, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/statements.py", line 379, in call
-    return method(parsed, *args, **kwargs)
-           ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/common/000statements.rpy", line 695, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-                    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/exports/statementexports.py", line 348, in call_screen
-    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/ui.py", line 304, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/core.py", line 2219, in interact
-    repeat, rv = self.interact_core(
-                 ~~~~~~~~~~~~~~~~~~^
-        preloads=preloads,
-        ^^^^^^^^^^^^^^^^^^
-    ...<4 lines>...
-        **kwargs,
-        ^^^^^^^^^
-    )  # type: ignore
-    ^                
-  File "renpy/display/core.py", line 2757, in interact_core
-    root_widget.visit_all(lambda d: d.per_interact())
-    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/displayable.py", line 432, in visit_all
-    d.visit_all(callback, seen)
-    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "renpy/display/displayable.py", line 432, in visit_all
-    d.visit_all(callback, seen)
-    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "renpy/display/displayable.py", line 432, in visit_all
-    d.visit_all(callback, seen)
-    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "renpy/display/screen.py", line 503, in visit_all
-    callback(self)
-    ~~~~~~~~^^^^^^
-  File "renpy/display/core.py", line 2757, in <lambda>
-    root_widget.visit_all(lambda d: d.per_interact())
-                                    ~~~~~~~~~~~~~~^^ 
-  File "renpy/display/screen.py", line 514, in per_interact
-    self.update()
-    ~~~~~~~~~~~^^
-  File "renpy/display/screen.py", line 715, in update
-    self.screen.function(**self.scope)
-    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-  File "game/narrative/day2/day2_outside.rpy", line 70, in execute
-    screen day2_outside_hub():
-  File "game/narrative/day2/day2_outside.rpy", line 70, in execute
-    screen day2_outside_hub():
-  File "game/narrative/day2/day2_outside.rpy", line 156, in execute
-    textbutton "[ EZREAL'S RANGE ]":
-  File "renpy/ui.py", line 1001, in _textbutton
-    text = renpy.text.text.Text(label, style=text_style, substitute=substitute, scope=scope, **text_kwargs)
-           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/text/text.py", line 2195, in __init__
-    self.set_text(text, scope, substitute)  # type: ignore
-    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^                
-  File "renpy/text/text.py", line 2329, in set_text
-    i, did_sub = renpy.substitutions.substitute(i, scope, substitute)  # type: ignore
-                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^                
-  File "renpy/substitutions.py", line 355, in substitute
-    s = interpolate(s, variables)  # type: ignore
-        ~~~~~~~~~~~^^^^^^^^^^^^^^                
-  File "renpy/substitutions.py", line 52, in interpolate
-    for lit, expr, conv, fmt in parse(s):
-                                ~~~~~^^^ 
-  File "renpy/substitutions.py", line 255, in parse
-    raise Exception("String {!r} ends with an open format operation.".format(s))
-Exception: String "[ EZREAL'S RANGE ]" ends with an open format operation.
+  File "game/narrative/day2/day2_outside.rpy", line 28, in script call
+    call day2_meet_fizz
+  File "game/narrative/day2/day2_fizz.rpy", line 10, in script
+    if fizz_explicit_done:
+  File "renpy/ast.py", line 2079, in execute
+    if renpy.python.py_eval(condition):
+       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^ 
+  File "renpy/python.py", line 1292, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/python.py", line 1285, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+           ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "game/narrative/day2/day2_fizz.rpy", line 10, in <module>
+    if fizz_explicit_done:
+       ^^^^^^^^^^^^^^^^^^ 
+NameError: name 'fizz_explicit_done' is not defined. Did you mean: 'jinx_explicit_done'?
 
 Windows-10-10.0.19045-SP0 AMD64
 Ren'Py 8.4.1.25072401
 Bandle City Nights 1.0
-Tue Apr 21 14:20:25 2026
+Wed Apr 22 12:04:30 2026

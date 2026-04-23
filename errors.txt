@@ -2,9 +2,11 @@
 errors listed below, and try again.
 
 
-File "game/narrative/day2/day2_corki.rpy", line 85: 'text_xalign' is not a keyword argument or valid child of the text statement.
-    text ">" xsize 32 ysize 50 size 28 color "#00ff88" text_xalign 0.5 text_yalign 0.5
-                                                                  ^
+File "game/narrative/minigames/minigame_corki.rpy", line 151: unterminated string literal
+    scene bg corki's autoshop
+
+File "game/narrative/minigames/minigame_rumble.rpy", line 151: unterminated string literal
+    scene bg rumble's roboshop
 
 Ren'Py Version: Ren'Py 8.4.1.25072401
-Tue Apr 21 12:06:36 2026
+Thu Apr 23 11:52:37 2026
