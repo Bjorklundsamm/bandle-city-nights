@@ -16,19 +16,44 @@ Open in the **Ren'Py launcher** and click "Launch Project". There is no CLI buil
 
 **IMPORTANT — rpyc files:** When renaming or moving any `.rpy` file, immediately delete the corresponding `.rpyc` file in the same directory. Stale `.rpyc` files cause confusing duplicate-declaration errors. The `.rpyc` files should not be committed to git.
 
+## Story Context
+
+**Always read `CONTEXT.md` before starting any narrative, dialogue, or content work.** It tracks where the story currently ends, the status of every character arc, the NSFW workflow, and the ordered next-work list. Update it whenever a scene is completed or priorities shift.
+
 ## File Architecture
 
-| File | Role |
-|---|---|
-| `script_main.rpy` | Character `define`s and the opening sequence (`start` → `introductions` → `gameStart`) |
-| `script_room.rpy` | `wakingUp` label — bedroom scene bridging the intro chase to `introductions` |
-| `script_misc.rpy` | Dead-end/game-over labels (e.g. `gameover1`) |
-| `inventory.rpy` | `backpack_intro` and `inventory_button` screens; `persistent.inventory_unlocked` flag |
-| `screens.rpy` | All UI screens (say, menu, prefs, save/load) and style definitions |
-| `gui.rpy` | Theme values (`gui.*`) consumed by `screens.rpy` — generated file, edit carefully |
-| `options.rpy` | Game config: title, version, audio channels, transitions, build settings |
+```
+game/
+  narrative/
+    defines.rpy               ← All character defines and default variables (edit here only)
+    day1/
+      day1_intro.rpy          ← start, introductions, gameStart labels
+      day1_morning.rpy        ← wakingUp label
+      day1_night.rpy          ← tavern_tutorial_loop, all Day 1 character first-meets
+    day2/
+      day2_morning.rpy        ← morning_day_2, Katarina peek, loaded dice
+      day2_tavern.rpy         ← day2_tavern_loop: Barkeep, Lulu, Poppy
+      day2_outside.rpy        ← day2_outside_loop: Miss Fortune, Fizz, job signs
+      day2_fizz.rpy           ← Fizz intro + explicit scene (isolated for Tier 3 content)
+      day2_corki/rumble/      ← Minigame logic for each job boss
+        teemo/morgana/ezreal.rpy
+    endings/
+      gameovers.rpy
+    minigames/
+      jobs_hub.rpy            ← Job hub screen + routing labels (Day 3+)
+      minigame_*.rpy          ← Standalone minigame implementations
+    tavern/
+      barkeep_system.rpy      ← barkeep_ask_about and overview labels
+      tavern_hub_screens.rpy  ← Reusable tavern hub screen
+    ui/
+      day_card.rpy            ← show_day_card label
+  screens.rpy                 ← All UI screens (say, menu, prefs, save/load), styles
+  gui.rpy                     ← Theme values — generated file, edit carefully
+  options.rpy                 ← Game config: title, version, audio, transitions, build
+  inventory.rpy               ← Backpack screen and inventory_button overlay
+```
 
-New scenes/locations get their own `script_[location].rpy` file. Keep narrative files under ~800 lines; split by location or story arc when they grow larger.
+New scenes/characters get their own file under `narrative/day*/` or a new `day*/` folder. Isolate any file containing a Tier 3 `[EXPLICIT]` block — name it `day*_[character].rpy`. Keep narrative files under ~800 lines; split by location or story arc when they grow larger.
 
 ## Constitution System
 
